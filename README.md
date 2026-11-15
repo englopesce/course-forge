@@ -11,7 +11,7 @@ Skills de agente da [L4Tec](https://l4tec.com) para transformar uma ementa num c
 | [`plano-de-estudo`](skills/plano-de-estudo) | Planeja trilhas e sessões com vídeos verificados |
 | [`youtube-legendas`](skills/youtube-legendas) | Baixa só a transcrição e os metadados de um vídeo do YouTube |
 | [`roteiro-didatico-ptbr`](skills/roteiro-didatico-ptbr) | Escreve e valida o `roteiro.json` da aula |
-| [`codigo-exemplo-aula-2`](skills/codigo-exemplo-aula-2) | Roda o repositório de exemplo, extrai os trechos de código e gera exercícios |
+| [`codigo-exemplo-aula`](skills/codigo-exemplo-aula) | Roda o repositório de exemplo, extrai os trechos de código e gera exercícios |
 | [`narracao-tts-ptbr`](skills/narracao-tts-ptbr) | Gera a narração pt-BR, a legenda SRT e confere a voz por transcrição reversa |
 | [`trechos-youtube-credito`](skills/trechos-youtube-credito) | Recorta trechos curtos com crédito gravado na imagem |
 | [`pagina-html-gsap`](skills/pagina-html-gsap) | Gera a página HTML animada (GSAP), offline |

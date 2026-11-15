@@ -1,14 +1,8 @@
 ---
 name: codigo-exemplo-aula
-description: >-
-  Etapa "codigo" de uma aula técnica (aula-ra) — roda o repositório de exemplo
-  da aula numa cópia limpa (install, build, testes, solução dos exercícios),
-  extrai do próprio repositório os trechos de código citados nas cenas do
-  roteiro (com realce de sintaxe offline e destaques por linha) e gera
-  exercicios.md; falha se o código não rodar. Use quando uma aula para
-  programadores precisar mostrar código na tela (vídeo e HTML), ter exercícios e
-  um repositório executável conferido automaticamente.
+description: Etapa "codigo" de uma aula técnica (aula-ra) — roda o repositório de exemplo da aula numa cópia limpa (install, build, testes, solução dos exercícios), extrai do próprio repositório os trechos de código citados nas cenas do roteiro (com realce de sintaxe offline e destaques por linha) e gera exercicios.md; falha se o código não rodar. Use quando uma aula para programadores precisar mostrar código na tela (vídeo e HTML), ter exercícios e um repositório executável conferido automaticamente.
 ---
+
 # codigo-exemplo-aula
 
 Arquivos auxiliares relativos a esta pasta (instalada em `/home/box/agent-data/workflows/codigo-exemplo-aula/`).
