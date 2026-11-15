@@ -22,9 +22,8 @@ padrao_aula:               # base de todos os aula.yaml (deep merge; listas subs
     cenas: 6 a 7
     estrutura: problema/gancho → conceito → como funciona por dentro → exemplo concreto → armadilhas comuns → próximos passos
     fechamento: Na prática
-  # motor azure: recomendado para curso NOVO / conteúdo monetizado (exige AZURE_SPEECH_KEY e AZURE_SPEECH_REGION).
-  # Cursos já renderizados em edge-tts devem fixar motor: edge e não re-narrar.
-  narracao: {motor: azure, voz: pt-BR-FranciscaNeural, rate: "-5%", pausa_frase_ms: 400, pausa_paragrafo_ms: 700, pausa_cena_ms: 950, whisper_modelo: small, termos_ingles: {modo: ingles_mesma_voz}}
+  # motor edge: padrão de todos os cursos (decisão do Carlos, 15/11/2026). O motor azure existe mas não é usado.
+  narracao: {motor: edge, voz: pt-BR-FranciscaNeural, rate: "-5%", pausa_frase_ms: 400, pausa_paragrafo_ms: 700, pausa_cena_ms: 950, whisper_modelo: small, termos_ingles: {modo: ingles_mesma_voz}}
   trechos_opcoes: {folga: 1.0, altura: 720, fundo_9x16: blur}
   html: {gsap_versao: 3.15.0}
   video: {resolucao: landscape, hyperframes: 0.9.43, legenda_fonte: Inter, legenda_tamanho: 18}

@@ -68,7 +68,7 @@ Arquivos auxiliares relativos a esta pasta. Instalação esperada: cada skill em
 ## Narração (v1.3.0) — parâmetros em `narracao:` do yaml (todos opcionais; padrões em `pipeline.py`, `NARRACAO_PADRAO`)
 | chave | padrão | o quê |
 |---|---|---|
-| `motor` | `edge` (se omitido) | v1.4.1 / narracao-tts-ptbr 1.8.0: `edge` ou `azure`. Sem a chave, o pipeline assume `edge` (cursos já existentes não mudam e não re-narram). **Cursos novos** devem pôr `narracao.motor: azure` (template do curso-a-partir-de-ementa; recomendado para conteúdo monetizado). `TTS_MOTOR` (env) vence o yaml. Chave e região do Azure só por `AZURE_SPEECH_KEY` e `AZURE_SPEECH_REGION`, nunca no yaml — erro claro se o motor for `azure` e faltarem. `motor: edge` (ou ausente) não entra no hash de cache. |
+| `motor` | `edge` (se omitido) | v1.4.1 / narracao-tts-ptbr 1.8.0: `edge` ou `azure`. Sem a chave, o pipeline assume `edge` (cursos já existentes não mudam e não re-narram). **Padrão em todos os cursos, novos inclusive: `edge`** (decisão do Carlos, 15/11/2026); o motor `azure` fica disponível mas não é usado. `TTS_MOTOR` (env) vence o yaml. Chave e região do Azure só por `AZURE_SPEECH_KEY` e `AZURE_SPEECH_REGION`, nunca no yaml — erro claro se o motor for `azure` e faltarem. `motor: edge` (ou ausente) não entra no hash de cache. |
 | `voz` | `pt-BR-FranciscaNeural` | venceu Antonio e Thalita em WER e termos em inglês |
 | `rate` | `-5%` | velocidade da voz (`velocidade`, nome antigo, ainda vale); no Azure vai para `<prosody rate>` |
 | `pausa_frase_ms` | 400 | silêncio entre frases (350–500 soa natural) |

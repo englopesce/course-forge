@@ -13,11 +13,9 @@ Python do venv com PyYAML (o mesmo da aula-ra).
 1. Copie `templates/curso_exemplo.yaml` para a pasta do curso como `curso.yaml` e ajuste: `curso.ementa` (arquivo
    de texto), `publico`, `nivel`, `tom`, `linguagem` (vão para todo roteiro), `estrutura` (aulas por módulo,
    duração, `cobertura: erro|aviso`), `padrao_aula` (base de todo aula.yaml: formatos, marca, `narracao: {motor, voz, rate, pausa_frase_ms, pausa_paragrafo_ms,
-   pausa_cena_ms, termos_ingles, pronuncia}` — repassados a todas as aulas). **Curso novo (v1.5.0):** o template
-   já vem com `narracao.motor: azure` (Azure Speech, licença comercial, recomendado para conteúdo monetizado;
-   exige `AZURE_SPEECH_KEY` e `AZURE_SPEECH_REGION` no ambiente, nunca no yaml — erro claro se faltarem).
-   Cursos já renderizados em edge-tts (IA para Jornalismo, Eng. Software IA) devem fixar `motor: edge` e não
-   re-narrar. Sem `motor` no yaml, o pipeline ainda assume `edge` (compatível com aulas antigas). Voz padrão
+   pausa_cena_ms, termos_ingles, pronuncia}` — repassados a todas as aulas). **Motor (v1.5.1):** o template vem com
+   `narracao.motor: edge` — padrão de TODOS os cursos, novos inclusive (decisão do Carlos, 15/11/2026). O motor
+   `azure` existe na narracao-tts-ptbr mas não deve ser usado; não re-narrar aulas prontas. Voz padrão
    `pt-BR-FranciscaNeural`, rate `-5%`, `termos_ingles.modo: ingles_mesma_voz`.
    Demais chaves sem valor caem nos padrões do pipeline aula-ra / narracao-tts-ptbr)
    e `por_tipo`.
