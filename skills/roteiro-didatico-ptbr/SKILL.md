@@ -1,15 +1,8 @@
 ---
 name: roteiro-didatico-ptbr
-description: >-
-  Escreve e valida o roteiro.json de uma mini-aula em pt-BR para o público
-  definido na config (de diretores não técnicos a programadores), com cenas de
-  telas curtas, narração, analogias, fechamento ("Para lembrar"/"Na prática"),
-  legendas pt-BR dos trechos e, em aulas técnicas, cenas com código do
-  repositório de exemplo e exercícios; fatos ancorados em transcrição ou
-  documentação oficial. Use quando precisar transformar transcrição(ões) de
-  vídeo e docs em roteiro didático para página HTML e/ou vídeo narrado, sobre
-  qualquer tema.
+description: Escreve e valida o roteiro.json de uma mini-aula em pt-BR para o público definido na config (de diretores não técnicos a programadores), com cenas de telas curtas, narração, analogias, fechamento ("Para lembrar"/"Na prática"), legendas pt-BR dos trechos e, em aulas técnicas, cenas com código do repositório de exemplo e exercícios; fatos ancorados em transcrição ou documentação oficial. Use quando precisar transformar transcrição(ões) de vídeo e docs em roteiro didático para página HTML e/ou vídeo narrado, sobre qualquer tema.
 ---
+
 # roteiro-didatico-ptbr
 
 Arquivos auxiliares relativos a esta pasta (instalada em `/home/box/agent-data/workflows/roteiro-didatico-ptbr/`).

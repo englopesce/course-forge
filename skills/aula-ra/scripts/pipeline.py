@@ -30,7 +30,7 @@ Cada formato tem cache próprio (video.json / video-9x16.json) e projeto HyperFr
 
 As skills de cada etapa são procuradas na pasta-mãe desta skill (ex.: /home/box/agent-data/workflows/)
 ou em $AULA_SKILLS_DIR / config `skills_dir`. Python das etapas: o mesmo que roda este script
-(use o venv com edge-tts, faster-whisper e PyYAML).
+(use o venv com edge-tts, faster-whisper e PyYAML; azure-cognitiveservices-speech é opcional, só no motor azure).
 """
 import argparse, glob, hashlib, json, os, shutil, subprocess, sys, time
 
@@ -50,7 +50,7 @@ FORMATOS = {"16x9": {"res": "landscape", "hf": "hf", "mp4": "aula.mp4", "srt": "
 
 
 # Padrões da narração (v1.3.0, escolhidos por transcrição reversa: ver narracao-tts-ptbr/references/vozes-e-pronuncia.md).
-# Na config: narracao: {voz, rate, pausa_frase_ms, pausa_paragrafo_ms, pausa_cena_ms, pausa_trecho_ms, pronuncia: {termo: grafia},
+# Na config: narracao: {motor, voz, rate, pausa_frase_ms, pausa_paragrafo_ms, pausa_cena_ms, pausa_trecho_ms, pronuncia: {termo: grafia},
 # whisper_modelo, termos_checagem, termos_ingles}. `velocidade` (até v1.2) ainda vale como rate.
 # termos_ingles (v1.5/v1.6): {modo: emendar_en|multilingual|original|aportuguesar|ssml_lang|ingles_mesma_voz,
 #   voz_en, voz_multilingual, termos: [extras], sem_ingles: [tirar da lista padrão]}.
@@ -143,9 +143,22 @@ class Pipeline:
         json.dump({"hash": key, "outputs": outputs, "quando": time.strftime("%Y-%m-%d %H:%M:%S")},
                   open(os.path.join(self.work, ".cache", f"{stage}.json"), "w"), indent=1)
 
+    @staticmethod
+    def narracao_cfg_hashable(n):
+        """motor: edge (ou ausente) não entra no hash — pin de cursos antigos não re-narra."""
+        if not isinstance(n, dict):
+            return n
+        n = dict(n)
+        if n.get("motor") in (None, "", "edge"):
+            n.pop("motor", None)
+        return n
+
     def key(self, stage, cfg_parts, files):
         h = hashlib.sha256()
-        h.update(json.dumps({k: self.cfg.get(k) for k in cfg_parts}, sort_keys=True, ensure_ascii=False).encode())
+        cfg = {k: self.cfg.get(k) for k in cfg_parts}
+        if "narracao" in cfg:
+            cfg["narracao"] = self.narracao_cfg_hashable(cfg.get("narracao"))
+        h.update(json.dumps(cfg, sort_keys=True, ensure_ascii=False).encode())
         skill_dir = self.s(stage) if STAGE_SKILL[stage] else os.path.join(HERE, "..")
         # scripts/, templates/ e os .json de references/ (ex.: mapa de pronúncia padrão) da skill da etapa
         h.update(sha_files(files + [os.path.join(skill_dir, "scripts"), os.path.join(skill_dir, "templates")]
@@ -292,17 +305,34 @@ class Pipeline:
         if "rate" not in n and "velocidade" in n: n["rate"] = n["velocidade"]
         return {**NARRACAO_PADRAO, **{k: v for k, v in n.items() if v is not None}}
 
+    def motor_narracao(self):
+        """TTS_MOTOR (env) vence narracao.motor (yaml); padrão edge. Não entra em NARRACAO_PADRAO:
+        assim o hash de cache das aulas já renderizadas no motor edge continua o mesmo."""
+        n = self.narracao_cfg()
+        m = (os.environ.get("TTS_MOTOR") or n.get("motor") or "edge").strip().lower()
+        if m not in ("edge", "azure"):
+            raise SystemExit(f"motor de narração desconhecido: {m!r} (use edge ou azure)")
+        return m
+
     def narracao(self):
         n = self.narracao_cfg()
         durs = {t["id"]: round(tsec(t["fim"]) - tsec(t["inicio"]), 3) for t in self.trechos_cfg()}
         dj = os.path.join(self.work, "trechos_duracoes.json"); json.dump(durs, open(dj, "w"))
         outs = [os.path.join(self.tts_dir, x) for x in ("narracao.wav", "narracao.srt", "timings.json", "voz.json")]
         k = self.key("narracao", ["narracao", "trechos"], [self.roteiro])
+        motor = self.motor_narracao()
+        # motor edge (padrão) não entra no hash, para não invalidar o cache já gravado;
+        # azure (ou outro) entra, e a pasta de cache de frases também é por hash com o motor.
+        if motor != "edge":
+            k = hashlib.sha256((k + "|motor:" + motor).encode()).hexdigest()
         if self.cache_ok("narracao", k, outs): return log("narracao: sem mudança, pulando")
         if os.path.isdir(self.tts_dir): shutil.rmtree(self.tts_dir)  # sem cena_XX velha de outra versão
-        cmd = [PY, self.s("narracao", "scripts", "tts_ptbr.py"), self.roteiro, self.tts_dir, "--voice", n["voz"],
+        cmd = [PY, self.s("narracao", "scripts", "tts_ptbr.py"), self.roteiro, self.tts_dir, "--motor", motor,
+               "--voice", n["voz"],
                f"--rate={n['rate']}", "--pausa-frase-ms", n["pausa_frase_ms"], "--pausa-paragrafo-ms", n["pausa_paragrafo_ms"],
                "--pausa-cena-ms", n["pausa_cena_ms"], "--pausa-trecho-ms", n["pausa_trecho_ms"], "--trechos", dj]
+        if motor == "azure":
+            cmd += ["--cache", os.path.join(self.work, ".cache", "tts-frases")]
         if n.get("pronuncia"):
             os.makedirs(self.tts_dir, exist_ok=True)
             pj = os.path.join(self.work, "pronuncia_extra.json"); json.dump(n["pronuncia"], open(pj, "w", encoding="utf-8"), ensure_ascii=False)

@@ -1,11 +1,8 @@
 ---
 name: youtube-legendas
-description: >-
-  Baixa só as legendas/transcrição e os metadados de um vídeo do YouTube (nunca
-  o vídeo), escolhe vídeo de canal oficial e lida com bloqueio 429/robô com
-  espera progressiva sem cookies. Use quando precisar da transcrição de um vídeo
-  do YouTube como base de roteiro, aula, resumo ou checagem de fatos.
+description: Baixa só as legendas/transcrição e os metadados de um vídeo do YouTube (nunca o vídeo), escolhe vídeo de canal oficial e lida com bloqueio 429/robô com espera progressiva sem cookies. Use quando precisar da transcrição de um vídeo do YouTube como base de roteiro, aula, resumo ou checagem de fatos.
 ---
+
 # youtube-legendas
 
 Arquivos auxiliares relativos a esta pasta (instalada em `/home/box/agent-data/workflows/youtube-legendas/`).

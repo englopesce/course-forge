@@ -95,8 +95,16 @@ def main():
     cenas_rot = json.load(open(a.roteiro, encoding="utf-8"))["cenas"]
     ref_txt = " ".join(c["narracao"] for c in cenas_rot)
     ref_cena = {c.get("id"): c["narracao"] for c in cenas_rot}
+    a.motor = None
+    if a.timings and os.path.exists(a.timings):
+        a.motor = json.load(open(a.timings, encoding="utf-8")).get("motor")
+        if a.motor:
+            print(f"Motor: {a.motor}")
     if a.de_json:
         velho = json.load(open(a.de_json, encoding="utf-8"))
+        if velho.get("motor") and not getattr(a, "motor", None):
+            a.motor = velho["motor"]
+            print(f"Motor: {a.motor}")
         return relatorio(a, ref_txt, velho["transcricao"], None, velho.get("palavras_min"))
     m = WhisperModel(a.model, device="cpu", compute_type="int8")
     # decodifica com ffmpeg (evita incompatibilidade de versões do PyAV)
@@ -176,9 +184,12 @@ def relatorio(a, ref_txt, hyp_txt, dur, ritmo):
         termos[t] = [n_hyp, n_ref]
         print(f"Termo '{t}': {n_hyp}/{n_ref} reconhecidos")
     if a.json:
-        json.dump({"wer": round(wer, 4), "S": S, "D": D, "I": I, "palavras_ref": len(ref),
-                   "palavras_min": ritmo, "trocas": diffs,
-                   "termos": termos, "transcricao": hyp_txt}, open(a.json, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        rel = {"wer": round(wer, 4), "S": S, "D": D, "I": I, "palavras_ref": len(ref),
+               "palavras_min": ritmo, "trocas": diffs,
+               "termos": termos, "transcricao": hyp_txt}
+        if getattr(a, "motor", None):
+            rel["motor"] = a.motor
+        json.dump(rel, open(a.json, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("\nTranscrição:\n" + hyp_txt)
 
 

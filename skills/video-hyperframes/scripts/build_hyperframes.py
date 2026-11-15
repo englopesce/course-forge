@@ -103,13 +103,25 @@ def main():
             outras = []  # outras fontes: roteiro.fontes_extras + vídeos dos trechos (crédito também no fim)
             for cl in list(rot.get("fontes_extras", [])) + list(clips.values()):
                 if cl["url"] != f["url"] and all(cl["url"] != o["url"] for o in outras): outras.append(cl)
-            curto = lambda u: re.sub(r"^https?://(www\.)?youtube\.com/watch\?v=", "youtu.be/", u)
-            linha = lambda o: f'{esc(o["canal"])} · “{esc(o["titulo"])}” · {esc(curto(o["url"]))}'
+            def curto(u):
+                u = u or ""
+                return re.sub(r"^https?://(www\.)?(youtube\.com/watch\?v=|youtu\.be/)", "youtu.be/", u)
+            def eh_youtube(o):
+                return bool(re.search(r"youtu(\.be|be\.com)", o.get("url") or ""))
+            def linha(o):
+                # fontes_extras pode ser lei/docs (sem canal), não só vídeo do YouTube
+                titulo = esc(o.get("titulo") or "")
+                url = esc(curto(o.get("url") or ""))
+                canal = o.get("canal")
+                if canal:
+                    return f'{esc(canal)} · “{titulo}” · {url}'
+                return f'“{titulo}” · {url}'
             final = ("Roteiro original em português, narrado por voz sintética"
                      + ("; trechos curtos dos vídeos originais usados com crédito, para treinamento interno." if clips else
                         "; nenhum trecho do vídeo original foi usado."))
-            if outras:  # várias fontes: lista compacta (1 linha por vídeo) para não invadir a área das legendas
-                extra = (f'\n        <div class="endcredit compacto" id="{sid}cr">Fontes (YouTube):<br>{linha(f)}'
+            if outras:  # lista compacta (1 linha por fonte) para não invadir a área das legendas
+                rotulo = "Fontes (YouTube):" if all(eh_youtube(o) for o in [f, *outras]) else "Fontes:"
+                extra = (f'\n        <div class="endcredit compacto" id="{sid}cr">{rotulo}<br>{linha(f)}'
                          + "".join(f"<br>{linha(o)}" for o in outras) + f"<br>{final}</div>")
             else:
                 extra = (f'\n        <div class="endcredit" id="{sid}cr">Baseado no vídeo “{esc(f["titulo"])}”, canal {esc(f["canal"])} '

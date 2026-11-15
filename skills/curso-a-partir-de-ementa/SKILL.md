@@ -1,14 +1,8 @@
 ---
 name: curso-a-partir-de-ementa
-description: >-
-  Transforma uma ementa (texto livre com módulos, unidades e tópicos) num curso
-  inteiro em vídeo — módulos → aulas com objetivos, tipo e duração,
-  CURSO.md/curso.json legíveis e um aula.yaml por aula — e roda o pipeline
-  aula-ra nas aulas escolhidas, com cache, checagem de cobertura de todos os
-  tópicos e público/nível/tom como parâmetros. Use quando pedirem um curso,
-  trilha ou série de aulas completa a partir de uma ementa, plano de ensino ou
-  programa de disciplina.
+description: Transforma uma ementa (texto livre com módulos, unidades e tópicos) num curso inteiro em vídeo — módulos → aulas com objetivos, tipo e duração, CURSO.md/curso.json legíveis e um aula.yaml por aula — e roda o pipeline aula-ra nas aulas escolhidas, com cache, checagem de cobertura de todos os tópicos e público/nível/tom como parâmetros. Use quando pedirem um curso, trilha ou série de aulas completa a partir de uma ementa, plano de ensino ou programa de disciplina.
 ---
+
 # curso-a-partir-de-ementa
 
 Arquivos auxiliares relativos a esta pasta (instalada em `/home/box/agent-data/workflows/curso-a-partir-de-ementa/`).
@@ -18,9 +12,14 @@ Python do venv com PyYAML (o mesmo da aula-ra).
 ## Passos
 1. Copie `templates/curso_exemplo.yaml` para a pasta do curso como `curso.yaml` e ajuste: `curso.ementa` (arquivo
    de texto), `publico`, `nivel`, `tom`, `linguagem` (vão para todo roteiro), `estrutura` (aulas por módulo,
-   duração, `cobertura: erro|aviso`), `padrao_aula` (base de todo aula.yaml: formatos, marca, `narracao: {voz, rate, pausa_frase_ms, pausa_paragrafo_ms,
-   pausa_cena_ms, termos_ingles, pronuncia}` — repassados a todas as aulas; sem eles valem os padrões do pipeline
-   aula-ra / narracao-tts-ptbr v1.7: voz `pt-BR-FranciscaNeural`, rate `-5%`, `termos_ingles.modo: ingles_mesma_voz`)
+   duração, `cobertura: erro|aviso`), `padrao_aula` (base de todo aula.yaml: formatos, marca, `narracao: {motor, voz, rate, pausa_frase_ms, pausa_paragrafo_ms,
+   pausa_cena_ms, termos_ingles, pronuncia}` — repassados a todas as aulas). **Curso novo (v1.5.0):** o template
+   já vem com `narracao.motor: azure` (Azure Speech, licença comercial, recomendado para conteúdo monetizado;
+   exige `AZURE_SPEECH_KEY` e `AZURE_SPEECH_REGION` no ambiente, nunca no yaml — erro claro se faltarem).
+   Cursos já renderizados em edge-tts (IA para Jornalismo, Eng. Software IA) devem fixar `motor: edge` e não
+   re-narrar. Sem `motor` no yaml, o pipeline ainda assume `edge` (compatível com aulas antigas). Voz padrão
+   `pt-BR-FranciscaNeural`, rate `-5%`, `termos_ingles.modo: ingles_mesma_voz`.
+   Demais chaves sem valor caem nos padrões do pipeline aula-ra / narracao-tts-ptbr)
    e `por_tipo`.
 2. `python scripts/curso.py estrutura curso.yaml` → lê a ementa (`ementa.json`: módulos, unidades, itens com ids
    `mNN.iNNN`/`mNN.uNN`) e, sem `estrutura.json`, escreve `PEDIDO_ESTRUTURA.md` (de `templates/prompt_estrutura.md`)

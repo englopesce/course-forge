@@ -1,0 +1,10 @@
+.env
+.env.*
+*.env
+__pycache__/
+*.pyc
+venv/
+.venv/
+# nunca versionar chave, região ou áudio de teste com credencial
+*speech*key*
+azure-key*

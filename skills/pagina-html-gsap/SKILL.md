@@ -1,15 +1,8 @@
 ---
 name: pagina-html-gsap
-description: >-
-  Gera uma página HTML única, offline, com animação passo a passo em GSAP (5–8
-  passos, botões Anterior/Próximo, teclado, crédito), cores e fontes da marca, e
-  opcionalmente trechos de vídeo local com legenda pt-BR e link ao original;
-  confere no Chrome headless (erros de JS, vídeos carregando, PNGs). Também
-  mostra código: cena com painel de código realçado (números de linha, destaques
-  clicáveis com nota, entrada linha a linha) e seção de exercícios práticos com
-  o comando que os confere. Use para explicar conceitos (a público não técnico
-  ou a programadores) em formato de página, a partir de um roteiro.json.
+description: Gera uma página HTML única, offline, com animação passo a passo em GSAP (5–8 passos, botões Anterior/Próximo, teclado, crédito), cores e fontes da marca, e opcionalmente trechos de vídeo local com legenda pt-BR e link ao original; confere no Chrome headless (erros de JS, vídeos carregando, PNGs). Também mostra código: cena com painel de código realçado (números de linha, destaques clicáveis com nota, entrada linha a linha) e seção de exercícios práticos com o comando que os confere. Use para explicar conceitos (a público não técnico ou a programadores) em formato de página, a partir de um roteiro.json.
 ---
+
 # pagina-html-gsap
 
 Arquivos auxiliares relativos a esta pasta (instalada em `/home/box/agent-data/workflows/pagina-html-gsap/`).

@@ -1,14 +1,8 @@
 ---
 name: video-hyperframes
-description: >-
-  Renderiza um vídeo MP4 explicativo (1920×1080 e/ou vertical 1080×1920 com
-  layout próprio) com HyperFrames a partir de roteiro.json + narração (timings),
-  com cores/fontes da marca, trechos de vídeo original inseridos com o próprio
-  áudio e legendas pt-BR gravadas com ffmpeg. Cenas com código ganham painel de
-  código animado (linhas entram uma a uma; cada destaque escurece o resto e
-  mostra sua nota). Use quando precisar transformar um roteiro narrado em vídeo
-  curto animado sem Remotion.
+description: Renderiza um vídeo MP4 explicativo (1920×1080 e/ou vertical 1080×1920 com layout próprio) com HyperFrames a partir de roteiro.json + narração (timings), com cores/fontes da marca, trechos de vídeo original inseridos com o próprio áudio e legendas pt-BR gravadas com ffmpeg. Cenas com código ganham painel de código animado (linhas entram uma a uma; cada destaque escurece o resto e mostra sua nota). Use quando precisar transformar um roteiro narrado em vídeo curto animado sem Remotion.
 ---
+
 # video-hyperframes
 
 Arquivos auxiliares relativos a esta pasta (instalada em `/home/box/agent-data/workflows/video-hyperframes/`).

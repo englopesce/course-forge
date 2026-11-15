@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Narração pt-BR com edge-tts a partir de um roteiro.json (campo cenas[].narracao).
+"""Narração pt-BR a partir de um roteiro.json (campo cenas[].narracao).
+
+Motores: --motor edge (padrão, edge-tts) ou --motor azure (Azure Speech, licença comercial;
+recomendado para conteúdo monetizado). Também vale a variável TTS_MOTOR. O caminho edge
+permanece idêntico ao da v1.7.
 
 Gera: <out>/cena_XX.wav (fala da cena, já com as pausas entre frases), <out>/narracao.wav (todas as
 cenas + pausas + silêncio dos trechos), <out>/timings.json (início/fim de cada cena e de cada frase) e
@@ -11,7 +15,7 @@ silêncio exato: --pausa-frase-ms entre frases, --pausa-paragrafo-ms entre pará
 ou quebra de linha na narração), --pausa-cena-ms entre cenas e --pausa-trecho-ms antes/depois de um
 trecho original. Sem as pausas a voz emenda as frases (~0,24 s natural do serviço).
 
-Uso: python tts_ptbr.py roteiro.json saida/ [--voice pt-BR-FranciscaNeural] [--rate -5%]
+Uso: python tts_ptbr.py roteiro.json saida/ [--motor edge|azure] [--voice pt-BR-FranciscaNeural] [--rate -5%]
          [--pausa-frase-ms 400] [--pausa-paragrafo-ms 700] [--pausa-cena-ms 950] [--pausa-trecho-ms 500]
          [--pronuncia extra.json]        # {"termo": "grafia falada"} somado ao mapa padrão (o roteiro vence)
          [--termos-ingles-modo emendar_en|multilingual|original|aportuguesar|ssml_lang|ingles_mesma_voz] [--voz-en en-US-AvaNeural]
@@ -20,7 +24,10 @@ Uso: python tts_ptbr.py roteiro.json saida/ [--voice pt-BR-FranciscaNeural] [--r
                                          # para o trecho original tocar logo após a fala da cena
 Campos de timings.json por cena: start/end (fala), frases [[início, fim], ...] e, se houver,
 clip_id/clip_start/clip_end. As legendas pt-BR do trecho (cenas[].trecho.legendas) entram no mesmo SRT.
-Requer: pip install edge-tts numpy ; ffmpeg/ffprobe no PATH. Precisa de internet (serviço da Microsoft).
+Requer: pip install edge-tts numpy ; ffmpeg/ffprobe no PATH. Precisa de internet.
+Motor azure: AZURE_SPEECH_KEY e AZURE_SPEECH_REGION no ambiente; pacote opcional
+azure-cognitiveservices-speech (WordBoundary); sem ele, usa o REST. timings.json
+registra o campo motor (edge|azure). Chave e região nunca vão a log nem a metadado.
 """
 import argparse, asyncio, json, os, re, subprocess, wave
 
@@ -28,6 +35,7 @@ import edge_tts
 import numpy as np
 
 import termos_ingles as ti
+import motor_azure as az
 
 MAX_CHARS = 42  # por linha de legenda
 MAX_LINES = 2
@@ -46,8 +54,11 @@ def norm_rate(r):
     return r
 
 
-async def synth(text, voice, rate, mp3, sem, tries=4):
+async def synth(text, voice, rate, mp3, sem, tries=4, motor="edge", cache_dir=None):
     async with sem:
+        if motor == "azure":
+            # retry/backoff (429/5xx) fica em motor_azure.sintetiza
+            return await asyncio.to_thread(az.sintetiza, text, voice, rate, mp3, cache_dir)
         for n in range(tries):
             try:
                 return await _synth(text, voice, rate, mp3)
@@ -87,9 +98,10 @@ def apara(x, words, limiar_db=-50.0):
     voz = np.where(20 * np.log10(rms) > limiar_db)[0]
     if len(voz) == 0: return x, 0.0
     a = max(0, voz[0] * hop - int(0.03 * SR))
-    a = min(a, max(0, int((words[0][0] - 0.02) * SR)))  # nunca corta o começo da 1ª palavra
     b = min(len(x), (voz[-1] + 1) * hop + int(0.09 * SR))
-    b = max(b, min(len(x), int((words[-1][1] + 0.05) * SR)))
+    if words:  # sem WordBoundary (REST Azure) vale só a energia; com words o corte é idêntico ao do edge
+        a = min(a, max(0, int((words[0][0] - 0.02) * SR)))  # nunca corta o começo da 1ª palavra
+        b = max(b, min(len(x), int((words[-1][1] + 0.05) * SR)))
     return x[a:b], a / SR
 
 
@@ -187,10 +199,16 @@ def main():
     ap.add_argument("--voz-en", default=PADRAO["voz_en"], help="voz en-US que diz os termos (modo emendar_en)")
     ap.add_argument("--voz-multilingual", default=PADRAO["voz_multilingual"], help="voz do modo multilingual")
     ap.add_argument("--termos-ingles", default="", help='JSON {"termos": [...], "sem_ingles": [...]} da aula')
+    ap.add_argument("--motor", default="", help="edge (padrão) ou azure (Azure Speech, licença comercial)")
+    ap.add_argument("--cache", default="", help="pasta de cache por hash (motor+voz+rate+texto); também TTS_CACHE_DIR")
     a = ap.parse_args()
     a.rate = norm_rate(a.rate)
+    a.motor = az.resolve_motor(cli=a.motor or None)
+    a.cache = a.cache or os.environ.get("TTS_CACHE_DIR") or ""
     gap_cena = a.gap if a.gap is not None else a.pausa_cena_ms / 1000
     gap_trecho = a.pausa_trecho_ms / 1000
+    if a.motor == "azure":
+        az.credenciais()  # falha cedo, mensagem clara, sem vazar segredo
     os.makedirs(a.out, exist_ok=True)
     rot = json.load(open(a.roteiro, encoding="utf-8"))
     cenas = rot["cenas"]
@@ -236,7 +254,8 @@ def main():
 
     async def todas():
         sem = asyncio.Semaphore(max(1, a.paralelo))
-        return await asyncio.gather(*[synth(f, a.voice, a.rate, os.path.join(a.out, f"cena_{k:02d}_f{j:02d}.mp3"), sem)
+        return await asyncio.gather(*[synth(f, a.voice, a.rate, os.path.join(a.out, f"cena_{k:02d}_f{j:02d}.mp3"), sem,
+                                              motor=a.motor, cache_dir=(a.cache or None))
                                       for k, j, _, f in jobs])
     res = asyncio.run(todas())
     aud_en, emendas = {}, []
@@ -258,7 +277,11 @@ def main():
                 x, words, rel = ti.emendar(x, words, aqui, sr=SR, ajusta_tom=False)
                 emendas += [{"cena": k, "frase": j, **r} for r in rel]
         x, desl = apara(x, words)
-        words = [(max(0.0, s0 - desl), max(0.0, s1 - desl), w) for s0, s1, w in words]
+        if words:
+            words = [(max(0.0, s0 - desl), max(0.0, s1 - desl), w) for s0, s1, w in words]
+        else:
+            # REST do Azure não traz WordBoundary: estima pela duração já aparada
+            words = az.palavras_por_duracao(fala, len(x) / SR)
         por_cena.setdefault(k, []).append((par, fala, x, words))
 
     # 2) monta a linha do tempo
@@ -314,13 +337,14 @@ def main():
     json.dump({"modo": modo, "voz_en": a.voz_en if modo == "emendar_en" else None, "f0_pt": f0_pt, "f0_en": f0_en,
                "pitch_en": pitch_en, "emendas": emendas},
               open(os.path.join(a.out, "termos_ingles.json"), "w"), ensure_ascii=False, indent=1)
-    json.dump({"voice": a.voice, "rate": a.rate, "termos_ingles_modo": modo, "pausa_frase_ms": a.pausa_frase_ms, "pausa_paragrafo_ms": a.pausa_paragrafo_ms,
-               "pausa_cena_ms": int(round(gap_cena * 1000)), "pausa_trecho_ms": a.pausa_trecho_ms,
-               "total": round(total, 3), "cenas": timings},
-              open(os.path.join(a.out, "timings.json"), "w"), indent=1)
+    meta = {"voice": a.voice, "rate": a.rate, "motor": a.motor, "termos_ingles_modo": modo, "pausa_frase_ms": a.pausa_frase_ms, "pausa_paragrafo_ms": a.pausa_paragrafo_ms,
+            "pausa_cena_ms": int(round(gap_cena * 1000)), "pausa_trecho_ms": a.pausa_trecho_ms,
+            "total": round(total, 3), "cenas": timings}
+    az.garante_metadado_limpo(meta)
+    json.dump(meta, open(os.path.join(a.out, "timings.json"), "w"), indent=1)
     for f in os.listdir(a.out):  # mp3 por frase são intermediários
         if re.match(r"cena_\d+_f\d+\.mp3$", f) or re.match(r"cena_\d+\.mp3$", f): os.remove(os.path.join(a.out, f))
-    print(f"ok: {len(cenas)} cenas, {len(jobs)} frases, {total:.1f}s, voz {a.voice} {a.rate}, termos em inglês: {modo}"
+    print(f"ok: {len(cenas)} cenas, {len(jobs)} frases, {total:.1f}s, motor {a.motor}, voz {a.voice} {a.rate}, termos em inglês: {modo}"
           f"{f' ({len(emendas)} emendas, voz {a.voz_en})' if modo == 'emendar_en' else ''}, "
           f"pausas frase/parágrafo/cena {a.pausa_frase_ms}/{a.pausa_paragrafo_ms}/{int(round(gap_cena * 1000))} ms")
 

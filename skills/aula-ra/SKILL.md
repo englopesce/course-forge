@@ -1,17 +1,8 @@
 ---
 name: aula-ra
-description: >-
-  Orquestra a produção de uma mini-aula em pt-BR sobre qualquer tema, para o
-  público da config (de diretores não técnicos a programadores), a partir de
-  vídeos do YouTube e documentação oficial — plano opcional (plano-de-estudo),
-  legendas, roteiro didático, código de exemplo testado com exercícios (aulas
-  técnicas), narração TTS, trechos com crédito, página HTML animada (GSAP) e
-  vídeo MP4 16:9/9:16 (HyperFrames) — com um pipeline único
-  (`scripts/pipeline.py aula.yaml`), cache e etapas re-executáveis. Use quando
-  pedirem uma aula, explicação animada, vídeo curto explicativo ou página passo
-  a passo baseada em vídeo(s) do YouTube; para um curso inteiro a partir de
-  ementa, use curso-a-partir-de-ementa (que chama este pipeline).
+description: Orquestra a produção de uma mini-aula em pt-BR sobre qualquer tema, para o público da config (de diretores não técnicos a programadores), a partir de vídeos do YouTube e documentação oficial — plano opcional (plano-de-estudo), legendas, roteiro didático, código de exemplo testado com exercícios (aulas técnicas), narração TTS, trechos com crédito, página HTML animada (GSAP) e vídeo MP4 16:9/9:16 (HyperFrames) — com um pipeline único (`scripts/pipeline.py aula.yaml`), cache e etapas re-executáveis. Use quando pedirem uma aula, explicação animada, vídeo curto explicativo ou página passo a passo baseada em vídeo(s) do YouTube; para um curso inteiro a partir de ementa, use curso-a-partir-de-ementa (que chama este pipeline).
 ---
+
 # aula-ra (orquestradora)
 
 Arquivos auxiliares relativos a esta pasta. Instalação esperada: cada skill em
@@ -77,8 +68,9 @@ Arquivos auxiliares relativos a esta pasta. Instalação esperada: cada skill em
 ## Narração (v1.3.0) — parâmetros em `narracao:` do yaml (todos opcionais; padrões em `pipeline.py`, `NARRACAO_PADRAO`)
 | chave | padrão | o quê |
 |---|---|---|
+| `motor` | `edge` (se omitido) | v1.4.1 / narracao-tts-ptbr 1.8.0: `edge` ou `azure`. Sem a chave, o pipeline assume `edge` (cursos já existentes não mudam e não re-narram). **Cursos novos** devem pôr `narracao.motor: azure` (template do curso-a-partir-de-ementa; recomendado para conteúdo monetizado). `TTS_MOTOR` (env) vence o yaml. Chave e região do Azure só por `AZURE_SPEECH_KEY` e `AZURE_SPEECH_REGION`, nunca no yaml — erro claro se o motor for `azure` e faltarem. `motor: edge` (ou ausente) não entra no hash de cache. |
 | `voz` | `pt-BR-FranciscaNeural` | venceu Antonio e Thalita em WER e termos em inglês |
-| `rate` | `-5%` | velocidade do edge-tts (`velocidade`, nome antigo, ainda vale) |
+| `rate` | `-5%` | velocidade da voz (`velocidade`, nome antigo, ainda vale); no Azure vai para `<prosody rate>` |
 | `pausa_frase_ms` | 400 | silêncio entre frases (350–500 soa natural) |
 | `pausa_paragrafo_ms` | 700 | entre parágrafos (quebra de linha na narração) |
 | `pausa_cena_ms` | 950 | entre cenas |
