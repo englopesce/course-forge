@@ -177,11 +177,15 @@ class Pipeline:
         """Legendas de cada vídeo. Com `cache_videos` (o curso põe <curso>/_cache/videos), cada vídeo é baixado UMA vez para
         <cache>/<id>/<versão da youtube-legendas>-<hash dos idiomas>/ e copiado para a aula: várias aulas com o mesmo vídeo
         reaproveitam a transcrição (e um resumo.md, se existir) sem novo download."""
-        outs = [os.path.join(self.leg_dir, vid_of(v["url"]), "fonte.json") for v in self.cfg["videos"]]
+        videos = self.cfg.get("videos") or []
+        if not videos:
+            os.makedirs(self.leg_dir, exist_ok=True)
+            return log("legendas: nenhum vídeo na config")
+        outs = [os.path.join(self.leg_dir, vid_of(v["url"]), "fonte.json") for v in videos]
         k = self.key("legendas", ["videos"], [])
         if self.cache_ok("legendas", k, outs): return log("legendas: sem mudança, pulando")
         ver = self.versao_skill("legendas")
-        for v in self.cfg["videos"]:
+        for v in videos:
             vid = vid_of(v["url"]); dest = os.path.join(self.leg_dir, vid); langs = v.get("idiomas", "pt.*,pt,en.*,en")
             if not self.cache_videos:
                 run([PY, self.s("legendas", "scripts", "fetch_subs.py"), v["url"], dest, "--langs", langs]); continue

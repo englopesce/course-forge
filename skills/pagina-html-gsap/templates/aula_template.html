@@ -73,11 +73,18 @@
   #pratica ol { margin: 12px 0 4px 22px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.5; }
   #pratica code { background: rgba(0,0,0,.35); padding: 1px 6px; border-radius: 6px; font-size: .92em; }
   #pratica .ok { color: var(--a2); font-size: 14px; }
+
+  #avisos { display: none; padding: 8px 4vw; font-size: 13px; line-height: 1.4; color: var(--muted); background: rgba(0,0,0,.28); border-bottom: 1px solid rgba(255,255,255,.1); }
+  body.com-avisos #avisos { display: block; }
+  #avisos strong { color: var(--ink); font-weight: 700; }
+  footer .avisos-rodape, footer .aviso-geracao { margin-top: 8px; }
+  footer .aviso-geracao a { color: var(--a2); }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
 <body>
 <div id="bar"><i></i></div>
+<div id="avisos" hidden></div>
 <header><span><b>{{TITULO}}</b> · {{SUBTITULO}}</span><span id="cont"></span></header>
 <main><section class="step" id="step" aria-live="polite"></section></main>
 <nav>
@@ -101,15 +108,41 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
 const N = AULA.cenas.length;
 let atual = 0;
 const f = AULA.fonte;
+const ehYoutube = (o) => /youtu(\.be|be\.com)/i.test((o && o.url) || "");
+const fonteLinha = (o) => {
+  const tit = esc(o.titulo || "");
+  const url = o.url ? ` <a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.url)}</a>` : "";
+  const canal = o.canal ? `${esc(o.canal)} · ` : "";
+  return `${canal}“${tit}”${url}`;
+};
+const avisos = (AULA.avisos || []).filter(Boolean);
+if (avisos.length) {
+  document.body.classList.add("com-avisos");
+  $("#avisos").hidden = false; $("#avisos").innerHTML = avisos.map((t) => `<span>${esc(t)}</span>`).join(" · ");
+}
 // outras fontes: as do roteiro (fontes_extras) e as dos trechos, sem repetir a principal
 const extras = [];
 for (const o of [...(AULA.fontes_extras || []), ...Object.values(CLIPS)])
   if (o.url && o.url !== f.url && !extras.some((x) => x.url === o.url)) extras.push(o);
-$("#credito").innerHTML = `Baseado no vídeo oficial “${esc(f.titulo)}”, canal ${esc(f.canal)} (YouTube): <a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.url)}</a>. ` +
-  extras.map((o) => `Também: “${esc(o.titulo)}”, canal ${esc(o.canal)}: <a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.url)}</a>. `).join("") +
-  `Texto original em português, escrito a partir da transcrição; ` +
-  (Object.keys(CLIPS).length ? `inclui ${Object.keys(CLIPS).length} trecho(s) curto(s) do vídeo original, com crédito, para treinamento interno.`
-                             : `o vídeo não foi reproduzido aqui.`);
+let cred;
+if (ehYoutube(f)) {
+  cred = `Baseado no vídeo oficial “${esc(f.titulo)}”, canal ${esc(f.canal)} (YouTube): <a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.url)}</a>. ` +
+    extras.map((o) => `Também: “${esc(o.titulo)}”, canal ${esc(o.canal || "")}: <a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.url)}</a>. `).join("") +
+    `Texto original em português, escrito a partir da transcrição; ` +
+    (Object.keys(CLIPS).length ? `inclui ${Object.keys(CLIPS).length} trecho(s) curto(s) do vídeo original, com crédito, para treinamento interno.`
+                               : `o vídeo não foi reproduzido aqui.`);
+} else {
+  cred = `Fontes: ` + [fonteLinha(f), ...extras.map(fonteLinha)].join(". ") + `. ` +
+    (Object.keys(CLIPS).length
+      ? `Texto original em português, a partir de documentos oficiais; inclui ${Object.keys(CLIPS).length} trecho(s) curto(s) de vídeo, com crédito.`
+      : `Roteiro original em português, a partir de documentos oficiais; nenhum trecho de vídeo foi usado.`);
+}
+const gera = AULA.credito_geracao || "";
+if (gera) {
+  const comLink = esc(gera).replace(/(https:\/\/github\.com\/englopesce\/course-forge)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  cred += `<div class="aviso-geracao">${comLink}</div>`;
+}
+$("#credito").innerHTML = cred;
 if ((AULA.exercicios || []).length) {
   const cmds = Object.fromEntries((CHECAGEM.comandos || []).map((c) => [c.nome, c]));
   const md = (t) => esc(t).replace(/`([^`]+)`/g, "<code>$1</code>");

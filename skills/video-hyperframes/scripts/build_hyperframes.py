@@ -108,21 +108,32 @@ def main():
                 return re.sub(r"^https?://(www\.)?(youtube\.com/watch\?v=|youtu\.be/)", "youtu.be/", u)
             def eh_youtube(o):
                 return bool(re.search(r"youtu(\.be|be\.com)", o.get("url") or ""))
-            def linha(o):
+            def linha(o, com_url=True):
                 # fontes_extras pode ser lei/docs (sem canal), não só vídeo do YouTube
-                titulo = esc(o.get("titulo") or "")
+                titulo = esc(o.get("titulo_curto") or o.get("titulo") or "")
                 url = esc(curto(o.get("url") or ""))
                 canal = o.get("canal")
-                if canal:
+                if com_url and eh_youtube(o) and canal and url:
                     return f'{esc(canal)} · “{titulo}” · {url}'
-                return f'“{titulo}” · {url}'
-            final = ("Roteiro original em português, narrado por voz sintética"
-                     + ("; trechos curtos dos vídeos originais usados com crédito, para treinamento interno." if clips else
-                        "; nenhum trecho do vídeo original foi usado."))
-            if outras:  # lista compacta (1 linha por fonte) para não invadir a área das legendas
-                rotulo = "Fontes (YouTube):" if all(eh_youtube(o) for o in [f, *outras]) else "Fontes:"
-                extra = (f'\n        <div class="endcredit compacto" id="{sid}cr">{rotulo}<br>{linha(f)}'
-                         + "".join(f"<br>{linha(o)}" for o in outras) + f"<br>{final}</div>")
+                if canal:
+                    return f'{esc(canal)} · “{titulo}”'
+                return f'“{titulo}” · {url}' if (com_url and url) else f'“{titulo}”'
+            gera = esc((rot.get("credito_geracao") or "").replace("https://github.com/englopesce/course-forge", "github.com/englopesce/course-forge"))
+            if eh_youtube(f) and (not outras or all(eh_youtube(o) for o in outras)):
+                final = ("Roteiro original em português, narrado por voz sintética"
+                         + ("; trechos curtos dos vídeos originais usados com crédito, para treinamento interno." if clips else
+                            "; nenhum trecho do vídeo original foi usado."))
+            else:
+                final = ("Roteiro original em português, a partir de documentos oficiais, narrado por voz sintética"
+                         + ("; inclui trechos curtos de vídeo com crédito." if clips else
+                            "; nenhum trecho de vídeo foi usado."))
+            if gera:
+                final += " " + gera
+            if outras or not eh_youtube(f):
+                so_docs = not eh_youtube(f) and all(not eh_youtube(o) for o in outras)
+                rotulo = "Fontes (YouTube):" if eh_youtube(f) and outras and all(eh_youtube(o) for o in [f, *outras]) else "Fontes:"
+                extra = (f'\n        <div class="endcredit compacto" id="{sid}cr">{rotulo}<br>{linha(f, com_url=not so_docs)}'
+                         + "".join(f"<br>{linha(o, com_url=not so_docs)}" for o in outras) + f"<br>{final}</div>")
             else:
                 extra = (f'\n        <div class="endcredit" id="{sid}cr">Baseado no vídeo “{esc(f["titulo"])}”, canal {esc(f["canal"])} '
                          f'(YouTube), {esc(f["url"])}.<br>{final}</div>')
@@ -163,10 +174,19 @@ def main():
                 f'      <video class="clip trecho-video" id="{sid}v" src="assets/clips/{esc(cl["arquivo"])}" data-start="{t["clip_start"]}" '
                 f'data-duration="{vdur}" data-has-audio="true" data-volume="1" playsinline data-track-index="4"></video>')
             tweens.append(f'      tl.fromTo("#{sid}tag", {{opacity: 0}}, {{opacity: 1, duration: 0.3}}, {cs:.3f});')
-    credit = f'Fonte: {esc(f["canal"])} (YouTube) · “{esc(f.get("titulo_curto", f["titulo"]))}”'
+    if re.search(r"youtu(\.be|be\.com)", f.get("url") or ""):
+        credit = f'Fonte: {esc(f["canal"])} (YouTube) · “{esc(f.get("titulo_curto", f["titulo"]))}”'
+    else:
+        canal = f.get("canal") or ""
+        tit = f.get("titulo_curto") or f.get("titulo") or ""
+        credit = f'Fonte: {esc(canal)} · “{esc(tit)}”' if canal else f'Fonte: “{esc(tit)}”'
+    avisos = [x for x in (rot.get("avisos") or []) if x]
+    avisos_bar = esc(" · ".join(avisos))
+    avisos_class = "com-avisos" if avisos else ""
     out = open(a.template, encoding="utf-8").read()
     out = (out.replace("{{ROOT_VARS}}", root_vars(tema)).replace("{{TOTAL}}", f"{total}").replace("{{SCENES}}", "\n".join(scenes))
-           .replace("{{TWEENS}}", "\n".join(tweens)).replace("{{CREDIT_SHORT}}", credit))
+           .replace("{{TWEENS}}", "\n".join(tweens)).replace("{{CREDIT_SHORT}}", credit)
+           .replace("{{AVISOS_BAR}}", avisos_bar).replace("{{AVISOS_CLASS}}", avisos_class))
     open(os.path.join(a.projeto, "index.html"), "w", encoding="utf-8").write(out)
     print("ok:", os.path.join(a.projeto, "index.html"), f"{total}s, {n} cenas, {len(clips)} trecho(s), {sum(1 for c in cenas if c.get("id") in codigo)} cena(s) com código")
 
