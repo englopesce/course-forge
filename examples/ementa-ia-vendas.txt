@@ -1,0 +1,222 @@
+Ementa IA para Vendas
+
+Público: executivos de contas, gerentes comerciais, planejamento comercial, opec (operações comerciais), atendimento a agências e anunciantes e gestores de vendas digitais do Grupo Rede Amazônica (grupo de mídia, rádio e TV no Norte do Brasil, com praças em AM, RO, RR, AC e AP). Não é um curso de formação de programadores. Pré-requisito: rotina comercial e uso de planilhas ou CRM.
+
+Carga horária total sugerida: 104 horas, em 13 módulos, além do tempo de prática com material fictício ou anonimizado da própria área. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar o comercial a usar inteligência artificial com método — na prospecção de anunciantes regionais, no planejamento, na proposta, no pedido de inserção (PI), na negociação e no pós-venda —, mantendo preço, desconto e compromisso sob decisão humana, cada número rastreável até a tabela e o sistema, e os dados de clientes protegidos, com pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários.
+
+Princípios que valem para todos os módulos:
+- Preço, desconto, bonificação e condição comercial saem da tabela vigente e da política da casa, nunca do modelo.
+- Nenhum dado de audiência, alcance ou resultado vai para proposta sem fonte, período e metodologia indicados.
+- Dados de clientes, agências e negociações só em ferramenta aprovada; nada de CRM exportado em conta pessoal.
+- Promessa comercial gerada por IA é rascunho: o executivo responde pelo que envia.
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências comparadas estão em comparacao-ementa-ia-vendas.md.
+
+1 - Fundamentos de IA e limites em vendas (6 horas)
+   ● O que a área precisa entender sobre IA
+         ○ Diferença entre automação tradicional (regras, macros, RPA), aprendizado de máquina, IA generativa e agentes
+         ○ O que um modelo de linguagem faz de fato: prever texto provável, não consultar uma base oficial nem "saber" o fato vigente
+         ○ Por que a resposta soa segura mesmo quando está errada (alucinação)
+         ○ Ferramentas que geram texto versus ferramentas que buscam, calculam ou extraem dados
+         ○ Multimodalidade útil ao comercial: tabela de preços em PDF, mídia kit, áudio de reunião (com consentimento), vídeo de case
+
+   ● Onde a IA ajuda e onde não se pode confiar
+         ○ Onde costuma ajudar: pesquisa de anunciantes e setores regionais, rascunho de proposta e e-mail, preparação de reunião, resumo de briefing, roteiros de objeções, pós-venda
+         ○ Onde não se confia sem validação: preço, desconto, audiência, alcance, disponibilidade de grade, prazos de veiculação e projeção de faturamento
+         ○ Atividades automatizáveis, apoiáveis e dependentes de julgamento profissional
+         ○ Definir o problema (o que resolver, com qual prazo, qual risco) antes de escolher a ferramenta
+
+   ● Riscos que a área precisa nomear desde o primeiro dia
+         ○ Números inventados (audiência, alcance, preço) em proposta
+         ○ Dados de clientes e negociações (LGPD e sigilo comercial)
+         ○ Promessas que a operação não consegue entregar
+         ○ Publicidade fora das regras (CONAR, período eleitoral)
+
+2 - Uso comparado de Gemini Enterprise, Claude, ChatGPT e Grok (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios: tipo de tarefa, leitura de arquivos longos, citação de fonte, integração com o que a empresa já usa, custo, limites, retenção e uso dos dados
+         ○ Teste lado a lado com o mesmo pacote fictício da área (tabela de preços fictícia, briefing de anunciante regional, PI fictício e mídia kit) e registro de acertos, erros e invenções
+         ○ Conta corporativa contratada versus conta pessoal gratuita: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam; a comparação é um método, não um ranking permanente
+
+   ● Gemini Enterprise e o ecossistema Google (ferramenta que a empresa está contratando)
+         ○ O que a documentação oficial do Google Cloud descreve sobre segurança do Gemini Enterprise: criptografia, controles de acesso, proteção de dados sensíveis e opções administrativas — conferir o que foi habilitado no contrato da empresa
+         ○ Integração com Google Workspace (Gmail, Drive, Documentos, Planilhas) conforme permissões e administração
+         ○ NotebookLM para perguntas sobre um conjunto delimitado de documentos (tabela de preços vigente, mídia kit, cases aprovados, política comercial, regras de veiculação)
+         ○ Agentes e conectores do Gemini Enterprise: o que a área pode pedir à TI e com que governança
+
+   ● Claude (Anthropic)
+         ○ Uso frequente para leitura e análise de documentos longos; conferir a janela de contexto vigente na documentação oficial da Anthropic
+         ○ Projetos para reunir políticas, modelos e acervo de referência da área
+         ○ Limite: documento longo lido não dispensa conferir trecho, número e citação na origem
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral; análise de arquivos conforme o plano contratado
+         ○ GPTs personalizados para tarefas repetidas da área, a partir de modelos da casa
+         ○ Limite: o que sai do chat é rascunho até ser conferido
+
+   ● Grok (xAI)
+         ○ Disponível em produtos da xAI e no X; a documentação da xAI descreve busca em posts do X
+         ○ Uso possível no comercial: acompanhar o que anunciantes e setores regionais publicam e a repercussão de campanhas, conferindo a fonte original
+         ○ Limite: post em rede social não é fonte oficial; conferir sempre a origem
+
+3 - Prompts com método para vendas de mídia (8 horas)
+   ● Anatomia de um prompt profissional
+         ○ Contexto, objetivo, dados, critérios e formato de resposta
+         ○ Pedir saída em tabela com coluna de origem (documento, página, trecho) e grau de certeza
+         ○ Obrigar o modelo a dizer o que não encontrou e a não inventar preço, audiência, desconto ou case
+         ○ Exemplos de entrada e de saída esperada (poucos e bons)
+         ○ Iterar: testar, achar o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para a rotina da área
+         ○ Pesquisa de anunciante: setor, sazonalidade, presença digital, com fonte
+         ○ Proposta personalizada a partir de briefing, tabela e cases aprovados
+         ○ Preparação de reunião e de objeções
+         ○ E-mail de follow-up e de pós-venda
+         ○ Resumo de reunião com próximos passos
+
+   ● Biblioteca de prompts da área
+         ○ Modelos por função: prospecção, atendimento a agências, varejo regional, digital, projetos especiais, opec
+         ○ Versionar e compartilhar com exemplo de entrada e de saída revisada
+         ○ Registrar o que a IA fez em cada entrega para manter rastreabilidade
+
+4 - Venda de mídia: TV, rádio e digital na Rede Amazônica (10 horas)
+   ● Produto e mercado
+         ○ Produtos: inserções em TV e rádio, patrocínio de programas, projetos especiais, conteúdo de marca, digital e redes
+         ○ Praças e coberturas (AM, RO, RR, AC, AP) e o anunciante regional
+         ○ Sazonalidade: datas comerciais, festivais regionais, eventos esportivos e eleições
+
+   ● Fluxo comercial
+         ○ Briefing, plano, proposta, negociação, PI, veiculação, comprovação e faturamento
+         ○ Agência e cliente direto; comissão de agência conforme política e normas do mercado — conferir as vigentes
+         ○ Onde a IA entra e onde a regra e o sistema mandam
+
+5 - Prospecção e inteligência de anunciantes regionais (8 horas)
+   ● Pesquisa
+         ○ Mapeamento de setores e anunciantes por praça com fontes públicas
+         ○ Sinais de oportunidade: inaugurações, lançamentos, licitações públicas de publicidade quando aplicável
+         ○ Gemini, Deep Research e Grok com exigência de fonte
+
+   ● Carteira
+         ○ Segmentação da carteira e prioridades
+         ○ Registro no CRM, não no chat
+
+6 - Propostas, tabela de preços e pedido de inserção (PI) (8 horas)
+   ● Proposta
+         ○ Estrutura: objetivo do anunciante, plano, valores, prazos, cases
+         ○ Valores sempre da tabela vigente e da política comercial
+         ○ Personalização do texto com IA, revisão do executivo
+
+   ● PI e conferência
+         ○ Conferência de PI contra proposta e grade
+         ○ Divergências e correções antes da veiculação
+
+7 - Negociação, objeções e relacionamento (8 horas)
+   ● Negociação
+         ○ Preparação com IA: interesses, alternativas, limites definidos pela gestão
+         ○ Simulação de objeções com o modelo
+         ○ O que nunca delegar: concessão e compromisso
+
+   ● Relacionamento
+         ○ Resumo de reuniões com consentimento
+         ○ Follow-up e cadência com o CRM
+
+8 - Dados comerciais, audiência e previsão de vendas (8 horas)
+   ● Dados
+         ○ Audiência e alcance só de fonte com metodologia e período declarados
+         ○ Indicadores de carteira, ticket médio e renovação calculados em planilha ou BI
+         ○ Cuidado com comparação entre medições diferentes
+
+   ● Previsão
+         ○ Pipeline de vendas e previsão com modelos simples e premissas explícitas
+         ○ Correlação não é causalidade; eventos únicos
+
+9 - Pós-venda, comprovação e renovação (6 horas)
+   ● Pós-venda
+         ○ Comprovação de veiculação e relatório ao anunciante
+         ○ Resultados com métricas verificáveis
+         ○ Renovação e venda cruzada TV, rádio e digital
+
+   ● Regras
+         ○ Publicidade em período eleitoral: conferir as resoluções do TSE vigentes
+         ○ CONAR: o anúncio entregue precisa estar conforme
+
+10 - Ética, LGPD, segurança da informação e governança de IA (8 horas)
+   ● Ética comercial
+         ○ Transparência com o anunciante sobre métricas e metodologia
+         ○ Não usar IA para pressão enganosa ou promessas sem base
+         ○ Publicidade e autorregulamentação: Código e Guias do CONAR
+
+   ● LGPD e segurança
+         ○ Dados de contatos de clientes e agências
+         ○ Gravação e transcrição de reuniões só com consentimento
+         ○ O que nunca enviar a ferramenta não aprovada: base do CRM, negociações em curso, condições especiais
+
+   ● Governança de IA no comercial
+         ○ Política de uso: ferramentas aprovadas, usos permitidos e proibidos, revisão obrigatória
+         ○ Exercício: rascunho de política de IA para o comercial da Rede Amazônica, para revisão da diretoria
+
+11 - Agentes e automação do fluxo comercial (6 horas)
+   ● Do assistente avulso ao processo
+         ○ Mapa do processo atual (prospecção, briefing, proposta, PI, veiculação, comprovação, faturamento, renovação) e pontos de atrito
+         ○ Onde agentes ajudam: preparação de reuniões, rascunho de propostas a partir de modelos, lembretes de renovação, organização de briefings
+         ○ Human in the loop: aprovação humana antes de enviar proposta, conceder desconto, emitir PI ou confirmar veiculação
+         ○ Agentes no Gemini Enterprise e assistentes personalizados (Gems, GPTs, Projetos do Claude): instruções, acervo e teste
+
+   ● Operação e medição
+         ○ Indicadores: tempo, retrabalho, erros evitados, erros introduzidos
+         ○ Documentação do fluxo para outro colega repetir
+         ○ O que nunca sai no automático: preço, desconto, PI, confirmação de grade e comunicação de condição comercial
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline é uma sequência de etapas reexecutáveis com entrada, saída e regra clara
+         ○ Etapas determinísticas em código, sem LLM: aplicar tabela de preços, calcular valores, descontos e comissão de agência, checar disponibilidade de grade no sistema, conferir PI contra proposta, cruzar veiculação com comprovante
+         ○ O modelo entra só onde há linguagem ou julgamento: redigir a proposta e o e-mail, resumir briefing, sugerir argumentos e organizar o pós-venda
+         ○ Comparar na mesma tarefa o caminho "tudo no chat" e o pipeline: custo em tokens, tempo, erro, capacidade de repetir e auditar
+         ○ Cache e reexecução por etapa; configuração em YAML; registro de tokens e custo por etapa
+         ○ Trava humana antes de qualquer resultado sair da área
+
+   ● Python para quem não é programador
+         ○ Notebooks no navegador (Jupyter ou Google Colab) para ver o resultado linha a linha
+         ○ Pedir o código à IA com problema, formato de entrada e de saída; recusar código que ninguém consegue explicar
+         ○ Rodar, ler o erro, devolver o erro à IA, conferir numa amostra — a pessoa é responsável pelo que o script faz
+         ○ Nunca colar senha, chave de API ou dado pessoal no notebook ou no chat
+         ○ Quando chamar a TI ou quem já trabalha com dados
+
+   ● Caso real e pipelines da área
+         ○ O pipeline interno de criação de aulas da Rede Amazônica (aula-ra) como exemplo de método: legendas do YouTube, roteiro escrito pelo modelo a partir de trechos relevantes, narração sintética, trechos com crédito, página HTML e vídeo 16:9 e 9:16 — cada etapa com script, cache e ponto de parada
+         ○ No teste das aulas de amostra, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só trechos relevantes e reaproveitar o cache (estimativa por tokenizer, não medição de API)
+         ○ Pipeline de proposta: briefing em formulário, valores calculados por regra a partir da tabela vigente, LLM só para o texto e a narrativa do case, revisão do executivo
+         ○ Pipeline de conferência de PI: comparar PI, proposta e grade por regra, LLM só para redigir divergências
+         ○ Pipeline de pós-venda: veiculação e comprovação cruzadas no código, LLM só para o relatório ao anunciante
+         ○ Exercício: desenhar em YAML as etapas de um pipeline da área marcando onde o LLM entra, onde não entra e onde há revisão
+
+   ● Skills, agentes e GitHub com segurança
+         ○ Skill: pacote reutilizável de instruções (e às vezes scripts) que um agente segue numa tarefa
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com arquivo SKILL.md (metadados em YAML com nome e descrição, e instruções em Markdown)
+         ○ Como avaliar skills e repositórios no GitHub: licença, manutenção recente, questões abertas, estrelas como sinal fraco, README e testes
+         ○ Segurança: não rodar código sem ler; não colocar dado da empresa em repositório alheio; desconfiar de pedido de permissão ampla
+         ○ Reutilizar e versionar as skills da própria área, com registro de mudanças
+
+13 - Projeto final — aplicação no comercial da Rede Amazônica (10 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou dupla) escolhe um caminho ligado a um processo real, usando dados fictícios ou anonimizados:
+         ○ Caminho A — Proposta para anunciante regional com valores calculados por regra
+         ○ Caminho B — Plano de prospecção de um setor numa praça
+         ○ Caminho C — Conferência de PI e comprovação de veiculação
+         ○ Caminho D — Relatório de pós-venda e renovação
+         ○ Caminho E — Pipeline reexecutável com LLM só onde for necessário e registro de custo
+         ○ Documento de partida: problema, dados, ferramentas, riscos (LGPD, sigilo, alucinação, direitos) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas aprovadas (prioridade ao Gemini Enterprise contratado)
+         ○ Amostra conferida por humano, com registro de acertos e erros da IA
+         ○ Produto mínimo: proposta, plano de prospecção, relatório de conferência ou pipeline auditável — não um discurso sobre IA
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à diretoria: problema, método, resultado, limite e pedido de decisão
+         ○ Critérios: utilidade, rigor de conferência, segurança de dados, clareza do método e viabilidade na rotina
+         ○ Projeto final: entrega do produto, do registro de conferência e da proposta de política ou procedimento associada

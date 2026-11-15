@@ -1,0 +1,81 @@
+aula:
+  slug: governanca-seguranca
+  tema: Governança, segurança e dados no Gemini Enterprise
+  publico: Diretores e segundos escalões da Rede Amazônica, público não técnico
+  objetivo: 'Saber o que protege os dados da empresa: dados não treinam modelos, acesso por identidade (IAM/SSO), residência de dados, uso responsável; LGPD como orientação; regras de ouro.'
+saida: /workspace/aula-ra/sessao-5
+trabalho: /workspace/aula-ra/work/sessao5
+formatos:
+- 16x9
+- 9x16
+videos:
+- url: https://www.youtube.com/watch?v=2uW8mIIIQYE
+  idiomas: pt.*,en.*
+- url: https://www.youtube.com/watch?v=s3rZEXcjuWw
+  idiomas: pt.*,en.*
+- url: https://www.youtube.com/watch?v=TShPEH5cgPM
+  idiomas: pt.*,en.*
+trechos:
+- id: console
+  video: 2uW8mIIIQYE
+  inicio: '02:00.0'
+  fim: '02:06.6'
+  cena: console
+  titulo_curto: AI Guardrails
+  mostra: 'Tela ''Inside the Admin Console'': TI vê quem criou cada agente e que conectores usa'
+- id: dados
+  video: 2uW8mIIIQYE
+  inicio: '06:14.2'
+  fim: '06:22.0'
+  cena: dados
+  titulo_curto: AI Guardrails
+  mostra: 'Tela ''Your data is your data'': não revisado por humanos, não usado para anúncios nem para treinar modelos'
+- id: regiao
+  video: 2uW8mIIIQYE
+  inicio: '05:55.6'
+  fim: '06:03.5'
+  cena: residencia
+  titulo_curto: AI Guardrails
+  mostra: Tela de controles regionais de dados (residência EUA/UE)
+trechos_opcoes:
+  folga: 1.0
+  altura: 720
+  fundo_9x16: blur
+roteiro:
+  arquivo: roteiro.json
+  duracao_alvo: 95
+  palavras_max: 200
+  cenas: 7 a 8
+narracao:
+  voz: pt-BR-FranciscaNeural
+  velocidade: +8%
+  whisper_modelo: small
+  termos_checagem:
+  - Gemini Enterprise
+  - IAM
+  - SSO
+  - LGPD
+  - agentes
+  - Brasil
+marca:
+  cores:
+    fundo: '#0b1d3a'
+    fundo2: '#12305e'
+    texto: '#ffffff'
+    suave: '#b9c7e0'
+    destaque1: '#4285f4'
+    destaque2: '#34a853'
+    destaque3: '#fbbc04'
+  fonte_titulo: Poppins
+  fonte_texto: Inter
+html:
+  gsap_versao: 3.15.0
+video:
+  resolucao: landscape
+  hyperframes: 0.9.43
+  legenda_fonte: Inter
+  legenda_tamanho: 18
+video_9x16:
+  legenda_tamanho: 9
+  legenda_margem: 48
+  legenda_max_chars: 26

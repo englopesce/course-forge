@@ -1,0 +1,221 @@
+Ementa IA para Marketing
+
+Público: profissionais e gestores de marketing, marketing de audiência, promoção e chamadas, digital, redes sociais, SEO, CRM e pesquisa do Grupo Rede Amazônica (grupo de mídia, rádio e TV no Norte do Brasil). Não é um curso de formação de programadores. Pré-requisito: rotina de campanhas, conteúdo ou análise de dados.
+
+Carga horária total sugerida: 104 horas, em 13 módulos, além do tempo de prática com material fictício ou anonimizado da própria área. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar o marketing a usar inteligência artificial com método — em audiência TV e digital, SEO e GEO, conteúdo, campanhas e mensuração —, rotulando conteúdo gerado, respeitando o CONAR, direitos de imagem e autorais e a LGPD, e montando pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários.
+
+Princípios que valem para todos os módulos:
+- Conteúdo sintético (imagem, voz, vídeo) é rotulado conforme a política da casa e as regras aplicáveis; testemunhal e pessoa real nunca são simulados sem autorização.
+- Peça publicitária segue o Código e os Guias do CONAR; o guia de influenciadores atualizado em 2026 trata de IA.
+- Nenhum dado de audiência ou resultado sai sem fonte, período e metodologia.
+- Dados de público e de participantes de promoções só em ferramenta aprovada (LGPD).
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências comparadas estão em comparacao-ementa-ia-marketing.md.
+
+1 - Fundamentos de IA e limites em marketing (6 horas)
+   ● O que a área precisa entender sobre IA
+         ○ Diferença entre automação tradicional (regras, macros, RPA), aprendizado de máquina, IA generativa e agentes
+         ○ O que um modelo de linguagem faz de fato: prever texto provável, não consultar uma base oficial nem "saber" o fato vigente
+         ○ Por que a resposta soa segura mesmo quando está errada (alucinação)
+         ○ Ferramentas que geram texto versus ferramentas que buscam, calculam ou extraem dados
+         ○ Multimodalidade útil ao marketing: imagem, vídeo, áudio, legendas e versões 16:9 e 9:16
+
+   ● Onde a IA ajuda e onde não se pode confiar
+         ○ Onde costuma ajudar: ideação, rascunho de textos e roteiros, variações de peças, SEO, análise de comentários, relatórios de campanha
+         ○ Onde não se confia sem validação: dados de audiência, resultados de campanha, alegações publicitárias, direitos sobre imagem e música e fatos sobre concorrentes
+         ○ Atividades automatizáveis, apoiáveis e dependentes de julgamento profissional
+         ○ Definir o problema (o que resolver, com qual prazo, qual risco) antes de escolher a ferramenta
+
+   ● Riscos que a área precisa nomear desde o primeiro dia
+         ○ Alegações enganosas e testemunhais artificiais (CONAR)
+         ○ Direitos de imagem, voz, música e marca
+         ○ Deepfake e conteúdo sintético sem rótulo
+         ○ Dados pessoais de público e participantes (LGPD)
+
+2 - Uso comparado de Gemini Enterprise, Claude, ChatGPT e Grok (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios: tipo de tarefa, leitura de arquivos longos, citação de fonte, integração com o que a empresa já usa, custo, limites, retenção e uso dos dados
+         ○ Teste lado a lado com o mesmo pacote fictício da área (briefing de campanha de programa, relatório de audiência fictício, posts e comentários fictícios) e registro de acertos, erros e invenções
+         ○ Conta corporativa contratada versus conta pessoal gratuita: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam; a comparação é um método, não um ranking permanente
+
+   ● Gemini Enterprise e o ecossistema Google (ferramenta que a empresa está contratando)
+         ○ O que a documentação oficial do Google Cloud descreve sobre segurança do Gemini Enterprise: criptografia, controles de acesso, proteção de dados sensíveis e opções administrativas — conferir o que foi habilitado no contrato da empresa
+         ○ Integração com Google Workspace (Gmail, Drive, Documentos, Planilhas) conforme permissões e administração
+         ○ NotebookLM para perguntas sobre um conjunto delimitado de documentos (manual de marca, tom de voz, guias do CONAR, briefings e relatórios anteriores)
+         ○ Agentes e conectores do Gemini Enterprise: o que a área pode pedir à TI e com que governança
+
+   ● Claude (Anthropic)
+         ○ Uso frequente para leitura e análise de documentos longos; conferir a janela de contexto vigente na documentação oficial da Anthropic
+         ○ Projetos para reunir políticas, modelos e acervo de referência da área
+         ○ Limite: documento longo lido não dispensa conferir trecho, número e citação na origem
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral; análise de arquivos conforme o plano contratado
+         ○ GPTs personalizados para tarefas repetidas da área, a partir de modelos da casa
+         ○ Limite: o que sai do chat é rascunho até ser conferido
+
+   ● Grok (xAI)
+         ○ Disponível em produtos da xAI e no X; a documentação da xAI descreve busca em posts do X
+         ○ Uso possível no marketing: acompanhar tendências e conversa pública no X sobre programas e eventos regionais, conferindo a fonte original
+         ○ Limite: post em rede social não é fonte oficial; conferir sempre a origem
+
+3 - Prompts com método para o marketing (8 horas)
+   ● Anatomia de um prompt profissional
+         ○ Contexto, objetivo, dados, critérios e formato de resposta
+         ○ Pedir saída em tabela com coluna de origem (documento, página, trecho) e grau de certeza
+         ○ Obrigar o modelo a dizer o que não encontrou e a não inventar audiência, resultado, depoimento ou alegação
+         ○ Exemplos de entrada e de saída esperada (poucos e bons)
+         ○ Iterar: testar, achar o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para a rotina da área
+         ○ Briefing e conceito de campanha para programa ou evento regional
+         ○ Variações de textos e roteiros por plataforma
+         ○ SEO: títulos, descrições e dados estruturados para o site
+         ○ Análise de comentários com amostra conferida
+         ○ Relatório de campanha com números da fonte
+
+   ● Biblioteca de prompts da área
+         ○ Modelos por função: audiência, promoção e chamadas, digital, redes, SEO, CRM, pesquisa
+         ○ Versionar e compartilhar com exemplo de entrada e de saída revisada
+         ○ Registrar o que a IA fez em cada entrega para manter rastreabilidade
+
+4 - Audiência TV e digital: dados e leitura com IA (10 horas)
+   ● Fontes e métricas
+         ○ Audiência de TV e rádio, alcance digital, visualizações e engajamento: fonte, período e metodologia
+         ○ Comparabilidade entre medições diferentes
+         ○ Consolidação em planilha ou código
+
+   ● Leitura
+         ○ IA para comentar variações, não para inventar causas
+         ○ Relatório para programação, jornalismo e comercial
+
+5 - SEO e GEO: ser encontrado e citado (8 horas)
+   ● SEO
+         ○ Títulos, descrições, dados estruturados e velocidade do site
+         ○ Conteúdo regional e buscas locais
+
+   ● GEO
+         ○ Ser citado por motores de resposta com IA: conteúdo claro, fonte e autoria
+         ○ Medir sem promessas: o que é verificável
+
+6 - Conteúdo e criação com IA e rotulagem (8 horas)
+   ● Criação
+         ○ Textos, imagens, vídeos e áudios com ferramentas aprovadas
+         ○ Manual de marca e tom de voz como instrução
+         ○ Versões 16:9 e 9:16, legendas e acessibilidade
+
+   ● Rotulagem e direitos
+         ○ Rótulo de conteúdo sintético
+         ○ Direitos de imagem, voz, música e obras de terceiros
+         ○ Nada de simular pessoa real sem autorização
+
+7 - Campanhas, promoções e redes sociais (8 horas)
+   ● Campanhas
+         ○ Campanhas de audiência e chamadas de programação
+         ○ Promoções: regulamento e regras vigentes
+         ○ Calendário regional: festivais, datas e eventos
+
+   ● Redes
+         ○ Planejamento por plataforma
+         ○ Resposta a comentários com revisão humana
+
+8 - Escuta, comentários e reputação da marca (8 horas)
+   ● Escuta
+         ○ Coleta de comentários e menções com ferramentas aprovadas
+         ○ Agrupamento de temas com amostra conferida
+         ○ Sinais de crise e escalonamento
+
+   ● Reputação
+         ○ Indicadores de percepção com metodologia
+         ○ Integração com comunicação corporativa
+
+9 - Mensuração, testes e atribuição (6 horas)
+   ● Métricas
+         ○ Testes A/B e amostra
+         ○ Atribuição com cautela
+         ○ Painéis rastreáveis
+
+   ● Relato
+         ○ Relatório com fato, hipótese e limite
+
+10 - Ética, LGPD, segurança da informação e governança de IA (8 horas)
+   ● Ética e publicidade
+         ○ CONAR: veracidade, identificação publicitária, testemunhais genuínos; uso de IA no guia de influenciadores atualizado em 2026
+         ○ Rotulagem de conteúdo sintético e política da casa
+         ○ Período eleitoral: Resolução TSE n. 23.610/2019 com a redação da Resolução n. 23.732/2024 (rotulagem e vedação de deepfake na propaganda eleitoral)
+
+   ● LGPD e segurança
+         ○ Dados de público, promoções e CRM
+         ○ Consentimento e finalidade em campanhas segmentadas
+         ○ O que nunca enviar a ferramenta não aprovada: bases de público identificadas, planos não divulgados
+
+   ● Governança de IA no marketing
+         ○ Política de uso e de rotulagem
+         ○ Registro de peças com IA
+         ○ Exercício: rascunho de política de IA para o marketing da Rede Amazônica
+
+11 - Agentes e automação do fluxo de marketing (6 horas)
+   ● Do assistente avulso ao processo
+         ○ Mapa do processo atual (briefing, criação, aprovação, veiculação, mensuração) e pontos de atrito
+         ○ Onde agentes ajudam: variações de peças, calendário editorial, relatórios recorrentes, triagem de comentários
+         ○ Human in the loop: aprovação humana antes de publicar, veicular ou enviar ao público
+         ○ Agentes no Gemini Enterprise e assistentes personalizados (Gems, GPTs, Projetos do Claude): instruções, acervo e teste
+
+   ● Operação e medição
+         ○ Indicadores: tempo, retrabalho, erros evitados, erros introduzidos
+         ○ Documentação do fluxo para outro colega repetir
+         ○ O que nunca sai no automático: publicação, alegação publicitária, uso de imagem ou voz de pessoa real e resposta em crise
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline é uma sequência de etapas reexecutáveis com entrada, saída e regra clara
+         ○ Etapas determinísticas em código, sem LLM: consolidar dados de audiência e analytics, calcular indicadores, gerar versões 16:9 e 9:16 e legendas com ffmpeg, checar rótulos e metadados, validar sitemap e dados estruturados
+         ○ O modelo entra só onde há linguagem ou julgamento: redigir textos e variações, agrupar temas de comentários, comentar o relatório
+         ○ Comparar na mesma tarefa o caminho "tudo no chat" e o pipeline: custo em tokens, tempo, erro, capacidade de repetir e auditar
+         ○ Cache e reexecução por etapa; configuração em YAML; registro de tokens e custo por etapa
+         ○ Trava humana antes de qualquer resultado sair da área
+
+   ● Python para quem não é programador
+         ○ Notebooks no navegador (Jupyter ou Google Colab) para ver o resultado linha a linha
+         ○ Pedir o código à IA com problema, formato de entrada e de saída; recusar código que ninguém consegue explicar
+         ○ Rodar, ler o erro, devolver o erro à IA, conferir numa amostra — a pessoa é responsável pelo que o script faz
+         ○ Nunca colar senha, chave de API ou dado pessoal no notebook ou no chat
+         ○ Quando chamar a TI ou quem já trabalha com dados
+
+   ● Caso real e pipelines da área
+         ○ O pipeline interno de criação de aulas da Rede Amazônica (aula-ra) como exemplo de método: legendas do YouTube, roteiro escrito pelo modelo a partir de trechos relevantes, narração sintética, trechos com crédito, página HTML e vídeo 16:9 e 9:16 — cada etapa com script, cache e ponto de parada
+         ○ No teste das aulas de amostra, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só trechos relevantes e reaproveitar o cache (estimativa por tokenizer, não medição de API)
+         ○ Pipeline de relatório de audiência TV+digital: dados consolidados no código, LLM só para o comentário
+         ○ Pipeline de versões de vídeo: cortes, legendas, 16:9 e 9:16 com ffmpeg, LLM só para títulos e descrições, rótulo de IA aplicado por regra
+         ○ Pipeline de SEO: inventário de páginas e checagens técnicas no código, LLM só para sugerir títulos e descrições
+         ○ Exercício: desenhar em YAML as etapas de um pipeline da área marcando onde o LLM entra, onde não entra e onde há revisão
+
+   ● Skills, agentes e GitHub com segurança
+         ○ Skill: pacote reutilizável de instruções (e às vezes scripts) que um agente segue numa tarefa
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com arquivo SKILL.md (metadados em YAML com nome e descrição, e instruções em Markdown)
+         ○ Como avaliar skills e repositórios no GitHub: licença, manutenção recente, questões abertas, estrelas como sinal fraco, README e testes
+         ○ Segurança: não rodar código sem ler; não colocar dado da empresa em repositório alheio; desconfiar de pedido de permissão ampla
+         ○ Reutilizar e versionar as skills da própria área, com registro de mudanças
+
+13 - Projeto final — aplicação no marketing da Rede Amazônica (10 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou dupla) escolhe um caminho ligado a um processo real, usando dados fictícios ou anonimizados:
+         ○ Caminho A — Campanha de programa ou evento regional com peças rotuladas
+         ○ Caminho B — Relatório de audiência TV+digital
+         ○ Caminho C — Plano de SEO/GEO para o site
+         ○ Caminho D — Análise de comentários e conversa pública
+         ○ Caminho E — Pipeline reexecutável com LLM só onde for necessário e registro de custo
+         ○ Documento de partida: problema, dados, ferramentas, riscos (LGPD, sigilo, alucinação, direitos) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas aprovadas (prioridade ao Gemini Enterprise contratado)
+         ○ Amostra conferida por humano, com registro de acertos e erros da IA
+         ○ Produto mínimo: campanha, relatório, plano ou pipeline auditável — não um discurso sobre IA
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à diretoria: problema, método, resultado, limite e pedido de decisão
+         ○ Critérios: utilidade, rigor de conferência, segurança de dados, clareza do método e viabilidade na rotina
+         ○ Projeto final: entrega do produto, do registro de conferência e da proposta de política ou procedimento associada

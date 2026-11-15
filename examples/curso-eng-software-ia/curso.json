@@ -1,0 +1,2221 @@
+{
+ "curso": {
+  "titulo": "Engenharia de Software em IA Aplicada",
+  "ementa": "../ementa-eng-software-ia.txt",
+  "objetivo": "Formar programadores para construir, integrar e operar software com IA generativa.",
+  "publico": "Programadores (back-end, front-end, full-stack) que já trabalham com JavaScript/TypeScript ou Python",
+  "nivel": "intermediário — sabe programar, usar git, npm e APIs HTTP; pouca ou nenhuma experiência com IA",
+  "tom": "técnico e direto, de dev para dev; mostra o código real e o porquê de cada decisão",
+  "linguagem": "frases curtas; termos técnicos em inglês mantidos (API, prompt, token) e explicados na primeira vez",
+  "resumo": "Curso prático para programadores: do funcionamento dos LLMs a agentes, MCP, DevOps, arquitetura, fine-tuning, governança e carreira, com um projeto integrador (Micro-SaaS).",
+  "pre_requisitos": [
+   "JavaScript/TypeScript ou Python",
+   "git e terminal",
+   "APIs HTTP/JSON"
+  ]
+ },
+ "stats": {
+  "aulas": 85,
+  "itens": 367,
+  "cobertos": 367,
+  "video_total_s": 10450
+ },
+ "aulas": [
+  {
+   "slug": "historia-da-ia",
+   "titulo": "De Turing aos LLMs: a linha do tempo da IA",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Situar ML, deep learning e LLMs numa linha do tempo",
+    "Explicar por que os LLMs surgiram agora"
+   ],
+   "topicos": [
+    "m01.i001"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 10,
+   "busca_videos": [
+    "history of artificial intelligence timeline"
+   ],
+   "id": "m01-a01",
+   "n": 1,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a01-historia-da-ia",
+   "anterior": null,
+   "proxima": "ML, deep learning, tensores e redes neurais em 2 minutos",
+   "yaml": "aulas/m01-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "ml-dl-redes-neurais",
+   "titulo": "ML, deep learning, tensores e redes neurais em 2 minutos",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Diferenciar IA, ML e deep learning",
+    "Explicar tensores e como uma rede neural aprende (gradiente)"
+   ],
+   "topicos": [
+    "m01.i005",
+    "m01.i008"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "3blue1brown neural networks"
+   ],
+   "id": "m01-a02",
+   "n": 2,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a02-ml-dl-redes-neurais",
+   "anterior": "De Turing aos LLMs: a linha do tempo da IA",
+   "proxima": "Como um LLM funciona: tokens, embeddings e attention",
+   "yaml": "aulas/m01-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "como-funcionam-llms",
+   "titulo": "Como um LLM funciona: tokens, embeddings e attention",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar o caminho token → embedding → attention → próximo token",
+    "Relacionar a attention ao uso de contexto em ChatGPT, Gemini e outros"
+   ],
+   "topicos": [
+    "m01.i006",
+    "m01.i007"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "3blue1brown attention transformers"
+   ],
+   "pratica": "Exercício: calcular à mão uma attention de 3 tokens (Q·K, softmax, soma ponderada de V).",
+   "id": "m01-a03",
+   "n": 3,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a03-como-funcionam-llms",
+   "anterior": "ML, deep learning, tensores e redes neurais em 2 minutos",
+   "proxima": "Sua primeira rede neural em JavaScript",
+   "yaml": "aulas/m01-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "primeira-rede-neural-js",
+   "titulo": "Sua primeira rede neural em JavaScript",
+   "tipo": "codigo",
+   "objetivos": [
+    "Treinar uma rede pequena em JavaScript",
+    "Percorrer o ciclo dados → treino → validação → inferência"
+   ],
+   "topicos": [
+    "m01.i012"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 45,
+   "busca_videos": [
+    "TensorFlow.js tutorial official"
+   ],
+   "id": "m01-a04",
+   "n": 4,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a04-primeira-rede-neural-js",
+   "anterior": "Como um LLM funciona: tokens, embeddings e attention",
+   "proxima": "ML no navegador: vídeo, jogos e deep learning na prática",
+   "yaml": "aulas/m01-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "ml-na-web",
+   "titulo": "ML no navegador: vídeo, jogos e deep learning na prática",
+   "tipo": "pratica",
+   "objetivos": [
+    "Rodar um modelo pré-treinado no browser sobre vídeo da webcam",
+    "Identificar usos de ML em jogos"
+   ],
+   "topicos": [
+    "m01.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 60,
+   "busca_videos": [
+    "TensorFlow.js pose detection"
+   ],
+   "pratica": "Detectar pose/objetos na webcam com um modelo pré-treinado.",
+   "id": "m01-a05",
+   "n": 5,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a05-ml-na-web",
+   "anterior": "Sua primeira rede neural em JavaScript",
+   "proxima": "Prompt engineering para codar, debugar e documentar",
+   "yaml": "aulas/m01-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "prompt-engineering-dev",
+   "titulo": "Prompt engineering para codar, debugar e documentar",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Escrever prompts com contexto, formato e critérios de aceite",
+    "Aplicar padrões de prompt para código, debug e docs"
+   ],
+   "topicos": [
+    "m01.i019"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "prompt engineering anthropic"
+   ],
+   "id": "m01-a06",
+   "n": 6,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a06-prompt-engineering-dev",
+   "anterior": "ML no navegador: vídeo, jogos e deep learning na prática",
+   "proxima": "Cursor, VS Code e Windsurf: IDEs com IA e vibe coding",
+   "yaml": "aulas/m01-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "cursor-e-ides-com-ia",
+   "titulo": "Cursor, VS Code e Windsurf: IDEs com IA e vibe coding",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Comparar Cursor, VS Code e Windsurf",
+    "Avaliar o que é vibe coding e seus limites"
+   ],
+   "topicos": [
+    "m01.i023",
+    "m01.i024",
+    "m01.i026"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "Cursor official"
+   ],
+   "id": "m01-a07",
+   "n": 7,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a07-cursor-e-ides-com-ia",
+   "anterior": "Prompt engineering para codar, debugar e documentar",
+   "proxima": "Cursor rules: a IA programando do jeito do seu time",
+   "yaml": "aulas/m01-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "cursor-rules",
+   "titulo": "Cursor rules: a IA programando do jeito do seu time",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Criar regras de projeto em .cursor/rules com o tipo de aplicação certo",
+    "Escolher entre Always, Auto Attached (globs), Agent Requested e Manual"
+   ],
+   "topicos": [
+    "m01.i025"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Cursor rules"
+   ],
+   "pratica": "Criar 3 regras (.mdc) para um projeto e validar o frontmatter.",
+   "documentacao": [
+    {
+     "titulo": "Cursor Docs — Rules",
+     "url": "https://cursor.com/docs/context/rules"
+    }
+   ],
+   "id": "m01-a08",
+   "n": 8,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a08-cursor-rules",
+   "anterior": "Cursor, VS Code e Windsurf: IDEs com IA e vibe coding",
+   "proxima": "MCPs e automação: IA que testa, lê docs e navega",
+   "yaml": "aulas/m01-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "mcp-e-automacao",
+   "titulo": "MCPs e automação: IA que testa, lê docs e navega",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar o que um MCP conecta",
+    "Usar IA para gerar testes, consultar docs e navegar sites; orquestrar fluxos com n8n"
+   ],
+   "topicos": [
+    "m01.i027"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "model context protocol introduction"
+   ],
+   "id": "m01-a09",
+   "n": 9,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a09-mcp-e-automacao",
+   "anterior": "Cursor rules: a IA programando do jeito do seu time",
+   "proxima": "RAG, embeddings e busca semântica com JavaScript e Postgres",
+   "yaml": "aulas/m01-a09.yaml",
+   "extra": true
+  },
+  {
+   "slug": "rag-embeddings",
+   "titulo": "RAG, embeddings e busca semântica com JavaScript e Postgres",
+   "tipo": "codigo",
+   "objetivos": [
+    "Explicar RAG e similarity search",
+    "Montar um RAG mínimo com embeddings e pgvector"
+   ],
+   "topicos": [
+    "m01.i034"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "busca_videos": [
+    "RAG explained embeddings"
+   ],
+   "id": "m01-a10",
+   "n": 10,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a10-rag-embeddings",
+   "anterior": "MCPs e automação: IA que testa, lê docs e navega",
+   "proxima": "Modelos abertos x fechados: OpenRouter e Ollama",
+   "yaml": "aulas/m01-a10.yaml",
+   "extra": true
+  },
+  {
+   "slug": "modelos-abertos-openrouter-ollama",
+   "titulo": "Modelos abertos x fechados: OpenRouter e Ollama",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Comparar modelos abertos e proprietários",
+    "Chamar vários modelos via OpenRouter e rodar um modelo local com Ollama"
+   ],
+   "topicos": [
+    "m01.i039"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Ollama official"
+   ],
+   "id": "m01-a11",
+   "n": 11,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a11-modelos-abertos-openrouter-ollama",
+   "anterior": "RAG, embeddings e busca semântica com JavaScript e Postgres",
+   "proxima": "Agentes de IA: decisões em etapas e agentes que programam",
+   "yaml": "aulas/m01-a11.yaml",
+   "extra": true
+  },
+  {
+   "slug": "agentes-de-ia",
+   "titulo": "Agentes de IA: decisões em etapas e agentes que programam",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar o loop de um agente",
+    "Reconhecer agentes de código reais e seus limites"
+   ],
+   "topicos": [
+    "m01.i043"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "AI agents explained anthropic"
+   ],
+   "id": "m01-a12",
+   "n": 12,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e LLMs para Programadores",
+   "modulo_slug": "fundamentos-ia-llms",
+   "total_modulo": 12,
+   "dir": "m01-fundamentos-ia-llms/m01-a12-agentes-de-ia",
+   "anterior": "Modelos abertos x fechados: OpenRouter e Ollama",
+   "proxima": null,
+   "yaml": "aulas/m01-a12.yaml",
+   "extra": true
+  },
+  {
+   "slug": "mercado-ia-como-servico",
+   "titulo": "IA como serviço: wrappers, oportunidades e onde o dev entra",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Analisar o mercado de 'wrappers' de LLM",
+    "Identificar oportunidades reais para devs"
+   ],
+   "topicos": [
+    "m02.i001"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 15,
+   "id": "m02-a01",
+   "n": 1,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a01-mercado-ia-como-servico",
+   "anterior": null,
+   "proxima": "OpenAI, Anthropic, Hugging Face e Gemini: APIs comparadas",
+   "yaml": "aulas/m02-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "provedores-de-modelos",
+   "titulo": "OpenAI, Anthropic, Hugging Face e Gemini: APIs comparadas",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Comparar APIs e modelos dos principais provedores",
+    "Escolher provedor por cenário de uso"
+   ],
+   "topicos": [
+    "m02.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "OpenAI API quickstart official"
+   ],
+   "id": "m02-a02",
+   "n": 2,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a02-provedores-de-modelos",
+   "anterior": "IA como serviço: wrappers, oportunidades e onde o dev entra",
+   "proxima": "Prompt chaining, templates e menos alucinação",
+   "yaml": "aulas/m02-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "prompts-avancados",
+   "titulo": "Prompt chaining, templates e menos alucinação",
+   "tipo": "codigo",
+   "objetivos": [
+    "Encadear prompts para tarefas complexas",
+    "Padronizar prompts com templates e reduzir alucinações"
+   ],
+   "topicos": [
+    "m02.i007"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 40,
+   "id": "m02-a03",
+   "n": 3,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a03-prompts-avancados",
+   "anterior": "OpenAI, Anthropic, Hugging Face e Gemini: APIs comparadas",
+   "proxima": "Custo e previsibilidade: tokens, cache e contexto",
+   "yaml": "aulas/m02-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "custo-e-previsibilidade",
+   "titulo": "Custo e previsibilidade: tokens, cache e contexto",
+   "tipo": "codigo",
+   "objetivos": [
+    "Desenhar chamadas pensando em custo",
+    "Aplicar cache de prompt e redução de tokens"
+   ],
+   "topicos": [
+    "m02.i011"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "prompt caching anthropic"
+   ],
+   "id": "m02-a04",
+   "n": 4,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a04-custo-e-previsibilidade",
+   "anterior": "Prompt chaining, templates e menos alucinação",
+   "proxima": "RAG avançado: orquestração, retries e observabilidade",
+   "yaml": "aulas/m02-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "rag-avancado-orquestracao",
+   "titulo": "RAG avançado: orquestração, retries e observabilidade",
+   "tipo": "codigo",
+   "objetivos": [
+    "Orquestrar fluxos com LangChain ou similares",
+    "Tratar erros, re-tentativas e logging em apps de IA"
+   ],
+   "topicos": [
+    "m02.i015"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 45,
+   "id": "m02-a05",
+   "n": 5,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a05-rag-avancado-orquestracao",
+   "anterior": "Custo e previsibilidade: tokens, cache e contexto",
+   "proxima": "Mão na massa: LLM da OpenAI num back-end existente",
+   "yaml": "aulas/m02-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "llm-no-back-end",
+   "titulo": "Mão na massa: LLM da OpenAI num back-end existente",
+   "tipo": "projeto",
+   "objetivos": [
+    "Integrar um LLM a um back-end com autenticação e versionamento",
+    "Testar o fluxo de requisições"
+   ],
+   "topicos": [
+    "m02.i019"
+   ],
+   "duracao_video_s": 150,
+   "duracao_estudo_min": 90,
+   "pratica": "Adicionar um endpoint de resumo com LLM a uma API existente, com testes.",
+   "id": "m02-a06",
+   "n": 6,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a06-llm-no-back-end",
+   "anterior": "RAG avançado: orquestração, retries e observabilidade",
+   "proxima": "Modelos multimodais: texto, imagem, áudio e vídeo",
+   "yaml": "aulas/m02-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "multimodal",
+   "titulo": "Modelos multimodais: texto, imagem, áudio e vídeo",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Escolher a modalidade certa por problema",
+    "Conhecer OpenAI Vision, Whisper e Gemini multimodal"
+   ],
+   "topicos": [
+    "m02.i022"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "id": "m02-a07",
+   "n": 7,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a07-multimodal",
+   "anterior": "Mão na massa: LLM da OpenAI num back-end existente",
+   "proxima": "OCR inteligente, análise de mídia e bots multimodais",
+   "yaml": "aulas/m02-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "apps-multimodais",
+   "titulo": "OCR inteligente, análise de mídia e bots multimodais",
+   "tipo": "projeto",
+   "objetivos": [
+    "Construir um OCR inteligente com LLM",
+    "Esboçar um bot multimodal"
+   ],
+   "topicos": [
+    "m02.i025"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 90,
+   "pratica": "OCR de notas fiscais com extração estruturada em JSON.",
+   "id": "m02-a08",
+   "n": 8,
+   "modulo": "m02",
+   "modulo_titulo": "APIs de IA Generativa e Prompt Engineering",
+   "modulo_slug": "apis-ia-generativa",
+   "total_modulo": 8,
+   "dir": "m02-apis-ia-generativa/m02-a08-apps-multimodais",
+   "anterior": "Modelos multimodais: texto, imagem, áudio e vídeo",
+   "proxima": null,
+   "yaml": "aulas/m02-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "o-que-e-mcp",
+   "titulo": "O que é MCP e por que ele acabou com as integrações sob medida",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar o problema N×M que o MCP resolve",
+    "Descrever host, client e server"
+   ],
+   "topicos": [
+    "m03.i001"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "model context protocol anthropic"
+   ],
+   "id": "m03-a01",
+   "n": 1,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a01-o-que-e-mcp",
+   "anterior": null,
+   "proxima": "Tools, resources e prompts: a integração padronizada",
+   "yaml": "aulas/m03-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "integracao-padronizada",
+   "titulo": "Tools, resources e prompts: a integração padronizada",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Mapear APIs, bancos e serviços para primitivas MCP",
+    "Explicar a padronização de entrada/saída"
+   ],
+   "topicos": [
+    "m03.i004"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "id": "m03-a02",
+   "n": 2,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a02-integracao-padronizada",
+   "anterior": "O que é MCP e por que ele acabou com as integrações sob medida",
+   "proxima": "MCP x tools/plugins de cada provedor",
+   "yaml": "aulas/m03-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "mcp-vs-tools",
+   "titulo": "MCP x tools/plugins de cada provedor",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Comparar MCP com function calling proprietário",
+    "Decidir quando usar MCP"
+   ],
+   "topicos": [
+    "m03.i007"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 15,
+   "id": "m03-a03",
+   "n": 3,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a03-mcp-vs-tools",
+   "anterior": "Tools, resources e prompts: a integração padronizada",
+   "proxima": "Criando um MCP server em TypeScript do zero",
+   "yaml": "aulas/m03-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "mcp-server-typescript",
+   "titulo": "Criando um MCP server em TypeScript do zero",
+   "tipo": "codigo",
+   "objetivos": [
+    "Implementar um MCP server com o SDK oficial (tool com schema Zod, transporte stdio)",
+    "Consumir o server com um client MCP e testar automaticamente"
+   ],
+   "topicos": [
+    "m03.i011",
+    "m03.i028"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "busca_videos": [
+    "building MCP server typescript anthropic"
+   ],
+   "pratica": "Adicionar uma nova tool ao server e cobri-la no teste com o client.",
+   "documentacao": [
+    {
+     "titulo": "MCP — Build an MCP server",
+     "url": "https://modelcontextprotocol.io/docs/develop/build-server"
+    },
+    {
+     "titulo": "MCP TypeScript SDK",
+     "url": "https://github.com/modelcontextprotocol/typescript-sdk"
+    }
+   ],
+   "id": "m03-a04",
+   "n": 4,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a04-mcp-server-typescript",
+   "anterior": "MCP x tools/plugins de cada provedor",
+   "proxima": "Organizando um projeto MCP: módulos, testes e versionamento",
+   "yaml": "aulas/m03-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "estrutura-projeto-mcp",
+   "titulo": "Organizando um projeto MCP: módulos, testes e versionamento",
+   "tipo": "codigo",
+   "objetivos": [
+    "Aplicar uma estrutura de pastas para tools/resources",
+    "Separar lógica de negócio do transporte"
+   ],
+   "topicos": [
+    "m03.i012"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "id": "m03-a05",
+   "n": 5,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a05-estrutura-projeto-mcp",
+   "anterior": "Criando um MCP server em TypeScript do zero",
+   "proxima": "Sua empresa como MCP: CRM, billing e suporte expostos para IA",
+   "yaml": "aulas/m03-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "empresa-como-mcp",
+   "titulo": "Sua empresa como MCP: CRM, billing e suporte expostos para IA",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Desenhar uma camada AI-ready sobre serviços internos"
+   ],
+   "topicos": [
+    "m03.i013"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "id": "m03-a06",
+   "n": 6,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a06-empresa-como-mcp",
+   "anterior": "Organizando um projeto MCP: módulos, testes e versionamento",
+   "proxima": "Segurança em MCP: tokens, rate limiting e WAF",
+   "yaml": "aulas/m03-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "seguranca-mcp",
+   "titulo": "Segurança em MCP: tokens, rate limiting e WAF",
+   "tipo": "codigo",
+   "objetivos": [
+    "Proteger um MCP remoto com tokens de serviço",
+    "Aplicar rate limiting e WAF"
+   ],
+   "topicos": [
+    "m03.i016"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 40,
+   "busca_videos": [
+    "MCP authorization security"
+   ],
+   "id": "m03-a07",
+   "n": 7,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a07-seguranca-mcp",
+   "anterior": "Sua empresa como MCP: CRM, billing e suporte expostos para IA",
+   "proxima": "MCP no mundo real: legados, copilots e IDEs",
+   "yaml": "aulas/m03-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "mcp-casos-e-cenarios",
+   "titulo": "MCP no mundo real: legados, copilots e IDEs",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Analisar casos de MCP em empresas",
+    "Identificar cenários: agentes, IDEs, ERP/CRM"
+   ],
+   "topicos": [
+    "m03.i020",
+    "m03.i023"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "id": "m03-a08",
+   "n": 8,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a08-mcp-casos-e-cenarios",
+   "anterior": "Segurança em MCP: tokens, rate limiting e WAF",
+   "proxima": "Hands-on: do MCP local à produção com front, back e vários clients",
+   "yaml": "aulas/m03-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "mcp-em-producao",
+   "titulo": "Hands-on: do MCP local à produção com front, back e vários clients",
+   "tipo": "projeto",
+   "objetivos": [
+    "Integrar o MCP a front-end e back-end",
+    "Testar em diferentes clients e compor com outros MCPs"
+   ],
+   "topicos": [
+    "m03.i029",
+    "m03.i030"
+   ],
+   "duracao_video_s": 150,
+   "duracao_estudo_min": 120,
+   "pratica": "Publicar o MCP por HTTP e testá-lo em dois clients.",
+   "id": "m03-a09",
+   "n": 9,
+   "modulo": "m03",
+   "modulo_titulo": "MCP – Model Context Protocol",
+   "modulo_slug": "mcp",
+   "total_modulo": 9,
+   "dir": "m03-mcp/m03-a09-mcp-em-producao",
+   "anterior": "MCP no mundo real: legados, copilots e IDEs",
+   "proxima": null,
+   "yaml": "aulas/m03-a09.yaml",
+   "extra": true
+  },
+  {
+   "slug": "arquitetura-de-agentes",
+   "titulo": "Arquitetura de agentes: o agent loop",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar percepção → raciocínio → ação → feedback",
+    "Identificar planner, executor, memória e toolbox"
+   ],
+   "topicos": [
+    "m04.u01"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "id": "m04-a01",
+   "n": 1,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a01-arquitetura-de-agentes",
+   "anterior": null,
+   "proxima": "ReAct, Plan-and-Execute e Reflection",
+   "yaml": "aulas/m04-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "react-plan-execute-reflection",
+   "titulo": "ReAct, Plan-and-Execute e Reflection",
+   "tipo": "codigo",
+   "objetivos": [
+    "Comparar padrões de raciocínio",
+    "Implementar ReAct e Plan-Execute"
+   ],
+   "topicos": [
+    "m04.u02"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 40,
+   "id": "m04-a02",
+   "n": 2,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a02-react-plan-execute-reflection",
+   "anterior": "Arquitetura de agentes: o agent loop",
+   "proxima": "Function calling e tool use com schemas JSON",
+   "yaml": "aulas/m04-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "function-calling",
+   "titulo": "Function calling e tool use com schemas JSON",
+   "tipo": "codigo",
+   "objetivos": [
+    "Desenhar schemas JSON de funções",
+    "Conectar um agente a APIs e bancos"
+   ],
+   "topicos": [
+    "m04.u03"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 40,
+   "id": "m04-a03",
+   "n": 3,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a03-function-calling",
+   "anterior": "ReAct, Plan-and-Execute e Reflection",
+   "proxima": "Memória e reflexão em agentes",
+   "yaml": "aulas/m04-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "memoria-e-reflexao",
+   "titulo": "Memória e reflexão em agentes",
+   "tipo": "codigo",
+   "objetivos": [
+    "Escolher tipos de memória",
+    "Implementar um reflection loop"
+   ],
+   "topicos": [
+    "m04.u04"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 35,
+   "id": "m04-a04",
+   "n": 4,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a04-memoria-e-reflexao",
+   "anterior": "Function calling e tool use com schemas JSON",
+   "proxima": "Gerenciamento de contexto: pruning e compressão",
+   "yaml": "aulas/m04-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "gerenciamento-de-contexto",
+   "titulo": "Gerenciamento de contexto: pruning e compressão",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Aplicar context pruning/compression",
+    "Equilibrar contexto global e local"
+   ],
+   "topicos": [
+    "m04.u05"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "id": "m04-a05",
+   "n": 5,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a05-gerenciamento-de-contexto",
+   "anterior": "Memória e reflexão em agentes",
+   "proxima": "LangGraph: grafos, roteamento e fallback",
+   "yaml": "aulas/m04-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "langgraph",
+   "titulo": "LangGraph: grafos, roteamento e fallback",
+   "tipo": "codigo",
+   "objetivos": [
+    "Construir um grafo de execução",
+    "Depurar agentes complexos"
+   ],
+   "topicos": [
+    "m04.u06"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 45,
+   "id": "m04-a06",
+   "n": 6,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a06-langgraph",
+   "anterior": "Gerenciamento de contexto: pruning e compressão",
+   "proxima": "Observabilidade, guardrails e limites de autonomia",
+   "yaml": "aulas/m04-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "observabilidade-e-limites",
+   "titulo": "Observabilidade, guardrails e limites de autonomia",
+   "tipo": "codigo",
+   "objetivos": [
+    "Instrumentar agentes",
+    "Aplicar guardrails e human-in-the-loop"
+   ],
+   "topicos": [
+    "m04.u07"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "id": "m04-a07",
+   "n": 7,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a07-observabilidade-e-limites",
+   "anterior": "LangGraph: grafos, roteamento e fallback",
+   "proxima": "Projeto: agente que automatiza tarefas complexas",
+   "yaml": "aulas/m04-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "projeto-agente",
+   "titulo": "Projeto: agente que automatiza tarefas complexas",
+   "tipo": "projeto",
+   "objetivos": [
+    "Construir um agente com planejamento, APIs, logs e memória"
+   ],
+   "topicos": [
+    "m04.u08"
+   ],
+   "duracao_video_s": 150,
+   "duracao_estudo_min": 180,
+   "id": "m04-a08",
+   "n": 8,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a08-projeto-agente",
+   "anterior": "Observabilidade, guardrails e limites de autonomia",
+   "proxima": "Sistemas multiagente: supervisor, hierárquico e group chat",
+   "yaml": "aulas/m04-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "multiagentes",
+   "titulo": "Sistemas multiagente: supervisor, hierárquico e group chat",
+   "tipo": "codigo",
+   "objetivos": [
+    "Comparar padrões multiagente",
+    "Implementar um mini sistema cooperativo"
+   ],
+   "topicos": [
+    "m04.u09"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 45,
+   "id": "m04-a09",
+   "n": 9,
+   "modulo": "m04",
+   "modulo_titulo": "Criação de Agentes Autônomos",
+   "modulo_slug": "agentes-autonomos",
+   "total_modulo": 9,
+   "dir": "m04-agentes-autonomos/m04-a09-multiagentes",
+   "anterior": "Projeto: agente que automatiza tarefas complexas",
+   "proxima": null,
+   "yaml": "aulas/m04-a09.yaml",
+   "extra": true
+  },
+  {
+   "slug": "ia-no-design",
+   "titulo": "A revolução da IA no design de interfaces",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar AI-driven UX",
+    "Mapear ferramentas por etapa do design"
+   ],
+   "topicos": [
+    "m05.u01"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 15,
+   "id": "m05-a01",
+   "n": 1,
+   "modulo": "m05",
+   "modulo_titulo": "Ferramentas de IA para UX & UI",
+   "modulo_slug": "ia-ux-ui",
+   "total_modulo": 5,
+   "dir": "m05-ia-ux-ui/m05-a01-ia-no-design",
+   "anterior": null,
+   "proxima": "Prototipação e geração de UI com IA (Firebase Studio)",
+   "yaml": "aulas/m05-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "prototipacao-com-ia",
+   "titulo": "Prototipação e geração de UI com IA (Firebase Studio)",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Gerar wireframes a partir de texto",
+    "Prototipar com Firebase Studio e validar fluxos"
+   ],
+   "topicos": [
+    "m05.u02"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 45,
+   "id": "m05-a02",
+   "n": 2,
+   "modulo": "m05",
+   "modulo_titulo": "Ferramentas de IA para UX & UI",
+   "modulo_slug": "ia-ux-ui",
+   "total_modulo": 5,
+   "dir": "m05-ia-ux-ui/m05-a02-prototipacao-com-ia",
+   "anterior": "A revolução da IA no design de interfaces",
+   "proxima": "Agentes de código e Gemini CLI no front-end",
+   "yaml": "aulas/m05-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "agentes-cli-front-end",
+   "titulo": "Agentes de código e Gemini CLI no front-end",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Usar Gemini CLI para scaffolding",
+    "Definir um fluxo com agentes de código"
+   ],
+   "topicos": [
+    "m05.u03"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "id": "m05-a03",
+   "n": 3,
+   "modulo": "m05",
+   "modulo_titulo": "Ferramentas de IA para UX & UI",
+   "modulo_slug": "ia-ux-ui",
+   "total_modulo": 5,
+   "dir": "m05-ia-ux-ui/m05-a03-agentes-cli-front-end",
+   "anterior": "Prototipação e geração de UI com IA (Firebase Studio)",
+   "proxima": "Testes E2E e interação inteligente com a UI",
+   "yaml": "aulas/m05-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "testes-e2e-com-ia",
+   "titulo": "Testes E2E e interação inteligente com a UI",
+   "tipo": "codigo",
+   "objetivos": [
+    "Automatizar testes E2E com IA"
+   ],
+   "topicos": [
+    "m05.u04"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "id": "m05-a04",
+   "n": 4,
+   "modulo": "m05",
+   "modulo_titulo": "Ferramentas de IA para UX & UI",
+   "modulo_slug": "ia-ux-ui",
+   "total_modulo": 5,
+   "dir": "m05-ia-ux-ui/m05-a04-testes-e2e-com-ia",
+   "anterior": "Agentes de código e Gemini CLI no front-end",
+   "proxima": "IA no cliente e no servidor com Firebase AI Logic",
+   "yaml": "aulas/m05-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "ia-no-cliente-e-servidor",
+   "titulo": "IA no cliente e no servidor com Firebase AI Logic",
+   "tipo": "codigo",
+   "objetivos": [
+    "Consumir APIs de IA no front-end com segurança",
+    "Construir uma feature inteligente"
+   ],
+   "topicos": [
+    "m05.u05"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "id": "m05-a05",
+   "n": 5,
+   "modulo": "m05",
+   "modulo_titulo": "Ferramentas de IA para UX & UI",
+   "modulo_slug": "ia-ux-ui",
+   "total_modulo": 5,
+   "dir": "m05-ia-ux-ui/m05-a05-ia-no-cliente-e-servidor",
+   "anterior": "Testes E2E e interação inteligente com a UI",
+   "proxima": null,
+   "yaml": "aulas/m05-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "ia-generativa-infra",
+   "titulo": "IA generativa para infraestrutura: fundamentos e limites",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Relacionar LLMs, APIs, agentes e RAG à infraestrutura",
+    "Validar respostas e evitar alucinações"
+   ],
+   "topicos": [
+    "m06.u01"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "id": "m06-a01",
+   "n": 1,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a01-ia-generativa-infra",
+   "anterior": null,
+   "proxima": "IaC Copilot: Terraform validado gerado por IA",
+   "yaml": "aulas/m06-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "iac-copilot",
+   "titulo": "IaC Copilot: Terraform validado gerado por IA",
+   "tipo": "codigo",
+   "objetivos": [
+    "Gerar Terraform a partir de linguagem natural",
+    "Validar com plan/validate e Policy-as-Code"
+   ],
+   "topicos": [
+    "m06.u02"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "id": "m06-a02",
+   "n": 2,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a02-iac-copilot",
+   "anterior": "IA generativa para infraestrutura: fundamentos e limites",
+   "proxima": "Agentes para Kubernetes: deploy, autoscaling e GitOps",
+   "yaml": "aulas/m06-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "agentes-kubernetes",
+   "titulo": "Agentes para Kubernetes: deploy, autoscaling e GitOps",
+   "tipo": "codigo",
+   "objetivos": [
+    "Gerar manifests e HPA/VPA",
+    "Integrar rollout com Argo CD/Flux"
+   ],
+   "topicos": [
+    "m06.u03"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "id": "m06-a03",
+   "n": 3,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a03-agentes-kubernetes",
+   "anterior": "IaC Copilot: Terraform validado gerado por IA",
+   "proxima": "Troubleshooting assistido: ReAct para pods quebrados",
+   "yaml": "aulas/m06-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "troubleshooting-assistido",
+   "titulo": "Troubleshooting assistido: ReAct para pods quebrados",
+   "tipo": "codigo",
+   "objetivos": [
+    "Diagnosticar CrashLoopBackOff e OOMKilled com IA",
+    "Correlacionar logs e traces"
+   ],
+   "topicos": [
+    "m06.u04"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 50,
+   "id": "m06-a04",
+   "n": 4,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a04-troubleshooting-assistido",
+   "anterior": "Agentes para Kubernetes: deploy, autoscaling e GitOps",
+   "proxima": "AIOps: PromQL por linguagem natural e anomalias",
+   "yaml": "aulas/m06-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "aiops-observabilidade",
+   "titulo": "AIOps: PromQL por linguagem natural e anomalias",
+   "tipo": "codigo",
+   "objetivos": [
+    "Gerar PromQL/LogQL",
+    "Detectar anomalias com ML"
+   ],
+   "topicos": [
+    "m06.u05"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 50,
+   "id": "m06-a05",
+   "n": 5,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a05-aiops-observabilidade",
+   "anterior": "Troubleshooting assistido: ReAct para pods quebrados",
+   "proxima": "ChatOps com aprovação humana e RBAC",
+   "yaml": "aulas/m06-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "chatops-com-aprovacao",
+   "titulo": "ChatOps com aprovação humana e RBAC",
+   "tipo": "codigo",
+   "objetivos": [
+    "Construir comandos seguros",
+    "Auditar ações com aprovação"
+   ],
+   "topicos": [
+    "m06.u06"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 50,
+   "id": "m06-a06",
+   "n": 6,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a06-chatops-com-aprovacao",
+   "anterior": "AIOps: PromQL por linguagem natural e anomalias",
+   "proxima": "Segurança, compliance e CI/CD com copilots",
+   "yaml": "aulas/m06-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "seguranca-e-cicd",
+   "titulo": "Segurança, compliance e CI/CD com copilots",
+   "tipo": "codigo",
+   "objetivos": [
+    "Automatizar scans e AI fix",
+    "Gerar pipelines com gates inteligentes"
+   ],
+   "topicos": [
+    "m06.u07",
+    "m06.u08"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 50,
+   "id": "m06-a07",
+   "n": 7,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a07-seguranca-e-cicd",
+   "anterior": "ChatOps com aprovação humana e RBAC",
+   "proxima": "FinOps com IA: Infracost, rightsizing e forecasting",
+   "yaml": "aulas/m06-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "finops-com-ia",
+   "titulo": "FinOps com IA: Infracost, rightsizing e forecasting",
+   "tipo": "codigo",
+   "objetivos": [
+    "Estimar custos em PRs",
+    "Detectar recursos ociosos"
+   ],
+   "topicos": [
+    "m06.u09"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "id": "m06-a08",
+   "n": 8,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a08-finops-com-ia",
+   "anterior": "Segurança, compliance e CI/CD com copilots",
+   "proxima": "RAG de runbooks, post-mortem e auto-remediação segura",
+   "yaml": "aulas/m06-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "runbooks-e-auto-remediacao",
+   "titulo": "RAG de runbooks, post-mortem e auto-remediação segura",
+   "tipo": "codigo",
+   "objetivos": [
+    "Montar RAG de runbooks",
+    "Auto-remediar com dry-run e human-in-the-loop"
+   ],
+   "topicos": [
+    "m06.u10",
+    "m06.u11"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 50,
+   "id": "m06-a09",
+   "n": 9,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a09-runbooks-e-auto-remediacao",
+   "anterior": "FinOps com IA: Infracost, rightsizing e forecasting",
+   "proxima": "Projeto integrador DevOps com IA",
+   "yaml": "aulas/m06-a09.yaml",
+   "extra": true
+  },
+  {
+   "slug": "projeto-integrador-devops",
+   "titulo": "Projeto integrador DevOps com IA",
+   "tipo": "projeto",
+   "objetivos": [
+    "Entregar um copilot/agente DevOps com guardrails e ROI"
+   ],
+   "topicos": [
+    "m06.u12"
+   ],
+   "duracao_video_s": 150,
+   "duracao_estudo_min": 180,
+   "id": "m06-a10",
+   "n": 10,
+   "modulo": "m06",
+   "modulo_titulo": "Ferramentas de IA para DevOps",
+   "modulo_slug": "ia-devops",
+   "total_modulo": 10,
+   "dir": "m06-ia-devops/m06-a10-projeto-integrador-devops",
+   "anterior": "RAG de runbooks, post-mortem e auto-remediação segura",
+   "proxima": null,
+   "yaml": "aulas/m06-a10.yaml",
+   "extra": true
+  },
+  {
+   "slug": "requirements-copilot",
+   "titulo": "Requirements copilot: escopo e histórias com IA",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Converter descrições em histórias e critérios de aceite"
+   ],
+   "topicos": [
+    "m07.u01"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "id": "m07-a01",
+   "n": 1,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a01-requirements-copilot",
+   "anterior": null,
+   "proxima": "Priorização inteligente de backlog",
+   "yaml": "aulas/m07-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "backlog-inteligente",
+   "titulo": "Priorização inteligente de backlog",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Aplicar frameworks de priorização com IA"
+   ],
+   "topicos": [
+    "m07.u02"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "id": "m07-a02",
+   "n": 2,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a02-backlog-inteligente",
+   "anterior": "Requirements copilot: escopo e histórias com IA",
+   "proxima": "Cronograma, capacidade e estimativas com IA (Monte Carlo)",
+   "yaml": "aulas/m07-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "cronograma-e-estimativas",
+   "titulo": "Cronograma, capacidade e estimativas com IA (Monte Carlo)",
+   "tipo": "codigo",
+   "objetivos": [
+    "Gerar cronogramas com dependências",
+    "Estimar prazos com simulação"
+   ],
+   "topicos": [
+    "m07.u03",
+    "m07.u04"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 40,
+   "id": "m07-a03",
+   "n": 3,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a03-cronograma-e-estimativas",
+   "anterior": "Priorização inteligente de backlog",
+   "proxima": "Riscos e mitigação com AIOps de projeto",
+   "yaml": "aulas/m07-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "riscos-aiops-projeto",
+   "titulo": "Riscos e mitigação com AIOps de projeto",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Detectar riscos com dados do projeto"
+   ],
+   "topicos": [
+    "m07.u05"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "id": "m07-a04",
+   "n": 4,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a04-riscos-aiops-projeto",
+   "anterior": "Cronograma, capacidade e estimativas com IA (Monte Carlo)",
+   "proxima": "Reuniões turbinadas e status reports automáticos",
+   "yaml": "aulas/m07-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "reunioes-e-status",
+   "titulo": "Reuniões turbinadas e status reports automáticos",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Extrair decisões e ações de reuniões",
+    "Gerar relatórios por público"
+   ],
+   "topicos": [
+    "m07.u06",
+    "m07.u07"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "id": "m07-a05",
+   "n": 5,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a05-reunioes-e-status",
+   "anterior": "Riscos e mitigação com AIOps de projeto",
+   "proxima": "Governança, compliance e qualidade com IA",
+   "yaml": "aulas/m07-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "governanca-qualidade",
+   "titulo": "Governança, compliance e qualidade com IA",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Automatizar checklists e trilhas de auditoria"
+   ],
+   "topicos": [
+    "m07.u08"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "id": "m07-a06",
+   "n": 6,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a06-governanca-qualidade",
+   "anterior": "Reuniões turbinadas e status reports automáticos",
+   "proxima": "Automação em Jira, Notion e Slack com bots em JavaScript",
+   "yaml": "aulas/m07-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "automacao-jira-slack",
+   "titulo": "Automação em Jira, Notion e Slack com bots em JavaScript",
+   "tipo": "codigo",
+   "objetivos": [
+    "Criar um bot que transforma linguagem natural em workflow"
+   ],
+   "topicos": [
+    "m07.u09"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "id": "m07-a07",
+   "n": 7,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a07-automacao-jira-slack",
+   "anterior": "Governança, compliance e qualidade com IA",
+   "proxima": "Portfólio e OKRs com IA",
+   "yaml": "aulas/m07-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "portfolio-e-okrs",
+   "titulo": "Portfólio e OKRs com IA",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Alinhar projetos a OKRs com métricas de outcome"
+   ],
+   "topicos": [
+    "m07.u10"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 20,
+   "id": "m07-a08",
+   "n": 8,
+   "modulo": "m07",
+   "modulo_titulo": "Ferramentas de IA para Gestão de Projetos",
+   "modulo_slug": "ia-gestao-projetos",
+   "total_modulo": 8,
+   "dir": "m07-ia-gestao-projetos/m07-a08-portfolio-e-okrs",
+   "anterior": "Automação em Jira, Notion e Slack com bots em JavaScript",
+   "proxima": null,
+   "yaml": "aulas/m07-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "arquitetura-ai-first",
+   "titulo": "Arquitetura AI-first: 5 padrões e trade-offs",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Comparar padrões arquiteturais com IA",
+    "Decidir por latência, custo e precisão"
+   ],
+   "topicos": [
+    "m08.u01"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "id": "m08-a01",
+   "n": 1,
+   "modulo": "m08",
+   "modulo_titulo": "Arquitetura de Sistemas com IA",
+   "modulo_slug": "arquitetura-ia",
+   "total_modulo": 5,
+   "dir": "m08-arquitetura-ia/m08-a01-arquitetura-ai-first",
+   "anterior": null,
+   "proxima": "Arquiteturas single-agent",
+   "yaml": "aulas/m08-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "single-agent",
+   "titulo": "Arquiteturas single-agent",
+   "tipo": "codigo",
+   "objetivos": [
+    "Prototipar agentes reativos e deliberativos"
+   ],
+   "topicos": [
+    "m08.u02"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "id": "m08-a02",
+   "n": 2,
+   "modulo": "m08",
+   "modulo_titulo": "Arquitetura de Sistemas com IA",
+   "modulo_slug": "arquitetura-ia",
+   "total_modulo": 5,
+   "dir": "m08-arquitetura-ia/m08-a02-single-agent",
+   "anterior": "Arquitetura AI-first: 5 padrões e trade-offs",
+   "proxima": "Arquiteturas multi-agent em JavaScript",
+   "yaml": "aulas/m08-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "multi-agent",
+   "titulo": "Arquiteturas multi-agent em JavaScript",
+   "tipo": "codigo",
+   "objetivos": [
+    "Implementar orquestração multiagente"
+   ],
+   "topicos": [
+    "m08.u03"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 45,
+   "id": "m08-a03",
+   "n": 3,
+   "modulo": "m08",
+   "modulo_titulo": "Arquitetura de Sistemas com IA",
+   "modulo_slug": "arquitetura-ia",
+   "total_modulo": 5,
+   "dir": "m08-arquitetura-ia/m08-a03-multi-agent",
+   "anterior": "Arquiteturas single-agent",
+   "proxima": "Padrões de design de IA: RAG, roteamento, cache e HITL",
+   "yaml": "aulas/m08-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "padroes-ia",
+   "titulo": "Padrões de design de IA: RAG, roteamento, cache e HITL",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Aplicar roteamento de modelos e caching semântico"
+   ],
+   "topicos": [
+    "m08.u04"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "id": "m08-a04",
+   "n": 4,
+   "modulo": "m08",
+   "modulo_titulo": "Arquitetura de Sistemas com IA",
+   "modulo_slug": "arquitetura-ia",
+   "total_modulo": 5,
+   "dir": "m08-arquitetura-ia/m08-a04-padroes-ia",
+   "anterior": "Arquiteturas multi-agent em JavaScript",
+   "proxima": "Arquitetura enterprise: do API gateway à observabilidade",
+   "yaml": "aulas/m08-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "arquitetura-enterprise",
+   "titulo": "Arquitetura enterprise: do API gateway à observabilidade",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Mapear o stack completo de IA enterprise"
+   ],
+   "topicos": [
+    "m08.u05"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 30,
+   "id": "m08-a05",
+   "n": 5,
+   "modulo": "m08",
+   "modulo_titulo": "Arquitetura de Sistemas com IA",
+   "modulo_slug": "arquitetura-ia",
+   "total_modulo": 5,
+   "dir": "m08-arquitetura-ia/m08-a05-arquitetura-enterprise",
+   "anterior": "Padrões de design de IA: RAG, roteamento, cache e HITL",
+   "proxima": null,
+   "yaml": "aulas/m08-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "quando-fazer-fine-tuning",
+   "titulo": "Quando fazer fine-tuning (e quando não)",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Aplicar um decision framework: prompt, RAG ou fine-tuning"
+   ],
+   "topicos": [
+    "m09.u01"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "id": "m09-a01",
+   "n": 1,
+   "modulo": "m09",
+   "modulo_titulo": "Processamento de Dados e Fine-Tuning de Modelos",
+   "modulo_slug": "dados-fine-tuning",
+   "total_modulo": 6,
+   "dir": "m09-dados-fine-tuning/m09-a01-quando-fazer-fine-tuning",
+   "anterior": null,
+   "proxima": "Preparando datasets JSONL para fine-tuning",
+   "yaml": "aulas/m09-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "datasets-jsonl",
+   "titulo": "Preparando datasets JSONL para fine-tuning",
+   "tipo": "codigo",
+   "objetivos": [
+    "Limpar, balancear e estruturar dados em JSONL"
+   ],
+   "topicos": [
+    "m09.u02"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 45,
+   "id": "m09-a02",
+   "n": 2,
+   "modulo": "m09",
+   "modulo_titulo": "Processamento de Dados e Fine-Tuning de Modelos",
+   "modulo_slug": "dados-fine-tuning",
+   "total_modulo": 6,
+   "dir": "m09-dados-fine-tuning/m09-a02-datasets-jsonl",
+   "anterior": "Quando fazer fine-tuning (e quando não)",
+   "proxima": "Fine-tuning via API da OpenAI",
+   "yaml": "aulas/m09-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "fine-tuning-openai",
+   "titulo": "Fine-tuning via API da OpenAI",
+   "tipo": "codigo",
+   "objetivos": [
+    "Subir dataset, treinar e versionar com scripts JavaScript"
+   ],
+   "topicos": [
+    "m09.u03"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 45,
+   "id": "m09-a03",
+   "n": 3,
+   "modulo": "m09",
+   "modulo_titulo": "Processamento de Dados e Fine-Tuning de Modelos",
+   "modulo_slug": "dados-fine-tuning",
+   "total_modulo": 6,
+   "dir": "m09-dados-fine-tuning/m09-a03-fine-tuning-openai",
+   "anterior": "Preparando datasets JSONL para fine-tuning",
+   "proxima": "LoRA e PEFT na prática",
+   "yaml": "aulas/m09-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "lora-peft",
+   "titulo": "LoRA e PEFT na prática",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar LoRA e comparar custo x desempenho"
+   ],
+   "topicos": [
+    "m09.u04"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "id": "m09-a04",
+   "n": 4,
+   "modulo": "m09",
+   "modulo_titulo": "Processamento de Dados e Fine-Tuning de Modelos",
+   "modulo_slug": "dados-fine-tuning",
+   "total_modulo": 6,
+   "dir": "m09-dados-fine-tuning/m09-a04-lora-peft",
+   "anterior": "Fine-tuning via API da OpenAI",
+   "proxima": "Avaliando modelos fine-tunados (A/B e métricas)",
+   "yaml": "aulas/m09-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "avaliar-fine-tuning",
+   "titulo": "Avaliando modelos fine-tunados (A/B e métricas)",
+   "tipo": "codigo",
+   "objetivos": [
+    "Medir precisão e consistência",
+    "Comparar modelos com testes A/B"
+   ],
+   "topicos": [
+    "m09.u05"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "id": "m09-a05",
+   "n": 5,
+   "modulo": "m09",
+   "modulo_titulo": "Processamento de Dados e Fine-Tuning de Modelos",
+   "modulo_slug": "dados-fine-tuning",
+   "total_modulo": 6,
+   "dir": "m09-dados-fine-tuning/m09-a05-avaliar-fine-tuning",
+   "anterior": "LoRA e PEFT na prática",
+   "proxima": "Projeto: modelo customizado para um domínio",
+   "yaml": "aulas/m09-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "projeto-modelo-customizado",
+   "titulo": "Projeto: modelo customizado para um domínio",
+   "tipo": "projeto",
+   "objetivos": [
+    "Entregar um modelo fine-tunado integrado a um fluxo"
+   ],
+   "topicos": [
+    "m09.u06"
+   ],
+   "duracao_video_s": 150,
+   "duracao_estudo_min": 180,
+   "id": "m09-a06",
+   "n": 6,
+   "modulo": "m09",
+   "modulo_titulo": "Processamento de Dados e Fine-Tuning de Modelos",
+   "modulo_slug": "dados-fine-tuning",
+   "total_modulo": 6,
+   "dir": "m09-dados-fine-tuning/m09-a06-projeto-modelo-customizado",
+   "anterior": "Avaliando modelos fine-tunados (A/B e métricas)",
+   "proxima": null,
+   "yaml": "aulas/m09-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "governanca-explicabilidade",
+   "titulo": "Governança, explicabilidade e vieses",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar governança em IA",
+    "Reconhecer vieses e limites de explicabilidade"
+   ],
+   "topicos": [
+    "m10.i001",
+    "m10.i002",
+    "m10.i003"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "id": "m10-a01",
+   "n": 1,
+   "modulo": "m10",
+   "modulo_titulo": "Segurança e Governança em IA",
+   "modulo_slug": "seguranca-governanca",
+   "total_modulo": 3,
+   "dir": "m10-seguranca-governanca/m10-a01-governanca-explicabilidade",
+   "anterior": null,
+   "proxima": "Riscos de IA: humanos, segurança, dados e regulação",
+   "yaml": "aulas/m10-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "riscos-de-ia",
+   "titulo": "Riscos de IA: humanos, segurança, dados e regulação",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Classificar riscos de IA",
+    "Relacionar riscos a controles e regulação"
+   ],
+   "topicos": [
+    "m10.i004",
+    "m10.i005",
+    "m10.i006"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 30,
+   "id": "m10-a02",
+   "n": 2,
+   "modulo": "m10",
+   "modulo_titulo": "Segurança e Governança em IA",
+   "modulo_slug": "seguranca-governanca",
+   "total_modulo": 3,
+   "dir": "m10-seguranca-governanca/m10-a02-riscos-de-ia",
+   "anterior": "Governança, explicabilidade e vieses",
+   "proxima": "Custos financeiros de IA",
+   "yaml": "aulas/m10-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "custos-de-ia",
+   "titulo": "Custos financeiros de IA",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Estimar e controlar custos de IA"
+   ],
+   "topicos": [
+    "m10.i007"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 20,
+   "id": "m10-a03",
+   "n": 3,
+   "modulo": "m10",
+   "modulo_titulo": "Segurança e Governança em IA",
+   "modulo_slug": "seguranca-governanca",
+   "total_modulo": 3,
+   "dir": "m10-seguranca-governanca/m10-a03-custos-de-ia",
+   "anterior": "Riscos de IA: humanos, segurança, dados e regulação",
+   "proxima": null,
+   "yaml": "aulas/m10-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "ideacao-arquitetura",
+   "titulo": "Ideação e arquitetura do Micro-SaaS",
+   "tipo": "projeto",
+   "objetivos": [
+    "Definir problema, proposta de valor e arquitetura"
+   ],
+   "topicos": [
+    "m11.u01"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 120,
+   "id": "m11-a01",
+   "n": 1,
+   "modulo": "m11",
+   "modulo_titulo": "Projeto Integrador – Capstone Project",
+   "modulo_slug": "capstone",
+   "total_modulo": 5,
+   "dir": "m11-capstone/m11-a01-ideacao-arquitetura",
+   "anterior": null,
+   "proxima": "Core: RAG, vector database e agente principal",
+   "yaml": "aulas/m11-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "rag-e-agentes",
+   "titulo": "Core: RAG, vector database e agente principal",
+   "tipo": "projeto",
+   "objetivos": [
+    "Entregar protótipo RAG com CLI (Entrega 1)"
+   ],
+   "topicos": [
+    "m11.u02"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 240,
+   "id": "m11-a02",
+   "n": 2,
+   "modulo": "m11",
+   "modulo_titulo": "Projeto Integrador – Capstone Project",
+   "modulo_slug": "capstone",
+   "total_modulo": 5,
+   "dir": "m11-capstone/m11-a02-rag-e-agentes",
+   "anterior": "Ideação e arquitetura do Micro-SaaS",
+   "proxima": "Back-end, MCP e orquestração com ADK",
+   "yaml": "aulas/m11-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "backend-mcp-orquestracao",
+   "titulo": "Back-end, MCP e orquestração com ADK",
+   "tipo": "projeto",
+   "objetivos": [
+    "Entregar API documentada e app com MCP (Entrega 2)"
+   ],
+   "topicos": [
+    "m11.u03"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 240,
+   "id": "m11-a03",
+   "n": 3,
+   "modulo": "m11",
+   "modulo_titulo": "Projeto Integrador – Capstone Project",
+   "modulo_slug": "capstone",
+   "total_modulo": 5,
+   "dir": "m11-capstone/m11-a03-backend-mcp-orquestracao",
+   "anterior": "Core: RAG, vector database e agente principal",
+   "proxima": "Front-end Angular, validação do MCP e deploy",
+   "yaml": "aulas/m11-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "front-end-e-deploy",
+   "titulo": "Front-end Angular, validação do MCP e deploy",
+   "tipo": "projeto",
+   "objetivos": [
+    "Entregar solução implantada com agente via MCP (Entrega 3)"
+   ],
+   "topicos": [
+    "m11.u04"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 240,
+   "id": "m11-a04",
+   "n": 4,
+   "modulo": "m11",
+   "modulo_titulo": "Projeto Integrador – Capstone Project",
+   "modulo_slug": "capstone",
+   "total_modulo": 5,
+   "dir": "m11-capstone/m11-a04-front-end-e-deploy",
+   "anterior": "Back-end, MCP e orquestração com ADK",
+   "proxima": "Apresentação final e defesa técnica",
+   "yaml": "aulas/m11-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "apresentacao-defesa",
+   "titulo": "Apresentação final e defesa técnica",
+   "tipo": "projeto",
+   "objetivos": [
+    "Defender decisões de arquitetura e documentar"
+   ],
+   "topicos": [
+    "m11.u05"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 120,
+   "id": "m11-a05",
+   "n": 5,
+   "modulo": "m11",
+   "modulo_titulo": "Projeto Integrador – Capstone Project",
+   "modulo_slug": "capstone",
+   "total_modulo": 5,
+   "dir": "m11-capstone/m11-a05-apresentacao-defesa",
+   "anterior": "Front-end Angular, validação do MCP e deploy",
+   "proxima": null,
+   "yaml": "aulas/m11-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "linkedin-networking-marca",
+   "titulo": "LinkedIn, networking e marca pessoal",
+   "tipo": "carreira",
+   "objetivos": [
+    "Otimizar perfil e rede para vagas de IA"
+   ],
+   "topicos": [
+    "m12.i001",
+    "m12.i002",
+    "m12.i003"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "id": "m12-a01",
+   "n": 1,
+   "modulo": "m12",
+   "modulo_titulo": "Carreira e Entrevistas para Engenheiros de IA Aplicada",
+   "modulo_slug": "carreira",
+   "total_modulo": 5,
+   "dir": "m12-carreira/m12-a01-linkedin-networking-marca",
+   "anterior": null,
+   "proxima": "Portfólio no GitHub e expectativas por nível",
+   "yaml": "aulas/m12-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "portfolio-e-niveis",
+   "titulo": "Portfólio no GitHub e expectativas por nível",
+   "tipo": "carreira",
+   "objetivos": [
+    "Montar um portfólio de projetos de IA",
+    "Entender o que cada nível exige"
+   ],
+   "topicos": [
+    "m12.i004",
+    "m12.i005"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 45,
+   "id": "m12-a02",
+   "n": 2,
+   "modulo": "m12",
+   "modulo_titulo": "Carreira e Entrevistas para Engenheiros de IA Aplicada",
+   "modulo_slug": "carreira",
+   "total_modulo": 5,
+   "dir": "m12-carreira/m12-a02-portfolio-e-niveis",
+   "anterior": "LinkedIn, networking e marca pessoal",
+   "proxima": "Entrevistas de RH (STAR) e proposta de valor",
+   "yaml": "aulas/m12-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "entrevistas-rh-e-salario",
+   "titulo": "Entrevistas de RH (STAR) e proposta de valor",
+   "tipo": "carreira",
+   "objetivos": [
+    "Responder com STAR",
+    "Pesquisar e justificar expectativa salarial"
+   ],
+   "topicos": [
+    "m12.i006",
+    "m12.i007"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "id": "m12-a03",
+   "n": 3,
+   "modulo": "m12",
+   "modulo_titulo": "Carreira e Entrevistas para Engenheiros de IA Aplicada",
+   "modulo_slug": "carreira",
+   "total_modulo": 5,
+   "dir": "m12-carreira/m12-a03-entrevistas-rh-e-salario",
+   "anterior": "Portfólio no GitHub e expectativas por nível",
+   "proxima": "Entrevistas técnicas: live coding, system design e perguntas de IA",
+   "yaml": "aulas/m12-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "entrevistas-tecnicas-ia",
+   "titulo": "Entrevistas técnicas: live coding, system design e perguntas de IA",
+   "tipo": "carreira",
+   "objetivos": [
+    "Praticar live coding pensando em voz alta",
+    "Desenhar um sistema de IA na entrevista"
+   ],
+   "topicos": [
+    "m12.i008",
+    "m12.i009",
+    "m12.i010",
+    "m12.i011"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "id": "m12-a04",
+   "n": 4,
+   "modulo": "m12",
+   "modulo_titulo": "Carreira e Entrevistas para Engenheiros de IA Aplicada",
+   "modulo_slug": "carreira",
+   "total_modulo": 5,
+   "dir": "m12-carreira/m12-a04-entrevistas-tecnicas-ia",
+   "anterior": "Entrevistas de RH (STAR) e proposta de valor",
+   "proxima": "Negociação, promoção e diferenciação",
+   "yaml": "aulas/m12-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "negociacao-e-diferenciacao",
+   "titulo": "Negociação, promoção e diferenciação",
+   "tipo": "carreira",
+   "objetivos": [
+    "Negociar ofertas e pedir promoção com dados"
+   ],
+   "topicos": [
+    "m12.i012",
+    "m12.i013",
+    "m12.i014"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "id": "m12-a05",
+   "n": 5,
+   "modulo": "m12",
+   "modulo_titulo": "Carreira e Entrevistas para Engenheiros de IA Aplicada",
+   "modulo_slug": "carreira",
+   "total_modulo": 5,
+   "dir": "m12-carreira/m12-a05-negociacao-e-diferenciacao",
+   "anterior": "Entrevistas técnicas: live coding, system design e perguntas de IA",
+   "proxima": null,
+   "yaml": "aulas/m12-a05.yaml",
+   "extra": true
+  }
+ ]
+}

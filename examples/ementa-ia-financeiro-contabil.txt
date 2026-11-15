@@ -1,0 +1,257 @@
+Ementa IA para Financeiro e Contábil
+
+Público: profissionais e gestores de contabilidade, controladoria, FP&A, tesouraria, fiscal/tributário, contas a pagar e a receber, faturamento comercial e auditoria interna do Grupo Rede Amazônica (grupo de mídia e TV no Norte do Brasil). Não é um curso de formação de programadores. Pré-requisito: uso de Excel ou Google Sheets na rotina. Quem já trabalha com dados avança nos módulos 9 e 12 sem deixar o restante do grupo para trás.
+
+Carga horária total sugerida: 104 horas, em 13 módulos, além do tempo de prática com bases fictícias ou anonimizadas da própria área. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar a área financeira e contábil a usar inteligência artificial com método — para conciliar, analisar, auditar, prever e relatar —, mantendo o julgamento profissional, a rastreabilidade de cada número e a proteção dos dados da empresa, e montando pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários.
+
+Princípios que valem para todos os módulos:
+- A IA auxilia; a responsabilidade técnica e a assinatura continuam humanas (contador responsável, controller, diretoria).
+- Nenhum número vai para demonstração, relatório à diretoria, obrigação acessória ou fisco sem conferência na origem (ERP, extrato, nota, livro).
+- Conta e soma se fazem em planilha, banco de dados ou código; o modelo de linguagem não é calculadora confiável.
+- Não se envia a ferramenta não aprovada pela empresa: dado pessoal de empregado, cliente ou fornecedor, folha, senha, certificado digital, extrato bancário identificado, informação estratégica não divulgada.
+- Norma tributária e contábil citada pela IA é pista, não fonte: conferir no texto oficial vigente (Receita Federal, CFC/NBC, CPC, legislação estadual e municipal).
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências comparadas estão em comparacao-ementa-ia-financeiro-contabil.md.
+
+1 - Fundamentos de IA e limites na área financeira (6 horas)
+   ● O que a área precisa entender sobre IA
+         ○ Diferença entre automação tradicional (RPA, regras, macros), aprendizado de máquina, IA generativa e agentes
+         ○ O que um modelo de linguagem faz de fato: prever texto provável, não consultar o razão nem "saber" a legislação vigente
+         ○ Por que a resposta soa segura mesmo quando o número ou a norma estão errados (alucinação)
+         ○ Ferramentas que geram texto versus ferramentas que calculam, consultam bases ou extraem dados
+         ○ Multimodalidade útil ao financeiro: PDF de nota, imagem de recibo, planilha, áudio de reunião
+
+   ● Onde a IA ajuda e onde não se pode confiar
+         ○ Onde costuma ajudar: leitura de documentos longos, extração preliminar, classificação, redação de relatório, explicação de variações, rascunho de política
+         ○ Onde não se confia sem validação: cálculo, saldo, alíquota, prazo legal, enquadramento tributário, interpretação de norma, conclusão de auditoria
+         ○ Atividades automatizáveis, apoiáveis e dependentes de julgamento profissional
+         ○ Definir o problema (o que resolver, com qual prazo, qual risco) antes de escolher a ferramenta
+
+   ● Riscos que o financeiro precisa nomear desde o primeiro dia
+         ○ Alucinação de números, normas e prazos
+         ○ Viés de confirmação: aceitar a explicação que confirma o que já se esperava
+         ○ Confidencialidade e informação privilegiada; dados pessoais (LGPD)
+         ○ Responsabilidade profissional: o Código de Ética do contador vale igual para trabalho feito com IA
+
+2 - Uso comparado de Gemini Enterprise, Claude, ChatGPT e Grok (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios: tipo de tarefa, leitura de arquivos longos, planilhas, citação de fonte, integração com o que a empresa já usa, custo, limites, retenção e uso dos dados
+         ○ Teste lado a lado com o mesmo pacote fictício (balancete, extrato, contrato, notas) e registro de acertos, erros e invenções
+         ○ Conta corporativa contratada versus conta pessoal gratuita: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam; a comparação é um método, não um ranking permanente
+
+   ● Gemini Enterprise e o ecossistema Google (ferramenta que a empresa está contratando)
+         ○ O que a documentação oficial do Google Cloud descreve sobre segurança do Gemini Enterprise: criptografia, controles de acesso, políticas de proteção de dados sensíveis e opções administrativas — conferir o que foi habilitado no contrato da empresa
+         ○ Integração com Google Workspace (Gmail, Drive, Documentos, Planilhas) conforme permissões e administração
+         ○ Gemini nas Planilhas e NotebookLM para perguntas sobre um conjunto delimitado de documentos (políticas, contratos, manuais)
+         ○ Agentes e conectores do Gemini Enterprise: o que a área pode pedir à TI e com que governança
+
+   ● Claude (Anthropic)
+         ○ Uso frequente para leitura e análise de documentos longos; conferir a janela de contexto vigente na documentação oficial da Anthropic
+         ○ Projetos para reunir políticas, plano de contas e modelos de relatório
+         ○ Limite: documento longo lido não dispensa conferir cifras e cláusulas na origem
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral; análise de arquivos e planilhas conforme o plano contratado
+         ○ GPTs personalizados para tarefas repetidas (ex.: rascunho de nota explicativa a partir de modelo da casa)
+         ○ Limite: resultado de cálculo dentro do chat deve ser refeito ou conferido em planilha
+
+   ● Grok (xAI)
+         ○ Disponível em produtos da xAI e no X; a documentação da xAI descreve busca em posts do X
+         ○ Uso possível no financeiro: acompanhar o que circula publicamente sobre mercado, anunciantes ou fornecedores, sempre conferindo a fonte original
+         ○ Limite: post em rede social não é dado contábil nem fonte oficial de indicador econômico
+
+3 - Prompts com método para finanças e contabilidade (8 horas)
+   ● Anatomia de um prompt profissional
+         ○ Contexto, objetivo, dados, critérios e formato de resposta
+         ○ Pedir saída em tabela ou CSV com colunas de origem (documento, página, conta), valor e grau de certeza
+         ○ Obrigar o modelo a dizer o que não encontrou e a não inventar norma, artigo ou valor
+         ○ Exemplos de entrada e de saída esperada (poucos e bons)
+         ○ Iterar: testar, achar o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para a rotina da área
+         ○ Explicar variações de DRE e orçamento (realizado x orçado) a partir de tabela já calculada
+         ○ Resumir contratos de fornecedores, anunciantes e direitos (vigência, valores, reajuste, multa, garantias)
+         ○ Redigir e revisar e-mails, comunicados de cobrança, notas explicativas e apresentações à diretoria
+         ○ Pedir contrapontos e hipóteses alternativas para um resultado inesperado
+         ○ Validação e revisão sistemática das respostas antes de usar
+
+   ● Biblioteca de prompts da área
+         ○ Modelos por função: contabilidade, fiscal, tesouraria, FP&A, contas a receber, auditoria interna
+         ○ Versionar e compartilhar com exemplo de entrada e de saída revisada
+         ○ Registrar o que a IA fez em cada entrega para manter a trilha de auditoria
+
+4 - Conciliações, documentos fiscais e rotinas contábeis (10 horas)
+   ● Conciliação com método
+         ○ Conciliação bancária: casar extrato e razão por data, valor e histórico em planilha ou código; IA só para sugerir pares de difícil correspondência e redigir pendências
+         ○ Conciliação de cartões, adquirentes e contas a receber de anunciantes
+         ○ Conciliação intercompany entre empresas do grupo
+         ○ Relatório de pendências com responsável, prazo e evidência
+
+   ● Notas fiscais e documentos
+         ○ Extrair dados de NF-e e NFS-e preferencialmente do XML (estruturado) em vez do PDF; IA para documentos não padronizados, recibos e contratos
+         ○ Conferência de CNPJ, valores, impostos destacados, retenções e datas contra o pedido e o contrato
+         ○ Classificação contábil sugerida com base no plano de contas da casa, com aprovação humana
+         ○ Faturamento de mídia: conferir pedido de inserção, comprovação de veiculação, nota e recebimento
+
+   ● Fechamento contábil
+         ○ Checklist de fechamento e acompanhamento de pendências
+         ○ Rascunho de lançamentos recorrentes e de provisões a partir de memória de cálculo humana
+         ○ Análise de contas (composição de saldos) e explicação de saldos anormais
+         ○ Notas explicativas: rascunho a partir dos números fechados e do modelo da casa, revisão do contador responsável
+
+5 - Tributário: SPED, obrigações e reforma tributária (8 horas)
+   ● Obrigações e escrituração
+         ○ Visão geral do SPED (EFD ICMS/IPI, EFD-Contribuições, ECD, ECF, EFD-Reinf) e onde a IA pode apoiar: leitura de leiautes, explicação de registros, checagem de consistência entre arquivos
+         ○ Validações determinísticas em código ou no validador oficial; IA para explicar o erro e sugerir onde investigar
+         ○ Cruzamentos entre escrituração fiscal, contábil e documentos emitidos
+         ○ Tributos sobre serviços de comunicação e publicidade (ISS, ICMS-comunicação quando aplicável, retenções) — sempre conferindo a legislação vigente do município e do estado
+
+   ● Reforma tributária do consumo
+         ○ O que é a reforma (Emenda Constitucional 132/2023 e leis complementares que a regulamentam): CBS, IBS, Imposto Seletivo e período de transição — conferir sempre o texto e o cronograma oficiais vigentes
+         ○ Uso da IA para estudar a norma: resumos ancorados no texto oficial carregado no assistente, com citação do artigo
+         ○ Simulações de impacto em planilha (preço, margem, crédito) com premissas explícitas; IA para redigir a explicação, não para calcular
+         ○ Riscos: norma em mudança, regulamentações pendentes e respostas do modelo baseadas em versões antigas
+
+   ● Pesquisa tributária com cuidado
+         ○ Pedir sempre a fonte (lei, IN, solução de consulta) e conferir no site oficial
+         ○ Nunca usar parecer gerado por IA como opinião legal sem revisão do tributarista responsável
+         ○ Registro das consultas e das conclusões para a trilha de auditoria
+
+6 - Auditoria, controles internos e detecção de fraudes (8 horas)
+   ● Testes com dados completos
+         ○ Testes em 100% da população com planilha ou código: duplicidades de pagamento, fornecedor sem cadastro, CNPJ inativo, pagamento em fim de semana, valores redondos, fracionamento abaixo de alçada
+         ○ Lei de Benford, outliers e séries fora do padrão como sinais, não como prova
+         ○ Cruzamento de cadastro de fornecedores com empregados (endereço, conta bancária) com cuidado de LGPD
+         ○ IA para explicar padrões, priorizar casos e redigir o relatório — a seleção do caso suspeito é regra auditável
+
+   ● Controles e evidências
+         ○ Segregação de funções, alçadas e trilhas de aprovação revisadas com apoio de IA
+         ○ Leitura de políticas e procedimentos para achar lacunas de controle
+         ○ Papéis de trabalho: o que a IA pode rascunhar e o que exige evidência original
+         ○ Red flags versus conclusão: como relatar o que se sabe, o que foi perguntado e o que ainda não se pode afirmar
+
+   ● Riscos da própria IA no controle interno
+         ○ Uso de IA em controles chave exige documentação, teste e responsável
+         ○ Mudança de modelo ou de prompt pode mudar o resultado; versionar
+         ○ Fraude com IA: documentos, notas e comprovantes falsificados, voz e e-mail sintéticos em golpes de pagamento — procedimentos de confirmação por canal independente
+
+7 - Relatórios gerenciais e comunicação com a diretoria (6 horas)
+   ● Do número à mensagem
+         ○ DRE gerencial, fluxo de caixa, indicadores (margem, EBITDA, liquidez, endividamento, prazo médio) calculados na planilha ou no BI; IA para redigir o comentário
+         ○ Explicação de variações com causa provável e evidência, separando fato de hipótese
+         ○ Resumo executivo de uma página e apresentação para diretoria e conselho
+         ○ Linguagem clara para quem não é da área (comercial, jornalismo, operações)
+
+   ● Qualidade e responsabilidade
+         ○ Revisão de cada número citado no texto contra a tabela de origem
+         ○ Não deixar a IA "suavizar" ou "dramatizar" resultados
+         ○ Versão, data-base e responsável em todo relatório
+
+8 - Orçamento, FP&A e previsão de caixa (8 horas)
+   ● Previsão com cuidado
+         ○ Diferença entre projeção, cenário, meta e previsão estatística
+         ○ Previsão de caixa: recebimentos de anunciantes, sazonalidade da publicidade (datas comerciais, eleições, eventos esportivos), pagamentos fixos e variáveis
+         ○ Modelos simples primeiro (média móvel, sazonalidade, regressão) em planilha ou código; IA para montar premissas e redigir cenários
+         ○ Intervalo de incerteza e premissas explícitas em todo número projetado
+
+   ● Orçamento e acompanhamento
+         ○ Orçamento base zero, rolling forecast e revisão de premissas com apoio de IA
+         ○ Análise realizado x orçado por centro de custo e por emissora/praça
+         ○ Precificação e rentabilidade de produtos de mídia com dados reais, não estimados pela IA
+         ○ Cuidados: correlação não é causalidade; mudança de série histórica; eventos únicos
+
+9 - Dados, planilhas e BI com IA (8 horas)
+   ● Organizar antes de perguntar
+         ○ Bases limpas: chaves, datas, plano de contas, centros de custo, cadastro único de clientes e fornecedores
+         ○ Gemini nas Planilhas e assistentes de análise: pedir fórmula, tabela dinâmica e gráfico, e conferir o resultado
+         ○ Perguntas em linguagem natural a bases e painéis (BI): o que é seguro e o que precisa de validação
+         ○ Exportações do ERP e integrações: o que pedir à TI
+
+   ● Métodos e armadilhas
+         ○ Overfitting, amostra pequena e conclusões precipitadas
+         ○ Painel bonito com dado errado: rastreabilidade do indicador até a origem
+         ○ Documentação do cálculo de cada indicador
+
+10 - Ética, LGPD, segurança da informação e governança de IA (8 horas)
+   ● Ética profissional
+         ○ Código de Ética Profissional do Contador e responsabilidade técnica no trabalho feito com IA
+         ○ Independência e ceticismo profissional quando a IA "concorda" com a gestão
+         ○ Transparência interna: declarar o uso de IA em entregas relevantes
+
+   ● LGPD e segurança
+         ○ Dados pessoais na área financeira: folha, cadastros, dados bancários, inadimplentes
+         ○ Minimização e anonimização antes de usar IA; base legal e finalidade
+         ○ O que nunca enviar a ferramenta não aprovada: certificado digital, senhas, tokens bancários, extratos identificados, resultados não divulgados
+         ○ Golpes e engenharia social com IA: falso e-mail de diretor, voz sintética pedindo transferência, boleto adulterado — dupla confirmação de pagamentos
+
+   ● Governança de IA na área
+         ○ Política de uso: ferramentas aprovadas, usos permitidos e proibidos, revisão obrigatória, registro
+         ○ Inventário de usos de IA e de automações que afetam números
+         ○ Propriedade intelectual e confidencialidade de contratos e informações de terceiros
+         ○ Exercício: rascunho de política de IA para o financeiro da Rede Amazônica, para revisão da diretoria
+
+11 - Agentes e automação do fluxo financeiro (6 horas)
+   ● Do assistente avulso ao processo
+         ○ Mapa do processo atual (compras a pagar, pedido a receber, fechamento) e pontos de atrito
+         ○ Onde agentes ajudam: triagem de documentos, coleta de pendências, rascunho de cobrança, preparação de pacote de fechamento
+         ○ Human in the loop: aprovação humana antes de pagar, lançar, emitir ou enviar ao fisco
+         ○ Agentes no Gemini Enterprise e assistentes personalizados (Gems, GPTs, Projetos do Claude): instruções, acervo e teste
+
+   ● Operação e medição
+         ○ Indicadores: tempo de fechamento, retrabalho, erros evitados, erros introduzidos
+         ○ Documentação do fluxo para outro colega repetir
+         ○ O que nunca sai no automático: pagamento, lançamento definitivo, entrega de obrigação, comunicação externa
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline é uma sequência de etapas reexecutáveis com entrada, saída e regra clara
+         ○ Etapas determinísticas em código, sem LLM: ler extrato e XML, limpar, somar, conciliar, aplicar regras, validar CNPJ e datas, gerar planilha
+         ○ O modelo entra só onde há linguagem ou julgamento: classificar histórico ambíguo, resumir contrato, redigir comentário de variação
+         ○ Comparar na mesma tarefa o caminho "tudo no chat" e o pipeline: custo em tokens, tempo, erro, capacidade de repetir e auditar
+         ○ Cache e reexecução por etapa; configuração em YAML; registro de tokens e custo por etapa
+         ○ Trava humana antes de qualquer número ir para relatório, lançamento ou fisco
+
+   ● Python para quem não é programador
+         ○ Notebooks no navegador (Jupyter ou Google Colab) para ver o resultado linha a linha
+         ○ Pedir o código à IA com problema, formato de entrada e de saída; recusar código que ninguém consegue explicar
+         ○ Rodar, ler o erro, devolver o erro à IA, conferir numa amostra — a pessoa é responsável pelo que o script faz
+         ○ Nunca colar senha, chave de API, certificado ou dado pessoal no notebook ou no chat
+         ○ Quando chamar a TI ou quem já trabalha com dados
+
+   ● Caso real e pipelines da área
+         ○ O pipeline interno de criação de aulas da Rede Amazônica (aula-ra) como exemplo de método: legendas do YouTube, roteiro escrito pelo modelo a partir de trechos relevantes, narração sintética, trechos com crédito, página HTML e vídeo — cada etapa com script, cache e ponto de parada
+         ○ No teste das aulas de amostra, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só trechos relevantes e reaproveitar o cache (estimativa por tokenizer, não medição de API)
+         ○ Pipeline de conciliação bancária: ler extrato (OFX/CSV) e razão, casar por regra, LLM só para sugerir pares restantes e redigir pendências
+         ○ Pipeline de notas fiscais: ler XML, validar CNPJ e impostos, cruzar com pedidos, LLM só para documentos fora do padrão
+         ○ Pipeline de relatório mensal: indicadores calculados no código, LLM só para o texto do comentário, revisão humana
+         ○ Exercício: desenhar em YAML as etapas de um pipeline da área marcando onde o LLM entra, onde não entra e onde há revisão
+
+   ● Skills, agentes e GitHub com segurança
+         ○ Skill: pacote reutilizável de instruções (e às vezes scripts) que um agente segue numa tarefa
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com arquivo SKILL.md (metadados em YAML com nome e descrição, e instruções em Markdown)
+         ○ Como avaliar skills e repositórios no GitHub: licença, manutenção recente, questões abertas, estrelas como sinal fraco, README e testes
+         ○ Segurança: não rodar código sem ler; não colocar dado da empresa em repositório alheio; desconfiar de pedido de permissão ampla
+         ○ Reutilizar e versionar as skills da própria área (conciliação, notas, relatório), com registro de mudanças
+
+13 - Projeto final — aplicação no financeiro da Rede Amazônica (10 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou dupla) escolhe um caminho ligado a um processo real, usando dados fictícios ou anonimizados:
+         ○ Caminho A — Conciliação ou fechamento: fluxo com etapas, regras, pendências e evidências
+         ○ Caminho B — Fiscal: checagem de notas e escrituração, ou estudo de impacto da reforma tributária com premissas explícitas
+         ○ Caminho C — Auditoria: bateria de testes de anomalias em 100% de uma base e relatório de red flags
+         ○ Caminho D — Previsão de caixa e relatório à diretoria com cenários e incerteza
+         ○ Caminho E — Pipeline reexecutável com LLM só onde for necessário e registro de custo
+         ○ Documento de partida: problema, dados, ferramentas, riscos (LGPD, sigilo, alucinação) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas aprovadas (prioridade ao Gemini Enterprise contratado)
+         ○ Amostra conferida por humano, com registro de acertos e erros da IA
+         ○ Produto mínimo: planilha auditável, relatório, protocolo ou protótipo — não um discurso sobre IA
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à diretoria: problema, método, resultado, limite e pedido de decisão
+         ○ Critérios: utilidade, rigor de conferência, segurança de dados, clareza do método e viabilidade na rotina
+         ○ Projeto final: entrega do produto, do registro de conferência e da proposta de política ou procedimento associada

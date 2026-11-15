@@ -1,0 +1,76 @@
+aula:
+  slug: agentes-sem-codigo
+  tema: 'Criar agentes sem código: Workflow Builder (antes Agent Designer)'
+  publico: Diretores e segundos escalões da Rede Amazônica, público não técnico
+  objetivo: Entender como criar um agente sem código no Gemini Enterprise; diferença entre agente de conversa e fluxo com aprovação humana; escrever o briefing de um agente.
+saida: /workspace/aula-ra/sessao-4
+trabalho: /workspace/aula-ra/work/sessao4
+formatos:
+- 16x9
+- 9x16
+videos:
+- url: https://www.youtube.com/watch?v=yiY8soEdVUQ
+  idiomas: pt.*,en.*
+trechos:
+- id: gatilho
+  video: yiY8soEdVUQ
+  inicio: '06:11.3'
+  fim: '06:19.3'
+  cena: fluxo
+  titulo_curto: Build no-code agents
+  mostra: 'Gatilho semanal: o fluxo roda só em dias úteis'
+- id: ferramentas
+  video: yiY8soEdVUQ
+  inicio: '07:02.8'
+  fim: '07:10.3'
+  cena: passos
+  titulo_curto: Build no-code agents
+  mostra: Passo do fluxo recebe a ferramenta Google Calendar
+- id: aprovacao
+  video: yiY8soEdVUQ
+  inicio: '09:17.3'
+  fim: '09:23.2'
+  cena: aprovacao
+  titulo_curto: Build no-code agents
+  mostra: Etapa de aprovação humana antes de enviar o e-mail
+trechos_opcoes:
+  folga: 1.0
+  altura: 720
+  fundo_9x16: blur
+roteiro:
+  arquivo: roteiro.json
+  duracao_alvo: 95
+  palavras_max: 200
+  cenas: 7 a 8
+narracao:
+  voz: pt-BR-FranciscaNeural
+  velocidade: +8%
+  whisper_modelo: small
+  termos_checagem:
+  - Workflow Builder
+  - Agent Designer
+  - Gemini Enterprise
+  - agente
+  - Gmail
+marca:
+  cores:
+    fundo: '#0b1d3a'
+    fundo2: '#12305e'
+    texto: '#ffffff'
+    suave: '#b9c7e0'
+    destaque1: '#4285f4'
+    destaque2: '#34a853'
+    destaque3: '#fbbc04'
+  fonte_titulo: Poppins
+  fonte_texto: Inter
+html:
+  gsap_versao: 3.15.0
+video:
+  resolucao: landscape
+  hyperframes: 0.9.43
+  legenda_fonte: Inter
+  legenda_tamanho: 18
+video_9x16:
+  legenda_tamanho: 9
+  legenda_margem: 48
+  legenda_max_chars: 26

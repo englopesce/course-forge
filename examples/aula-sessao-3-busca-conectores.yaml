@@ -1,0 +1,81 @@
+aula:
+  slug: busca-conectores
+  tema: Busca corporativa e conectores no Gemini Enterprise
+  publico: Diretores e segundos escalões da Rede Amazônica, público não técnico
+  objetivo: 'Entender como o Gemini Enterprise busca nos sistemas da empresa via conectores; o agente só vê o que a pessoa já pode ver; ligar sistemas é decisão de TI e governança; atividade: 3 fontes da
+    verdade por área.'
+saida: /workspace/aula-ra/sessao-3
+trabalho: /workspace/aula-ra/work/sessao3
+formatos:
+- 16x9
+- 9x16
+videos:
+- url: https://www.youtube.com/watch?v=f2MrZ5DHbKg
+  idiomas: pt.*,en.*
+- url: https://www.youtube.com/watch?v=UL8rXu8qfFY
+  idiomas: pt.*,en.*
+trechos:
+- id: catalogo
+  video: f2MrZ5DHbKg
+  inicio: '04:46.3'
+  fim: '04:52.5'
+  cena: conector
+  titulo_curto: Getting Started with Connectors
+  mostra: 'Catálogo de conectores no console: Workspace, nuvem Google e terceiros'
+- id: fontes
+  video: f2MrZ5DHbKg
+  inicio: '06:49.0'
+  fim: '06:56.6'
+  cena: escolha
+  titulo_curto: Getting Started with Connectors
+  mostra: Usuário abre o ícone de conectores e liga/desliga fontes
+- id: permissao
+  video: f2MrZ5DHbKg
+  inicio: '07:16.6'
+  fim: '07:24.6'
+  cena: permissao
+  titulo_curto: Getting Started with Connectors
+  mostra: Resposta com fontes; o usuário só vê o que tem direito de ver
+trechos_opcoes:
+  folga: 1.0
+  altura: 720
+  fundo_9x16: blur
+roteiro:
+  arquivo: roteiro.json
+  duracao_alvo: 95
+  palavras_max: 200
+  cenas: 7 a 8
+narracao:
+  voz: pt-BR-FranciscaNeural
+  velocidade: +8%
+  whisper_modelo: small
+  termos_checagem:
+  - Gemini Enterprise
+  - Gemini
+  - conectores
+  - Google Drive
+  - SharePoint
+  - Gmail
+  - TI
+marca:
+  cores:
+    fundo: '#0b1d3a'
+    fundo2: '#12305e'
+    texto: '#ffffff'
+    suave: '#b9c7e0'
+    destaque1: '#4285f4'
+    destaque2: '#34a853'
+    destaque3: '#fbbc04'
+  fonte_titulo: Poppins
+  fonte_texto: Inter
+html:
+  gsap_versao: 3.15.0
+video:
+  resolucao: landscape
+  hyperframes: 0.9.43
+  legenda_fonte: Inter
+  legenda_tamanho: 18
+video_9x16:
+  legenda_tamanho: 9
+  legenda_margem: 48
+  legenda_max_chars: 26

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITULO}}</title>
+<style>
+  :root { {{ROOT_VARS}} }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body { font-family: var(--font-body); color: var(--ink);
+    background: radial-gradient(1200px 700px at 80% 0%, var(--bg2), var(--bg)); display: flex; flex-direction: column; min-height: 100vh; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 18px 4vw; color: var(--muted); font-size: 15px; gap: 16px; }
+  header b { color: var(--ink); }
+  #bar { height: 6px; background: rgba(255,255,255,.12); }
+  #bar i { display: block; height: 100%; width: 0; background: var(--a2); transition: width .4s; }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 3vh 6vw; }
+  .step { width: min(1100px, 100%); }
+  .step.com-trecho { width: min(1500px, 100%); display: grid; grid-template-columns: 1fr minmax(380px, 46%); gap: 40px; align-items: center; }
+  figure.trecho { background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.15); border-radius: 18px; padding: 14px; }
+  figure.trecho video { width: 100%; border-radius: 10px; display: block; background: #000; }
+  figure.trecho figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+  figure.trecho figcaption b { color: var(--ink); }
+  figure.trecho a { color: var(--a2); }
+  .com-trecho .fluxo { flex-direction: column; }
+  .com-trecho .card { flex: 0 0 auto; flex-direction: row; align-items: center; padding: 14px 18px; }
+  .com-trecho .seta { transform: rotate(90deg); font-size: 26px; line-height: 1; }
+  @media (max-width: 900px) { .step.com-trecho { grid-template-columns: 1fr; } }
+  .kicker { color: var(--a2); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 15px; margin-bottom: 10px; }
+  h1 { font-family: var(--font-display); font-size: clamp(30px, 4.6vw, 58px); line-height: 1.1; margin-bottom: 28px; display: flex; gap: 18px; align-items: center; }
+  h1 .ico { font-size: 1.1em; }
+  ul.lista { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  ul.lista li { display: flex; gap: 18px; align-items: center; font-size: clamp(18px, 2.3vw, 28px); background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 16px 20px; }
+  .n { flex: 0 0 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; background: var(--a1); }
+  .n.c2 { background: var(--a2); }
+  .n.c3 { background: var(--a3); color: #1b1b1b; }
+  .fluxo { display: flex; align-items: stretch; gap: 12px; flex-wrap: wrap; }
+  .card { flex: 1 1 220px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 18px; padding: 22px;
+    font-size: clamp(18px, 2vw, 26px); display: flex; flex-direction: column; gap: 14px; }
+  .card .n { align-self: flex-start; width: 44px; }
+  .seta { align-self: center; font-size: 34px; color: var(--muted); }
+  .fala { margin-top: 26px; color: var(--muted); font-size: clamp(15px, 1.6vw, 19px); line-height: 1.5; max-width: 900px; }
+  nav { display: flex; justify-content: center; align-items: center; gap: 18px; padding: 16px; }
+  button { font: inherit; font-size: 18px; font-weight: 700; padding: 12px 26px; border-radius: 999px; border: 0; cursor: pointer; background: var(--a1); color: #fff; }
+  button:disabled { opacity: .35; cursor: default; }
+  #dots { display: flex; gap: 8px; }
+  #dots span { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.25); cursor: pointer; }
+  #dots span.on { background: var(--a2); }
+  footer { padding: 12px 4vw 18px; color: var(--muted); font-size: 13px; line-height: 1.5; text-align: center; }
+  footer a { color: var(--muted); }
+  /* código (cenas com "codigo"): painel com números de linha, realce e destaques */
+  .step.com-codigo { width: min(1600px, 100%); display: grid; grid-template-columns: minmax(300px, 38%) 1fr; gap: 36px; align-items: center; }
+  .com-codigo h1 { font-size: clamp(26px, 3.2vw, 44px); }
+  .com-codigo ul.lista li { font-size: clamp(16px, 1.6vw, 22px); padding: 12px 16px; }
+  .codigo { background: #0d1424; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; overflow: hidden; box-shadow: 0 16px 50px rgba(0,0,0,.35); }
+  .codigo .arq { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; font: 600 14px/1.2 var(--font-body); color: var(--muted); background: rgba(255,255,255,.05); }
+  .codigo pre { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; margin: 0; padding: 12px 0; overflow-x: auto; font: 500 clamp(12px, 1.05vw, 16px)/1.55 "JetBrains Mono", "Fira Code", "DejaVu Sans Mono", Consolas, monospace; color: #e6edf7; }
+  .codigo .ln { display: block; padding: 0 16px 0 0; white-space: pre; transition: background .3s, opacity .3s; }
+  .codigo .ln i { display: inline-block; width: 3.2em; padding-right: 1em; text-align: right; color: #5c6a82; font-style: normal; user-select: none; }
+  .codigo.focando .ln { opacity: .38; }
+  .codigo.focando .ln.on { opacity: 1; background: rgba(251,188,4,.16); box-shadow: inset 4px 0 0 var(--a3); }
+  .destaques { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 14px 14px; }
+  .destaques button { font-size: 13px; padding: 7px 12px; background: rgba(255,255,255,.08); color: var(--ink); border: 1px solid rgba(255,255,255,.18); }
+  .destaques button.on { background: var(--a3); color: #1b1b1b; }
+  .nota { padding: 0 16px 12px; color: var(--muted); font-size: 14px; min-height: 1.4em; }
+  {{REALCE_CSS}}
+  @media (max-width: 1000px) { .step.com-codigo { grid-template-columns: 1fr; } }
+  /* exercícios */
+  #pratica { width: min(1100px, 92vw); margin: 0 auto 10px; }
+  #pratica details { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 12px 18px; }
+  #pratica summary { cursor: pointer; font-weight: 700; font-size: 17px; }
+  #pratica ol { margin: 12px 0 4px 22px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.5; }
+  #pratica code { background: rgba(0,0,0,.35); padding: 1px 6px; border-radius: 6px; font-size: .92em; }
+  #pratica .ok { color: var(--a2); font-size: 14px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div id="bar"><i></i></div>
+<header><span><b>{{TITULO}}</b> · {{SUBTITULO}}</span><span id="cont"></span></header>
+<main><section class="step" id="step" aria-live="polite"></section></main>
+<nav>
+  <button id="prev" aria-label="Passo anterior">‹ Anterior</button>
+  <div id="dots"></div>
+  <button id="next" aria-label="Próximo passo">Próximo ›</button>
+</nav>
+<section id="pratica" hidden></section>
+<footer id="credito"></footer>
+<script>/* GSAP embutido para funcionar sem internet. GSAP: https://gsap.com/standard-license */
+{{GSAP}}
+</script>
+<script>
+const AULA = {{DATA_JSON}};
+const CLIPS = {{CLIPS_JSON}};
+const CODIGO = {{CODIGO_JSON}};
+const CHECAGEM = {{CHECAGEM_JSON}};
+const AULA_CLIPS_DIR = {{CLIPS_DIR}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const N = AULA.cenas.length;
+let atual = 0;
+const f = AULA.fonte;
+// outras fontes: as do roteiro (fontes_extras) e as dos trechos, sem repetir a principal
+const extras = [];
+for (const o of [...(AULA.fontes_extras || []), ...Object.values(CLIPS)])
+  if (o.url && o.url !== f.url && !extras.some((x) => x.url === o.url)) extras.push(o);
+$("#credito").innerHTML = `Baseado no vídeo oficial “${esc(f.titulo)}”, canal ${esc(f.canal)} (YouTube): <a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.url)}</a>. ` +
+  extras.map((o) => `Também: “${esc(o.titulo)}”, canal ${esc(o.canal)}: <a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.url)}</a>. `).join("") +
+  `Texto original em português, escrito a partir da transcrição; ` +
+  (Object.keys(CLIPS).length ? `inclui ${Object.keys(CLIPS).length} trecho(s) curto(s) do vídeo original, com crédito, para treinamento interno.`
+                             : `o vídeo não foi reproduzido aqui.`);
+if ((AULA.exercicios || []).length) {
+  const cmds = Object.fromEntries((CHECAGEM.comandos || []).map((c) => [c.nome, c]));
+  const md = (t) => esc(t).replace(/`([^`]+)`/g, "<code>$1</code>");
+  $("#pratica").hidden = false;
+  $("#pratica").innerHTML = `<details><summary>🛠️ Exercícios práticos (${AULA.exercicios.length})</summary><ol>` +
+    AULA.exercicios.map((e) => `<li><b>${esc(e.titulo)}</b> — ${md(e.enunciado)}` +
+      (e.arquivo ? `<br>Arquivo: <code>exemplo/${esc(e.arquivo)}</code>` : "") +
+      (e.dica ? `<br><i>Dica:</i> ${md(e.dica)}` : "") +
+      (e.checagem && cmds[e.checagem] ? `<br><span class="ok">Conferir: <code>${esc(cmds[e.checagem].cmd)}</code> ${cmds[e.checagem].ok ? "✔ verificado na geração da aula" : ""}</span>` : "") +
+      "</li>").join("") + "</ol></details>";
+}
+$("#dots").innerHTML = AULA.cenas.map((_, i) => `<span data-i="${i}" title="Passo ${i + 1}"></span>`).join("");
+function render(i) {
+  atual = Math.max(0, Math.min(N - 1, i));
+  const c = AULA.cenas[atual];
+  let corpo;
+  if (c.layout === "fluxo") {
+    corpo = '<div class="fluxo">' + c.tela.map((t, k) =>
+      (k ? '<div class="seta anim">→</div>' : "") + `<div class="card anim"><span class="n c${k + 1}">${k + 1}</span>${esc(t)}</div>`).join("") + "</div>";
+  } else {
+    corpo = '<ul class="lista">' + c.tela.map((t, k) => `<li class="anim"><span class="n c${k + 1}">${k + 1}</span><span>${esc(t)}</span></li>`).join("") + "</ul>";
+  }
+  document.querySelectorAll("video").forEach((v) => v.pause());
+  const txt = `<div class="kicker">Passo ${atual + 1} de ${N}</div>
+    <h1 class="tit"><span class="ico">${c.icone || ""}</span><span>${esc(c.titulo)}</span></h1>${corpo}
+    <p class="fala anim">${esc(c.narracao)}</p>`;
+  const clip = c.trecho && CLIPS[c.trecho.id];
+  const cod = !clip && CODIGO[c.id];
+  const passo = $("#step");
+  passo.classList.toggle("com-trecho", !!clip);
+  passo.classList.toggle("com-codigo", !!cod);
+  if (cod) {
+    const linhas = cod.html.map((h, k) => `<span class="ln" data-n="${cod.inicio + k}"><i>${cod.inicio + k}</i>${h || " "}</span>`).join("");
+    passo.innerHTML = `<div>${txt}</div><figure class="codigo anim"><div class="arq"><span>📄 ${esc(cod.titulo)}</span><span>linhas ${cod.inicio}–${cod.fim} · exemplo/ testado</span></div>
+      <pre>${linhas}</pre>${cod.destaques.length ? '<div class="nota"></div><div class="destaques">' + cod.destaques.map((d, k) =>
+        `<button data-d="${k}">${k + 1}. ${d.de === d.ate ? "linha " + d.de : "linhas " + d.de + "–" + d.ate}</button>`).join("") + "</div>" : ""}</figure>`;
+    const fig = passo.querySelector(".codigo");
+    const foca = (k) => {
+      const d = cod.destaques[k];
+      fig.classList.add("focando");
+      fig.querySelectorAll(".ln").forEach((l) => l.classList.toggle("on", +l.dataset.n >= d.de && +l.dataset.n <= d.ate));
+      fig.querySelectorAll(".destaques button").forEach((b) => b.classList.toggle("on", +b.dataset.d === k));
+      fig.querySelector(".nota").textContent = d.nota || "";
+    };
+    fig.querySelectorAll(".destaques button").forEach((b) => (b.onclick = () => foca(+b.dataset.d)));
+    if (cod.destaques.length) setTimeout(() => { if (passo.contains(fig)) foca(0); }, 1400);
+  } else if (clip) {
+    passo.innerHTML = `<div>${txt}</div><figure class="trecho anim">
+      <video controls preload="metadata" playsinline src="${esc(AULA_CLIPS_DIR + clip.arquivo)}"></video>
+      <figcaption><b>Trecho do vídeo original</b> (${esc(clip.inicio_mmss)}–${esc(clip.fim_mmss)}), canal ${esc(clip.canal)}:
+        “${esc(clip.titulo)}”. <a href="${esc(clip.link_tempo)}" target="_blank" rel="noopener">Assistir no YouTube a partir de ${esc(clip.inicio_mmss)}</a>.
+        ${clip.vtt_text ? "Legenda em português disponível (CC)." : ""} Uso interno, educacional.</figcaption></figure>`;
+    if (clip.vtt_text) {  // legenda via Blob: funciona também em file:// (sem servidor)
+      const tr = document.createElement("track");
+      Object.assign(tr, { kind: "subtitles", srclang: "pt", label: "Português", default: true,
+        src: URL.createObjectURL(new Blob([clip.vtt_text], { type: "text/vtt" })) });
+      passo.querySelector("video").appendChild(tr);
+    }
+  } else {
+    passo.innerHTML = txt;
+  }
+  $("#prev").disabled = atual === 0;
+  $("#next").disabled = atual === N - 1;
+  $("#cont").textContent = `${atual + 1} / ${N}`;
+  $("#bar i").style.width = `${((atual + 1) / N) * 100}%`;
+  document.querySelectorAll("#dots span").forEach((d, k) => d.classList.toggle("on", k === atual));
+  history.replaceState(null, "", "#" + (atual + 1));
+  const reduz = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (window.gsap && !reduz) {
+    const tl = gsap.timeline()
+      .from(".kicker", { opacity: 0, y: -10, duration: 0.3 })
+      .from(".tit", { opacity: 0, y: 30, duration: 0.5, ease: "power3.out" }, "-=0.1")
+      .from(".anim", { opacity: 0, y: 24, duration: 0.45, stagger: 0.35, ease: "power2.out" }, "-=0.1");
+    if (document.querySelector(".codigo .ln"))  // código "digitado" linha a linha
+      tl.from(".codigo .ln", { opacity: 0, x: -12, duration: 0.25, stagger: 0.03, ease: "power1.out", clearProps: "opacity,transform" }, "-=0.3");
+  }
+}
+$("#prev").onclick = () => render(atual - 1);
+$("#next").onclick = () => render(atual + 1);
+$("#dots").onclick = (e) => { if (e.target.dataset.i) render(+e.target.dataset.i); };
+document.addEventListener("keydown", (e) => {
+  if (["ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); render(atual + 1); }
+  if (["ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); render(atual - 1); }
+});
+render((parseInt(location.hash.slice(1), 10) || 1) - 1);
+</script>
+</body>
+</html>

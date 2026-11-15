@@ -1,0 +1,77 @@
+# Sessão 2 da série aula-ra. Caminhos relativos são relativos a este arquivo.
+aula:
+  slug: deep-research-notebook
+  tema: "Agentes prontos: Deep Research e Gemini Notebook"
+  publico: "Diretores e segundos escalões da Rede Amazônica, público não técnico"
+  objetivo: "Pedir um relatório ao Deep Research (revisar o plano e checar as citações), montar um Gemini Notebook Enterprise com fontes da própria área e saber quando usar cada um. Agentes preparam, pessoas decidem."
+
+saida: /workspace/aula-ra/sessao-2
+trabalho: /workspace/aula-ra/work/sessao2
+
+# Saídas: aula.mp4 (16:9, 1920x1080) e aula-9x16.mp4 (9:16, 1080x1920)
+formatos: [16x9, 9x16]
+
+videos:
+  - url: https://www.youtube.com/watch?v=IJsp9AC-n7Q   # Google Workspace · Gemini at Work Lesson 1 (NotebookLM & Deep Research)
+    idiomas: "pt.*,en.*"
+  - url: https://www.youtube.com/watch?v=qxbcYu5yQU4   # Google Workspace · NotebookLM
+    idiomas: "pt.*,en.*"
+  - url: https://www.youtube.com/watch?v=N0Iz1feWkb0   # Conecta Nuvem (pt-BR) · NotebookLM
+    idiomas: "pt.*,en.*"
+  - url: https://www.youtube.com/watch?v=4NFtsoPg5EU   # Google Cloud · Gemini Enterprise front door
+    idiomas: "pt.*,en.*"
+
+trechos:                                       # 3 trechos curtos (8 s), todos de canais oficiais do Google
+  - id: plano
+    video: 4NFtsoPg5EU
+    inicio: "03:23"
+    fim: "03:30.5"
+    cena: plano
+    titulo_curto: "Gemini Enterprise – front door to AI"
+    mostra: "Deep Research no Gemini Enterprise: pedido digitado e o plano de pesquisa ('Research plan') para revisar"
+  - id: fontes
+    video: qxbcYu5yQU4
+    inicio: "08:18"
+    fim: "08:25"
+    cena: notebook
+    titulo_curto: "NotebookLM: Unlock instant insights"
+    mostra: "Notebook com fontes (PDF, apresentação, Google Docs); escolher em quais fontes a resposta se apoia"
+  - id: citacoes
+    video: qxbcYu5yQU4
+    inicio: "10:12.5"
+    fim: "10:20"
+    cena: citacoes
+    titulo_curto: "NotebookLM: Unlock instant insights"
+    mostra: "Resposta com citações numeradas; passar o mouse mostra de que fonte veio cada trecho"
+trechos_opcoes: {folga: 1.0, altura: 720, fundo_9x16: blur}
+
+roteiro:
+  arquivo: roteiro.json
+  duracao_alvo: 92
+  palavras_max: 185
+  cenas: "7 a 8"
+
+narracao:
+  voz: pt-BR-FranciscaNeural
+  velocidade: "+8%"
+  whisper_modelo: small
+  termos_checagem: ["Deep Research", "Notebook", "NotebookLM", "Workbench", "Gemini Enterprise", "Google Cloud", "agentes"]
+
+marca:
+  cores: {fundo: "#0b1d3a", fundo2: "#12305e", texto: "#ffffff", suave: "#b9c7e0", destaque1: "#4285f4", destaque2: "#34a853", destaque3: "#fbbc04"}
+  fonte_titulo: Poppins
+  fonte_texto: Inter
+
+html:
+  gsap_versao: "3.15.0"
+
+video:
+  resolucao: landscape
+  hyperframes: "0.9.43"
+  legenda_fonte: Inter
+  legenda_tamanho: 18
+
+video_9x16:
+  legenda_tamanho: 9
+  legenda_margem: 48
+  legenda_max_chars: 26

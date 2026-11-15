@@ -1,0 +1,106 @@
+{
+ "titulo": "Agentes de IA no Gemini Enterprise",
+ "subtitulo": "Uma aula rápida para diretores",
+ "fonte": {
+  "titulo": "How to Use Agentic AI for Business with Gemini Enterprise | Gemini at Work - Lesson 6",
+  "canal": "Google Workspace",
+  "url": "https://www.youtube.com/watch?v=uDr0xdA_E_A",
+  "publicado": "2026-04-06",
+  "titulo_curto": "Gemini at Work – Lesson 6"
+ },
+ "cenas": [
+  {
+   "id": "abertura",
+   "titulo": "Agentes de IA no Gemini Enterprise",
+   "tela": [
+    "Aula rápida para diretores",
+    "Baseada em vídeo oficial do Google Workspace"
+   ],
+   "narracao": "Esta é uma aula rápida sobre agentes de inteligência artificial no Gemini Enterprise, baseada em um vídeo oficial do Google Workspace.",
+   "icone": "🎓"
+  },
+  {
+   "id": "agente",
+   "titulo": "O que é um agente?",
+   "tela": [
+    "Entende o objetivo",
+    "Raciocina",
+    "Executa as etapas"
+   ],
+   "narracao": "Primeiro: o que é um agente? É uma inteligência artificial que entende um objetivo definido por você, raciocina e executa as etapas para chegar lá.",
+   "layout": "fluxo",
+   "icone": "🎯"
+  },
+  {
+   "id": "cerebro-contexto",
+   "titulo": "Cérebro + contexto",
+   "tela": [
+    "Cérebro: modelos do Google, como o Gemini",
+    "Contexto: e-mails, arquivos e sistemas da empresa",
+    "Só o que cada pessoa já pode acessar"
+   ],
+   "narracao": "O Gemini Enterprise é a porta de entrada da IA no trabalho. O cérebro são os modelos do Google. O contexto são os dados da empresa: e-mails, arquivos e sistemas como Google Drive, OneDrive e ServiceNow, dentro do que cada pessoa já pode acessar.",
+   "icone": "🧠"
+  },
+  {
+   "id": "analogia",
+   "titulo": "Uma analogia",
+   "tela": [
+    "Um assistente novo e brilhante...",
+    "...que já conhece a casa",
+    "sabe onde estão os documentos e quais são as regras"
+   ],
+   "narracao": "Pense num assistente brilhante que já conhece a casa: sabe onde estão os documentos, quais são os prazos e quais são as regras.",
+   "icone": "🧑‍💼"
+  },
+  {
+   "id": "tres-fontes",
+   "titulo": "De onde vêm os agentes",
+   "tela": [
+    "Prontos do Google (ex.: Deep Research)",
+    "Da empresa ou de parceiros",
+    "Do próprio funcionário, no Workbench, sem programar"
+   ],
+   "narracao": "Os agentes vêm de três fontes: prontos, do Google, como o Deep Research; criados pela empresa ou por parceiros; e criados pelo próprio funcionário, no Workbench, sem escrever código.",
+   "icone": "🧩"
+  },
+  {
+   "id": "exemplo",
+   "titulo": "Exemplo do vídeo: escala de uma loja",
+   "tela": [
+    "Pedido: “monte a escala da equipe”",
+    "Usa disponibilidade e regras de RH",
+    "Dois por turno, com reservas"
+   ],
+   "narracao": "No exemplo do vídeo, um varejista pede apenas: monte a escala da equipe. O agente cria a tabela de turnos com duas pessoas por turno e reservas, porque conhece a disponibilidade dos funcionários e as regras de RH.",
+   "layout": "fluxo",
+   "icone": "🗓️"
+  },
+  {
+   "id": "governanca",
+   "titulo": "Governança",
+   "tela": [
+    "Uma plataforma central para todos os agentes",
+    "Camadas de segurança",
+    "Dados protegidos enquanto o uso cresce"
+   ],
+   "narracao": "Por fim, a governança: os agentes ficam numa plataforma central, com camadas de segurança, para que o uso da IA cresça sem expor os dados da empresa.",
+   "icone": "🔐"
+  },
+  {
+   "id": "lembrar",
+   "titulo": "Para o diretor lembrar",
+   "tela": [
+    "Agente = objetivo + dados + ação",
+    "Comece por uma tarefa repetitiva",
+    "Governança desde o primeiro dia"
+   ],
+   "narracao": "Para lembrar: um agente junta objetivo, dados e ação. Comece por uma tarefa repetitiva da sua área e trate a governança desde o primeiro dia.",
+   "icone": "📌"
+  }
+ ],
+ "pronuncia": {
+  "Gemini": "Dgémini",
+  "ServiceNow": "Sérvis Nau"
+ }
+}

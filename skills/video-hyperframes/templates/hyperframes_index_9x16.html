@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <!-- Versão vertical 9:16 (1080x1920). Layout próprio: ícone grande, título e itens empilhados;
+         faixa de baixo (≈ y 1380–1920) reservada às legendas gravadas. Trechos: MP4 já reenquadrado (FIT, fundo
+         desfocado, crédito na área livre) ocupando a tela toda. -->
+    <script src="gsap.min.js"></script>
+    <style>
+      :root { {{ROOT_VARS}} }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 100%; height: 100%; font-family: var(--font-body); color: var(--ink);
+        background: radial-gradient(900px 1100px at 85% 8%, var(--ground2), var(--ground)); }
+      .clip { position: absolute; inset: 0; }
+      .scene { padding: 250px 84px 560px 84px; display: flex; flex-direction: column; justify-content: center; }
+      .icon { font-size: 120px; line-height: 1; margin-bottom: 30px; }
+      .kicker { font-family: var(--font-display); color: var(--accent); font-size: 32px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px; }
+      .title { font-family: var(--font-display); font-size: 78px; font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 52px; }
+      .bullets { list-style: none; display: flex; flex-direction: column; gap: 30px; }
+      .bullet { display: flex; align-items: center; gap: 26px; font-size: 44px; line-height: 1.2; color: var(--ink);
+        background: rgba(255,255,255,.06); border-radius: 22px; padding: 22px 26px; }
+      .num { flex: 0 0 68px; height: 68px; border-radius: 50%; background: var(--accent2); display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-display); font-weight: 700; font-size: 34px; }
+      .bullet:nth-child(2) .num { background: var(--accent); }
+      .bullet:nth-child(3) .num { background: var(--warn); color: #1b1b1b; }
+      #progress { position: absolute; left: 0; top: 0; height: 12px; width: 1080px; background: var(--accent); transform-origin: 0 50%; z-index: 9; }
+      #credit { position: absolute; left: 84px; right: 84px; top: 70px; font-size: 26px; color: var(--muted); line-height: 1.35; }
+      .trecho-video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000; z-index: 5; }
+      .trecho-tag { position: absolute; left: 0; right: 0; top: 300px; text-align: center; font-size: 40px; font-weight: 700; color: var(--accent); font-family: var(--font-display); z-index: 6; }
+      .endcredit { margin-top: 44px; font-size: 27px; color: var(--muted); line-height: 1.4; border-left: 6px solid var(--accent2); padding-left: 22px; }
+      .endcredit.compacto { margin-top: 34px; font-size: 22px; line-height: 1.35; }
+      /* cena com código (etapa codigo): título, itens curtos e painel empilhados */
+      .cena-codigo { padding: 230px 84px 560px 84px; justify-content: flex-start; }
+      .cena-codigo .title { font-size: 58px; margin-bottom: 26px; }
+      .cena-codigo .bullets { gap: 14px; margin-bottom: 28px; }
+      .cena-codigo .bullet { font-size: 32px; padding: 14px 20px; gap: 18px; }
+      .cena-codigo .num { flex: 0 0 50px; height: 50px; font-size: 26px; }
+      .codepanel { background: #0d1424; border: 1px solid rgba(255,255,255,.14); border-radius: 20px; overflow: hidden; }
+      .codepanel .arq { display: flex; justify-content: space-between; padding: 12px 18px; font-size: 22px; color: var(--muted); background: rgba(255,255,255,.05); }
+      .codepanel pre { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; margin: 0; padding: 12px 0; font-family: "JetBrains Mono", "DejaVu Sans Mono", "Liberation Mono", monospace; line-height: 1.5; color: #e6edf7; }
+      .codepanel .ln { display: block; white-space: pre; padding-right: 12px; }
+      .codepanel .ln i { display: inline-block; width: 3.2em; padding-right: 1em; text-align: right; color: #5c6a82; font-style: normal; }
+      .codepanel .notas { position: relative; height: 92px; }
+      .codepanel .nota { position: absolute; left: 18px; right: 18px; top: 8px; font-size: 26px; line-height: 1.3; color: var(--warn); opacity: 0; }
+      .tk-kw{color:#c792ea}.tk-str{color:#c3e88d}.tk-com{color:#7f8ca3;font-style:italic}.tk-num{color:#f78c6c}
+      .tk-fn{color:#82aaff}.tk-typ{color:#ffcb6b}.tk-key{color:#89ddff}.tk-punct{color:#a6accd}
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{TOTAL}}" data-width="1080" data-height="1920">
+      <div id="progress"></div>
+      <div id="credit">{{CREDIT_SHORT}}</div>
+{{SCENES}}
+      <audio id="vo" src="assets/narracao.wav" data-start="0" data-duration="{{TOTAL}}" data-volume="1"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: {{TOTAL}}, ease: "none" }, 0);
+{{TWEENS}}
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

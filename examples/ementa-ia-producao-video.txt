@@ -1,0 +1,241 @@
+Ementa IA para Produção de Vídeo de Entretenimento, Animação e Publicidade
+
+Público: produtores, editores, diretores de arte, animadores e profissionais de criação publicitária do Grupo Rede Amazônica (televisão, rádio e internet, com sede em Manaus e atuação no Norte do Brasil). Não é um curso de formação de programadores. Pré-requisito: rotina de produção audiovisual, animação, motion graphics ou criação publicitária.
+
+Carga horária total sugerida: 104 horas, em 13 módulos, além do tempo de prática com material fictício ou anonimizado da própria área. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar a produção de vídeo de entretenimento, animação e publicidade a usar inteligência artificial com método — em roteiro e pré-produção, geração de imagem e vídeo, animação e motion graphics, edição e pós, áudio, dublagem e voz, variações de peças e entrega para TV aberta e digital —, com rotulagem de conteúdo sintético, respeito ao CONAR, direitos de imagem, voz e autoria, contratos com talentos e regras do TSE em período eleitoral, e com pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários.
+
+Princípios que valem para todos os módulos:
+- Conteúdo sintético (imagem, voz, vídeo, animação) é rotulado conforme a política da casa e as regras aplicáveis; pessoa real nunca é simulada sem autorização expressa e contrato.
+- Peça publicitária segue o Código e os Guias do CONAR; o guia de influenciadores atualizado em 2026 trata de IA. O IAB Brasil publicou o Guia de Uso da Inteligência Artificial na Publicidade Digital — Edição 2026.
+- Direitos de imagem, voz, interpretação e obras de terceiros (música, artes, marcas) são verificados antes da veiculação; o contrato com talentos cobre o uso de IA sobre a performance.
+- Em período eleitoral, conteúdo sintético segue as resoluções do TSE vigentes; deepfake é vedado na propaganda eleitoral (Resolução TSE n. 23.732/2024).
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências comparadas estão em comparacao-ementa-ia-producao-video.md.
+
+1 - Fundamentos de IA e limites na produção de vídeo, animação e publicidade (6 horas)
+   ● O que a área precisa entender sobre IA
+         ○ Diferença entre automação tradicional (regras, macros, RPA), aprendizado de máquina, IA generativa e agentes
+         ○ O que um modelo de linguagem faz de fato: prever texto provável, não consultar uma base oficial nem "saber" o fato vigente
+         ○ Por que a resposta soa segura mesmo quando está errada (alucinação)
+         ○ Ferramentas que geram texto versus ferramentas que buscam, calculam ou extraem dados
+         ○ Multimodalidade útil à produção: imagem, vídeo, áudio, storyboard, legendas e versões 16:9 e 9:16
+
+   ● Onde a IA ajuda e onde não se pode confiar
+         ○ Onde costuma ajudar: roteiro e storyboard, moodboard, variações de peças, geração de imagem e vídeo, animação e motion, legendas, voz e trilha, versões por formato
+         ○ Onde não se confia sem validação: direitos sobre imagem, voz, música e obras, continuidade e fidelidade a pessoa real, alegações publicitárias, especificações de entrega para TV e qualquer número de orçamento sem fonte
+         ○ Atividades automatizáveis, apoiáveis e dependentes de julgamento profissional
+         ○ Definir o problema (o que resolver, com qual prazo, qual risco) antes de escolher a ferramenta
+
+   ● Riscos que a área precisa nomear desde o primeiro dia
+         ○ Deepfake e voz ou rosto sintéticos sem rótulo ou autorização
+         ○ Direitos de imagem, voz, música, artes e marca
+         ○ Alegações enganosas e testemunhais artificiais (CONAR)
+         ○ Dados pessoais de elenco, clientes e público (LGPD)
+
+2 - Uso comparado de Gemini Enterprise, Claude, ChatGPT e Grok (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios: tipo de tarefa, leitura de arquivos longos, citação de fonte, integração com o que a empresa já usa, custo, limites, retenção e uso dos dados
+         ○ Teste lado a lado com o mesmo pacote fictício da área (briefing publicitário fictício, roteiro curto, storyboard e especificação de entrega 16:9 e 9:16) e registro de acertos, erros e invenções
+         ○ Conta corporativa contratada versus conta pessoal gratuita: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam; a comparação é um método, não um ranking permanente
+
+   ● Gemini Enterprise e o ecossistema Google (ferramenta que a empresa está contratando)
+         ○ O que a documentação oficial do Google Cloud descreve sobre segurança do Gemini Enterprise: criptografia, controles de acesso, proteção de dados sensíveis e opções administrativas — conferir o que foi habilitado no contrato da empresa
+         ○ Integração com Google Workspace (Gmail, Drive, Documentos, Planilhas) conforme permissões e administração
+         ○ NotebookLM para perguntas sobre um conjunto delimitado de documentos (manual de marca, tom de voz, roteiros e storyboards aprovados, guias do CONAR e especificações técnicas de entrega)
+         ○ Agentes e conectores do Gemini Enterprise: o que a área pode pedir à TI e com que governança
+
+   ● Claude (Anthropic)
+         ○ Uso frequente para leitura e análise de documentos longos; conferir a janela de contexto vigente na documentação oficial da Anthropic
+         ○ Projetos para reunir políticas, modelos e acervo de referência da área
+         ○ Limite: documento longo lido não dispensa conferir trecho, número e citação na origem
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral; análise de arquivos conforme o plano contratado
+         ○ GPTs personalizados para tarefas repetidas da área, a partir de modelos da casa
+         ○ Limite: o que sai do chat é rascunho até ser conferido
+
+   ● Grok (xAI)
+         ○ Disponível em produtos da xAI e no X; a documentação da xAI descreve busca em posts do X
+         ○ Uso possível na produção: acompanhar referências visuais e conversa pública no X sobre formatos e campanhas, conferindo a fonte original e os direitos de uso
+         ○ Limite: post em rede social não é fonte oficial; conferir sempre a origem
+
+3 - Prompts com método para a produção de vídeo, animação e publicidade (8 horas)
+   ● Anatomia de um prompt profissional
+         ○ Contexto, objetivo, dados, critérios e formato de resposta
+         ○ Pedir saída em tabela com coluna de origem (documento, página, trecho) e grau de certeza
+         ○ Obrigar o modelo a dizer o que não encontrou e a não inventar direito, depoimento, pessoa real, especificações de entrega ou número de orçamento
+         ○ Exemplos de entrada e de saída esperada (poucos e bons)
+         ○ Iterar: testar, achar o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para a rotina da área
+         ○ Roteiro curto e decupagem a partir de briefing aprovado
+         ○ Storyboard e lista de planos com continuidade
+         ○ Prompts de imagem e de vídeo com enquadramento, luz, movimento e duração
+         ○ Variações de peça em 16:9 e 9:16 com rótulo
+         ○ Legendas, locução e notas de trilha a partir de roteiro aprovado
+
+   ● Biblioteca de prompts da área
+         ○ Modelos por função: roteiro, direção de arte, animação, edição, áudio, criação publicitária, produção
+         ○ Versionar e compartilhar com exemplo de entrada e de saída revisada
+         ○ Registrar o que a IA fez em cada entrega para manter rastreabilidade
+
+4 - Roteiro, pré-produção e storyboard com IA (8 horas)
+   ● Do briefing ao roteiro
+         ○ Briefing, público, duração, canal (TV aberta, digital, publicidade) e o que não pode ser inventado
+         ○ IA para ideação, sinopse, estrutura de cenas e rascunho de diálogos a partir de fatos e restrições aprovadas
+         ○ Decupagem, lista de planos e necessidades de produção (elenco, locação, arte, áudio)
+         ○ O roteiro só segue depois de revisão humana; nada de fala atribuída a pessoa real sem autorização
+
+   ● Storyboard, moodboard e previs
+         ○ Moodboard e referências visuais com curadoria: estilo, luz, enquadramento e o que deve permanecer entre planos
+         ○ Storyboard e previs com IA para testar ritmo e continuidade antes de filmar ou gerar
+         ○ Limite: frame gerado não é garantia de direito de uso nem de fidelidade a talento, marca ou locação real
+
+5 - Geração de vídeo e imagem com IA — limites e conferência (10 horas)
+   ● Ferramentas e método
+         ○ Panorama de ferramentas de imagem e de vídeo (exemplos a conferir na documentação oficial vigente: Veo, Sora, Runway, Kling, Midjourney, Imagen e Nano Banana, entre outras que a empresa autorizar)
+         ○ Texto para imagem, imagem para vídeo, vídeo para vídeo: quando cada caminho serve e quando ainda vale filmar
+         ○ Prompts de direção: ação, duração, enquadramento, movimento de câmera, luz, continuidade de personagem e cenário
+         ○ Capacidades, limites, créditos e preços mudam; a comparação é um método, não um ranking permanente
+
+   ● Limites, direitos e conferência
+         ○ O que costuma falhar: continuidade, mãos, texto na imagem, deformações, duração e fidelidade a pessoa ou produto reais
+         ○ Teste econômico antes da finalização; registrar o que foi gerado, o prompt, a ferramenta e a versão aprovada
+         ○ Direitos de treinamento, licença de uso comercial e política da casa: o arquivo gerado não sai sem essa checagem
+         ○ Nada de clonar rosto ou voz de pessoa real sem contrato; conteúdo sintético segue a política de rotulagem
+
+6 - Animação 2D/3D e motion graphics com IA (8 horas)
+   ● Animação e personagem
+         ○ Onde a IA costuma ajudar: previs, testes de movimento, in-betweens, rotoscopia, variação de ciclo e referência de acting
+         ○ Personagem e estilo consistentes ao longo da sequência; revisão de anatomia, timing e continuidade
+         ○ 3D e produção virtual: a IA pode apoiar rascunho de modelo, textura ou rig, mas a entrega passa por ferramenta e padrão da casa
+         ○ Limite: performance de ator ou animador não é substituída por modelo sem autorização e direção
+
+   ● Motion graphics e identidade
+         ○ Vinhetas, terceiras, lower thirds, chamadas e pacotes de programa com manual de marca como instrução
+         ○ IA para variações e animatics; composição, tipografia e ritmo com revisão de direção de arte
+         ○ Integração com o fluxo já usado na casa (edição, composição e entrega), sem abandonar o controle de versão
+
+7 - Edição, pós, cor, áudio, dublagem e trilha (8 horas)
+   ● Edição, cor e acabamento
+         ○ IA na montagem: transcrição, detecção de cortes, limpeza de plano e apoio à seleção de takes — a decisão de corte é humana
+         ○ Cor e acabamento: o que a IA pode sugerir e o que precisa conferir em monitor e no padrão de entrega
+         ○ Automação determinística com ffmpeg e Python: transcodificação, legendas, versões 16:9 e 9:16, slates e checagem de duração e loudness, sem LLM nesses passos
+         ○ HyperFrames e pipelines internos (aula-ra) como exemplo de renderização de vídeo narrado com etapas reexecutáveis e cache
+
+   ● Áudio, dublagem, voz sintética e trilha
+         ○ Locução e voz sintética só com rotulagem e, se for voz de pessoa real, com autorização e contrato
+         ○ Dublagem e sincronização labial: limites éticos e trabalhistas; a IA não substitui acordo com o talento
+         ○ Trilha e efeitos: licença da música e da biblioteca; o que for gerado também precisa de checagem de direitos
+         ○ Busca e avaliação segura de skills e repositórios no GitHub (licença, manutenção, testes; não rodar código sem ler) — o método completo está no módulo 12
+
+8 - Publicidade: variações, formatos, testes e conformidade (8 horas)
+   ● Variações, formatos e testes
+         ○ Da peça-mãe às versões: 16:9 para TV e YouTube, 9:16 para stories e reels, e outros formatos da campanha
+         ○ Variações de texto, quadro e duração com a mesma identidade; o que muda e o que não pode mudar (alegação, oferta, marca)
+         ○ Testes A/B com amostra, hipótese e métrica definidos antes; a IA não inventa vencedor nem causa
+         ○ Calendário de entrega e aprovação humana antes de veicular ou enviar ao cliente
+
+   ● Conformidade, rotulagem e contratos
+         ○ CONAR: Código e guias; o guia de influenciadores atualizado em 2026 trata de IA, testemunhais genuínos e influenciadores virtuais
+         ○ IAB Brasil: Guia de Uso da IA na Publicidade Digital — Edição 2026 como leitura complementar de criação, produção e conformidade
+         ○ Rotulagem de conteúdo sintético conforme política da casa, plataformas e regras específicas (incluindo período eleitoral)
+         ○ Direito autoral, de imagem e de voz; contratos com talentos cobrindo uso de IA
+         ○ Regra do TSE em período eleitoral: rotulagem e vedação de deepfake na propaganda eleitoral (Resolução n. 23.732/2024)
+
+9 - Fluxo de produção, orçamento e pipeline de entrega para TV aberta e digital (6 horas)
+   ● Fluxo e orçamento
+         ○ Mapa do fluxo atual (briefing, aprovação, produção, pós, entrega) e onde a IA reduz retrabalho sem pular a conferência
+         ○ Orçamento e prazo com números da fonte: créditos de ferramenta, retrabalho, horas de revisão e o que ainda precisa ser filmado
+         ○ Quando a IA barateia um teste e quando sai mais caro do que filmar ou animar no método já dominado
+         ○ Documentar o fluxo para outro colega repetir, com pontos de parada humana
+
+   ● Entrega para TV aberta e digital
+         ○ Especificações da casa e das plataformas: formato, duração, proporção, legendas, áudio e metadados — conferir o padrão vigente, não memorizar uma ficha eterna
+         ○ Checklist de entrega: versão aprovada, rótulo de IA quando couber, autorizações, legendas e arquivos mestres
+         ○ Versões 16:9 e 9:16 no mesmo pacote, com correspondência de conteúdo e de direitos
+         ○ Exercício: montar um pacote de entrega fictício para um VT ou peça, com checklist auditável
+
+10 - Ética, LGPD, segurança da informação e governança de IA (8 horas)
+   ● Ética, publicidade e rotulagem
+         ○ CONAR: veracidade, identificação publicitária, testemunhais genuínos; uso de IA no guia de influenciadores atualizado em 2026
+         ○ IAB Brasil: Guia de Uso da Inteligência Artificial na Publicidade Digital — Edição 2026, e o Manual de Conformidade e Boas Práticas sobre IA, como leitura complementar
+         ○ Rotulagem de conteúdo sintético e política da casa; o CONAR não institui, no guia de 2026, um dever geral de informar o uso de IA em toda peça, mas outras regras (TSE, contrato, política da casa, plataformas) podem exigir o rótulo
+         ○ Período eleitoral: Resolução TSE n. 23.610/2019 com a redação da Resolução n. 23.732/2024 (rotulagem e vedação de deepfake na propaganda eleitoral)
+
+   ● Direitos, contratos e LGPD
+         ○ Imagem, voz e interpretação de talentos: autorização expressa e contrato cobrindo uso de IA (clonagem de voz, dublagem, extensão de performance, variação de plano)
+         ○ Música, artes, marcas e obras de terceiros: licença verificada antes da veiculação; o que o modelo gera não dispensa a checagem de direitos
+         ○ Dados pessoais de elenco, figurantes, clientes e público só em ferramenta aprovada (LGPD)
+         ○ O que nunca enviar a ferramenta não aprovada: rushes com pessoas identificáveis, contratos, estratégias e peças ainda não públicas
+
+   ● Governança de IA na produção
+         ○ Política de uso, rotulagem e aprovação antes de veicular ou enviar ao cliente ou à programação
+         ○ Registro das peças que usaram IA, das autorizações e das versões aprovadas
+         ○ Exercício: rascunho de política de IA, rotulagem e contratos com talentos para a produção da Rede Amazônica
+
+11 - Agentes e automação do fluxo de produção audiovisual (6 horas)
+   ● Do assistente avulso ao processo
+         ○ Mapa do processo atual (briefing, roteiro, storyboard, produção, pós, aprovação, entrega para TV e digital) e pontos de atrito
+         ○ Onde agentes ajudam: rascunho de roteiro e storyboard, variações de peças, legendas, versões por formato, checklist de entrega
+         ○ Human in the loop: aprovação humana antes de veicular, publicar ou enviar ao cliente ou à programação
+         ○ Agentes no Gemini Enterprise e assistentes personalizados (Gems, GPTs, Projetos do Claude): instruções, acervo e teste
+
+   ● Operação e medição
+         ○ Indicadores: tempo, retrabalho, erros evitados, erros introduzidos
+         ○ Documentação do fluxo para outro colega repetir
+         ○ O que nunca sai no automático: veiculação, uso de imagem ou voz de pessoa real, alegação publicitária e peça em período eleitoral
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline é uma sequência de etapas reexecutáveis com entrada, saída e regra clara
+         ○ Etapas determinísticas em código, sem LLM: transcodificar e gerar versões 16:9 e 9:16 e legendas com ffmpeg, aplicar rótulo e slates por regra, checar duração, loudness e metadados, consolidar orçamento e checklist de entrega
+         ○ O modelo entra só onde há linguagem ou julgamento: redigir roteiro e variações, descrever planos e prompts visuais, resumir notas de revisão
+         ○ Comparar na mesma tarefa o caminho "tudo no chat" e o pipeline: custo em tokens, tempo, erro, capacidade de repetir e auditar
+         ○ Cache e reexecução por etapa; configuração em YAML; registro de tokens e custo por etapa
+         ○ Trava humana antes de qualquer resultado sair da área
+
+   ● Python para quem não é programador
+         ○ Notebooks no navegador (Jupyter ou Google Colab) para ver o resultado linha a linha
+         ○ Pedir o código à IA com problema, formato de entrada e de saída; recusar código que ninguém consegue explicar
+         ○ Rodar, ler o erro, devolver o erro à IA, conferir numa amostra — a pessoa é responsável pelo que o script faz
+         ○ Nunca colar senha, chave de API ou dado pessoal no notebook ou no chat
+         ○ Quando chamar a TI ou quem já trabalha com dados
+
+   ● Caso real e pipelines da área
+         ○ O pipeline interno de criação de aulas da Rede Amazônica (aula-ra) como exemplo de método: legendas do YouTube, roteiro escrito pelo modelo a partir de trechos relevantes, narração sintética, trechos com crédito, página HTML e vídeo 16:9 e 9:16 — cada etapa com script, cache e ponto de parada
+         ○ No teste das aulas de amostra, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só trechos relevantes e reaproveitar o cache (estimativa por tokenizer, não medição de API)
+         ○ Pipeline de versões de entrega: corte aprovado, legendas, 16:9 e 9:16 com ffmpeg, rótulo de IA por regra, LLM só para títulos e descrições
+         ○ Pipeline de aula ou VT narrado (aula-ra / HyperFrames): legendas, roteiro pelo modelo só a partir de trechos relevantes, narração sintética rotulada, trechos com crédito, página e vídeo — cada etapa com script, cache e ponto de parada
+         ○ Pipeline de variações publicitárias: peças-base aprovadas versionadas por regra de formato; LLM só para textos alternativos, com revisão humana antes do teste A/B
+         ○ Exercício: desenhar em YAML as etapas de um pipeline da área marcando onde o LLM entra, onde não entra e onde há revisão
+
+   ● Skills, agentes e GitHub com segurança
+         ○ Skill: pacote reutilizável de instruções (e às vezes scripts) que um agente segue numa tarefa
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com arquivo SKILL.md (metadados em YAML com nome e descrição, e instruções em Markdown)
+         ○ Como avaliar skills e repositórios no GitHub: licença, manutenção recente, questões abertas, estrelas como sinal fraco, README e testes
+         ○ Segurança: não rodar código sem ler; não colocar dado da empresa em repositório alheio; desconfiar de pedido de permissão ampla
+         ○ Reutilizar e versionar as skills da própria área, com registro de mudanças
+
+13 - Projeto final — aplicação na produção de vídeo da Rede Amazônica (10 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou dupla) escolhe um caminho ligado a um processo real, usando dados fictícios ou anonimizados:
+         ○ Caminho A — Roteiro, storyboard e pré-produção de um curto ou VT com conferência humana
+         ○ Caminho B — Peça publicitária com variações 16:9 e 9:16, rotulagem e checklist CONAR/TSE
+         ○ Caminho C — Sequência de animação ou motion graphics com IA e revisão de continuidade
+         ○ Caminho D — Pacote de pós: edição, cor, áudio e voz sintética rotulada, com entrega para TV e digital
+         ○ Caminho E — Pipeline reexecutável com LLM só onde for necessário e registro de custo
+         ○ Documento de partida: problema, dados, ferramentas, riscos (LGPD, sigilo, alucinação, direitos) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas aprovadas (prioridade ao Gemini Enterprise contratado)
+         ○ Amostra conferida por humano, com registro de acertos e erros da IA
+         ○ Produto mínimo: roteiro e storyboard, peça, sequência, pacote de entrega ou pipeline auditável — não um discurso sobre IA
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à diretoria: problema, método, resultado, limite e pedido de decisão
+         ○ Critérios: utilidade, rigor de conferência, segurança de dados, clareza do método e viabilidade na rotina
+         ○ Projeto final: entrega do produto, do registro de conferência e da proposta de política ou procedimento associada

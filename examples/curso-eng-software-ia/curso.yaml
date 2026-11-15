@@ -1,0 +1,37 @@
+# Config de curso (curso-a-partir-de-ementa). Caminhos relativos a este arquivo.
+curso:
+  titulo: Engenharia de Software em IA Aplicada
+  ementa: ../ementa-eng-software-ia.txt
+  objetivo: Formar programadores para construir, integrar e operar software com IA generativa.
+  publico: Programadores (back-end, front-end, full-stack) que já trabalham com JavaScript/TypeScript ou Python
+  nivel: intermediário — sabe programar, usar git, npm e APIs HTTP; pouca ou nenhuma experiência com IA
+  tom: técnico e direto, de dev para dev; mostra o código real e o porquê de cada decisão
+  linguagem: frases curtas; termos técnicos em inglês mantidos (API, prompt, token) e explicados na primeira vez
+saida: .
+skills_dir: /workspace/aula-ra/skills   # cópia de trabalho versionada (igual à instalada após sync_skills.sh)
+estrutura:
+  aulas_por_modulo: 3 a 12
+  duracao_video_s: 90 a 150
+  cobertura: erro          # erro | aviso — item da ementa sem aula
+  regras:
+    - Exemplos de código em TypeScript/JavaScript quando a ementa não disser outra linguagem.
+padrao_aula:               # base de todos os aula.yaml (deep merge; listas substituem)
+  marca:
+    cores: {fundo: '#0b1d3a', fundo2: '#12305e', texto: '#ffffff', suave: '#b9c7e0', destaque1: '#4285f4', destaque2: '#34a853', destaque3: '#fbbc04'}
+    fonte_titulo: Poppins
+    fonte_texto: Inter
+  formatos: [16x9, 9x16]
+  roteiro:
+    cenas: 6 a 7
+    estrutura: problema/gancho → conceito → como funciona por dentro → exemplo concreto → armadilhas comuns → próximos passos
+    fechamento: Na prática
+  narracao: {voz: pt-BR-FranciscaNeural, rate: "-5%", pausa_frase_ms: 400, pausa_paragrafo_ms: 700, pausa_cena_ms: 950, whisper_modelo: small, termos_ingles: {modo: ingles_mesma_voz}}  # v1.3.0; termos: ingles_mesma_voz, só Francisca -5% (decisão do Carlos, 2026-11-14; a emenda en-US foi recusada): mais lento e com pausas (feedback do Carlos)
+  trechos_opcoes: {folga: 1.0, altura: 720, fundo_9x16: blur}
+  html: {gsap_versao: 3.15.0}
+  video: {resolucao: landscape, hyperframes: 0.9.43, legenda_fonte: Inter, legenda_tamanho: 18}
+  video_9x16: {legenda_tamanho: 9, legenda_margem: 48, legenda_max_chars: 26}
+por_tipo:                  # sobreposto ao padrao_aula conforme o tipo da aula
+  codigo:
+    roteiro:
+      cenas: 6 a 8
+      estrutura: o que vamos construir → estrutura do projeto → código passo a passo (cenas com codigo) → rodar e testar → erros comuns → exercício

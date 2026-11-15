@@ -1,0 +1,360 @@
+Ementa IA para Jornalismo
+
+Público: jornalistas, editores, chefes de reportagem e analistas de audiência da Rede Amazônica (TV e plataformas digitais no Norte do Brasil). Não é um curso de formação de programadores. Parte das rotinas de apuração, edição e escuta do público; quem já trabalha com dados avança nos módulos 6 a 8 e no módulo de pipelines sem deixar o restante do grupo para trás. O módulo de pipelines ensina o suficiente para desenhar etapas em código, pedir trechos à IA, rodar e conferir — não para formar engenheiros de software.
+
+Carga horária total sugerida: 106 horas, em 13 módulos, além do tempo de prática nas próprias pautas da redação. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar a redação a usar inteligência artificial com método jornalístico — para apurar, escutar o público, monitorar diários oficiais, cruzar dados públicos, verificar conteúdo, montar pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários, e decidir com responsabilidade editorial.
+
+Princípios que valem para todos os módulos:
+- A IA auxilia; a responsabilidade editorial é sempre humana.
+- Nenhum número, citação, atribuição, nexo causal ou identificação de pessoa vai ao ar ou ao digital sem checagem independente.
+- Não se envia à nuvem o que comprometa fonte em risco, sigilo profissional ou dados pessoais desnecessários (LGPD).
+- Comentários e posts em redes não são amostra representativa da opinião pública.
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências de cursos comparados e o que foi incorporado a partir delas estão em comparacao-ementa-ia-jornalismo.md.
+
+1 - Fundamentos de IA e limites no jornalismo (6 horas)
+   ● O que a redação precisa entender sobre IA
+         ○ Diferença entre inteligência artificial, aprendizado de máquina e IA generativa
+         ○ O que um modelo de linguagem faz de fato: prever a continuação mais provável de um texto, não "saber" ou "apurar"
+         ○ Por que o texto sai fluente mesmo quando o conteúdo está errado (alucinação)
+         ○ Ferramentas que geram conteúdo versus ferramentas que analisam, buscam ou organizam dados (distinção útil para escolher o instrumento certo)
+         ○ Multimodalidade em termos jornalísticos: texto, imagem, áudio e vídeo como entrada e como saída
+
+   ● O que a IA já faz (e o que não faz) numa redação
+         ○ Onde costuma ajudar: transcrição, triagem, síntese, organização de acervo, extração preliminar, tradução de apoio, rascunho de estrutura
+         ○ Onde não se pode confiar sem validação humana: atribuição, números, citações, nexo causal, identificação de pessoas, "fatos" sem fonte rastreável
+         ○ Definir o problema editorial antes de escolher a ferramenta (o que a pauta precisa resolver, com qual prazo e qual risco)
+         ○ Exemplos reais de uso de IA no jornalismo, com acertos e fracassos documentados em reportagens e treinamentos de referência
+         ○ O que muda (e o que não muda) no método jornalístico: pauta, apuração, checagem, edição e publicação
+
+   ● Riscos que o jornalista precisa nomear desde o primeiro dia
+         ○ Alucinação, viés, desatualização e confiança excessiva no tom seguro da resposta
+         ○ Viés nos dados de treino e no recorte regional: o que um modelo "conhece" mal sobre a Amazônia, povos indígenas, cidades do interior e línguas locais
+         ○ Privacidade e segurança: o que não deve ser colado em ferramentas na nuvem
+         ○ Impacto na confiança do público quando o uso é opaco ou quando um erro da IA vai ao ar
+
+2 - Uso comparado de Claude, Gemini, Grok e ChatGPT (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios práticos: tipo de tarefa, qualidade da citação de fontes, multimodalidade, trabalho em equipe, custo, limite de uso, política de retenção de dados e o que a organização já contrata
+         ○ Teste lado a lado com a mesma pauta e o mesmo pacote de documentos, anotando acertos, invenções e recusas
+         ○ Velocidade não é o mesmo que precisão: como registrar os dois no teste
+         ○ Planos, contas corporativas e contas pessoais: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam com frequência; a comparação desta ementa é um método, não um ranking permanente
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral, muito presente na rotina de redações; conferir no plano contratado quais ferramentas estão ligadas (pesquisa, arquivos, voz, imagem)
+         ○ GPTs personalizados: instruções fixas, arquivos de apoio e formato de saída para tarefas repetidas da editoria
+         ○ Quando faz sentido: rascunho de estrutura, brainstorm de ângulos, apoio a tarefas gerais — sempre com revisão editorial
+         ○ Limite: não tratar a resposta como apuração pronta; conferir fontes e números fora do chat
+
+   ● Claude (Anthropic)
+         ○ Família de modelos frequentemente usada para ler e analisar documentos longos; a janela de contexto vigente deve ser conferida na documentação oficial da Anthropic
+         ○ Projetos (Projects) e espaços de trabalho para reunir o material de uma pauta ou de uma editoria
+         ○ Quando faz sentido: leitura de processos, relatórios, transcrições longas e revisão cuidadosa de texto, com checagem humana dos trechos usados
+         ○ Limite: contexto longo não dispensa a leitura jornalística nem a conferência de cifras e nomes
+
+   ● Gemini e o ecossistema Google
+         ○ Integração com serviços do Google Workspace (por exemplo Gmail, Drive e Documentos), quando a conta e a administração da organização habilitam esse acesso — conforme a documentação de suporte do Google
+         ○ NotebookLM: cadernos ancorados nos arquivos que a equipe envia, úteis para síntese, roteiros e perguntas sobre um acervo delimitado
+         ○ Pinpoint (Google News Initiative): organização, busca, OCR e transcrição em coleções grandes de documentos
+         ○ Fact Check Explorer e outras ferramentas Google de verificação, quando couberem à pauta
+         ○ Gems (assistentes personalizados), Deep Research e o risco, já documentado em treinamentos jornalísticos, de fontes fabricadas ou mal atribuídas
+         ○ Quando faz sentido: pauta que já vive no Workspace da empresa, acervos documentais e pesquisa ancorada em arquivos da própria equipe
+
+   ● Grok (xAI) e o X
+         ○ O Grok está disponível em produtos da xAI e no X; o que cada interface oferece depende do plano e da conta
+         ○ A documentação oficial da xAI descreve a ferramenta X Search: busca por palavra-chave e por significado, busca de usuários e recuperação de fios (threads) no X, com recorte por contas e por datas
+         ○ Quando faz sentido: escuta do que circula no X sobre um tema, uma pauta ou uma conta, com citação e conferência do post original
+         ○ Limite: isso não é acesso automático a todas as redes, nem substitui busca no YouTube, em comentários do site ou em grupos fechados; tendência no X não é tendência da audiência da TV
+
+   ● Outras peças do estojo, sem trocar o método
+         ○ Planilhas (incluindo o uso de Gemini ou complementos no Google Sheets) para organizar extrações em tabela ou CSV
+         ○ Quando vale um modelo ou ferramenta especializada em vez do chat genérico
+         ○ Registro simples da comparação: qual ferramenta usamos, para quê, o que conferimos e o que descartamos
+
+3 - Prompts e apuração com método (8 horas)
+   ● Anatomia de um prompt que presta para jornalismo
+         ○ Papel, tarefa, recorte, fonte obrigatória, formato da saída e o que o modelo deve admitir que não encontrou
+         ○ Pedir tabela ou CSV para ir direto à planilha, com colunas de origem, data, valor, nome e grau de certeza
+         ○ Obrigatoriedade de citar o trecho ou o documento de origem; proibir invenção de página, link, processo ou entrevista
+         ○ Exemplos poucos e bons valem mais do que um parágrafo vago: mostrar o padrão de saída desejado
+         ○ Iterar: testar, ver o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para o ciclo da pauta
+         ○ Levantamento de ângulos e perguntas a partir de um dossiê, sem aceitar "fatos" que não estejam no material
+         ○ Roteiro de entrevistas e lista de omissões do entrevistado, a partir da transcrição
+         ○ Triagem de malotes, PDFs e e-mails: o que parece pauta, o que é rotina, o que exige olho humano imediato
+         ○ Síntese de processo, relatório ou lei em linguagem clara, com trechos literais entre aspas e página ou seção
+         ○ Apoio a edição: cortes, títulos e sugestão de passagem de VT ou de texto para digital — a decisão permanece da editoria
+
+   ● Pesquisa aprofundada e acervo
+         ○ Uso responsável de modos de pesquisa longa (por exemplo Deep Research e equivalentes): tratar o relatório como ponto de partida, nunca como fonte final
+         ○ Armadilha das fontes fabricadas: conferir se o link existe, se o título bate e se o trecho está lá
+         ○ NotebookLM e Pinpoint no fluxo: subir o acervo, buscar, transcrever, extrair entidades e só então sintetizar
+         ○ RAG em linguagem de redação: ancorar a resposta nos documentos da pauta reduz, mas não elimina, o risco de erro
+         ○ Arquivos sensíveis: preferir ferramentas e contas corporativas; anonimizar ou não enviar quando houver fonte em risco
+
+   ● Biblioteca da editoria
+         ○ Modelos de prompt reutilizáveis por editoria (política, cidades, economia, meio ambiente, esportes, agronegócio)
+         ○ Versionar e compartilhar o que funcionou, com exemplo de entrada e de saída revisada
+         ○ Documentar o que a IA fez em cada etapa, para a apuração continuar auditável quando o editor perguntar
+
+4 - Análise de comentários das matérias (8 horas)
+   ● Por que escutar quem comenta — e por que desconfiar do volume
+         ○ Comentários no site, no aplicativo, no YouTube, no X e em outras redes da reportagem: o que cada canal representa
+         ○ Viés de quem comenta: ruído, campanha organizada, ironia, recorte partidário e ausência de quem não fala
+         ○ Comentário não é enquete e não autoriza frase do tipo "o público acha que"
+         ○ O que a redação pode aprender: dúvidas recorrentes, correções apontadas, temas que a matéria não cobriu, tom da recepção, sinais de assédio à equipe
+
+   ● Palavras mais faladas, temas e frequência
+         ○ Limpeza mínima do texto: repetição, spam, links, variações da mesma palavra
+         ○ Frequência, nuvem de palavras e agrupamento por tema: o que mostrar na reunião de pauta e o que não transforma em "dado científico"
+         ○ Separar menção à reportagem, menção a personagens e menção a assuntos laterais
+         ○ Recortes úteis à Rede Amazônica: municípios, rios, povos, órgãos e temas (saúde, energia, queimadas, transporte, segurança)
+         ○ Séries no tempo: o que mudou nos comentários depois de uma correção, de um segundo capítulo ou de uma coletiva
+
+   ● Sentimento, toxicidade e risco à equipe
+         ○ Classificação preliminar de tom (apoio, crítica, dúvida, ataque) com revisão humana de uma amostra
+         ○ Toxicidade, discurso de ódio, ameaça e assédio a jornalistas, entrevistados e comunidades
+         ○ Protocolo interno: o que escala para a editoria, o que vai para segurança da equipe, o que não se responde
+         ○ Armadilha de "medir sentimento" com IA: ironia, português regional e código local geram erro; a amostra revisada é obrigatória
+
+   ● Da escuta à decisão editorial
+         ○ Alertas: correção factual apontada por leitor, denúncia nova com indício, coordenação de ataque, dúvida repetida que pede FAQs ou matéria-explicação
+         ○ O que pode virar pauta, o que vira ajuste de linguagem e o que deve ser ignorado
+         ○ LGPD e ética: comentário visível não autoriza expor dado pessoal, menor de idade ou alvo de ódio em reportagem posterior sem critério
+         ○ Relato periódico para a editoria: o que foi ouvido, com que método, com que limites
+
+5 - Agência de escuta (social listening) (10 horas)
+   ● O que é uma agência de escuta numa emissora regional
+         ○ Diferença entre monitoramento de menções à marca, escuta jornalística e pesquisa de opinião
+         ○ Função: detectar temas emergentes, desinformação em circulação, demandas locais e sinais de pauta antes que virem "todo mundo está falando"
+         ○ Recorte territorial: Amazonas, Rondônia, Roraima, Acre e Amapá, com atenção a municípios do interior e a comunidades que pouco aparecem no volume nacional
+         ○ Governança: quem monitora, quem valida, quem decide se vira pauta, com que prazo e com que registro
+
+   ● Fontes e canais de escuta
+         ○ X: busca e fios com apoio do Grok e da ferramenta de busca no X, quando disponível no plano, sempre conferindo o post original
+         ○ YouTube: comentários, títulos em alta e lives de interesse regional
+         ○ Comentários das próprias matérias e programas da Rede Amazônica (ligação com o módulo 4)
+         ○ Outras redes e grupos abertos de interesse público, com respeito a termos de uso, à LGPD e ao que é espaço privado
+         ○ Sinais oficiais e de serviço: alertas de órgãos, clima, saúde e trânsito, que dialogam com a escuta nas redes — sem misturar os dois como se fossem a mesma coisa
+
+   ● Método: da palavra-chave ao alerta
+         ○ Dicionário de escuta: nomes, siglas, apelidos, topônimos, povos, rios, obras, eleições e desastres recorrentes na área de cobertura
+         ○ Consultas booleanas e variações (queimada/fogo/focos, estiagem/rio baixo, PEC/proposta)
+         ○ Separar volume, alcance aparente e confiabilidade da fonte
+         ○ Alertas com limiar: o que merece aviso imediato à chefia e o que entra no boletim do dia
+         ○ Tendência regional versus tendência nacional: como evitar que o recorte de São Paulo ou do X global apague o que importa em Porto Velho, Boa Vista, Macapá, Rio Branco ou no interior do Amazonas
+
+   ● Desinformação, campanha e ética da escuta
+         ○ Reconhecer padrão de publicação coordenada sem transformar suspeita em denúncia pronta
+         ○ Não amplificar conteúdo falso ao "rebater" sem verificação
+         ○ O que não se coleta: dado sensível de particular, conversa claramente privada, conteúdo de menor
+         ○ Boletim de escuta: fato observado, fonte, recorte, o que já foi conferido e o que ainda é hipótese
+         ○ Integração com a reunião de pauta e com a editoria de verificação
+
+6 - Diários oficiais da área de cobertura e documentos públicos (10 horas)
+   ● O mapa dos diários e por que eles importam
+         ○ O que é um diário oficial e o que costuma sair nele: leis, decretos, nomeações, licitações, contratos, homologações, prestações de contas
+         ○ Diário Oficial da União (DOU) e a consulta no portal oficial
+         ○ Diários oficiais dos estados da área de cobertura (Amazonas, Rondônia, Roraima, Acre e Amapá), nos portais oficiais de cada estado
+         ○ Diários municipais: captais e interior; a dificuldade prática dos PDFs pouco acessíveis
+         ○ Lei de Acesso à Informação (LAI) como complemento do que o diário não detalha
+
+   ● Querido Diário e ferramentas de acervo
+         ○ O projeto Querido Diário, da Open Knowledge Brasil: diários do Executivo municipal em formato aberto, com plataforma de busca e API
+         ○ Cobertura variável: nem todo município está na base; conferir a cobertura vigente na plataforma oficial antes de afirmar que "não saiu no diário"
+         ○ Busca avançada, recorte por município, palavra-chave e período; uso da API por quem tiver apoio de dados, sem exigir programação de toda a turma
+         ○ Relação com o Diário do Clima e o monitoramento de atos ambientais — relevante para a cobertura amazônica
+         ○ NotebookLM, Pinpoint e equivalentes para OCR, transcrição e busca em lotes de PDFs baixados dos portais oficiais
+
+   ● Extração com método
+         ○ O que extrair de um ato: tipo, órgão, data de publicação, vigência, nomes, cargos, CNPJ, valores, objeto, prazos e número do processo ou da licitação
+         ○ Tabelas padronizadas para contratos, licitações, nomeações, exonerações, decretos e convênios
+         ○ Atenção a valores por extenso versus numéricos, retificações posteriores e atos que revogam atos anteriores
+         ○ OCR falha em diário antigo, scan ruim e carimbo; a IA também troca dígitos — a conferência no PDF original é obrigatória
+         ○ Organização do acervo da pauta: pastas, nome de arquivo, origem e data da coleta
+
+   ● Da publicação à pauta
+         ○ Sinais de reportagem: contratação emergencial recorrente, valor atípico, nomeação de familiar já noticiado, aditivo sucessivo, dispensa de licitação, convênio com OSC pouco conhecida
+         ○ Agenda pública, discursos e legislações: onde encontrar e como processar em volume, com supervisão humana (lição também presente em formações da Abraji sobre dados públicos)
+         ○ O que é só rotina administrativa e não é notícia
+         ○ Como registrar a fonte de forma que outro colega retome a apuração
+
+7 - Inconsistências, cruzamentos e transparência (8 horas)
+   ● O que conta como inconsistência (e o que ainda não é furo)
+         ○ Divergência de valores, datas, prazos, objetos ou quantidades entre um ato e outro
+         ○ CNPJ que não confere com a razão social, empresa inexistente, empresa com CNAE incompatível ou com sócios em comum em várias contratações
+         ○ Nome de pessoa com grafias diferentes, CPF/CNPJ mascarado, cargo que não existe no organograma publicado
+         ○ Ato que cita um processo, um contrato ou uma lei que não aparece onde deveria
+         ○ Retificação silenciosa: o que mudou entre a versão original e a corrigida
+
+   ● Cruzamento com bases oficiais
+         ○ Portal da Transparência da União e portais de transparência estaduais e municipais da área de cobertura
+         ○ Consulta de CNPJ e situação cadastral em fontes oficiais da Receita Federal
+         ○ Licitações e contratos em portais de compras e em bases estaduais ou municipais, quando existirem e estiverem atualizados
+         ○ Diários, transparência e LAI: o que fazer quando uma ponta não fecha — pedir acesso, registrar o pedido e não preencher o buraco com a IA
+         ○ Tribunais de Contas e outros órgãos de controle como fonte e como contexto, sem transformar o acórdão em sentença jornalística automática
+
+   ● Papel da IA nesse cruzamento
+         ○ Uso da IA para sugerir pares a conferir, montar a planilha e apontar divergências possíveis
+         ○ Proibição explícita: a IA não "confirma" fraude, superfaturamento ou parentesco; ela aponta o que deve ser checado
+         ○ Conferência célula a célula dos valores e identificadores usados na reportagem
+         ○ Red flags versus prova: como escrever o que se sabe, o que se perguntou ao poder público e o que ainda não se pode afirmar
+         ○ Organização da apuração para o jurídico e para o direito de resposta
+
+8 - Jornalismo de dados e previsões com cuidado (8 horas)
+   ● Dados para apurar, não para enfeitar
+         ○ Pergunta jornalística primeiro, base de dados depois
+         ○ Séries temporais: o que é tendência, o que é sazonalidade, o que é ruído de um mês atípico
+         ○ Bases recorrentes na cobertura amazônica: queimadas e focos de calor, nível dos rios, saúde, educação, orçamento, segurança e eleições — sempre na fonte oficial e na documentação da metodologia
+         ○ Cruce simples em planilha antes de qualquer modelo sofisticado
+         ○ Visualização honesta: eixo, recorte, período e o que foi excluído
+
+   ● Previsão: o que a redação pode e o que não pode dizer
+         ○ Diferença entre projeção exploratória, cenário, estimativa oficial e "previsão" apresentada como fato
+         ○ Eleições: pesquisas registradas, margem de erro, o que a IA não pode inventar em intenção de voto e o risco ético de "prever resultado"
+         ○ Clima e queimadas: usar dados e alertas de fontes especializadas; não transformar um exercício de modelo caseiro em forecast no jornalismo
+         ○ Orçamento e execução: projetar ritmo de gasto é diferente de afirmar desvio
+         ○ Incerteza, intervalo e hipótese: como falar no ar e no digital sem superlativo indevido
+
+   ● Cuidados metodológicos
+         ○ Correlação não é causalidade
+         ○ Recorte geográfico e recorte temporal que mudam a conclusão
+         ○ Qualidade da base: atraso, sub-registro, mudança de metodologia, buracos em município do interior
+         ○ Quando a equipe de dados precisa entrar e quando o jornalista para e pede ajuda
+         ○ Revisão antes de publicar número: origem, data, conta, responsável pela checagem
+
+9 - Verificação, checagem e mídia sintética (8 horas)
+   ● Protocolo de checagem quando a IA entra na apuração
+         ○ Tudo que a IA entregou vira pista: conferir na fonte primária
+         ○ Números, nomes, cargos, datas, citações e links exigem dupla checagem
+         ○ Não usar a própria ferramenta que gerou o texto como única prova de que o texto está certo
+         ○ Fact-checking clássico continua valendo; a IA não substitui o método de agências e mesas de verificação
+         ○ Ferramentas de apoio (por exemplo Fact Check Explorer e bases de checagens publicadas), com leitura da peça original
+
+   ● Imagem, áudio e vídeo sintéticos
+         ○ O que são deepfake, voz clonada, imagem gerada e edição enganosa "tradicional"
+         ○ Sinais de alerta e os limites desses sinais: artefato visual não prova origem, e ausência de artefato não prova autenticidade
+         ○ Procedimentos: origem do arquivo, metadados quando existirem, busca reversa, contato com a fonte, contexto de publicação
+         ○ Conteúdo sintético em campanha e em crises (inclusive no ciclo eleitoral): velocidade da redação versus risco de amplificar o falso
+         ○ Política de uso de imagem, áudio ou vídeo gerados pela própria redação: quando é ilustração, quando é enganoso, quando precisa de selo explícito
+
+   ● Desinformação e cobertura de alto risco
+         ○ Cadeia de circulação: de onde saiu, quem impulsionou, o que já foi desmentido
+         ○ Eleições e integridade da informação: o que muda no protocolo em ano eleitoral (formação de referência no Brasil trata especificamente desse cenário)
+         ○ Como corrigir no ar e no digital quando a redação erra, inclusive se o erro teve origem em ferramenta de IA
+         ○ Colaboração com mesas de verificação e com o jornalismo de dados da casa, quando houver
+
+10 - Ética, LGPD, transparência e política editorial de IA (8 horas)
+   ● Ética jornalística aplicada à IA
+         ○ Independência, precisão, honestidade com o público e dever de minimizar dano
+         ○ Viés: como testar respostas da IA com os mesmos fatos em recortes diferentes (gênero, raça, território, afiliação política, povos indígenas)
+         ○ Não terceirizar para o modelo o juízo sobre quem é suspeito, quem é vítima e o que é de interesse público
+         ○ Crédito, citação e o risco de plágio ou de reaproveitar texto de terceiro via modelo
+         ○ Propriedade intelectual: o debate sobre uso de conteúdo jornalístico para treinar modelos e o que isso implica para o veículo e para a reportagem
+
+   ● LGPD, fontes e segurança da informação
+         ○ Base legal, minimização e finalidade: comentários, documentos, planilhas e entrevistas não entram na ferramenta "porque é mais fácil"
+         ○ Dados pessoais, dados sensíveis e dado de criança e adolescente
+         ○ Fonte em risco, off e material sob segredo de Justiça: regra padrão é não enviar à nuvem
+         ○ Contas pessoais versus contas corporativas, histórico, treino do modelo e política de retenção do provedor — ler os termos vigentes
+         ○ Segurança digital básica: phishing com tema de IA, extensões duvidosas e compartilhamento de chaves ou de acessos
+
+   ● Transparência com o público
+         ○ Quando declarar o uso de IA (apoio à apuração, geração de imagem, síntese, tradução, transcrição) e quando a menção é dispensável
+         ○ Linguagem clara, sem jargão, em TV, rádio, site e redes
+         ○ O que não se deve fazer: atribuir à IA a responsabilidade por um erro editorial
+         ○ Como responder pergunta de audiência ou de entrevistado sobre o uso de IA na reportagem
+
+   ● Política editorial de IA da casa
+         ○ Componentes mínimos: usos permitidos, usos proibidos, checagem obrigatória, proteção de fontes, transparência, responsabilidade da chefia e canal de dúvida
+         ○ Modelos e guias de referência (por exemplo formações da Abraji, do Poynter e do JournalismAI) para adaptar, não para copiar sem contexto
+         ○ Quem aprova exceções e como se registra o uso em pautas sensíveis
+         ○ Formação contínua: a política envelhece quando a ferramenta muda
+         ○ Exercício: rascunho de política aplicável à Rede Amazônica, para revisão da direção e da editoria-chefe
+
+11 - Automação, agentes e fluxo da redação (6 horas)
+   ● Do assistente avulso ao fluxo da casa
+         ○ Mapa do fluxo atual: pauta, apuração, edição, publicação, escuta e correção
+         ○ Onde a IA reduz trabalho repetitivo e onde ela cria retrabalho ou risco
+         ○ Assistentes personalizados da redação (GPTs, Gems, Projetos do Claude e equivalentes): instruções, acervo, formato de saída e teste
+         ○ Agentes e encadeamento de etapas (triagem → extração → planilha → alerta), sempre com trava humana antes de publicar ou de acusar
+         ○ O que automatizar primeiro: tarefas de alto volume e baixo risco (transcrição, recorte de diário, boletim de escuta), não a reportagem investigativa completa
+
+   ● Operação, qualidade e descoberta
+         ○ Filas, plantão e fim de semana: quem olha o alerta e com que prazo
+         ○ Indicadores simples: tempo economizado, erros evitados, erros introduzidos, pautas geradas com qualidade
+         ○ Documentação do fluxo para um colega novo conseguir repetir o método
+         ○ SEO e visibilidade em mecanismos de resposta com IA (GEO): o que a redação pode fazer para o jornalismo original ser citado com crédito, sem deixar que essa otimização guide a pauta
+         ○ Limite ético da automação de publicação: o que nunca sai no automático
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline, neste curso, é uma sequência de etapas reexecutáveis, com entrada, saída e regra claras — não um papo longo num chat
+         ○ Etapas determinísticas em código, sem LLM: coleta, limpeza, recorte de data, contagem, frequência, expressões regulares, cruzamento de planilhas e CNPJ, validação de formato
+         ○ O modelo entra só onde a tarefa é linguagem ou julgamento (classificar tema, redigir boletim, resumir um ato, sugerir ângulo) e sai de novo para o código gravar o resultado
+         ○ Comparar, na mesma pauta, o caminho "tudo no chat" e o caminho do pipeline: custo em tokens, tempo, erro, capacidade de repetir e de auditar
+         ○ Cache e reexecução por etapa: se a coleta não mudou, não se paga de novo a transcrição nem o roteiro
+         ○ Configuração em arquivo (YAML ou equivalente): vozes, pastas, limites, fontes — para não embutir decisão no meio do código ou do prompt
+         ○ Registro de tokens e de custo por etapa e no total; meta de reduzir o que o modelo lê, não só de "escrever um prompt melhor"
+         ○ Trava humana nos pontos em que o resultado vira pauta, número publicado, acusação ou conteúdo no ar
+
+   ● Python para jornalistas, sem pretender formar programador
+         ○ Por que Python aparece tanto em redação de dados: lê planilha, texto e pasta de arquivos com pouca cerimônia
+         ○ Onde rodar no começo: notebook no navegador (Jupyter ou Google Colab), para ver o resultado linha a linha
+         ○ Pedir o código à IA com o problema, o formato da entrada e o formato da saída; recusar "código mágico" que a pessoa não consegue explicar
+         ○ Rodar, ler a mensagem de erro, mandar o erro de volta, conferir o resultado numa amostra — o jornalista permanece responsável pelo que o script faz
+         ○ O que não colar no chat ou no notebook na nuvem: fonte em risco, dado pessoal desnecessário, chave de API, senha ou material sob sigilo
+         ○ Quando pedir ajuda a quem já trabalha com dados na casa, em vez de insistir sozinho
+
+   ● Caso real: o pipeline de aulas da Rede Amazônica e pipelines jornalísticos
+         ○ O pipeline interno de criação de aulas (aula-ra) como exemplo de método, não como produto a copiar inteiro: cada etapa tem script, cache e ponto de parada
+         ○ Cadeia típica: baixar só as legendas de um vídeo do YouTube; o modelo escreve o roteiro a partir de trechos relevantes (não da transcrição inteira); narração com síntese de voz (edge-tts); recorte de trechos com crédito na imagem; página HTML com animação; renderização do vídeo com HyperFrames e ffmpeg, em 16:9 e 9:16
+         ○ No teste das aulas de amostra de um curso interno, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só os trechos relevantes e ao reaproveitar o cache; o número foi estimado por tokenizer, não medido numa API de provedor
+         ○ Reexecução seletiva: refazer só a voz ou só o vídeo, sem gastar de novo o roteiro, quando a entrada não mudou
+         ○ Traduzir o mesmo método para a redação: pipeline de diários oficiais (baixar, extrair texto, filtrar por palavra e município, LLM só para classificar ou resumir o que restou, planilha para checagem)
+         ○ Pipeline de comentários: coletar, limpar, contar palavras e temas no código; LLM só para classificar uma amostra ou redigir o boletim
+         ○ Pipeline de escuta: busca e alerta no código; o modelo ajuda a redigir o resumo do que já foi filtrado, nunca a "inventar" que algo está em alta
+         ○ Exercício: desenhar no papel (depois num YAML) as etapas de um desses três pipelines, marcando onde o LLM entra, onde não entra e onde a pessoa revisa
+
+   ● Edição de vídeo automatizada, com ética e rotulagem
+         ○ O que o ffmpeg faz bem em lote: cortar, juntar, redimensionar, gravar legenda na imagem, gerar versão 16:9 e versão 9:16
+         ○ No vertical 9:16, um recorte a partir de um original 16:9 pode usar o enquadramento FIT (o quadro inteiro centralizado sobre fundo desfocado), para não cortar crédito nem informação
+         ○ Legenda automática com transcrição (por exemplo Whisper ou equivalente): sempre revisar nomes, toponímia amazônica e termos técnicos antes de publicar
+         ○ Narração sintética: quando ajuda (acessibilidade, aula interna, versão rápida) e quando exige selo, autorização e decisão editorial
+         ○ Crédito de trechos de terceiros na própria imagem (canal, título, link e tempo), em material interno ou publicado, e o limite jurídico de usar obra alheia
+         ○ O que não se automatiza: escolha do furo, montagem que altera o sentido, publicação no ar sem revisão
+         ○ Ligação com o módulo 9: vídeo gerado ou narrado por IA segue a política de transparência e de rotulagem da casa
+
+   ● Skills, agentes e busca no GitHub
+         ○ Skill, neste sentido, é um pacote reutilizável de instruções (e, às vezes, de scripts) que um agente segue numa tarefa — distinto de um "truque de prompt" solto no chat
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com um arquivo SKILL.md (metadados em YAML, com nome e descrição, e instruções em Markdown), que o agente carrega quando a tarefa combina com a descrição
+         ○ Regras de projeto em ambientes de agentes (por exemplo regras do Cursor ou arquivos equivalentes, conforme a documentação vigente da ferramenta): o que a casa quer que o assistente sempre faça ou nunca faça
+         ○ Como buscar skills e repositórios no GitHub: licença, data da última atualização, questões abertas, número de estrelas como sinal fraco (não como garantia), README e testes visíveis
+         ○ Segurança: não rodar código baixado sem ler; não colar chave nem dado da redação em repositório alheio; desconfiar de pedido de permissão ampla ou de instalação opaca
+         ○ Reutilizar, adaptar e versionar as skills da própria casa (o que deu certo nos módulos de diário, de escuta, de comentários ou de aula), com registro de mudança
+         ○ Exercício: avaliar um repositório público com uma ficha (licença, manutenção, risco, o que reaproveitar) e rascunhar o SKILL.md de uma tarefa da editoria
+
+13 - Projeto final — aplicação na Rede Amazônica (8 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou a dupla) escolhe um de três caminhos, preferencialmente ligado a uma pauta ou a um território real da cobertura:
+         ○ Caminho A — Agência de escuta: dicionário regional, canais, boletim e protocolo de alerta para um tema (por exemplo queimadas, saúde, eleições ou obra pública)
+         ○ Caminho B — Monitoramento de diários oficiais: recorte de um estado ou município, extração, cruzamento com transparência e lista de inconsistências a checar
+         ○ Caminho C — Comentários e audiência de uma série ou de um programa: método de coleta, temas, riscos e recomendações editoriais
+         ○ Caminho D — Pipeline reexecutável: diários, comentários, escuta ou recorte de vídeo, com etapas em código, LLM só onde a linguagem for necessária, registro de custo e ponto de revisão humana
+         ○ Documento de partida: problema editorial, público afetado, fontes, ferramentas, riscos (ética, LGPD, alucinação) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas escolhidas (entre Claude, Gemini, Grok, ChatGPT e o estojo complementar)
+         ○ Amostra conferida por humano, com registro do que a IA acertou e do que errou
+         ○ Produto mínimo: boletim, planilha auditável, protocolo ou protótipo de alerta — não um discurso sobre IA
+         ○ Plano de continuidade na redação: quem opera, com que frequência, com que revisão
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à editoria: problema, método, achado, limite e pedido de decisão
+         ○ Critérios: relevância jornalística, rigor da checagem, cuidado ético e de dados, clareza do método e viabilidade na rotina
+         ○ Lições a incorporar na política de IA e na biblioteca de prompts da casa
+         ○ Projeto final: entrega do produto, do registro de checagem e da proposta de política ou de protocolo associada

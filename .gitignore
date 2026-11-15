@@ -1,0 +1,25 @@
+# segredos
+.env
+.env.*
+*.pem
+*.key
+# ambientes e caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+_cache/
+_trabalho/
+work/
+frames/
+# mídia pesada (vai para Releases ou R2, nunca para o git)
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.m4a
+*.zip
+*.tar.gz
+.DS_Store

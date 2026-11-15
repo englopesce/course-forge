@@ -1,0 +1,222 @@
+Ementa IA para Comunicação Corporativa
+
+Público: profissionais e gestores de comunicação interna e externa, assessoria de imprensa, relações institucionais, eventos, ESG e produção institucional do Grupo Rede Amazônica (rádio, televisão e internet no Norte do Brasil). Não é um curso de formação de programadores. Pré-requisito: rotina de comunicação institucional.
+
+Carga horária total sugerida: 104 horas, em 13 módulos, além do tempo de prática com material fictício ou anonimizado da própria área. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar a comunicação corporativa a usar inteligência artificial com método — em comunicação interna e externa, releases e posicionamentos, crise e reputação, porta-vozes, peças institucionais para rádio, TV e internet, acessibilidade e relatórios ESG —, com rotulagem de conteúdo sintético, respeito às regras de radiodifusão, CONAR e TSE, ética contra deepfake e proteção de dados, e com pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários.
+
+Princípios que valem para todos os módulos:
+- Posicionamento oficial, nota em crise e fala de porta-voz são aprovados por pessoas com alçada; a IA prepara rascunho.
+- Voz e imagem sintéticas são rotuladas; voz ou rosto de pessoa real só com autorização expressa e contrato.
+- Nenhum fato, número ou dado ESG sai sem fonte interna verificada.
+- Em período eleitoral, conteúdo sintético segue as resoluções do TSE vigentes; deepfake é vedado na propaganda eleitoral (Resolução TSE n. 23.732/2024).
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências comparadas estão em comparacao-ementa-ia-comunicacao-corporativa.md.
+
+1 - Fundamentos de IA e limites na comunicação corporativa (6 horas)
+   ● O que a área precisa entender sobre IA
+         ○ Diferença entre automação tradicional (regras, macros, RPA), aprendizado de máquina, IA generativa e agentes
+         ○ O que um modelo de linguagem faz de fato: prever texto provável, não consultar uma base oficial nem "saber" o fato vigente
+         ○ Por que a resposta soa segura mesmo quando está errada (alucinação)
+         ○ Ferramentas que geram texto versus ferramentas que buscam, calculam ou extraem dados
+         ○ Multimodalidade útil à comunicação: áudio para spots, vídeo para VTs e chamadas, legendas, imagens, transcrição de entrevistas
+
+   ● Onde a IA ajuda e onde não se pode confiar
+         ○ Onde costuma ajudar: rascunho de releases, comunicados e roteiros, versões por canal, resumo de clipping, preparação de porta-vozes, legendas e textos de acessibilidade
+         ○ Onde não se confia sem validação: fatos e números institucionais, posicionamento em crise, dados ESG, interpretações regulatórias e qualquer fala atribuída a pessoa real
+         ○ Atividades automatizáveis, apoiáveis e dependentes de julgamento profissional
+         ○ Definir o problema (o que resolver, com qual prazo, qual risco) antes de escolher a ferramenta
+
+   ● Riscos que a área precisa nomear desde o primeiro dia
+         ○ Deepfake e voz sintética sem rótulo ou autorização
+         ○ Declaração inventada atribuída a porta-voz
+         ○ Dados pessoais de empregados e público (LGPD)
+         ○ Regras de radiodifusão, publicidade e período eleitoral
+
+2 - Uso comparado de Gemini Enterprise, Claude, ChatGPT e Grok (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios: tipo de tarefa, leitura de arquivos longos, citação de fonte, integração com o que a empresa já usa, custo, limites, retenção e uso dos dados
+         ○ Teste lado a lado com o mesmo pacote fictício da área (release fictício, nota de crise fictícia, roteiro de spot e de VT institucional) e registro de acertos, erros e invenções
+         ○ Conta corporativa contratada versus conta pessoal gratuita: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam; a comparação é um método, não um ranking permanente
+
+   ● Gemini Enterprise e o ecossistema Google (ferramenta que a empresa está contratando)
+         ○ O que a documentação oficial do Google Cloud descreve sobre segurança do Gemini Enterprise: criptografia, controles de acesso, proteção de dados sensíveis e opções administrativas — conferir o que foi habilitado no contrato da empresa
+         ○ Integração com Google Workspace (Gmail, Drive, Documentos, Planilhas) conforme permissões e administração
+         ○ NotebookLM para perguntas sobre um conjunto delimitado de documentos (manual de marca e tom de voz, posicionamentos aprovados, relatórios institucionais, políticas)
+         ○ Agentes e conectores do Gemini Enterprise: o que a área pode pedir à TI e com que governança
+
+   ● Claude (Anthropic)
+         ○ Uso frequente para leitura e análise de documentos longos; conferir a janela de contexto vigente na documentação oficial da Anthropic
+         ○ Projetos para reunir políticas, modelos e acervo de referência da área
+         ○ Limite: documento longo lido não dispensa conferir trecho, número e citação na origem
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral; análise de arquivos conforme o plano contratado
+         ○ GPTs personalizados para tarefas repetidas da área, a partir de modelos da casa
+         ○ Limite: o que sai do chat é rascunho até ser conferido
+
+   ● Grok (xAI)
+         ○ Disponível em produtos da xAI e no X; a documentação da xAI descreve busca em posts do X
+         ○ Uso possível na comunicação: escuta de menções à marca e de crises em curso no X, conferindo a fonte original
+         ○ Limite: post em rede social não é fonte oficial; conferir sempre a origem
+
+3 - Prompts com método para a comunicação corporativa (8 horas)
+   ● Anatomia de um prompt profissional
+         ○ Contexto, objetivo, dados, critérios e formato de resposta
+         ○ Pedir saída em tabela com coluna de origem (documento, página, trecho) e grau de certeza
+         ○ Obrigar o modelo a dizer o que não encontrou e a não inventar fato, número, declaração ou fonte
+         ○ Exemplos de entrada e de saída esperada (poucos e bons)
+         ○ Iterar: testar, achar o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para a rotina da área
+         ○ Release e comunicado a partir de ficha de fatos aprovada
+         ○ Posicionamento e perguntas e respostas para porta-voz
+         ○ Roteiros de spot de rádio e VT institucional
+         ○ Versões para redes, newsletter e site
+         ○ Resumo de clipping com links
+
+   ● Biblioteca de prompts da área
+         ○ Modelos por função: interna, imprensa, institucional, eventos, ESG, produção
+         ○ Versionar e compartilhar com exemplo de entrada e de saída revisada
+         ○ Registrar o que a IA fez em cada entrega para manter rastreabilidade
+
+4 - Comunicação interna e externa, releases e posicionamentos (8 horas)
+   ● Interna
+         ○ Comunicados para equipes de cinco estados e plantões
+         ○ Newsletter, intranet e murais
+         ○ Tom de voz da marca
+
+   ● Externa
+         ○ Releases a partir de ficha de fatos aprovada
+         ○ Posicionamentos e notas
+         ○ Relacionamento com imprensa
+
+5 - Gestão de crise, reputação e escuta (10 horas)
+   ● Escuta
+         ○ Monitoramento de menções em redes e imprensa
+         ○ Classificação de tom com amostra conferida
+         ○ Sinais de alerta e escalonamento
+
+   ● Crise
+         ○ Plano de crise, notas pré-aprovadas e fluxo de aprovação
+         ○ Desinformação e deepfake sobre a marca: verificação e resposta
+         ○ Pós-crise: relatório e lições
+
+6 - Porta-vozes e media training (6 horas)
+   ● Preparação
+         ○ Mensagens-chave e perguntas difíceis simuladas com IA
+         ○ Treino de entrevista para rádio, TV e digital
+         ○ Nada de falas inventadas atribuídas a porta-vozes
+
+7 - Peças institucionais para rádio, TV e internet (10 horas)
+   ● Rádio
+         ○ Roteiros de spots e vinhetas
+         ○ Locução sintética com rotulagem e autorização
+
+   ● TV
+         ○ VTs, chamadas e legendas
+         ○ Versões 16:9 e 9:16
+
+   ● Internet
+         ○ Redes, newsletter e site
+         ○ Adaptação por plataforma
+
+8 - Acessibilidade e marca (6 horas)
+   ● Acessibilidade
+         ○ Legendas, audiodescrição e Libras: IA para rascunho, revisão humana e intérprete de Libras
+         ○ Conferir normas vigentes de acessibilidade em radiodifusão
+
+   ● Marca
+         ○ Manual de marca e tom de voz como instrução
+         ○ Consistência entre canais
+
+9 - ESG, relatórios e regras do setor (8 horas)
+   ● ESG
+         ○ Relatórios com dados verificados, sem greenwashing
+         ○ Narrativa a partir de indicadores aprovados
+
+   ● Regras
+         ○ Radiodifusão e ANATEL: consultar sempre o texto oficial vigente
+         ○ CONAR e período eleitoral (TSE): só o verificável
+
+10 - Ética, LGPD, segurança da informação e governança de IA (8 horas)
+   ● Ética, deepfake e rotulagem
+         ○ Política de rotulagem de conteúdo sintético para rádio, TV e internet
+         ○ Proibição de simular pessoa real sem autorização
+         ○ CONAR: veracidade e identificação publicitária; guia de influenciadores atualizado em 2026 com regras de IA
+         ○ TSE: rotulagem e vedação de deepfake na propaganda eleitoral (Resolução n. 23.610/2019 com redação da n. 23.732/2024)
+
+   ● LGPD e segurança
+         ○ Dados de empregados em comunicação interna
+         ○ Imagem e voz de entrevistados e participantes
+         ○ O que nunca enviar a ferramenta não aprovada: crise em curso não divulgada, dados pessoais, estratégias
+
+   ● Governança
+         ○ Política de uso de IA na comunicação
+         ○ Registro de peças com IA e aprovações
+         ○ Exercício: rascunho de política de IA e rotulagem para a comunicação da Rede Amazônica
+
+11 - Agentes e automação do fluxo de comunicação (6 horas)
+   ● Do assistente avulso ao processo
+         ○ Mapa do processo atual (pauta institucional, release, aprovação, distribuição, monitoramento, crise) e pontos de atrito
+         ○ Onde agentes ajudam: clipping, rascunhos por canal, legendas, calendário, monitoramento de menções
+         ○ Human in the loop: aprovação humana antes de publicar, enviar à imprensa ou veicular
+         ○ Agentes no Gemini Enterprise e assistentes personalizados (Gems, GPTs, Projetos do Claude): instruções, acervo e teste
+
+   ● Operação e medição
+         ○ Indicadores: tempo, retrabalho, erros evitados, erros introduzidos
+         ○ Documentação do fluxo para outro colega repetir
+         ○ O que nunca sai no automático: nota oficial, fala de porta-voz, resposta em crise e peça com voz ou imagem de pessoa real
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline é uma sequência de etapas reexecutáveis com entrada, saída e regra clara
+         ○ Etapas determinísticas em código, sem LLM: coletar clipping e menções, deduplicar, gerar legendas e versões 16:9 e 9:16 com ffmpeg, aplicar rótulo de IA por regra, montar newsletter a partir de itens aprovados
+         ○ O modelo entra só onde há linguagem ou julgamento: redigir release, resumir clipping, agrupar temas de menções, rascunhar roteiro
+         ○ Comparar na mesma tarefa o caminho "tudo no chat" e o pipeline: custo em tokens, tempo, erro, capacidade de repetir e auditar
+         ○ Cache e reexecução por etapa; configuração em YAML; registro de tokens e custo por etapa
+         ○ Trava humana antes de qualquer resultado sair da área
+
+   ● Python para quem não é programador
+         ○ Notebooks no navegador (Jupyter ou Google Colab) para ver o resultado linha a linha
+         ○ Pedir o código à IA com problema, formato de entrada e de saída; recusar código que ninguém consegue explicar
+         ○ Rodar, ler o erro, devolver o erro à IA, conferir numa amostra — a pessoa é responsável pelo que o script faz
+         ○ Nunca colar senha, chave de API ou dado pessoal no notebook ou no chat
+         ○ Quando chamar a TI ou quem já trabalha com dados
+
+   ● Caso real e pipelines da área
+         ○ O pipeline interno de criação de aulas da Rede Amazônica (aula-ra) como exemplo de método: legendas do YouTube, roteiro escrito pelo modelo a partir de trechos relevantes, narração sintética, trechos com crédito, página HTML e vídeo 16:9 e 9:16 — cada etapa com script, cache e ponto de parada
+         ○ No teste das aulas de amostra, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só trechos relevantes e reaproveitar o cache (estimativa por tokenizer, não medição de API)
+         ○ Pipeline de clipping e escuta: coleta e deduplicação no código, LLM só para resumo e classificação de tom, alerta humano
+         ○ Pipeline de peças institucionais: roteiro aprovado, narração sintética rotulada, legendas e versões 16:9/9:16 por regra — como no aula-ra
+         ○ Pipeline de newsletter interna: itens aprovados montados por regra, LLM só para títulos
+         ○ Exercício: desenhar em YAML as etapas de um pipeline da área marcando onde o LLM entra, onde não entra e onde há revisão
+
+   ● Skills, agentes e GitHub com segurança
+         ○ Skill: pacote reutilizável de instruções (e às vezes scripts) que um agente segue numa tarefa
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com arquivo SKILL.md (metadados em YAML com nome e descrição, e instruções em Markdown)
+         ○ Como avaliar skills e repositórios no GitHub: licença, manutenção recente, questões abertas, estrelas como sinal fraco, README e testes
+         ○ Segurança: não rodar código sem ler; não colocar dado da empresa em repositório alheio; desconfiar de pedido de permissão ampla
+         ○ Reutilizar e versionar as skills da própria área, com registro de mudanças
+
+13 - Projeto final — aplicação na comunicação da Rede Amazônica (10 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou dupla) escolhe um caminho ligado a um processo real, usando dados fictícios ou anonimizados:
+         ○ Caminho A — Plano de crise com escuta e notas pré-aprovadas
+         ○ Caminho B — Kit de porta-voz e media training
+         ○ Caminho C — Peça institucional para rádio, TV e internet com rotulagem e acessibilidade
+         ○ Caminho D — Relatório ESG com dados verificados
+         ○ Caminho E — Pipeline reexecutável com LLM só onde for necessário e registro de custo
+         ○ Documento de partida: problema, dados, ferramentas, riscos (LGPD, sigilo, alucinação, direitos) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas aprovadas (prioridade ao Gemini Enterprise contratado)
+         ○ Amostra conferida por humano, com registro de acertos e erros da IA
+         ○ Produto mínimo: plano, kit, peça ou pipeline auditável — não um discurso sobre IA
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à diretoria: problema, método, resultado, limite e pedido de decisão
+         ○ Critérios: utilidade, rigor de conferência, segurança de dados, clareza do método e viabilidade na rotina
+         ○ Projeto final: entrega do produto, do registro de conferência e da proposta de política ou procedimento associada

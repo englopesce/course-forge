@@ -1,0 +1,80 @@
+aula:
+  slug: casos-de-uso-90-dias
+  tema: Casos de uso por área e plano de 90 dias
+  publico: Diretores e segundos escalões da Rede Amazônica, público não técnico
+  objetivo: Escolher casos de uso por diretoria (jornalismo, comercial, RH, financeiro, jurídico, operações de TV) e montar um plano de 90 dias com um cartão de piloto por diretoria.
+saida: /workspace/aula-ra/sessao-6
+trabalho: /workspace/aula-ra/work/sessao6
+formatos:
+- 16x9
+- 9x16
+videos:
+- url: https://www.youtube.com/watch?v=WH7rGHycRn8
+  idiomas: pt.*,en.*
+- url: https://www.youtube.com/watch?v=0jipmhJdB4s
+  idiomas: pt.*,en.*
+trechos:
+- id: onboarding
+  video: WH7rGHycRn8
+  inicio: '22:47.0'
+  fim: '22:53.1'
+  cena: rh
+  titulo_curto: Workflow automation for everyone
+  mostra: Agente de integração de novos funcionários responde 'bem-vindo ao time'
+- id: contrato
+  video: WH7rGHycRn8
+  inicio: '33:53.8'
+  fim: '34:00.8'
+  cena: juridico
+  titulo_curto: Workflow automation for everyone
+  mostra: 'Triagem de contrato: perfil de risco ''baixo a moderado'''
+- id: kpis
+  video: 0jipmhJdB4s
+  inicio: '11:05.2'
+  fim: '11:10.6'
+  cena: medir
+  titulo_curto: Scaling AI adoption
+  mostra: 'Tela de conclusões: medir KPIs de negócio, não só uso'
+trechos_opcoes:
+  folga: 1.0
+  altura: 720
+  fundo_9x16: blur
+roteiro:
+  arquivo: roteiro.json
+  duracao_alvo: 95
+  palavras_max: 200
+  cenas: 7 a 8
+narracao:
+  voz: pt-BR-FranciscaNeural
+  velocidade: +8%
+  whisper_modelo: small
+  termos_checagem:
+  - Deep Research
+  - Notebook
+  - RH
+  - jurídico
+  - jornalismo
+  - comercial
+  - agentes
+marca:
+  cores:
+    fundo: '#0b1d3a'
+    fundo2: '#12305e'
+    texto: '#ffffff'
+    suave: '#b9c7e0'
+    destaque1: '#4285f4'
+    destaque2: '#34a853'
+    destaque3: '#fbbc04'
+  fonte_titulo: Poppins
+  fonte_texto: Inter
+html:
+  gsap_versao: 3.15.0
+video:
+  resolucao: landscape
+  hyperframes: 0.9.43
+  legenda_fonte: Inter
+  legenda_tamanho: 18
+video_9x16:
+  legenda_tamanho: 9
+  legenda_margem: 48
+  legenda_max_chars: 26

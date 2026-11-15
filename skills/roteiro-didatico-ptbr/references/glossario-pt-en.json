@@ -1,0 +1,10 @@
+{"_nota": "Expande a consulta (pt) da seleção de trechos para transcrições em inglês. Chave = radical pt sem acento.",
+ "atencao": ["attention"], "regra": ["rule", "rules"], "ferrament": ["tool", "tools"], "servidor": ["server"], "cliente": ["client"],
+ "modelo": ["model"], "contexto": ["context"], "janela": ["window"], "agente": ["agent", "agents"], "codigo": ["code"],
+ "teste": ["test", "testing"], "arquivo": ["file", "files"], "pesquisa": ["research", "search"], "busca": ["search"],
+ "vetor": ["vector"], "palavra": ["word", "token"], "probabilidade": ["probability"], "previs": ["predict", "prediction"],
+ "proximo": ["next"], "camada": ["layer"], "rede": ["network"], "neural": ["neural"], "treino": ["training"],
+ "seguranca": ["security", "safety"], "projeto": ["project"], "descricao": ["description"], "protocolo": ["protocol"],
+ "esquema": ["schema"], "entrada": ["input"], "saida": ["output"], "mensagem": ["message"], "memoria": ["memory"],
+ "conversa": ["conversation", "chat"], "dado": ["data"], "documento": ["document", "docs"], "custo": ["cost"],
+ "avaliac": ["evaluation", "eval"], "implant": ["deploy", "deployment"], "fluxo": ["workflow", "flow"]}

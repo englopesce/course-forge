@@ -1,0 +1,3777 @@
+{
+ "curso": {
+  "titulo": "IA para Jornalismo",
+  "ementa": "../ementa-ia-jornalismo.txt",
+  "objetivo": "Capacitar a redação a usar inteligência artificial com método jornalístico — para apurar, escutar o público, monitorar diários oficiais, cruzar dados públicos, verificar conteúdo, montar pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários, e decidir com responsabilidade editorial.",
+  "publico": "Jornalistas, editores, chefes de reportagem e analistas de audiência da Rede Amazônica (TV e plataformas digitais no Norte do Brasil). Não é um curso de formação de programadores.",
+  "nivel": "introdutório a intermediário — parte das rotinas de apuração, edição e escuta do público; quem já trabalha com dados avança nos módulos 6 a 8 e no de pipelines, sem deixar o restante do grupo para trás",
+  "tom": "claro e direto, de redação para redação; analogias do jornalismo do dia a dia; a IA auxilia, a responsabilidade editorial é sempre humana",
+  "linguagem": "frases curtas em pt-BR; termos técnicos em inglês só quando forem o nome da coisa (prompt, token, RAG) e explicados na primeira vez; preferir \"janela de contexto\", \"o agente\", \"regras\"",
+  "resumo": "Curso prático para jornalistas, editores, chefes de reportagem e analistas de audiência da Rede Amazônica usarem inteligência artificial com método jornalístico: apurar, escutar o público, monitorar diários oficiais, cruzar dados, verificar conteúdo, montar pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários, e decidir com responsabilidade editorial. Não forma programadores.",
+  "pre_requisitos": [
+   "Rotina de apuração, edição ou escuta do público numa redação (TV ou plataformas digitais)",
+   "Não é exigido saber programar; o módulo de pipelines ensina o suficiente para desenhar etapas, pedir trechos à IA, rodar e conferir"
+  ]
+ },
+ "stats": {
+  "aulas": 124,
+  "itens": 284,
+  "cobertos": 284,
+  "video_total_s": 14620
+ },
+ "aulas": [
+  {
+   "slug": "ia-ml-e-ia-generativa",
+   "titulo": "IA, aprendizado de máquina e IA generativa: o que muda para a redação",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Diferenciar inteligência artificial, aprendizado de máquina e IA generativa",
+    "Dizer, em uma frase, o que cada uma dessas ideias implica na rotina da pauta"
+   ],
+   "topicos": [
+    "m01.i002"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "what is generative AI vs machine learning newsroom"
+   ],
+   "id": "m01-a01",
+   "n": 1,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a01-ia-ml-e-ia-generativa",
+   "anterior": null,
+   "proxima": "O modelo prevê texto: fluência não é apuração",
+   "yaml": "aulas/m01-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "o-modelo-preve-texto",
+   "titulo": "O modelo prevê texto: fluência não é apuração",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar que um modelo de linguagem prevê a continuação mais provável de um texto, e não 'sabe' ou 'apura'",
+    "Relacionar a fluência da resposta com o risco de alucinação"
+   ],
+   "topicos": [
+    "m01.i003",
+    "m01.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "how language models predict next token hallucination journalism"
+   ],
+   "id": "m01-a02",
+   "n": 2,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a02-o-modelo-preve-texto",
+   "anterior": "IA, aprendizado de máquina e IA generativa: o que muda para a redação",
+   "proxima": "Gerar conteúdo não é o mesmo que analisar ou buscar dados",
+   "yaml": "aulas/m01-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "gerar-versus-analisar",
+   "titulo": "Gerar conteúdo não é o mesmo que analisar ou buscar dados",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Distinguir ferramentas que geram conteúdo das que analisam, buscam ou organizam dados",
+    "Reconhecer multimodalidade em termos jornalísticos: texto, imagem, áudio e vídeo como entrada e como saída"
+   ],
+   "topicos": [
+    "m01.i005",
+    "m01.i006"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "generative AI vs analytical tools journalism multimodal"
+   ],
+   "id": "m01-a03",
+   "n": 3,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a03-gerar-versus-analisar",
+   "anterior": "O modelo prevê texto: fluência não é apuração",
+   "proxima": "Onde a IA costuma ajudar na redação",
+   "yaml": "aulas/m01-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "onde-a-ia-ajuda",
+   "titulo": "Onde a IA costuma ajudar na redação",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Listar usos em que a IA costuma ajudar: transcrição, triagem, síntese, acervo, extração preliminar, tradução de apoio e rascunho de estrutura",
+    "Separar esses apoios de uma apuração pronta para ir ao ar"
+   ],
+   "topicos": [
+    "m01.i008"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "AI transcription research newsroom workflow Knight Center"
+   ],
+   "id": "m01-a04",
+   "n": 4,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a04-onde-a-ia-ajuda",
+   "anterior": "Gerar conteúdo não é o mesmo que analisar ou buscar dados",
+   "proxima": "Onde não se pode confiar sem validação humana",
+   "yaml": "aulas/m01-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "onde-nao-confiar",
+   "titulo": "Onde não se pode confiar sem validação humana",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Identificar o que exige validação humana: atribuição, números, citações, nexo causal, identificação de pessoas e fatos sem fonte rastreável",
+    "Aplicar a regra: nada disso vai ao ar só porque a IA afirmou"
+   ],
+   "topicos": [
+    "m01.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "AI hallucination attribution quotes journalism verification"
+   ],
+   "id": "m01-a05",
+   "n": 5,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a05-onde-nao-confiar",
+   "anterior": "Onde a IA costuma ajudar na redação",
+   "proxima": "Defina o problema editorial antes de escolher a ferramenta",
+   "yaml": "aulas/m01-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "problema-editorial-primeiro",
+   "titulo": "Defina o problema editorial antes de escolher a ferramenta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Formular o que a pauta precisa resolver, com qual prazo e qual risco, antes de abrir um chat",
+    "Justificar a escolha da ferramenta a partir do problema, não do hábito"
+   ],
+   "topicos": [
+    "m01.i010"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "define the problem before choosing AI tool newsroom"
+   ],
+   "id": "m01-a06",
+   "n": 6,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a06-problema-editorial-primeiro",
+   "anterior": "Onde não se pode confiar sem validação humana",
+   "proxima": "Acertos e fracassos documentados no uso de IA no jornalismo",
+   "yaml": "aulas/m01-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "acertos-e-fracassos",
+   "titulo": "Acertos e fracassos documentados no uso de IA no jornalismo",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Citar exemplos reais de uso de IA no jornalismo com acerto ou fracasso documentado",
+    "Extrair uma lição prática de cada caso, sem generalizar além da fonte"
+   ],
+   "topicos": [
+    "m01.i011"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "AI journalism failures case studies Reuters Institute Poynter"
+   ],
+   "id": "m01-a07",
+   "n": 7,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a07-acertos-e-fracassos",
+   "anterior": "Defina o problema editorial antes de escolher a ferramenta",
+   "proxima": "O que muda — e o que não muda — no método jornalístico",
+   "yaml": "aulas/m01-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "o-metodo-nao-muda",
+   "titulo": "O que muda — e o que não muda — no método jornalístico",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Recorrer a pauta, apuração, checagem, edição e publicação como etapas que a IA não substitui",
+    "Dizer o que pode mudar na execução de cada etapa sem abrir mão da responsabilidade editorial"
+   ],
+   "topicos": [
+    "m01.i012"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "journalism method verification editing AI assistance"
+   ],
+   "id": "m01-a08",
+   "n": 8,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a08-o-metodo-nao-muda",
+   "anterior": "Acertos e fracassos documentados no uso de IA no jornalismo",
+   "proxima": "Alucinação, viés, desatualização e o tom seguro da resposta",
+   "yaml": "aulas/m01-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "riscos-do-primeiro-dia",
+   "titulo": "Alucinação, viés, desatualização e o tom seguro da resposta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Nomear alucinação, viés, desatualização e confiança excessiva no tom seguro da resposta",
+    "Reconhecer o tom seguro como um risco, não como um sinal de acerto"
+   ],
+   "topicos": [
+    "m01.i014"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "AI overconfidence bias outdated knowledge journalism"
+   ],
+   "id": "m01-a09",
+   "n": 9,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a09-riscos-do-primeiro-dia",
+   "anterior": "O que muda — e o que não muda — no método jornalístico",
+   "proxima": "O que o modelo conhece mal sobre a Amazônia e o interior",
+   "yaml": "aulas/m01-a09.yaml",
+   "extra": true
+  },
+  {
+   "slug": "vies-sobre-a-amazonia",
+   "titulo": "O que o modelo conhece mal sobre a Amazônia e o interior",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar o viés de treino e de recorte regional: Amazônia, povos indígenas, cidades do interior e línguas locais",
+    "Adotar a conferência em fonte local como regra quando o tema for territorial ou indígena"
+   ],
+   "topicos": [
+    "m01.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "AI bias indigenous languages regional knowledge Amazon"
+   ],
+   "id": "m01-a10",
+   "n": 10,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a10-vies-sobre-a-amazonia",
+   "anterior": "Alucinação, viés, desatualização e o tom seguro da resposta",
+   "proxima": "O que não colar na nuvem — e o custo de um erro no ar",
+   "yaml": "aulas/m01-a10.yaml",
+   "extra": true
+  },
+  {
+   "slug": "privacidade-e-confianca",
+   "titulo": "O que não colar na nuvem — e o custo de um erro no ar",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Identificar o que não deve ser colado em ferramentas na nuvem (fonte em risco, sigilo, dado pessoal desnecessário)",
+    "Relacionar uso opaco ou erro da IA no ar com o impacto na confiança do público"
+   ],
+   "topicos": [
+    "m01.i016",
+    "m01.i017"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "newsroom AI privacy confidential sources audience trust"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m01-a11",
+   "n": 11,
+   "modulo": "m01",
+   "modulo_titulo": "Fundamentos de IA e limites no jornalismo",
+   "modulo_slug": "fundamentos-ia-limites",
+   "total_modulo": 11,
+   "dir": "m01-fundamentos-ia-limites/m01-a11-privacidade-e-confianca",
+   "anterior": "O que o modelo conhece mal sobre a Amazônia e o interior",
+   "proxima": null,
+   "yaml": "aulas/m01-a11.yaml",
+   "extra": true
+  },
+  {
+   "slug": "criterios-para-comparar",
+   "titulo": "Critérios para comparar assistentes sem cair em propaganda",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Listar critérios práticos: tipo de tarefa, citação de fontes, multimodalidade, trabalho em equipe, custo, limite de uso, retenção de dados e o que a casa já contrata",
+    "Montar uma ficha de comparação reutilizável pela editoria"
+   ],
+   "topicos": [
+    "m02.i002"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "comparing AI assistants newsroom criteria cost privacy"
+   ],
+   "id": "m02-a01",
+   "n": 1,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a01-criterios-para-comparar",
+   "anterior": null,
+   "proxima": "Teste lado a lado: a mesma pauta, o mesmo pacote, dois relógios",
+   "yaml": "aulas/m02-a01.yaml",
+   "extra": true
+  },
+  {
+   "slug": "teste-lado-a-lado",
+   "titulo": "Teste lado a lado: a mesma pauta, o mesmo pacote, dois relógios",
+   "tipo": "pratica",
+   "objetivos": [
+    "Rodar o mesmo pacote de documentos e a mesma pauta em mais de um assistente, anotando acertos, invenções e recusas",
+    "Registrar velocidade e precisão em separado, sem tratar uma como prova da outra"
+   ],
+   "topicos": [
+    "m02.i003",
+    "m02.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "busca_videos": [
+    "side by side LLM evaluation journalism accuracy vs speed"
+   ],
+   "pratica": "Testar a mesma pauta e o mesmo pacote de documentos em dois assistentes; anotar acertos, invenções, recusas, tempo e precisão.",
+   "id": "m02-a02",
+   "n": 2,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a02-teste-lado-a-lado",
+   "anterior": "Critérios para comparar assistentes sem cair em propaganda",
+   "proxima": "Conta da casa versus conta pessoal — e a comparação não é um ranking",
+   "yaml": "aulas/m02-a02.yaml",
+   "extra": true
+  },
+  {
+   "slug": "conta-corporativa-e-metodo",
+   "titulo": "Conta da casa versus conta pessoal — e a comparação não é um ranking",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar o que muda em sigilo, histórico e conformidade entre plano, conta corporativa e conta pessoal",
+    "Tratar a comparação como método revisável, não como ranking permanente, porque as capacidades mudam"
+   ],
+   "topicos": [
+    "m02.i005",
+    "m02.i006"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "enterprise vs personal AI accounts data retention newsroom"
+   ],
+   "id": "m02-a03",
+   "n": 3,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a03-conta-corporativa-e-metodo",
+   "anterior": "Teste lado a lado: a mesma pauta, o mesmo pacote, dois relógios",
+   "proxima": "ChatGPT: o que o plano contratado liga — e os GPTs da editoria",
+   "yaml": "aulas/m02-a03.yaml",
+   "extra": true
+  },
+  {
+   "slug": "chatgpt-plano-e-gpts",
+   "titulo": "ChatGPT: o que o plano contratado liga — e os GPTs da editoria",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Conferir, no plano contratado, quais ferramentas estão ligadas (pesquisa, arquivos, voz, imagem)",
+    "Configurar um GPT personalizado com instruções fixas, arquivos de apoio e formato de saída para uma tarefa repetida"
+   ],
+   "topicos": [
+    "m02.i008",
+    "m02.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "ChatGPT official custom GPTs instructions"
+   ],
+   "pratica": "Rascunhar as instruções de um GPT da editoria (tarefa, formato de saída e o que ele deve admitir que não encontrou).",
+   "documentacao": [
+    {
+     "titulo": "OpenAI Help Center",
+     "url": "https://help.openai.com/"
+    }
+   ],
+   "id": "m02-a04",
+   "n": 4,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a04-chatgpt-plano-e-gpts",
+   "anterior": "Conta da casa versus conta pessoal — e a comparação não é um ranking",
+   "proxima": "Quando o ChatGPT faz sentido — e o limite da apuração",
+   "yaml": "aulas/m02-a04.yaml",
+   "extra": true
+  },
+  {
+   "slug": "quando-usar-chatgpt",
+   "titulo": "Quando o ChatGPT faz sentido — e o limite da apuração",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Indicar usos cabíveis: rascunho de estrutura, brainstorm de ângulos e apoio a tarefas gerais, sempre com revisão editorial",
+    "Recusar tratar a resposta como apuração pronta; conferir fontes e números fora do chat"
+   ],
+   "topicos": [
+    "m02.i010",
+    "m02.i011"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "ChatGPT newsroom draft structure verification limits"
+   ],
+   "id": "m02-a05",
+   "n": 5,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a05-quando-usar-chatgpt",
+   "anterior": "ChatGPT: o que o plano contratado liga — e os GPTs da editoria",
+   "proxima": "Claude: documentos longos e a janela de contexto vigente",
+   "yaml": "aulas/m02-a05.yaml",
+   "extra": true
+  },
+  {
+   "slug": "claude-janela-de-contexto",
+   "titulo": "Claude: documentos longos e a janela de contexto vigente",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Explicar por que o Claude é frequentemente usado para ler documentos longos",
+    "Conferir na documentação oficial da Anthropic o tamanho vigente da janela de contexto, sem decorar um número que pode mudar"
+   ],
+   "topicos": [
+    "m02.i013"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "Anthropic Claude context window official docs"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Anthropic Docs",
+     "url": "https://docs.anthropic.com/"
+    }
+   ],
+   "id": "m02-a06",
+   "n": 6,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a06-claude-janela-de-contexto",
+   "anterior": "Quando o ChatGPT faz sentido — e o limite da apuração",
+   "proxima": "Projetos no Claude: quando usar e o que a janela longa não dispensa",
+   "yaml": "aulas/m02-a06.yaml",
+   "extra": true
+  },
+  {
+   "slug": "projetos-no-claude",
+   "titulo": "Projetos no Claude: quando usar e o que a janela longa não dispensa",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Organizar o material de uma pauta ou de uma editoria em Projetos e espaços de trabalho",
+    "Usar o Claude para leitura de processos, relatórios e transcrições longas, com checagem humana de cifras, nomes e trechos"
+   ],
+   "topicos": [
+    "m02.i014",
+    "m02.i015",
+    "m02.i016"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Claude Projects official Anthropic workspace"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Anthropic Docs",
+     "url": "https://docs.anthropic.com/"
+    }
+   ],
+   "id": "m02-a07",
+   "n": 7,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a07-projetos-no-claude",
+   "anterior": "Claude: documentos longos e a janela de contexto vigente",
+   "proxima": "Gemini, NotebookLM e Pinpoint no acervo da casa",
+   "yaml": "aulas/m02-a07.yaml",
+   "extra": true
+  },
+  {
+   "slug": "gemini-workspace-e-acervo",
+   "titulo": "Gemini, NotebookLM e Pinpoint no acervo da casa",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Descrever a integração do Gemini com o Google Workspace quando a administração da casa habilita o acesso",
+    "Distinguir NotebookLM (caderno ancorado nos arquivos enviados) de Pinpoint (organização, busca, OCR e transcrição em coleções grandes)"
+   ],
+   "topicos": [
+    "m02.i018",
+    "m02.i019",
+    "m02.i020"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 35,
+   "busca_videos": [
+    "NotebookLM official Google Pinpoint Journalist Studio"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Ajuda do Gemini (Google)",
+     "url": "https://support.google.com/gemini"
+    },
+    {
+     "titulo": "Ajuda do NotebookLM",
+     "url": "https://support.google.com/notebooklm"
+    },
+    {
+     "titulo": "Google Pinpoint (Journalist Studio)",
+     "url": "https://journaliststudio.google.com/pinpoint"
+    }
+   ],
+   "id": "m02-a08",
+   "n": 8,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a08-gemini-workspace-e-acervo",
+   "anterior": "Projetos no Claude: quando usar e o que a janela longa não dispensa",
+   "proxima": "Fact Check Explorer, Gems e o risco da pesquisa longa",
+   "yaml": "aulas/m02-a08.yaml",
+   "extra": true
+  },
+  {
+   "slug": "fact-check-gems-deep-research",
+   "titulo": "Fact Check Explorer, Gems e o risco da pesquisa longa",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Localizar o Fact Check Explorer e outras ferramentas Google de verificação quando couberem à pauta",
+    "Usar Gems e pesquisa longa (Deep Research) com o alerta, já documentado em treinamentos jornalísticos, de fontes fabricadas ou mal atribuídas"
+   ],
+   "topicos": [
+    "m02.i021",
+    "m02.i022"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Google Fact Check Explorer Deep Research fabricated sources journalism"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Google Fact Check Explorer",
+     "url": "https://toolbox.google.com/factcheck/explorer"
+    }
+   ],
+   "id": "m02-a09",
+   "n": 9,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a09-fact-check-gems-deep-research",
+   "anterior": "Gemini, NotebookLM e Pinpoint no acervo da casa",
+   "proxima": "Quando o ecossistema Google faz sentido na pauta",
+   "yaml": "aulas/m02-a09.yaml",
+   "extra": true
+  },
+  {
+   "slug": "quando-o-google-faz-sentido",
+   "titulo": "Quando o ecossistema Google faz sentido na pauta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Indicar o uso quando a pauta já vive no Workspace da empresa, em acervos documentais ou em pesquisa ancorada nos arquivos da própria equipe",
+    "Evitar escolher o Gemini só por ser o da empresa, se a tarefa não se beneficia dessa âncora"
+   ],
+   "topicos": [
+    "m02.i023"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "Gemini Workspace newsroom document grounded research"
+   ],
+   "id": "m02-a10",
+   "n": 10,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a10-quando-o-google-faz-sentido",
+   "anterior": "Fact Check Explorer, Gems e o risco da pesquisa longa",
+   "proxima": "Grok e a busca no X: escuta com conferência do post original",
+   "yaml": "aulas/m02-a10.yaml",
+   "extra": true
+  },
+  {
+   "slug": "grok-e-busca-no-x",
+   "titulo": "Grok e a busca no X: escuta com conferência do post original",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Localizar o Grok nos produtos da xAI e no X, sabendo que o que cada interface oferece depende do plano e da conta",
+    "Usar a busca no X (palavra-chave, significado, usuários e fios, com recorte de contas e datas) para escutar o que circula, citando e conferindo o post original — sem tratar tendência no X como tendência da audiência da TV"
+   ],
+   "topicos": [
+    "m02.i025",
+    "m02.i026",
+    "m02.i027",
+    "m02.i028"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "xAI Grok X Search official documentation"
+   ],
+   "documentacao": [
+    {
+     "titulo": "xAI Docs",
+     "url": "https://docs.x.ai/"
+    }
+   ],
+   "id": "m02-a11",
+   "n": 11,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a11-grok-e-busca-no-x",
+   "anterior": "Quando o ecossistema Google faz sentido na pauta",
+   "proxima": "Planilhas, ferramenta especializada e o registro da comparação",
+   "yaml": "aulas/m02-a11.yaml",
+   "extra": true
+  },
+  {
+   "slug": "planilhas-e-registro",
+   "titulo": "Planilhas, ferramenta especializada e o registro da comparação",
+   "tipo": "pratica",
+   "objetivos": [
+    "Organizar extrações em tabela ou CSV com planilhas (incluindo Gemini ou complementos no Google Sheets)",
+    "Decidir quando vale uma ferramenta especializada em vez do chat genérico e registrar o que foi usado, conferido e descartado"
+   ],
+   "topicos": [
+    "m02.i030",
+    "m02.i031",
+    "m02.i032"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Google Sheets Gemini add-on extract table journalism"
+   ],
+   "pratica": "Preencher um registro simples: ferramenta, tarefa, o que conferiu, o que descartou.",
+   "id": "m02-a12",
+   "n": 12,
+   "modulo": "m02",
+   "modulo_titulo": "Uso comparado de Claude, Gemini, Grok e ChatGPT",
+   "modulo_slug": "uso-comparado-assistentes",
+   "total_modulo": 12,
+   "dir": "m02-uso-comparado-assistentes/m02-a12-planilhas-e-registro",
+   "anterior": "Grok e a busca no X: escuta com conferência do post original",
+   "proxima": null,
+   "yaml": "aulas/m02-a12.yaml",
+   "extra": true
+  },
+  {
+   "slug": "anatomia-do-prompt",
+   "titulo": "Anatomia de um prompt que presta para jornalismo",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Montar um comando com papel, tarefa, recorte, fonte obrigatória, formato da saída e o que o modelo deve admitir que não encontrou",
+    "Reconhecer um prompt vago como risco editorial, não só como resultado ruim"
+   ],
+   "topicos": [
+    "m03.i002"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "prompt engineering journalism role task source format"
+   ],
+   "id": "m03-a01",
+   "n": 1,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a01-anatomia-do-prompt",
+   "anterior": null,
+   "proxima": "Peça tabela com origem — e proíba inventar página, link ou entrevista",
+   "yaml": "aulas/m03-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "csv-e-proibir-invencao",
+   "titulo": "Peça tabela com origem — e proíba inventar página, link ou entrevista",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Pedir tabela ou CSV com colunas de origem, data, valor, nome e grau de certeza, pronto para a planilha",
+    "Exigir citação do trecho ou do documento de origem e proibir invenção de página, link, processo ou entrevista"
+   ],
+   "topicos": [
+    "m03.i003",
+    "m03.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "prompt CSV table citations prevent fabricated sources journalism"
+   ],
+   "id": "m03-a02",
+   "n": 2,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a02-csv-e-proibir-invencao",
+   "anterior": "Anatomia de um prompt que presta para jornalismo",
+   "proxima": "Mostre o padrão de saída e itere o que funcionou",
+   "yaml": "aulas/m03-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "exemplos-e-iteracao",
+   "titulo": "Mostre o padrão de saída e itere o que funcionou",
+   "tipo": "pratica",
+   "objetivos": [
+    "Incluir poucos exemplos bons do padrão de saída desejado, em vez de um parágrafo vago",
+    "Testar, ver o erro, corrigir o comando e guardar o que funcionou"
+   ],
+   "topicos": [
+    "m03.i005",
+    "m03.i006"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "few shot prompting iterate newsroom prompt library"
+   ],
+   "pratica": "Iterar um prompt três vezes a partir do erro observado e guardar a versão que funcionou.",
+   "id": "m03-a03",
+   "n": 3,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a03-exemplos-e-iteracao",
+   "anterior": "Peça tabela com origem — e proíba inventar página, link ou entrevista",
+   "proxima": "Ângulos, roteiro de entrevista e triagem do malote",
+   "yaml": "aulas/m03-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "angulos-entrevistas-triagem",
+   "titulo": "Ângulos, roteiro de entrevista e triagem do malote",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Levantar ângulos e perguntas a partir de um dossiê, sem aceitar fatos que não estejam no material",
+    "Tirar roteiro de entrevista e omissões do entrevistado de uma transcrição, e triar malotes, PDFs e e-mails entre pauta, rotina e olho humano imediato"
+   ],
+   "topicos": [
+    "m03.i008",
+    "m03.i009",
+    "m03.i010"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 35,
+   "busca_videos": [
+    "AI interview questions transcript omissions newsroom triage"
+   ],
+   "id": "m03-a04",
+   "n": 4,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a04-angulos-entrevistas-triagem",
+   "anterior": "Mostre o padrão de saída e itere o que funcionou",
+   "proxima": "Síntese com trecho literal — e apoio à edição, com a decisão na editoria",
+   "yaml": "aulas/m03-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "sintese-e-edicao",
+   "titulo": "Síntese com trecho literal — e apoio à edição, com a decisão na editoria",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Sintetizar processo, relatório ou lei em linguagem clara, com trechos literais entre aspas e página ou seção",
+    "Usar a IA para cortes, títulos e sugestão de passagem de VT ou de texto digital, deixando a decisão com a editoria"
+   ],
+   "topicos": [
+    "m03.i011",
+    "m03.i012"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "AI document summary quoted excerpts news editing assistance"
+   ],
+   "id": "m03-a05",
+   "n": 5,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a05-sintese-e-edicao",
+   "anterior": "Ângulos, roteiro de entrevista e triagem do malote",
+   "proxima": "Pesquisa longa é ponto de partida — confira se o link existe",
+   "yaml": "aulas/m03-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "pesquisa-longa-e-fontes-fabricadas",
+   "titulo": "Pesquisa longa é ponto de partida — confira se o link existe",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Tratar relatórios de modos de pesquisa longa (Deep Research e equivalentes) como ponto de partida, nunca como fonte final",
+    "Conferir se o link existe, se o título bate e se o trecho está lá, diante da armadilha das fontes fabricadas"
+   ],
+   "topicos": [
+    "m03.i014",
+    "m03.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "Deep Research fabricated citations journalism verification"
+   ],
+   "id": "m03-a06",
+   "n": 6,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a06-pesquisa-longa-e-fontes-fabricadas",
+   "anterior": "Síntese com trecho literal — e apoio à edição, com a decisão na editoria",
+   "proxima": "Ancorar a resposta no acervo da pauta reduz — e não elimina — o erro",
+   "yaml": "aulas/m03-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "notebooklm-pinpoint-e-rag",
+   "titulo": "Ancorar a resposta no acervo da pauta reduz — e não elimina — o erro",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Usar NotebookLM e Pinpoint no fluxo: subir o acervo, buscar, transcrever, extrair entidades e só então sintetizar",
+    "Explicar busca ancorada em documentos (RAG) em linguagem de redação: reduz, mas não elimina, o risco de erro"
+   ],
+   "topicos": [
+    "m03.i016",
+    "m03.i017"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "NotebookLM Pinpoint RAG grounded generation journalism"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Ajuda do NotebookLM",
+     "url": "https://support.google.com/notebooklm"
+    },
+    {
+     "titulo": "Google Pinpoint (Journalist Studio)",
+     "url": "https://journaliststudio.google.com/pinpoint"
+    }
+   ],
+   "id": "m03-a07",
+   "n": 7,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a07-notebooklm-pinpoint-e-rag",
+   "anterior": "Pesquisa longa é ponto de partida — confira se o link existe",
+   "proxima": "Arquivos sensíveis: conta da casa, anonimizar ou não enviar",
+   "yaml": "aulas/m03-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "arquivos-sensiveis",
+   "titulo": "Arquivos sensíveis: conta da casa, anonimizar ou não enviar",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Preferir ferramentas e contas corporativas para arquivos da pauta",
+    "Decidir anonimizar ou não enviar quando houver fonte em risco"
+   ],
+   "topicos": [
+    "m03.i018"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "confidential sources AI tools newsroom data protection"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m03-a08",
+   "n": 8,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a08-arquivos-sensiveis",
+   "anterior": "Ancorar a resposta no acervo da pauta reduz — e não elimina — o erro",
+   "proxima": "Biblioteca de prompts da editoria, versionada e auditável",
+   "yaml": "aulas/m03-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "biblioteca-da-editoria",
+   "titulo": "Biblioteca de prompts da editoria, versionada e auditável",
+   "tipo": "pratica",
+   "objetivos": [
+    "Montar modelos de prompt reutilizáveis por editoria (política, cidades, economia, meio ambiente, esportes, agronegócio)",
+    "Versionar o que funcionou, com exemplo de entrada e de saída revisada, e documentar o que a IA fez em cada etapa"
+   ],
+   "topicos": [
+    "m03.i020",
+    "m03.i021",
+    "m03.i022"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "busca_videos": [
+    "newsroom prompt library versioning audit trail"
+   ],
+   "pratica": "Guardar um prompt da sua editoria com exemplo de entrada, saída revisada e o que a IA fez em cada etapa.",
+   "id": "m03-a09",
+   "n": 9,
+   "modulo": "m03",
+   "modulo_titulo": "Prompts e apuração com método",
+   "modulo_slug": "prompts-e-apuracao",
+   "total_modulo": 9,
+   "dir": "m03-prompts-e-apuracao/m03-a09-biblioteca-da-editoria",
+   "anterior": "Arquivos sensíveis: conta da casa, anonimizar ou não enviar",
+   "proxima": null,
+   "yaml": "aulas/m03-a09.yaml",
+   "extra": false
+  },
+  {
+   "slug": "canais-de-comentario",
+   "titulo": "Cada canal de comentário representa um recorte diferente",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Mapear comentários no site, no aplicativo, no YouTube, no X e em outras redes da reportagem",
+    "Dizer o que cada canal representa — e o que ele não representa"
+   ],
+   "topicos": [
+    "m04.i002"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "news comments YouTube X site audience listening"
+   ],
+   "id": "m04-a01",
+   "n": 1,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a01-canais-de-comentario",
+   "anterior": null,
+   "proxima": "Comentário não é enquete — e não autoriza 'o público acha que'",
+   "yaml": "aulas/m04-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "comentario-nao-e-enquete",
+   "titulo": "Comentário não é enquete — e não autoriza 'o público acha que'",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Reconhecer viés de quem comenta: ruído, campanha organizada, ironia, recorte partidário e ausência de quem não fala",
+    "Recusar a frase do tipo 'o público acha que' a partir de comentários"
+   ],
+   "topicos": [
+    "m04.i003",
+    "m04.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "comments are not public opinion journalism bias"
+   ],
+   "id": "m04-a02",
+   "n": 2,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a02-comentario-nao-e-enquete",
+   "anterior": "Cada canal de comentário representa um recorte diferente",
+   "proxima": "O que a redação pode aprender com quem comenta",
+   "yaml": "aulas/m04-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "o-que-aprender-com-comentarios",
+   "titulo": "O que a redação pode aprender com quem comenta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Separar aprendizados úteis: dúvidas recorrentes, correções apontadas, temas que a matéria não cobriu, tom da recepção e sinais de assédio à equipe",
+    "Levar esses sinais à reunião de pauta com método, não com impressão solta"
+   ],
+   "topicos": [
+    "m04.i005"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "audience comments corrections harassment newsroom listening"
+   ],
+   "id": "m04-a03",
+   "n": 3,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a03-o-que-aprender-com-comentarios",
+   "anterior": "Comentário não é enquete — e não autoriza 'o público acha que'",
+   "proxima": "Limpeza, frequência e agrupamento por tema — sem virar dado científico",
+   "yaml": "aulas/m04-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "limpeza-frequencia-e-temas",
+   "titulo": "Limpeza, frequência e agrupamento por tema — sem virar dado científico",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Fazer a limpeza mínima do texto: repetição, spam, links e variações da mesma palavra",
+    "Usar frequência, nuvem de palavras e agrupamento por tema na reunião de pauta, sem tratar o resultado como dado científico"
+   ],
+   "topicos": [
+    "m04.i007",
+    "m04.i008"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "text cleaning word frequency theme clustering comments journalism"
+   ],
+   "id": "m04-a04",
+   "n": 4,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a04-limpeza-frequencia-e-temas",
+   "anterior": "O que a redação pode aprender com quem comenta",
+   "proxima": "Menções, recortes amazônicos e o que muda depois de uma correção",
+   "yaml": "aulas/m04-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "mencoes-recortes-e-series",
+   "titulo": "Menções, recortes amazônicos e o que muda depois de uma correção",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Separar menção à reportagem, a personagens e a assuntos laterais",
+    "Aplicar recortes úteis à Rede Amazônica (municípios, rios, povos, órgãos, temas) e observar séries no tempo depois de correção, segundo capítulo ou coletiva"
+   ],
+   "topicos": [
+    "m04.i009",
+    "m04.i010",
+    "m04.i011"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "comment analysis regional toponyms time series journalism"
+   ],
+   "id": "m04-a05",
+   "n": 5,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a05-mencoes-recortes-e-series",
+   "anterior": "Limpeza, frequência e agrupamento por tema — sem virar dado científico",
+   "proxima": "Classificar o tom só com amostra revisada por humano",
+   "yaml": "aulas/m04-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "tom-e-amostra-revisada",
+   "titulo": "Classificar o tom só com amostra revisada por humano",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Fazer classificação preliminar de tom (apoio, crítica, dúvida, ataque)",
+    "Revisar uma amostra humana antes de qualquer relato à editoria"
+   ],
+   "topicos": [
+    "m04.i013"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "sentiment classification news comments human review sample"
+   ],
+   "id": "m04-a06",
+   "n": 6,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a06-tom-e-amostra-revisada",
+   "anterior": "Menções, recortes amazônicos e o que muda depois de uma correção",
+   "proxima": "Toxicidade, assédio e o que escala para a editoria ou à segurança",
+   "yaml": "aulas/m04-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "toxicidade-e-protocolo",
+   "titulo": "Toxicidade, assédio e o que escala para a editoria ou à segurança",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Identificar toxicidade, discurso de ódio, ameaça e assédio a jornalistas, entrevistados e comunidades",
+    "Aplicar o protocolo interno: o que escala para a editoria, o que vai para a segurança da equipe e o que não se responde"
+   ],
+   "topicos": [
+    "m04.i014",
+    "m04.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "online harassment journalists protocol toxicity comments"
+   ],
+   "id": "m04-a07",
+   "n": 7,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a07-toxicidade-e-protocolo",
+   "anterior": "Classificar o tom só com amostra revisada por humano",
+   "proxima": "Ironia e português regional quebram a medição automática de tom",
+   "yaml": "aulas/m04-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "ironia-e-portugues-regional",
+   "titulo": "Ironia e português regional quebram a medição automática de tom",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar por que ironia, português regional e código local geram erro na classificação automática",
+    "Tornar a amostra revisada obrigatória antes de qualquer número de sentimento"
+   ],
+   "topicos": [
+    "m04.i016"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "sentiment analysis irony dialect error journalism AI"
+   ],
+   "id": "m04-a08",
+   "n": 8,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a08-ironia-e-portugues-regional",
+   "anterior": "Toxicidade, assédio e o que escala para a editoria ou à segurança",
+   "proxima": "Alertas: correção, denúncia, ataque e dúvida repetida",
+   "yaml": "aulas/m04-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "alertas-e-o-que-vira-pauta",
+   "titulo": "Alertas: correção, denúncia, ataque e dúvida repetida",
+   "tipo": "pratica",
+   "objetivos": [
+    "Montar alertas para correção factual apontada por leitor, denúncia nova com indício, coordenação de ataque e dúvida repetida que pede FAQ ou matéria-explicação",
+    "Separar o que pode virar pauta, o que vira ajuste de linguagem e o que deve ser ignorado"
+   ],
+   "topicos": [
+    "m04.i018",
+    "m04.i019"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "audience comments editorial alerts corrections new tips"
+   ],
+   "pratica": "Classificar 15 comentários de uma matéria em: pauta, ajuste de linguagem ou ignorar, com uma linha de justificativa.",
+   "id": "m04-a09",
+   "n": 9,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a09-alertas-e-o-que-vira-pauta",
+   "anterior": "Ironia e português regional quebram a medição automática de tom",
+   "proxima": "Comentário visível não autoriza expor dado pessoal — e o relato tem método",
+   "yaml": "aulas/m04-a09.yaml",
+   "extra": false
+  },
+  {
+   "slug": "lgpd-nos-comentarios-e-relato",
+   "titulo": "Comentário visível não autoriza expor dado pessoal — e o relato tem método",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Aplicar LGPD e ética: comentário visível não autoriza expor dado pessoal, menor de idade ou alvo de ódio em reportagem posterior sem critério",
+    "Produzir um relato periódico à editoria com o que foi ouvido, com que método e com que limites"
+   ],
+   "topicos": [
+    "m04.i020",
+    "m04.i021"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "LGPD comments personal data newsroom editorial report"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m04-a10",
+   "n": 10,
+   "modulo": "m04",
+   "modulo_titulo": "Análise de comentários das matérias",
+   "modulo_slug": "analise-de-comentarios",
+   "total_modulo": 10,
+   "dir": "m04-analise-de-comentarios/m04-a10-lgpd-nos-comentarios-e-relato",
+   "anterior": "Alertas: correção, denúncia, ataque e dúvida repetida",
+   "proxima": null,
+   "yaml": "aulas/m04-a10.yaml",
+   "extra": false
+  },
+  {
+   "slug": "escuta-nao-e-pesquisa-de-opiniao",
+   "titulo": "Escuta jornalística não é monitoramento de marca nem pesquisa de opinião",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Diferenciar monitoramento de menções à marca, escuta jornalística e pesquisa de opinião",
+    "Definir a função: temas emergentes, desinformação em circulação, demandas locais e sinais de pauta antes de 'todo mundo está falando'"
+   ],
+   "topicos": [
+    "m05.i002",
+    "m05.i003"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "journalistic social listening vs brand monitoring vs opinion poll"
+   ],
+   "id": "m05-a01",
+   "n": 1,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a01-escuta-nao-e-pesquisa-de-opiniao",
+   "anterior": null,
+   "proxima": "Recorte Norte e governança: quem monitora, quem valida, quem decide",
+   "yaml": "aulas/m05-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "recorte-territorial-e-governanca",
+   "titulo": "Recorte Norte e governança: quem monitora, quem valida, quem decide",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Recortar a escuta em Amazonas, Rondônia, Roraima, Acre e Amapá, com atenção a municípios do interior e a comunidades pouco visíveis no volume nacional",
+    "Definir quem monitora, quem valida, quem decide se vira pauta, com que prazo e com que registro"
+   ],
+   "topicos": [
+    "m05.i004",
+    "m05.i005"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "regional newsroom social listening governance Amazon"
+   ],
+   "id": "m05-a02",
+   "n": 2,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a02-recorte-territorial-e-governanca",
+   "anterior": "Escuta jornalística não é monitoramento de marca nem pesquisa de opinião",
+   "proxima": "Escuta no X com Grok — sempre conferindo o post original",
+   "yaml": "aulas/m05-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "escuta-no-x-com-grok",
+   "titulo": "Escuta no X com Grok — sempre conferindo o post original",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Usar busca e fios no X com apoio do Grok e da ferramenta de busca, quando disponíveis no plano",
+    "Conferir sempre o post original antes de qualquer alerta"
+   ],
+   "topicos": [
+    "m05.i007"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "Grok X Search social listening official"
+   ],
+   "documentacao": [
+    {
+     "titulo": "xAI Docs",
+     "url": "https://docs.x.ai/"
+    }
+   ],
+   "id": "m05-a03",
+   "n": 3,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a03-escuta-no-x-com-grok",
+   "anterior": "Recorte Norte e governança: quem monitora, quem valida, quem decide",
+   "proxima": "YouTube, comentários da casa e outras redes — com limite no que é privado",
+   "yaml": "aulas/m05-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "youtube-comentarios-e-outras-redes",
+   "titulo": "YouTube, comentários da casa e outras redes — com limite no que é privado",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Monitorar comentários, títulos em alta e lives de interesse regional no YouTube, além dos comentários das próprias matérias e programas",
+    "Incluir outras redes e grupos abertos de interesse público com respeito a termos de uso, à LGPD e ao que é espaço privado"
+   ],
+   "topicos": [
+    "m05.i008",
+    "m05.i009",
+    "m05.i010"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "YouTube comments regional news social listening ethics"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m05-a04",
+   "n": 4,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a04-youtube-comentarios-e-outras-redes",
+   "anterior": "Escuta no X com Grok — sempre conferindo o post original",
+   "proxima": "Alertas oficiais dialogam com a escuta — e não se misturam com ela",
+   "yaml": "aulas/m05-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "sinais-oficiais-versus-redes",
+   "titulo": "Alertas oficiais dialogam com a escuta — e não se misturam com ela",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Incluir sinais oficiais e de serviço (órgãos, clima, saúde, trânsito) no radar da escuta",
+    "Evitar misturar alerta oficial e conversa em rede como se fossem a mesma evidência"
+   ],
+   "topicos": [
+    "m05.i011"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "official alerts vs social media listening newsroom"
+   ],
+   "id": "m05-a05",
+   "n": 5,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a05-sinais-oficiais-versus-redes",
+   "anterior": "YouTube, comentários da casa e outras redes — com limite no que é privado",
+   "proxima": "Dicionário de escuta e consultas com variações da mesma pauta",
+   "yaml": "aulas/m05-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "dicionario-e-consultas",
+   "titulo": "Dicionário de escuta e consultas com variações da mesma pauta",
+   "tipo": "pratica",
+   "objetivos": [
+    "Montar um dicionário com nomes, siglas, apelidos, topônimos, povos, rios, obras, eleições e desastres recorrentes da área de cobertura",
+    "Usar consultas booleanas e variações (queimada/fogo/focos, estiagem/rio baixo, PEC/proposta)"
+   ],
+   "topicos": [
+    "m05.i013",
+    "m05.i014"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "busca_videos": [
+    "boolean search social listening keyword dictionary journalism"
+   ],
+   "pratica": "Rascunhar o dicionário de escuta de um tema da cobertura (10 a 15 termos e variações).",
+   "id": "m05-a06",
+   "n": 6,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a06-dicionario-e-consultas",
+   "anterior": "Alertas oficiais dialogam com a escuta — e não se misturam com ela",
+   "proxima": "Separe volume, alcance e confiabilidade — e defina o limiar do alerta",
+   "yaml": "aulas/m05-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "volume-alcance-e-alertas",
+   "titulo": "Separe volume, alcance e confiabilidade — e defina o limiar do alerta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Separar volume, alcance aparente e confiabilidade da fonte",
+    "Definir o limiar: o que merece aviso imediato à chefia e o que entra no boletim do dia"
+   ],
+   "topicos": [
+    "m05.i015",
+    "m05.i016"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "social listening alert threshold source reliability journalism"
+   ],
+   "id": "m05-a07",
+   "n": 7,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a07-volume-alcance-e-alertas",
+   "anterior": "Dicionário de escuta e consultas com variações da mesma pauta",
+   "proxima": "A tendência de São Paulo não pode apagar Porto Velho ou o interior",
+   "yaml": "aulas/m05-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "tendencia-regional-versus-nacional",
+   "titulo": "A tendência de São Paulo não pode apagar Porto Velho ou o interior",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Distinguir tendência regional e tendência nacional",
+    "Evitar que o recorte de São Paulo ou do X global apague o que importa em Porto Velho, Boa Vista, Macapá, Rio Branco ou no interior do Amazonas"
+   ],
+   "topicos": [
+    "m05.i017"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "regional vs national social media trends local journalism"
+   ],
+   "id": "m05-a08",
+   "n": 8,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a08-tendencia-regional-versus-nacional",
+   "anterior": "Separe volume, alcance e confiabilidade — e defina o limiar do alerta",
+   "proxima": "Padrão coordenado, não amplificar o falso e o que não se coleta",
+   "yaml": "aulas/m05-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "desinformacao-e-o-que-nao-coletar",
+   "titulo": "Padrão coordenado, não amplificar o falso e o que não se coleta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Reconhecer padrão de publicação coordenada sem transformar suspeita em denúncia pronta",
+    "Não amplificar conteúdo falso ao rebater sem verificação, e não coletar dado sensível de particular, conversa claramente privada ou conteúdo de menor"
+   ],
+   "topicos": [
+    "m05.i019",
+    "m05.i020",
+    "m05.i021"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "coordinated inauthentic behavior disinformation listening ethics"
+   ],
+   "id": "m05-a09",
+   "n": 9,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a09-desinformacao-e-o-que-nao-coletar",
+   "anterior": "A tendência de São Paulo não pode apagar Porto Velho ou o interior",
+   "proxima": "O boletim de escuta: fato, fonte, recorte, o conferido e a hipótese",
+   "yaml": "aulas/m05-a09.yaml",
+   "extra": false
+  },
+  {
+   "slug": "boletim-de-escuta-e-pauta",
+   "titulo": "O boletim de escuta: fato, fonte, recorte, o conferido e a hipótese",
+   "tipo": "pratica",
+   "objetivos": [
+    "Redigir um boletim com fato observado, fonte, recorte, o que já foi conferido e o que ainda é hipótese",
+    "Integrar o boletim à reunião de pauta e à editoria de verificação"
+   ],
+   "topicos": [
+    "m05.i022",
+    "m05.i023"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "busca_videos": [
+    "social listening briefing newsroom editorial meeting"
+   ],
+   "pratica": "Escrever um boletim de uma página sobre um tema da cobertura, com o que foi conferido e o que ainda é hipótese.",
+   "id": "m05-a10",
+   "n": 10,
+   "modulo": "m05",
+   "modulo_titulo": "Agência de escuta (social listening)",
+   "modulo_slug": "agencia-de-escuta",
+   "total_modulo": 10,
+   "dir": "m05-agencia-de-escuta/m05-a10-boletim-de-escuta-e-pauta",
+   "anterior": "Padrão coordenado, não amplificar o falso e o que não se coleta",
+   "proxima": null,
+   "yaml": "aulas/m05-a10.yaml",
+   "extra": false
+  },
+  {
+   "slug": "o-que-e-um-diario-oficial",
+   "titulo": "O que é um diário oficial e o que costuma sair nele",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Explicar o que é um diário oficial",
+    "Listar o que costuma sair nele: leis, decretos, nomeações, licitações, contratos, homologações e prestações de contas"
+   ],
+   "topicos": [
+    "m06.i002"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "official gazette what is published journalism Brazil"
+   ],
+   "id": "m06-a01",
+   "n": 1,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a01-o-que-e-um-diario-oficial",
+   "anterior": null,
+   "proxima": "DOU e os diários dos cinco estados da cobertura",
+   "yaml": "aulas/m06-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "dou-e-diarios-estaduais",
+   "titulo": "DOU e os diários dos cinco estados da cobertura",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Consultar o Diário Oficial da União no portal oficial",
+    "Localizar os diários oficiais de Amazonas, Rondônia, Roraima, Acre e Amapá nos portais oficiais de cada estado"
+   ],
+   "topicos": [
+    "m06.i003",
+    "m06.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Diário Oficial da União consulta oficiais estaduais Norte"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Diário Oficial da União — consultas",
+     "url": "https://www.in.gov.br/consultas"
+    }
+   ],
+   "id": "m06-a02",
+   "n": 2,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a02-dou-e-diarios-estaduais",
+   "anterior": "O que é um diário oficial e o que costuma sair nele",
+   "proxima": "Diários municipais, PDFs difíceis e a LAI como complemento",
+   "yaml": "aulas/m06-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "diarios-municipais-e-lai",
+   "titulo": "Diários municipais, PDFs difíceis e a LAI como complemento",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Enfrentar a dificuldade prática dos PDFs pouco acessíveis dos diários municipais (capitais e interior)",
+    "Usar a Lei de Acesso à Informação como complemento do que o diário não detalha"
+   ],
+   "topicos": [
+    "m06.i005",
+    "m06.i006"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "municipal official gazette Brazil Lei de Acesso à Informação"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei de Acesso à Informação (Lei 12.527/2011)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    }
+   ],
+   "id": "m06-a03",
+   "n": 3,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a03-diarios-municipais-e-lai",
+   "anterior": "DOU e os diários dos cinco estados da cobertura",
+   "proxima": "Querido Diário: busca aberta — e a cobertura que falta conferir",
+   "yaml": "aulas/m06-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "querido-diario",
+   "titulo": "Querido Diário: busca aberta — e a cobertura que falta conferir",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Usar o Querido Diário, da Open Knowledge Brasil, para buscar diários do Executivo municipal em formato aberto, inclusive pela API quando houver apoio de dados",
+    "Conferir a cobertura vigente na plataforma oficial antes de afirmar que não saiu no diário"
+   ],
+   "topicos": [
+    "m06.i008",
+    "m06.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Querido Diário Open Knowledge Brasil official"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Querido Diário (Open Knowledge Brasil)",
+     "url": "https://queridodiario.ok.org.br/"
+    }
+   ],
+   "id": "m06-a04",
+   "n": 4,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a04-querido-diario",
+   "anterior": "Diários municipais, PDFs difíceis e a LAI como complemento",
+   "proxima": "Busca avançada, API e o Diário do Clima na cobertura ambiental",
+   "yaml": "aulas/m06-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "busca-e-diario-do-clima",
+   "titulo": "Busca avançada, API e o Diário do Clima na cobertura ambiental",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Fazer busca avançada com recorte por município, palavra-chave e período, e usar a API com apoio de dados, sem exigir programação de toda a turma",
+    "Relacionar o Diário do Clima ao monitoramento de atos ambientais relevantes para a cobertura amazônica"
+   ],
+   "topicos": [
+    "m06.i010",
+    "m06.i011"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "Querido Diário API Diário do Clima ambiental"
+   ],
+   "id": "m06-a05",
+   "n": 5,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a05-busca-e-diario-do-clima",
+   "anterior": "Querido Diário: busca aberta — e a cobertura que falta conferir",
+   "proxima": "OCR e busca em lotes de PDFs baixados dos portais oficiais",
+   "yaml": "aulas/m06-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "ocr-com-notebooklm-e-pinpoint",
+   "titulo": "OCR e busca em lotes de PDFs baixados dos portais oficiais",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Usar NotebookLM, Pinpoint e equivalentes para OCR, transcrição e busca em lotes de PDFs oficiais",
+    "Manter o PDF original como referência da conferência"
+   ],
+   "topicos": [
+    "m06.i012"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Pinpoint NotebookLM OCR official PDFs journalism"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Ajuda do NotebookLM",
+     "url": "https://support.google.com/notebooklm"
+    },
+    {
+     "titulo": "Google Pinpoint (Journalist Studio)",
+     "url": "https://journaliststudio.google.com/pinpoint"
+    }
+   ],
+   "id": "m06-a06",
+   "n": 6,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a06-ocr-com-notebooklm-e-pinpoint",
+   "anterior": "Busca avançada, API e o Diário do Clima na cobertura ambiental",
+   "proxima": "O que extrair de um ato — e a tabela padronizada da pauta",
+   "yaml": "aulas/m06-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "o-que-extrair-e-tabelas",
+   "titulo": "O que extrair de um ato — e a tabela padronizada da pauta",
+   "tipo": "pratica",
+   "objetivos": [
+    "Extrair tipo, órgão, data de publicação, vigência, nomes, cargos, CNPJ, valores, objeto, prazos e número do processo ou da licitação",
+    "Usar tabelas padronizadas para contratos, licitações, nomeações, exonerações, decretos e convênios"
+   ],
+   "topicos": [
+    "m06.i014",
+    "m06.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 35,
+   "busca_videos": [
+    "extract structured data official gazette contracts tenders"
+   ],
+   "pratica": "Preencher uma tabela padronizada a partir de um ato real da área de cobertura.",
+   "id": "m06-a07",
+   "n": 7,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a07-o-que-extrair-e-tabelas",
+   "anterior": "OCR e busca em lotes de PDFs baixados dos portais oficiais",
+   "proxima": "Extenso versus número, retificação, OCR que falha e o acervo da pauta",
+   "yaml": "aulas/m06-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "retificacoes-ocr-e-acervo",
+   "titulo": "Extenso versus número, retificação, OCR que falha e o acervo da pauta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Conferir valores por extenso versus numéricos, retificações posteriores e atos que revogam atos anteriores",
+    "Tratar falha de OCR e troca de dígitos pela IA como regra de risco: a conferência no PDF original é obrigatória, e o acervo leva pasta, nome, origem e data da coleta"
+   ],
+   "topicos": [
+    "m06.i016",
+    "m06.i017",
+    "m06.i018"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "OCR errors official gazette verification document archive"
+   ],
+   "id": "m06-a08",
+   "n": 8,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a08-retificacoes-ocr-e-acervo",
+   "anterior": "O que extrair de um ato — e a tabela padronizada da pauta",
+   "proxima": "Sinais de reportagem no diário: emergência, aditivo, familiar, dispensa",
+   "yaml": "aulas/m06-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "sinais-de-reportagem",
+   "titulo": "Sinais de reportagem no diário: emergência, aditivo, familiar, dispensa",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Reconhecer sinais de reportagem: contratação emergencial recorrente, valor atípico, nomeação de familiar já noticiado, aditivo sucessivo, dispensa de licitação e convênio com OSC pouco conhecida",
+    "Tratar o sinal como pista, não como furo pronto"
+   ],
+   "topicos": [
+    "m06.i020"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "red flags public contracts emergency bidding journalism"
+   ],
+   "id": "m06-a09",
+   "n": 9,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a09-sinais-de-reportagem",
+   "anterior": "Extenso versus número, retificação, OCR que falha e o acervo da pauta",
+   "proxima": "Agenda pública, o que não é notícia e o registro para o colega retomar",
+   "yaml": "aulas/m06-a09.yaml",
+   "extra": false
+  },
+  {
+   "slug": "agenda-rotina-e-registro",
+   "titulo": "Agenda pública, o que não é notícia e o registro para o colega retomar",
+   "tipo": "pratica",
+   "objetivos": [
+    "Localizar e processar em volume, com supervisão humana, agenda pública, discursos e legislações",
+    "Separar rotina administrativa do que é notícia e registrar a fonte de forma que outro colega retome a apuração"
+   ],
+   "topicos": [
+    "m06.i021",
+    "m06.i022",
+    "m06.i023"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "public agenda speeches legislation Abraji dados públicos"
+   ],
+   "pratica": "Registrar a fonte de um ato (URL, data da coleta, trecho e o que falta checar) para um colega retomar.",
+   "id": "m06-a10",
+   "n": 10,
+   "modulo": "m06",
+   "modulo_titulo": "Diários oficiais da área de cobertura e documentos públicos",
+   "modulo_slug": "diarios-oficiais",
+   "total_modulo": 10,
+   "dir": "m06-diarios-oficiais/m06-a10-agenda-rotina-e-registro",
+   "anterior": "Sinais de reportagem no diário: emergência, aditivo, familiar, dispensa",
+   "proxima": null,
+   "yaml": "aulas/m06-a10.yaml",
+   "extra": false
+  },
+  {
+   "slug": "divergencias-entre-atos",
+   "titulo": "Divergência entre atos: valor, data, prazo, objeto e quantidade",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Identificar divergência de valores, datas, prazos, objetos ou quantidades entre um ato e outro",
+    "Tratar a divergência como inconsistência a checar, não ainda como furo"
+   ],
+   "topicos": [
+    "m07.i002"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "inconsistencies public records contracts journalism"
+   ],
+   "id": "m07-a01",
+   "n": 1,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a01-divergencias-entre-atos",
+   "anterior": null,
+   "proxima": "CNPJ que não confere, empresa inexistente e sócios em comum",
+   "yaml": "aulas/m07-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "cnpj-e-empresas",
+   "titulo": "CNPJ que não confere, empresa inexistente e sócios em comum",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Reconhecer CNPJ que não confere com a razão social, empresa inexistente, CNAE incompatível ou sócios em comum em várias contratações",
+    "Levar cada um desses sinais à fonte oficial, não à conclusão pronta"
+   ],
+   "topicos": [
+    "m07.i003"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "CNPJ company registry red flags public contracts Brazil"
+   ],
+   "id": "m07-a02",
+   "n": 2,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a02-cnpj-e-empresas",
+   "anterior": "Divergência entre atos: valor, data, prazo, objeto e quantidade",
+   "proxima": "Grafias, CPF mascarado, cargo inexistente e o processo que não aparece",
+   "yaml": "aulas/m07-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "nomes-cargos-e-atos-sem-processo",
+   "titulo": "Grafias, CPF mascarado, cargo inexistente e o processo que não aparece",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Detectar nome com grafias diferentes, CPF/CNPJ mascarado e cargo que não existe no organograma publicado",
+    "Checar o ato que cita um processo, um contrato ou uma lei que não aparece onde deveria"
+   ],
+   "topicos": [
+    "m07.i004",
+    "m07.i005"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "name matching public records missing process citation journalism"
+   ],
+   "id": "m07-a03",
+   "n": 3,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a03-nomes-cargos-e-atos-sem-processo",
+   "anterior": "CNPJ que não confere, empresa inexistente e sócios em comum",
+   "proxima": "Retificação silenciosa: o que mudou entre a versão original e a corrigida",
+   "yaml": "aulas/m07-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "retificacao-silenciosa",
+   "titulo": "Retificação silenciosa: o que mudou entre a versão original e a corrigida",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Comparar a versão original e a retificada de um ato",
+    "Registrar o que mudou e o que a retificação silenciou"
+   ],
+   "topicos": [
+    "m07.i006"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "official gazette retification amendment comparison journalism"
+   ],
+   "id": "m07-a04",
+   "n": 4,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a04-retificacao-silenciosa",
+   "anterior": "Grafias, CPF mascarado, cargo inexistente e o processo que não aparece",
+   "proxima": "Portal da Transparência e a situação cadastral na Receita",
+   "yaml": "aulas/m07-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "transparencia-e-receita",
+   "titulo": "Portal da Transparência e a situação cadastral na Receita",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Consultar o Portal da Transparência da União e os portais estaduais e municipais da área de cobertura",
+    "Conferir CNPJ e situação cadastral em fontes oficiais da Receita Federal"
+   ],
+   "topicos": [
+    "m07.i008",
+    "m07.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "Portal da Transparência Receita Federal CNPJ consulta"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Portal da Transparência da União",
+     "url": "https://portaldatransparencia.gov.br/"
+    }
+   ],
+   "id": "m07-a05",
+   "n": 5,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a05-transparencia-e-receita",
+   "anterior": "Retificação silenciosa: o que mudou entre a versão original e a corrigida",
+   "proxima": "Licitações, LAI quando uma ponta não fecha, e Tribunais de Contas",
+   "yaml": "aulas/m07-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "licitacoes-lai-e-tribunais",
+   "titulo": "Licitações, LAI quando uma ponta não fecha, e Tribunais de Contas",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Buscar licitações e contratos em portais de compras e em bases estaduais ou municipais, quando existirem e estiverem atualizados",
+    "Quando uma ponta não fecha, pedir acesso pela LAI, registrar o pedido e não preencher o buraco com a IA; usar Tribunais de Contas como fonte e contexto, sem transformar o acórdão em sentença jornalística automática"
+   ],
+   "topicos": [
+    "m07.i010",
+    "m07.i011",
+    "m07.i012"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "licitações LAI Tribunais de Contas journalism Brazil"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei de Acesso à Informação (Lei 12.527/2011)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    }
+   ],
+   "id": "m07-a06",
+   "n": 6,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a06-licitacoes-lai-e-tribunais",
+   "anterior": "Portal da Transparência e a situação cadastral na Receita",
+   "proxima": "A IA sugere pares a conferir — e não confirma irregularidade",
+   "yaml": "aulas/m07-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "ia-sugere-nao-confirma",
+   "titulo": "A IA sugere pares a conferir — e não confirma irregularidade",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Usar a IA para sugerir pares a conferir, montar a planilha e apontar divergências possíveis",
+    "Aplicar a proibição explícita: a IA não confirma irregularidade, superfaturamento ou parentesco; ela aponta o que deve ser checado"
+   ],
+   "topicos": [
+    "m07.i014",
+    "m07.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "AI assisted records matching cannot confirm irregularity journalism"
+   ],
+   "id": "m07-a07",
+   "n": 7,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a07-ia-sugere-nao-confirma",
+   "anterior": "Licitações, LAI quando uma ponta não fecha, e Tribunais de Contas",
+   "proxima": "Célula a célula, sinal versus prova, e o dossiê para o jurídico",
+   "yaml": "aulas/m07-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "conferencia-red-flags-e-juridico",
+   "titulo": "Célula a célula, sinal versus prova, e o dossiê para o jurídico",
+   "tipo": "pratica",
+   "objetivos": [
+    "Conferir célula a célula os valores e identificadores usados na reportagem",
+    "Escrever o que se sabe, o que se perguntou ao poder público e o que ainda não se pode afirmar, organizando a apuração para o jurídico e para o direito de resposta"
+   ],
+   "topicos": [
+    "m07.i016",
+    "m07.i017",
+    "m07.i018"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 40,
+   "busca_videos": [
+    "red flags vs proof right of reply legal review journalism"
+   ],
+   "pratica": "Montar um dossiê curto de uma inconsistência: o que foi conferido, o que foi perguntado e o que ainda não se pode afirmar.",
+   "id": "m07-a08",
+   "n": 8,
+   "modulo": "m07",
+   "modulo_titulo": "Inconsistências, cruzamentos e transparência",
+   "modulo_slug": "inconsistencias-e-cruzamentos",
+   "total_modulo": 8,
+   "dir": "m07-inconsistencias-e-cruzamentos/m07-a08-conferencia-red-flags-e-juridico",
+   "anterior": "A IA sugere pares a conferir — e não confirma irregularidade",
+   "proxima": null,
+   "yaml": "aulas/m07-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "pergunta-primeiro",
+   "titulo": "A pergunta jornalística vem antes da base de dados",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Formular a pergunta jornalística antes de escolher a base",
+    "Recusar o dado que entra na reportagem só para enfeitar"
+   ],
+   "topicos": [
+    "m08.i002"
+   ],
+   "duracao_video_s": 100,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "data journalism question first before dataset"
+   ],
+   "id": "m08-a01",
+   "n": 1,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a01-pergunta-primeiro",
+   "anterior": null,
+   "proxima": "Tendência, sazonalidade e o ruído de um mês atípico",
+   "yaml": "aulas/m08-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "series-temporais",
+   "titulo": "Tendência, sazonalidade e o ruído de um mês atípico",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Distinguir tendência, sazonalidade e ruído de um mês atípico numa série temporal",
+    "Evitar transformar um ponto fora da curva em manchete de recorde sem contexto"
+   ],
+   "topicos": [
+    "m08.i003"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "time series trend seasonality outlier data journalism"
+   ],
+   "id": "m08-a02",
+   "n": 2,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a02-series-temporais",
+   "anterior": "A pergunta jornalística vem antes da base de dados",
+   "proxima": "Bases recorrentes da cobertura amazônica — na fonte e na metodologia",
+   "yaml": "aulas/m08-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "bases-da-cobertura-amazonica",
+   "titulo": "Bases recorrentes da cobertura amazônica — na fonte e na metodologia",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Localizar bases recorrentes: queimadas e focos de calor, nível dos rios, saúde, educação, orçamento, segurança e eleições",
+    "Ir sempre à fonte oficial e à documentação da metodologia"
+   ],
+   "topicos": [
+    "m08.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "INPE queimadas ANA river levels official data Amazon journalism"
+   ],
+   "id": "m08-a03",
+   "n": 3,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a03-bases-da-cobertura-amazonica",
+   "anterior": "Tendência, sazonalidade e o ruído de um mês atípico",
+   "proxima": "Cruze na planilha antes do modelo — e visualize com eixo, recorte e exclusão",
+   "yaml": "aulas/m08-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "cruzamento-e-visualizacao",
+   "titulo": "Cruze na planilha antes do modelo — e visualize com eixo, recorte e exclusão",
+   "tipo": "pratica",
+   "objetivos": [
+    "Fazer o cruzamento simples em planilha antes de qualquer modelo sofisticado",
+    "Produzir visualização honesta: eixo, recorte, período e o que foi excluído"
+   ],
+   "topicos": [
+    "m08.i005",
+    "m08.i006"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 35,
+   "busca_videos": [
+    "spreadsheet data join honest visualization journalism"
+   ],
+   "pratica": "Cruzar duas colunas de uma base oficial da cobertura e anotar eixo, período e o que ficou de fora do gráfico.",
+   "id": "m08-a04",
+   "n": 4,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a04-cruzamento-e-visualizacao",
+   "anterior": "Bases recorrentes da cobertura amazônica — na fonte e na metodologia",
+   "proxima": "Projeção, cenário, estimativa oficial — e previsão apresentada como fato",
+   "yaml": "aulas/m08-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "projecao-cenario-e-previsao",
+   "titulo": "Projeção, cenário, estimativa oficial — e previsão apresentada como fato",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Diferenciar projeção exploratória, cenário, estimativa oficial e previsão apresentada como fato",
+    "Escolher a palavra certa antes de ir ao ar ou ao digital"
+   ],
+   "topicos": [
+    "m08.i008"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "projection vs forecast vs official estimate data journalism"
+   ],
+   "id": "m08-a05",
+   "n": 5,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a05-projecao-cenario-e-previsao",
+   "anterior": "Cruze na planilha antes do modelo — e visualize com eixo, recorte e exclusão",
+   "proxima": "Eleições: pesquisa registrada, margem de erro e o que a IA não pode inventar",
+   "yaml": "aulas/m08-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "eleicoes-e-ia",
+   "titulo": "Eleições: pesquisa registrada, margem de erro e o que a IA não pode inventar",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Usar apenas pesquisas registradas e informar a margem de erro",
+    "Recusar que a IA invente intenção de voto ou que a redação preveja resultado"
+   ],
+   "topicos": [
+    "m08.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "election polls margin of error AI ethics journalism Brazil"
+   ],
+   "id": "m08-a06",
+   "n": 6,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a06-eleicoes-e-ia",
+   "anterior": "Projeção, cenário, estimativa oficial — e previsão apresentada como fato",
+   "proxima": "Clima, queimadas e orçamento: fonte especializada, não modelo caseiro",
+   "yaml": "aulas/m08-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "clima-queimadas-e-orcamento",
+   "titulo": "Clima, queimadas e orçamento: fonte especializada, não modelo caseiro",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Usar dados e alertas de fontes especializadas em clima e queimadas, sem transformar exercício de modelo caseiro em forecast",
+    "Distinguir projetar ritmo de gasto de afirmar desvio no orçamento"
+   ],
+   "topicos": [
+    "m08.i010",
+    "m08.i011"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "wildfire climate official alerts budget execution journalism"
+   ],
+   "id": "m08-a07",
+   "n": 7,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a07-clima-queimadas-e-orcamento",
+   "anterior": "Eleições: pesquisa registrada, margem de erro e o que a IA não pode inventar",
+   "proxima": "Incerteza, intervalo e hipótese: como falar sem superlativo indevido",
+   "yaml": "aulas/m08-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "incerteza-no-ar",
+   "titulo": "Incerteza, intervalo e hipótese: como falar sem superlativo indevido",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Levar incerteza, intervalo e hipótese para o texto no ar e no digital",
+    "Evitar superlativo indevido quando o dado não comporta certeza"
+   ],
+   "topicos": [
+    "m08.i012"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "communicating uncertainty intervals hypotheses broadcast journalism"
+   ],
+   "id": "m08-a08",
+   "n": 8,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a08-incerteza-no-ar",
+   "anterior": "Clima, queimadas e orçamento: fonte especializada, não modelo caseiro",
+   "proxima": "Correlação não é causalidade — e o recorte muda a conclusão",
+   "yaml": "aulas/m08-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "correlacao-e-recorte",
+   "titulo": "Correlação não é causalidade — e o recorte muda a conclusão",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Aplicar a regra: correlação não é causalidade",
+    "Mostrar como recorte geográfico e recorte temporal mudam a conclusão"
+   ],
+   "topicos": [
+    "m08.i014",
+    "m08.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "correlation is not causation geographic temporal cutoff data journalism"
+   ],
+   "id": "m08-a09",
+   "n": 9,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a09-correlacao-e-recorte",
+   "anterior": "Incerteza, intervalo e hipótese: como falar sem superlativo indevido",
+   "proxima": "Atraso, buraco no interior, quando pedir ajuda e a revisão do número",
+   "yaml": "aulas/m08-a09.yaml",
+   "extra": false
+  },
+  {
+   "slug": "qualidade-da-base-e-revisao",
+   "titulo": "Atraso, buraco no interior, quando pedir ajuda e a revisão do número",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Avaliar qualidade da base: atraso, sub-registro, mudança de metodologia e buracos em município do interior",
+    "Saber quando a equipe de dados precisa entrar e revisar, antes de publicar, origem, data, conta e responsável pela checagem"
+   ],
+   "topicos": [
+    "m08.i016",
+    "m08.i017",
+    "m08.i018"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "data quality underreporting review before publishing numbers journalism"
+   ],
+   "id": "m08-a10",
+   "n": 10,
+   "modulo": "m08",
+   "modulo_titulo": "Jornalismo de dados e previsões com cuidado",
+   "modulo_slug": "jornalismo-de-dados",
+   "total_modulo": 10,
+   "dir": "m08-jornalismo-de-dados/m08-a10-qualidade-da-base-e-revisao",
+   "anterior": "Correlação não é causalidade — e o recorte muda a conclusão",
+   "proxima": null,
+   "yaml": "aulas/m08-a10.yaml",
+   "extra": false
+  },
+  {
+   "slug": "ia-entrega-pista",
+   "titulo": "Tudo que a IA entregou vira pista: confira na fonte primária",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Tratar toda entrega da IA como pista a conferir na fonte primária",
+    "Exigir dupla checagem de números, nomes, cargos, datas, citações e links"
+   ],
+   "topicos": [
+    "m09.i002",
+    "m09.i003"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "AI output is a lead verify primary source journalism"
+   ],
+   "id": "m09-a01",
+   "n": 1,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a01-ia-entrega-pista",
+   "anterior": null,
+   "proxima": "Quem gerou o texto não é a prova de que o texto está certo",
+   "yaml": "aulas/m09-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "nao-usar-a-propria-ferramenta-como-prova",
+   "titulo": "Quem gerou o texto não é a prova de que o texto está certo",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Recusar usar a própria ferramenta que gerou o texto como única prova de que o texto está certo",
+    "Manter o fact-checking clássico: a IA não substitui o método de agências e mesas de verificação"
+   ],
+   "topicos": [
+    "m09.i004",
+    "m09.i005"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "fact checking method AI cannot verify itself Poynter"
+   ],
+   "id": "m09-a02",
+   "n": 2,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a02-nao-usar-a-propria-ferramenta-como-prova",
+   "anterior": "Tudo que a IA entregou vira pista: confira na fonte primária",
+   "proxima": "Fact Check Explorer e bases publicadas — com leitura da peça original",
+   "yaml": "aulas/m09-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "ferramentas-de-apoio-a-checagem",
+   "titulo": "Fact Check Explorer e bases publicadas — com leitura da peça original",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Usar o Fact Check Explorer e bases de checagens publicadas como apoio",
+    "Ler a peça original, não só o recorte que a ferramenta devolve"
+   ],
+   "topicos": [
+    "m09.i006"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "Google Fact Check Explorer official"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Google Fact Check Explorer",
+     "url": "https://toolbox.google.com/factcheck/explorer"
+    }
+   ],
+   "id": "m09-a03",
+   "n": 3,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a03-ferramentas-de-apoio-a-checagem",
+   "anterior": "Quem gerou o texto não é a prova de que o texto está certo",
+   "proxima": "Imagem, áudio e vídeo sintéticos — e a edição enganosa tradicional",
+   "yaml": "aulas/m09-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "o-que-e-midia-sintetica",
+   "titulo": "Imagem, áudio e vídeo sintéticos — e a edição enganosa tradicional",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Diferenciar mídia sintética (imagem gerada, voz clonada, vídeo fabricado) e edição enganosa tradicional",
+    "Nomear cada tipo com precisão antes de qualquer protocolo"
+   ],
+   "topicos": [
+    "m09.i008"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "synthetic media cloned voice AI generated image vs traditional cheapfake"
+   ],
+   "id": "m09-a04",
+   "n": 4,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a04-o-que-e-midia-sintetica",
+   "anterior": "Fact Check Explorer e bases publicadas — com leitura da peça original",
+   "proxima": "Artefato não prova origem — e a ausência de artefato não prova autenticidade",
+   "yaml": "aulas/m09-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "sinais-limites-e-procedimentos",
+   "titulo": "Artefato não prova origem — e a ausência de artefato não prova autenticidade",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Usar sinais de alerta conhecendo os limites: artefato visual não prova origem, e ausência de artefato não prova autenticidade",
+    "Seguir a origem do arquivo, metadados quando existirem, busca reversa, contato com a fonte e contexto de publicação"
+   ],
+   "topicos": [
+    "m09.i009",
+    "m09.i010"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "reverse image search metadata synthetic media detection limits journalism"
+   ],
+   "id": "m09-a05",
+   "n": 5,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a05-sinais-limites-e-procedimentos",
+   "anterior": "Imagem, áudio e vídeo sintéticos — e a edição enganosa tradicional",
+   "proxima": "Sintético em campanha e o selo quando a própria redação gera a imagem",
+   "yaml": "aulas/m09-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "campanha-crise-e-politica-de-uso",
+   "titulo": "Sintético em campanha e o selo quando a própria redação gera a imagem",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Equilibrar velocidade da redação e risco de amplificar o falso em campanha e em crises, inclusive no ciclo eleitoral",
+    "Aplicar a política de uso de imagem, áudio ou vídeo gerados pela própria redação: ilustração, engano e selo explícito"
+   ],
+   "topicos": [
+    "m09.i011",
+    "m09.i012"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "synthetic media elections newsroom labeling policy AI images"
+   ],
+   "id": "m09-a06",
+   "n": 6,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a06-campanha-crise-e-politica-de-uso",
+   "anterior": "Artefato não prova origem — e a ausência de artefato não prova autenticidade",
+   "proxima": "De onde saiu, quem impulsionou e o que muda em ano eleitoral",
+   "yaml": "aulas/m09-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "cadeia-de-circulacao-e-eleicoes",
+   "titulo": "De onde saiu, quem impulsionou e o que muda em ano eleitoral",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Mapear a cadeia de circulação: de onde saiu, quem impulsionou e o que já foi desmentido",
+    "Ajustar o protocolo em ano eleitoral, conforme formações de referência no Brasil sobre integridade da informação"
+   ],
+   "topicos": [
+    "m09.i014",
+    "m09.i015"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "disinformation circulation chain election integrity journalism Brazil"
+   ],
+   "id": "m09-a07",
+   "n": 7,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a07-cadeia-de-circulacao-e-eleicoes",
+   "anterior": "Sintético em campanha e o selo quando a própria redação gera a imagem",
+   "proxima": "Como corrigir no ar quando o erro teve origem na IA",
+   "yaml": "aulas/m09-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "correcao-e-colaboracao",
+   "titulo": "Como corrigir no ar quando o erro teve origem na IA",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Corrigir no ar e no digital quando a redação erra, inclusive se o erro teve origem em ferramenta de IA",
+    "Colaborar com mesas de verificação e com o jornalismo de dados da casa, quando houver"
+   ],
+   "topicos": [
+    "m09.i016",
+    "m09.i017"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "newsroom corrections on air AI errors verification desk"
+   ],
+   "id": "m09-a08",
+   "n": 8,
+   "modulo": "m09",
+   "modulo_titulo": "Verificação, checagem e mídia sintética",
+   "modulo_slug": "verificacao-e-midia-sintetica",
+   "total_modulo": 8,
+   "dir": "m09-verificacao-e-midia-sintetica/m09-a08-correcao-e-colaboracao",
+   "anterior": "De onde saiu, quem impulsionou e o que muda em ano eleitoral",
+   "proxima": null,
+   "yaml": "aulas/m09-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "independencia-precisao-e-dano",
+   "titulo": "Independência, precisão, honestidade com o público e dever de minimizar dano",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Reafirmar independência, precisão, honestidade com o público e dever de minimizar dano no uso de IA",
+    "Usar esses princípios como teste de qualquer atalho que a ferramenta ofereça"
+   ],
+   "topicos": [
+    "m10.i002"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 15,
+   "busca_videos": [
+    "journalism ethics AI accuracy minimize harm"
+   ],
+   "id": "m10-a01",
+   "n": 1,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a01-independencia-precisao-e-dano",
+   "anterior": null,
+   "proxima": "Teste de viés — e o juízo sobre suspeito, vítima e interesse público não se terceiriza",
+   "yaml": "aulas/m10-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "vies-e-juizo-nao-terceirizado",
+   "titulo": "Teste de viés — e o juízo sobre suspeito, vítima e interesse público não se terceiriza",
+   "tipo": "pratica",
+   "objetivos": [
+    "Testar respostas da IA com os mesmos fatos em recortes diferentes (gênero, raça, território, afiliação política, povos indígenas)",
+    "Recusar terceirizar para o modelo o juízo sobre quem é suspeito, quem é vítima e o que é de interesse público"
+   ],
+   "topicos": [
+    "m10.i003",
+    "m10.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "AI bias testing gender race indigenous journalism ethics"
+   ],
+   "pratica": "Rodar o mesmo conjunto de fatos em dois recortes (por território ou por grupo) e anotar diferenças de tom ou de juízo.",
+   "id": "m10-a02",
+   "n": 2,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a02-vies-e-juizo-nao-terceirizado",
+   "anterior": "Independência, precisão, honestidade com o público e dever de minimizar dano",
+   "proxima": "Crédito, risco de plágio e o debate sobre treinar modelos com jornalismo",
+   "yaml": "aulas/m10-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "credito-plagio-e-propriedade",
+   "titulo": "Crédito, risco de plágio e o debate sobre treinar modelos com jornalismo",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Citar com crédito e reconhecer o risco de plágio ou de reaproveitar texto de terceiro via modelo",
+    "Explicar o debate sobre uso de conteúdo jornalístico para treinar modelos e o que isso implica para o veículo e para a reportagem"
+   ],
+   "topicos": [
+    "m10.i005",
+    "m10.i006"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "copyright news content training AI models plagiarism journalism"
+   ],
+   "id": "m10-a03",
+   "n": 3,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a03-credito-plagio-e-propriedade",
+   "anterior": "Teste de viés — e o juízo sobre suspeito, vítima e interesse público não se terceiriza",
+   "proxima": "LGPD: base legal, minimização e dado de criança",
+   "yaml": "aulas/m10-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "lgpd-minimizacao-e-dados-sensiveis",
+   "titulo": "LGPD: base legal, minimização e dado de criança",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Aplicar base legal, minimização e finalidade: comentários, documentos, planilhas e entrevistas não entram na ferramenta porque é mais fácil",
+    "Distinguir dado pessoal, dado sensível e dado de criança e adolescente"
+   ],
+   "topicos": [
+    "m10.i008",
+    "m10.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "LGPD personal sensitive children's data newsroom AI"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m10-a04",
+   "n": 4,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a04-lgpd-minimizacao-e-dados-sensiveis",
+   "anterior": "Crédito, risco de plágio e o debate sobre treinar modelos com jornalismo",
+   "proxima": "Fonte em risco não vai à nuvem — leia os termos da conta que você usa",
+   "yaml": "aulas/m10-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "fonte-em-risco-e-contas",
+   "titulo": "Fonte em risco não vai à nuvem — leia os termos da conta que você usa",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Aplicar a regra padrão: fonte em risco, off e material sob segredo de Justiça não se enviam à nuvem",
+    "Ler os termos vigentes de contas pessoais versus corporativas, histórico, treino do modelo e política de retenção do provedor"
+   ],
+   "topicos": [
+    "m10.i010",
+    "m10.i011"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "confidential sources cloud AI accounts retention policy newsroom"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m10-a05",
+   "n": 5,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a05-fonte-em-risco-e-contas",
+   "anterior": "LGPD: base legal, minimização e dado de criança",
+   "proxima": "Golpe com tema de IA, extensões duvidosas e chave compartilhada",
+   "yaml": "aulas/m10-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "seguranca-digital-basica",
+   "titulo": "Golpe com tema de IA, extensões duvidosas e chave compartilhada",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Reconhecer golpe com tema de IA, extensões duvidosas e o risco de compartilhar chaves ou acessos",
+    "Adotar práticas mínimas de segurança digital na redação"
+   ],
+   "topicos": [
+    "m10.i012"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "AI themed phishing API keys browser extensions newsroom security"
+   ],
+   "id": "m10-a06",
+   "n": 6,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a06-seguranca-digital-basica",
+   "anterior": "Fonte em risco não vai à nuvem — leia os termos da conta que você usa",
+   "proxima": "Quando declarar o uso de IA — em linguagem clara, em todos os meios",
+   "yaml": "aulas/m10-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "quando-declarar-o-uso-de-ia",
+   "titulo": "Quando declarar o uso de IA — em linguagem clara, em todos os meios",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Decidir quando declarar o uso de IA (apoio à apuração, geração de imagem, síntese, tradução, transcrição) e quando a menção é dispensável",
+    "Fazer essa declaração em linguagem clara, sem jargão, em TV, rádio, site e redes"
+   ],
+   "topicos": [
+    "m10.i014",
+    "m10.i015"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "disclosing AI use newsroom labeling broadcast digital"
+   ],
+   "id": "m10-a07",
+   "n": 7,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a07-quando-declarar-o-uso-de-ia",
+   "anterior": "Golpe com tema de IA, extensões duvidosas e chave compartilhada",
+   "proxima": "O erro é da redação, não da IA — e como responder ao público",
+   "yaml": "aulas/m10-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "responsabilidade-e-perguntas-do-publico",
+   "titulo": "O erro é da redação, não da IA — e como responder ao público",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Recusar atribuir à IA a responsabilidade por um erro editorial",
+    "Responder pergunta de audiência ou de entrevistado sobre o uso de IA na reportagem com clareza"
+   ],
+   "topicos": [
+    "m10.i016",
+    "m10.i017"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "editorial responsibility AI errors audience questions transparency"
+   ],
+   "id": "m10-a08",
+   "n": 8,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a08-responsabilidade-e-perguntas-do-publico",
+   "anterior": "Quando declarar o uso de IA — em linguagem clara, em todos os meios",
+   "proxima": "Os componentes mínimos da política editorial de IA da casa",
+   "yaml": "aulas/m10-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "componentes-da-politica",
+   "titulo": "Os componentes mínimos da política editorial de IA da casa",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Listar componentes mínimos: usos permitidos e proibidos, checagem obrigatória, proteção de fontes, transparência, responsabilidade da chefia e canal de dúvida",
+    "Adaptar modelos de referência (Abraji, Poynter, JournalismAI) ao contexto da casa, definindo quem aprova exceções e como se registra o uso em pautas sensíveis"
+   ],
+   "topicos": [
+    "m10.i019",
+    "m10.i020",
+    "m10.i021"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "newsroom AI policy Poynter JournalismAI Abraji guidelines"
+   ],
+   "id": "m10-a09",
+   "n": 9,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a09-componentes-da-politica",
+   "anterior": "O erro é da redação, não da IA — e como responder ao público",
+   "proxima": "A política envelhece — rascunhe a da Rede Amazônica",
+   "yaml": "aulas/m10-a09.yaml",
+   "extra": false
+  },
+  {
+   "slug": "formacao-continua-e-rascunho",
+   "titulo": "A política envelhece — rascunhe a da Rede Amazônica",
+   "tipo": "projeto",
+   "objetivos": [
+    "Prever formação contínua porque a política envelhece quando a ferramenta muda",
+    "Rascunhar uma política aplicável à Rede Amazônica, para revisão da direção e da editoria-chefe"
+   ],
+   "topicos": [
+    "m10.i022",
+    "m10.i023"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 60,
+   "busca_videos": [
+    "newsroom AI policy draft continuous training"
+   ],
+   "pratica": "Entregar um rascunho de política de IA da casa (usos permitidos e proibidos, checagem, fontes, transparência e canal de dúvida) para revisão da chefia.",
+   "id": "m10-a10",
+   "n": 10,
+   "modulo": "m10",
+   "modulo_titulo": "Ética, LGPD, transparência e política editorial de IA",
+   "modulo_slug": "etica-lgpd-politica",
+   "total_modulo": 10,
+   "dir": "m10-etica-lgpd-politica/m10-a10-formacao-continua-e-rascunho",
+   "anterior": "Os componentes mínimos da política editorial de IA da casa",
+   "proxima": null,
+   "yaml": "aulas/m10-a10.yaml",
+   "extra": false
+  },
+  {
+   "slug": "mapa-do-fluxo-atual",
+   "titulo": "Mapeie o fluxo atual: onde a IA reduz trabalho e onde ela cria risco",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Mapear o fluxo atual: pauta, apuração, edição, publicação, escuta e correção",
+    "Marcar onde a IA reduz trabalho repetitivo e onde ela cria retrabalho ou risco"
+   ],
+   "topicos": [
+    "m11.i002",
+    "m11.i003"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "newsroom workflow map AI automation risk"
+   ],
+   "id": "m11-a01",
+   "n": 1,
+   "modulo": "m11",
+   "modulo_titulo": "Automação, agentes e fluxo da redação",
+   "modulo_slug": "automacao-e-fluxo",
+   "total_modulo": 6,
+   "dir": "m11-automacao-e-fluxo/m11-a01-mapa-do-fluxo-atual",
+   "anterior": null,
+   "proxima": "GPTs, Gems e Projetos do Claude com instruções, acervo e teste",
+   "yaml": "aulas/m11-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "assistentes-personalizados",
+   "titulo": "GPTs, Gems e Projetos do Claude com instruções, acervo e teste",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Configurar assistentes personalizados da redação (GPTs, Gems, Projetos do Claude e equivalentes) com instruções, acervo e formato de saída",
+    "Testar o assistente antes de liberar para o plantão"
+   ],
+   "topicos": [
+    "m11.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "custom GPTs Gems Claude Projects newsroom assistants"
+   ],
+   "id": "m11-a02",
+   "n": 2,
+   "modulo": "m11",
+   "modulo_titulo": "Automação, agentes e fluxo da redação",
+   "modulo_slug": "automacao-e-fluxo",
+   "total_modulo": 6,
+   "dir": "m11-automacao-e-fluxo/m11-a02-assistentes-personalizados",
+   "anterior": "Mapeie o fluxo atual: onde a IA reduz trabalho e onde ela cria risco",
+   "proxima": "Encadeie etapas — e trave o humano antes de publicar ou de acusar",
+   "yaml": "aulas/m11-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "agentes-com-trava-humana",
+   "titulo": "Encadeie etapas — e trave o humano antes de publicar ou de acusar",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Descrever agentes e encadeamento de etapas (triagem, extração, planilha, alerta) com trava humana antes de publicar ou de acusar",
+    "Automatizar primeiro tarefas de alto volume e baixo risco (transcrição, recorte de diário, boletim de escuta), não a reportagem investigativa completa"
+   ],
+   "topicos": [
+    "m11.i005",
+    "m11.i006"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "AI agents human in the loop newsroom automation"
+   ],
+   "id": "m11-a03",
+   "n": 3,
+   "modulo": "m11",
+   "modulo_titulo": "Automação, agentes e fluxo da redação",
+   "modulo_slug": "automacao-e-fluxo",
+   "total_modulo": 6,
+   "dir": "m11-automacao-e-fluxo/m11-a03-agentes-com-trava-humana",
+   "anterior": "GPTs, Gems e Projetos do Claude com instruções, acervo e teste",
+   "proxima": "Quem olha o alerta no fim de semana — e como medir erro evitado e erro introduzido",
+   "yaml": "aulas/m11-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "plantao-e-indicadores",
+   "titulo": "Quem olha o alerta no fim de semana — e como medir erro evitado e erro introduzido",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Definir filas, plantão e fim de semana: quem olha o alerta e com que prazo",
+    "Acompanhar indicadores simples: tempo economizado, erros evitados, erros introduzidos e pautas geradas com qualidade"
+   ],
+   "topicos": [
+    "m11.i008",
+    "m11.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "newsroom desk alerts weekend staffing AI quality metrics"
+   ],
+   "id": "m11-a04",
+   "n": 4,
+   "modulo": "m11",
+   "modulo_titulo": "Automação, agentes e fluxo da redação",
+   "modulo_slug": "automacao-e-fluxo",
+   "total_modulo": 6,
+   "dir": "m11-automacao-e-fluxo/m11-a04-plantao-e-indicadores",
+   "anterior": "Encadeie etapas — e trave o humano antes de publicar ou de acusar",
+   "proxima": "Documente o fluxo para um colega novo repetir o método",
+   "yaml": "aulas/m11-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "documentacao-do-fluxo",
+   "titulo": "Documente o fluxo para um colega novo repetir o método",
+   "tipo": "pratica",
+   "objetivos": [
+    "Escrever a documentação do fluxo de forma que um colega novo consiga repetir o método",
+    "Incluir ferramentas, travas humanas e o que fazer quando o alerta falha"
+   ],
+   "topicos": [
+    "m11.i010"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "busca_videos": [
+    "newsroom process documentation onboarding automation"
+   ],
+   "pratica": "Documentar em uma página o fluxo de um alerta (quem olha, prazo, trava e o que registrar).",
+   "id": "m11-a05",
+   "n": 5,
+   "modulo": "m11",
+   "modulo_titulo": "Automação, agentes e fluxo da redação",
+   "modulo_slug": "automacao-e-fluxo",
+   "total_modulo": 6,
+   "dir": "m11-automacao-e-fluxo/m11-a05-documentacao-do-fluxo",
+   "anterior": "Quem olha o alerta no fim de semana — e como medir erro evitado e erro introduzido",
+   "proxima": "Ser citado com crédito — sem deixar o SEO de IA guiar a pauta",
+   "yaml": "aulas/m11-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "geo-e-limite-da-publicacao-automatica",
+   "titulo": "Ser citado com crédito — sem deixar o SEO de IA guiar a pauta",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Identificar o que a redação pode fazer para o jornalismo original ser citado com crédito em mecanismos de resposta com IA (GEO), sem deixar que essa otimização guide a pauta",
+    "Fixar o limite ético: o que nunca sai no automático"
+   ],
+   "topicos": [
+    "m11.i011",
+    "m11.i012"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "generative engine optimization GEO journalism citation ethics"
+   ],
+   "id": "m11-a06",
+   "n": 6,
+   "modulo": "m11",
+   "modulo_titulo": "Automação, agentes e fluxo da redação",
+   "modulo_slug": "automacao-e-fluxo",
+   "total_modulo": 6,
+   "dir": "m11-automacao-e-fluxo/m11-a06-geo-e-limite-da-publicacao-automatica",
+   "anterior": "Documente o fluxo para um colega novo repetir o método",
+   "proxima": null,
+   "yaml": "aulas/m11-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "o-que-e-um-pipeline",
+   "titulo": "Pipeline é etapa reexecutável — o modelo entra só na linguagem",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Definir pipeline como sequência de etapas reexecutáveis, com entrada, saída e regra claras — não um papo longo num chat",
+    "Separar etapas determinísticas em código (coleta, limpeza, recorte, contagem, cruzamento, validação) do ponto em que o modelo entra só para linguagem ou julgamento e sai de novo para o código gravar o resultado"
+   ],
+   "topicos": [
+    "m12.i002",
+    "m12.i003",
+    "m12.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "deterministic pipeline vs LLM step journalism workflow"
+   ],
+   "id": "m12-a01",
+   "n": 1,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a01-o-que-e-um-pipeline",
+   "anterior": null,
+   "proxima": "Tudo no chat versus pipeline: custo, erro, repetição e auditoria",
+   "yaml": "aulas/m12-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "chat-versus-pipeline",
+   "titulo": "Tudo no chat versus pipeline: custo, erro, repetição e auditoria",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Comparar, na mesma pauta, o caminho tudo no chat e o caminho do pipeline em tokens, tempo, erro, capacidade de repetir e de auditar",
+    "Usar cache e reexecução por etapa: se a coleta não mudou, não se paga de novo a transcrição nem o roteiro"
+   ],
+   "topicos": [
+    "m12.i005",
+    "m12.i006"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "LLM pipeline cache cost tokens vs chat journalism"
+   ],
+   "id": "m12-a02",
+   "n": 2,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a02-chat-versus-pipeline",
+   "anterior": "Pipeline é etapa reexecutável — o modelo entra só na linguagem",
+   "proxima": "Configuração em arquivo, registro de tokens e a trava antes de ir ao ar",
+   "yaml": "aulas/m12-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "config-custo-e-trava-humana",
+   "titulo": "Configuração em arquivo, registro de tokens e a trava antes de ir ao ar",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Colocar vozes, pastas, limites e fontes num arquivo de configuração (YAML ou equivalente), sem embutir decisão no meio do código ou do prompt",
+    "Registrar tokens e custo por etapa e no total, com meta de reduzir o que o modelo lê, e manter trava humana quando o resultado vira pauta, número publicado, acusação ou conteúdo no ar"
+   ],
+   "topicos": [
+    "m12.i007",
+    "m12.i008",
+    "m12.i009"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "YAML config token usage cost tracking human review pipeline"
+   ],
+   "id": "m12-a03",
+   "n": 3,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a03-config-custo-e-trava-humana",
+   "anterior": "Tudo no chat versus pipeline: custo, erro, repetição e auditoria",
+   "proxima": "Python para jornalistas: planilha, texto e pasta, começando no notebook",
+   "yaml": "aulas/m12-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "python-para-jornalistas",
+   "titulo": "Python para jornalistas: planilha, texto e pasta, começando no notebook",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Explicar por que o Python aparece tanto em redação de dados: lê planilha, texto e pasta de arquivos com pouca cerimônia",
+    "Começar num notebook no navegador (Jupyter ou Google Colab), para ver o resultado linha a linha"
+   ],
+   "topicos": [
+    "m12.i011",
+    "m12.i012"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 40,
+   "busca_videos": [
+    "Python Jupyter Colab data journalism beginners"
+   ],
+   "pratica": "Abrir um notebook e ler uma planilha pequena, conferindo as primeiras linhas.",
+   "id": "m12-a04",
+   "n": 4,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a04-python-para-jornalistas",
+   "anterior": "Configuração em arquivo, registro de tokens e a trava antes de ir ao ar",
+   "proxima": "Peça o código à IA, rode, leia o erro e confira a amostra",
+   "yaml": "aulas/m12-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "pedir-rodar-e-conferir-codigo",
+   "titulo": "Peça o código à IA, rode, leia o erro e confira a amostra",
+   "tipo": "codigo",
+   "objetivos": [
+    "Pedir o código à IA com o problema, o formato da entrada e o formato da saída, recusando código mágico que a pessoa não consegue explicar",
+    "Rodar, ler a mensagem de erro, mandar o erro de volta e conferir o resultado numa amostra — o jornalista permanece responsável pelo que o script faz"
+   ],
+   "topicos": [
+    "m12.i013",
+    "m12.i014"
+   ],
+   "duracao_video_s": 140,
+   "duracao_estudo_min": 60,
+   "busca_videos": [
+    "ask AI for python code run errors check sample journalism"
+   ],
+   "pratica": "Pedir um script que leia um CSV, rode, corrija o erro e confira três linhas na mão.",
+   "id": "m12-a05",
+   "n": 5,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a05-pedir-rodar-e-conferir-codigo",
+   "anterior": "Python para jornalistas: planilha, texto e pasta, começando no notebook",
+   "proxima": "O que não colar no notebook da nuvem — e quando pedir ajuda a quem já trabalha com dados",
+   "yaml": "aulas/m12-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "o-que-nao-colar-e-quando-pedir-ajuda",
+   "titulo": "O que não colar no notebook da nuvem — e quando pedir ajuda a quem já trabalha com dados",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Não colar no chat ou no notebook na nuvem fonte em risco, dado pessoal desnecessário, chave de API, senha ou material sob sigilo",
+    "Saber quando pedir ajuda a quem já trabalha com dados na casa, em vez de insistir sozinho"
+   ],
+   "topicos": [
+    "m12.i015",
+    "m12.i016"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 20,
+   "busca_videos": [
+    "API keys confidential data Colab security newsroom"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m12-a06",
+   "n": 6,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a06-o-que-nao-colar-e-quando-pedir-ajuda",
+   "anterior": "Peça o código à IA, rode, leia o erro e confira a amostra",
+   "proxima": "O pipeline interno de aulas como método — e a queda estimada de tokens",
+   "yaml": "aulas/m12-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "caso-aula-ra-e-economia-de-tokens",
+   "titulo": "O pipeline interno de aulas como método — e a queda estimada de tokens",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Descrever o pipeline interno de criação de aulas (aula-ra) como exemplo de método, não como produto a copiar inteiro: cada etapa tem script, cache e ponto de parada",
+    "Relatar a cadeia típica (legendas, roteiro só com trechos relevantes, narração, crédito, HTML, vídeo 16:9 e 9:16) e a estimativa de que, no teste das aulas de amostra, os tokens caíram cerca de 54 por cento ao enviar só trechos relevantes e reaproveitar o cache — número estimado por tokenizer, não medido numa API de provedor; e a reexecução seletiva (só a voz ou só o vídeo) quando a entrada não mudou"
+   ],
+   "topicos": [
+    "m12.i018",
+    "m12.i019",
+    "m12.i020",
+    "m12.i021"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "selective context pipeline cache token savings educational video"
+   ],
+   "id": "m12-a07",
+   "n": 7,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a07-caso-aula-ra-e-economia-de-tokens",
+   "anterior": "O que não colar no notebook da nuvem — e quando pedir ajuda a quem já trabalha com dados",
+   "proxima": "Três pipelines da redação: diários, comentários e escuta",
+   "yaml": "aulas/m12-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "pipelines-da-redacao",
+   "titulo": "Três pipelines da redação: diários, comentários e escuta",
+   "tipo": "pratica",
+   "objetivos": [
+    "Traduzir o método para diários oficiais (baixar, extrair, filtrar, modelo só para classificar ou resumir o que restou), comentários (contar no código; modelo só na amostra ou no boletim) e escuta (busca e alerta no código; o modelo redige o resumo do que já foi filtrado, nunca inventa que algo está em alta)",
+    "Desenhar no papel, depois num YAML, as etapas de um desses três pipelines, marcando onde o modelo entra, onde não entra e onde a pessoa revisa"
+   ],
+   "topicos": [
+    "m12.i022",
+    "m12.i023",
+    "m12.i024",
+    "m12.i025"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 50,
+   "busca_videos": [
+    "official gazette comments listening pipelines YAML journalism"
+   ],
+   "pratica": "Desenhar no papel e depois num YAML as etapas de um pipeline (diários, comentários ou escuta), com o ponto do modelo e o ponto de revisão humana.",
+   "id": "m12-a08",
+   "n": 8,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a08-pipelines-da-redacao",
+   "anterior": "O pipeline interno de aulas como método — e a queda estimada de tokens",
+   "proxima": "FFmpeg em lote: corte, legenda, 16:9 e o vertical em FIT",
+   "yaml": "aulas/m12-a08.yaml",
+   "extra": false
+  },
+  {
+   "slug": "ffmpeg-e-formatos",
+   "titulo": "FFmpeg em lote: corte, legenda, 16:9 e o vertical em FIT",
+   "tipo": "ferramenta",
+   "objetivos": [
+    "Listar o que o FFmpeg faz bem em lote: cortar, juntar, redimensionar, gravar legenda na imagem e gerar versão 16:9 e 9:16",
+    "Explicar o enquadramento FIT no vertical (quadro inteiro centralizado sobre fundo desfocado), para não cortar crédito nem informação"
+   ],
+   "topicos": [
+    "m12.i027",
+    "m12.i028"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 35,
+   "busca_videos": [
+    "ffmpeg crop scale subtitles 16:9 9:16 blur background"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Documentação do FFmpeg",
+     "url": "https://ffmpeg.org/documentation.html"
+    }
+   ],
+   "id": "m12-a09",
+   "n": 9,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a09-ffmpeg-e-formatos",
+   "anterior": "Três pipelines da redação: diários, comentários e escuta",
+   "proxima": "Legenda, narração sintética, crédito na imagem e o que não se automatiza",
+   "yaml": "aulas/m12-a09.yaml",
+   "extra": false
+  },
+  {
+   "slug": "legendas-narracao-credito-e-limite",
+   "titulo": "Legenda, narração sintética, crédito na imagem e o que não se automatiza",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Revisar nomes, toponímia amazônica e termos técnicos em legenda automática (Whisper ou equivalente) antes de publicar, e decidir quando a narração sintética exige selo, autorização e decisão editorial",
+    "Gravar crédito de trechos de terceiros na própria imagem (canal, título, link e tempo), respeitar o limite jurídico de obra alheia, e não automatizar escolha do furo, montagem que altera o sentido ou publicação no ar sem revisão — vídeo gerado ou narrado por IA segue a política de transparência e de rotulagem da casa (módulo 9)"
+   ],
+   "topicos": [
+    "m12.i029",
+    "m12.i030",
+    "m12.i031",
+    "m12.i032",
+    "m12.i033"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "Whisper subtitles synthetic narration credit overlay ethics journalism"
+   ],
+   "id": "m12-a10",
+   "n": 10,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a10-legendas-narracao-credito-e-limite",
+   "anterior": "FFmpeg em lote: corte, legenda, 16:9 e o vertical em FIT",
+   "proxima": "Skill é pacote reutilizável — e as regras do que o agente sempre faz ou nunca faz",
+   "yaml": "aulas/m12-a10.yaml",
+   "extra": false
+  },
+  {
+   "slug": "skills-e-regras-de-projeto",
+   "titulo": "Skill é pacote reutilizável — e as regras do que o agente sempre faz ou nunca faz",
+   "tipo": "conceitual",
+   "objetivos": [
+    "Definir skill como pacote reutilizável de instruções (e, às vezes, de scripts) que um agente segue numa tarefa, distinto de um truque de prompt solto no chat",
+    "Descrever, conforme a documentação oficial da Anthropic, Agent Skills como pasta com SKILL.md (metadados em YAML e instruções) e as regras de projeto em ambientes de agentes (por exemplo regras do Cursor), conforme a documentação vigente"
+   ],
+   "topicos": [
+    "m12.i035",
+    "m12.i036",
+    "m12.i037"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 25,
+   "busca_videos": [
+    "Anthropic Agent Skills SKILL.md Cursor rules official docs"
+   ],
+   "documentacao": [
+    {
+     "titulo": "Anthropic Docs — Agent Skills",
+     "url": "https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills"
+    }
+   ],
+   "id": "m12-a11",
+   "n": 11,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a11-skills-e-regras-de-projeto",
+   "anterior": "Legenda, narração sintética, crédito na imagem e o que não se automatiza",
+   "proxima": "Buscar no GitHub com ficha de risco — e versionar as skills da casa",
+   "yaml": "aulas/m12-a11.yaml",
+   "extra": false
+  },
+  {
+   "slug": "buscar-no-github-e-seguranca",
+   "titulo": "Buscar no GitHub com ficha de risco — e versionar as skills da casa",
+   "tipo": "pratica",
+   "objetivos": [
+    "Buscar skills e repositórios no GitHub olhando licença, data da última atualização, questões abertas, estrelas só como sinal fraco, README e testes visíveis, sem rodar código baixado sem ler e sem colar chave nem dado da redação em repositório alheio",
+    "Reutilizar, adaptar e versionar as skills da própria casa, com registro de mudança; avaliar um repositório público com uma ficha e rascunhar o SKILL.md de uma tarefa da editoria"
+   ],
+   "topicos": [
+    "m12.i038",
+    "m12.i039",
+    "m12.i040",
+    "m12.i041"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 45,
+   "busca_videos": [
+    "GitHub evaluate repository license security Agent Skills"
+   ],
+   "pratica": "Preencher uma ficha (licença, manutenção, risco, o que reaproveitar) de um repositório público e rascunhar o SKILL.md de uma tarefa da editoria.",
+   "id": "m12-a12",
+   "n": 12,
+   "modulo": "m12",
+   "modulo_titulo": "Pipelines em Python: o LLM só quando for necessário",
+   "modulo_slug": "pipelines-em-python",
+   "total_modulo": 12,
+   "dir": "m12-pipelines-em-python/m12-a12-buscar-no-github-e-seguranca",
+   "anterior": "Skill é pacote reutilizável — e as regras do que o agente sempre faz ou nunca faz",
+   "proxima": null,
+   "yaml": "aulas/m12-a12.yaml",
+   "extra": false
+  },
+  {
+   "slug": "escolher-o-caminho",
+   "titulo": "Escolha o caminho — de preferência ligado a uma pauta real",
+   "tipo": "projeto",
+   "objetivos": [
+    "Escolher, individualmente ou em dupla, um dos caminhos do projeto, de preferência ligado a uma pauta ou a um território real da cobertura",
+    "Registrar a escolha e o recorte territorial ou temático"
+   ],
+   "topicos": [
+    "m13.i002"
+   ],
+   "duracao_video_s": 110,
+   "duracao_estudo_min": 30,
+   "pratica": "Registrar o caminho escolhido, o território ou a pauta e o porquê da escolha. (A ementa fala em três caminhos e em seguida lista quatro, A a D: use os quatro descritos.)",
+   "id": "m13-a01",
+   "n": 1,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a01-escolher-o-caminho",
+   "anterior": null,
+   "proxima": "Caminho A: agência de escuta de um tema da cobertura",
+   "yaml": "aulas/m13-a01.yaml",
+   "extra": false
+  },
+  {
+   "slug": "caminho-agencia-de-escuta",
+   "titulo": "Caminho A: agência de escuta de um tema da cobertura",
+   "tipo": "projeto",
+   "objetivos": [
+    "Desenhar dicionário regional, canais, boletim e protocolo de alerta para um tema (queimadas, saúde, eleições ou obra pública)",
+    "Deixar explícito o que é fato observado e o que ainda é hipótese"
+   ],
+   "topicos": [
+    "m13.i003"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 60,
+   "pratica": "Entregar o dicionário, a lista de canais, o modelo de boletim e o protocolo de alerta do tema escolhido.",
+   "id": "m13-a02",
+   "n": 2,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a02-caminho-agencia-de-escuta",
+   "anterior": "Escolha o caminho — de preferência ligado a uma pauta real",
+   "proxima": "Caminho B: monitoramento de diários oficiais com lista de inconsistências",
+   "yaml": "aulas/m13-a02.yaml",
+   "extra": false
+  },
+  {
+   "slug": "caminho-diarios-oficiais",
+   "titulo": "Caminho B: monitoramento de diários oficiais com lista de inconsistências",
+   "tipo": "projeto",
+   "objetivos": [
+    "Recortar um estado ou município, extrair atos, cruzar com transparência e montar a lista de inconsistências a checar",
+    "Manter cada item como pista, não como acusação"
+   ],
+   "topicos": [
+    "m13.i004"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 60,
+   "pratica": "Entregar o recorte, a tabela de extração e a lista de inconsistências a checar, com fonte de cada linha.",
+   "id": "m13-a03",
+   "n": 3,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a03-caminho-diarios-oficiais",
+   "anterior": "Caminho A: agência de escuta de um tema da cobertura",
+   "proxima": "Caminho C: comentários e audiência de uma série ou de um programa",
+   "yaml": "aulas/m13-a03.yaml",
+   "extra": false
+  },
+  {
+   "slug": "caminho-comentarios",
+   "titulo": "Caminho C: comentários e audiência de uma série ou de um programa",
+   "tipo": "projeto",
+   "objetivos": [
+    "Definir método de coleta, temas, riscos e recomendações editoriais a partir dos comentários de uma série ou de um programa",
+    "Evitar transformar volume em 'o público acha que'"
+   ],
+   "topicos": [
+    "m13.i005"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 60,
+   "pratica": "Entregar método, temas encontrados, riscos e recomendações editoriais, com os limites da amostra.",
+   "id": "m13-a04",
+   "n": 4,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a04-caminho-comentarios",
+   "anterior": "Caminho B: monitoramento de diários oficiais com lista de inconsistências",
+   "proxima": "Caminho D: pipeline reexecutável, com o modelo só onde a linguagem entra",
+   "yaml": "aulas/m13-a04.yaml",
+   "extra": false
+  },
+  {
+   "slug": "caminho-pipeline",
+   "titulo": "Caminho D: pipeline reexecutável, com o modelo só onde a linguagem entra",
+   "tipo": "projeto",
+   "objetivos": [
+    "Desenhar um pipeline reexecutável (diários, comentários, escuta ou recorte de vídeo) com etapas em código, modelo só onde a linguagem for necessária, registro de custo e ponto de revisão humana",
+    "Marcar com clareza onde o modelo entra, onde não entra e quem revisa"
+   ],
+   "topicos": [
+    "m13.i006"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 70,
+   "pratica": "Entregar o desenho das etapas (papel e YAML), o registro de custo previsto e o ponto de revisão humana.",
+   "id": "m13-a05",
+   "n": 5,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a05-caminho-pipeline",
+   "anterior": "Caminho C: comentários e audiência de uma série ou de um programa",
+   "proxima": "Documento de partida: problema, fontes, riscos e o que não será automatizado",
+   "yaml": "aulas/m13-a05.yaml",
+   "extra": false
+  },
+  {
+   "slug": "documento-de-partida",
+   "titulo": "Documento de partida: problema, fontes, riscos e o que não será automatizado",
+   "tipo": "projeto",
+   "objetivos": [
+    "Redigir o documento de partida com problema editorial, público afetado, fontes, ferramentas, riscos (ética, LGPD, alucinação) e o que não será automatizado",
+    "Usar esse documento como contrato da execução supervisionada"
+   ],
+   "topicos": [
+    "m13.i007"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 45,
+   "pratica": "Entregar o documento de partida do projeto escolhido.",
+   "documentacao": [
+    {
+     "titulo": "Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    }
+   ],
+   "id": "m13-a06",
+   "n": 6,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a06-documento-de-partida",
+   "anterior": "Caminho D: pipeline reexecutável, com o modelo só onde a linguagem entra",
+   "proxima": "Execute com amostra conferida, produto mínimo e plano de continuidade",
+   "yaml": "aulas/m13-a06.yaml",
+   "extra": false
+  },
+  {
+   "slug": "execucao-supervisionada",
+   "titulo": "Execute com amostra conferida, produto mínimo e plano de continuidade",
+   "tipo": "projeto",
+   "objetivos": [
+    "Montar o fluxo com as ferramentas escolhidas (entre Claude, Gemini, Grok, ChatGPT e o estojo complementar)",
+    "Conferir uma amostra com registro do que a IA acertou e do que errou; entregar um produto mínimo (boletim, planilha auditável, protocolo ou protótipo de alerta) e o plano de continuidade (quem opera, com que frequência, com que revisão)"
+   ],
+   "topicos": [
+    "m13.i009",
+    "m13.i010",
+    "m13.i011",
+    "m13.i012"
+   ],
+   "duracao_video_s": 130,
+   "duracao_estudo_min": 90,
+   "pratica": "Entregar o produto mínimo, o registro da amostra conferida e o plano de continuidade na redação.",
+   "id": "m13-a07",
+   "n": 7,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a07-execucao-supervisionada",
+   "anterior": "Documento de partida: problema, fontes, riscos e o que não será automatizado",
+   "proxima": "Apresente à editoria: problema, método, achado, limite e pedido de decisão",
+   "yaml": "aulas/m13-a07.yaml",
+   "extra": false
+  },
+  {
+   "slug": "apresentacao-e-avaliacao",
+   "titulo": "Apresente à editoria: problema, método, achado, limite e pedido de decisão",
+   "tipo": "projeto",
+   "objetivos": [
+    "Fazer uma apresentação curta à editoria com problema, método, achado, limite e pedido de decisão",
+    "Atender aos critérios de relevância jornalística, rigor da checagem, cuidado ético e de dados, clareza do método e viabilidade na rotina, incorporando lições à política de IA e à biblioteca de prompts, e entregando o produto, o registro de checagem e a proposta de política ou de protocolo"
+   ],
+   "topicos": [
+    "m13.i014",
+    "m13.i015",
+    "m13.i016",
+    "m13.i017"
+   ],
+   "duracao_video_s": 120,
+   "duracao_estudo_min": 60,
+   "pratica": "Apresentar à editoria e entregar o pacote final: produto, registro de checagem e proposta de política ou de protocolo associada.",
+   "id": "m13-a08",
+   "n": 8,
+   "modulo": "m13",
+   "modulo_titulo": "Projeto final — aplicação na Rede Amazônica",
+   "modulo_slug": "projeto-final",
+   "total_modulo": 8,
+   "dir": "m13-projeto-final/m13-a08-apresentacao-e-avaliacao",
+   "anterior": "Execute com amostra conferida, produto mínimo e plano de continuidade",
+   "proxima": null,
+   "yaml": "aulas/m13-a08.yaml",
+   "extra": false
+  }
+ ]
+}

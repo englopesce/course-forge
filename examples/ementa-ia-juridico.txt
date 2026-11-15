@@ -1,0 +1,233 @@
+Ementa IA para Jurídico
+
+Público: advogados, advogadas, paralegais e gestores do departamento jurídico do Grupo Rede Amazônica (grupo de mídia, rádio e TV no Norte do Brasil), além de profissionais de compliance e contratos que trabalham com o jurídico. Não é um curso de formação de programadores. Pré-requisito: rotina com contratos, peças ou pareceres. Quem já trabalha com dados avança no módulo 12 sem deixar o grupo para trás.
+
+Carga horária total sugerida: 104 horas, em 13 módulos, além do tempo de prática com material fictício ou anonimizado da própria área. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar o jurídico a usar inteligência artificial com método — para pesquisar, redigir, revisar contratos, acompanhar processos e responder a riscos de imagem, autoral e de radiodifusão —, mantendo a responsabilidade do advogado, a veracidade de cada citação, o sigilo profissional e a proteção de dados, e montando pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários.
+
+Princípios que valem para todos os módulos:
+- A IA auxilia; o julgamento profissional, a assinatura e a responsabilidade continuam do advogado. A Recomendação n. 001/2024 do Conselho Federal da OAB orienta supervisão humana, sigilo, verificação de doutrina e jurisprudência e transparência com o cliente.
+- Nenhuma jurisprudência, súmula, artigo de lei ou doutrina vai para peça, parecer ou e-mail sem conferência no repositório oficial (site do tribunal, Planalto, Diário Oficial). Tribunais brasileiros já multaram advogados por citar precedentes inexistentes gerados por IA (TJSC, fev. 2025; TJPR, jun. 2026).
+- Não se envia a ferramenta não aprovada pela empresa: peça sob segredo de justiça, dado pessoal identificável, estratégia processual, contrato confidencial, senha ou certificado digital.
+- Norma citada pela IA é pista, não fonte: conferir no texto oficial vigente e na redação compilada.
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências comparadas estão em comparacao-ementa-ia-juridico.md.
+
+1 - Fundamentos de IA e limites na área jurídica (6 horas)
+   ● O que a área precisa entender sobre IA
+         ○ Diferença entre automação tradicional (regras, macros, RPA), aprendizado de máquina, IA generativa e agentes
+         ○ O que um modelo de linguagem faz de fato: prever texto provável, não consultar uma base oficial nem "saber" o fato vigente
+         ○ Por que a resposta soa segura mesmo quando está errada (alucinação)
+         ○ Ferramentas que geram texto versus ferramentas que buscam, calculam ou extraem dados
+         ○ Multimodalidade útil ao jurídico: PDF de processo, imagem de documento, áudio de audiência ou reunião, vídeo de programa questionado
+
+   ● Onde a IA ajuda e onde não se pode confiar
+         ○ Onde costuma ajudar: leitura de autos e contratos longos, resumo, comparação de versões, rascunho de notificação e de cláusula, organização de pesquisa, linha do tempo de fatos
+         ○ Onde não se confia sem validação: jurisprudência, número de processo, súmula, artigo de lei, prazo processual, valor de causa, conclusão de mérito e enquadramento de risco
+         ○ Atividades automatizáveis, apoiáveis e dependentes de julgamento profissional
+         ○ Definir o problema (o que resolver, com qual prazo, qual risco) antes de escolher a ferramenta
+
+   ● Riscos que a área precisa nomear desde o primeiro dia
+         ○ Citações e precedentes inventados (alucinação jurídica) e suas consequências: litigância de má-fé (arts. 77 e 80 do CPC) e apuração disciplinar (art. 34 do Estatuto da Advocacia)
+         ○ Sigilo profissional e segredo de justiça; dados pessoais (LGPD)
+         ○ Prompt injection: comandos escondidos em documentos de terceiros
+         ○ Responsabilidade: o Código de Ética e Disciplina da OAB vale igual para trabalho feito com IA
+
+2 - Uso comparado de Gemini Enterprise, Claude, ChatGPT e Grok (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios: tipo de tarefa, leitura de arquivos longos, citação de fonte, integração com o que a empresa já usa, custo, limites, retenção e uso dos dados
+         ○ Teste lado a lado com o mesmo pacote fictício da área (contrato de licenciamento fictício, petição inicial anonimizada, notificação extrajudicial e um pedido de direito de resposta) e registro de acertos, erros e invenções
+         ○ Conta corporativa contratada versus conta pessoal gratuita: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam; a comparação é um método, não um ranking permanente
+
+   ● Gemini Enterprise e o ecossistema Google (ferramenta que a empresa está contratando)
+         ○ O que a documentação oficial do Google Cloud descreve sobre segurança do Gemini Enterprise: criptografia, controles de acesso, proteção de dados sensíveis e opções administrativas — conferir o que foi habilitado no contrato da empresa
+         ○ Integração com Google Workspace (Gmail, Drive, Documentos, Planilhas) conforme permissões e administração
+         ○ NotebookLM para perguntas sobre um conjunto delimitado de documentos (contratos-modelo, políticas internas, manuais de radiodifusão, pareceres anteriores anonimizados)
+         ○ Agentes e conectores do Gemini Enterprise: o que a área pode pedir à TI e com que governança
+
+   ● Claude (Anthropic)
+         ○ Uso frequente para leitura e análise de documentos longos; conferir a janela de contexto vigente na documentação oficial da Anthropic
+         ○ Projetos para reunir políticas, modelos e acervo de referência da área
+         ○ Limite: documento longo lido não dispensa conferir trecho, número e citação na origem
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral; análise de arquivos conforme o plano contratado
+         ○ GPTs personalizados para tarefas repetidas da área, a partir de modelos da casa
+         ○ Limite: o que sai do chat é rascunho até ser conferido
+
+   ● Grok (xAI)
+         ○ Disponível em produtos da xAI e no X; a documentação da xAI descreve busca em posts do X
+         ○ Uso possível no jurídico: acompanhar repercussão pública de um caso, de uma notícia contestada ou de um uso indevido de marca da emissora, sempre conferindo a fonte original
+         ○ Limite: post em rede social não é fonte oficial; conferir sempre a origem
+
+3 - Prompts com método para o jurídico (8 horas)
+   ● Anatomia de um prompt profissional
+         ○ Contexto, objetivo, dados, critérios e formato de resposta
+         ○ Pedir saída em tabela com coluna de origem (documento, página, trecho) e grau de certeza
+         ○ Obrigar o modelo a dizer o que não encontrou e a não inventar precedente, número de processo, artigo ou doutrina
+         ○ Exemplos de entrada e de saída esperada (poucos e bons)
+         ○ Iterar: testar, achar o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para a rotina da área
+         ○ Resumir autos e montar linha do tempo com página de origem de cada fato
+         ○ Comparar versões de contrato e listar diferenças, riscos e cláusulas ausentes frente ao modelo da casa
+         ○ Rascunhar notificação extrajudicial, resposta a direito de resposta e e-mails a áreas internas
+         ○ Pedir contra-argumentos e pontos fracos da própria tese
+         ○ Checklist de revisão antes de protocolar: cada citação conferida, cada fato com página, cada prazo calculado no sistema
+
+   ● Biblioteca de prompts da área
+         ○ Modelos por função: contencioso cível, trabalhista, contratos, propriedade intelectual e imagem, regulatório de radiodifusão, compliance
+         ○ Versionar e compartilhar com exemplo de entrada e de saída revisada
+         ○ Registrar o que a IA fez em cada entrega para manter rastreabilidade
+
+4 - Pesquisa jurídica, jurisprudência e verificação de citações (10 horas)
+   ● Pesquisa com método
+         ○ Ferramentas generalistas versus ferramentas jurídicas especializadas com base de jurisprudência
+         ○ Pesquisa profunda (deep research) com exigência de link para o repositório oficial
+         ○ Conferir cada precedente no site do tribunal: número, relator, órgão julgador, data e trecho
+         ○ Diferença entre ementa, inteiro teor e tese firmada
+
+   ● Casos reais de sanção e como evitá-los
+         ○ TJSC, fev. 2025: precedentes e doutrinas inexistentes, multa de 10% sobre o valor da causa e comunicação à OAB/SC
+         ○ TJPR, jun. 2026: jurisprudência do STJ não localizada no repositório oficial, multa por litigância de má-fé e envio à OAB/PR
+         ○ OAB/ES, jun. 2025: consulta respondida pelo TED afirmando infração disciplinar por fundamentação fictícia
+         ○ Checklist de verificação antes de qualquer protocolo
+
+5 - Contratos e documentos com IA (8 horas)
+   ● Leitura e revisão
+         ○ Resumo de contratos de licenciamento de conteúdo, direitos de transmissão, patrocínio, cessão de imagem, prestação de serviços e publicidade
+         ○ Comparação com o modelo da casa e lista de cláusulas ausentes
+         ○ Prazos, reajustes, multas, exclusividade, território e janelas de exibição
+         ○ Rascunho de cláusulas e de notificações, revisado pelo advogado
+
+   ● Gestão do acervo
+         ○ Acervo de modelos no NotebookLM ou Projetos, com versão e responsável
+         ○ Cuidados com prompt injection em documentos de terceiros
+
+6 - Direito de imagem, autoral e conexos na mídia (8 horas)
+   ● Direitos da emissora e de terceiros
+         ○ Direitos autorais e conexos (Lei n. 9.610/1998): obras, interpretações, emissões e uso de trechos — conferir o texto vigente
+         ○ Direito de imagem e voz de entrevistados, apresentadores e figurantes
+         ○ Conteúdo gerado por IA: titularidade, termos de uso da ferramenta e riscos de reproduzir obra de terceiros
+         ○ Voz e imagem sintéticas: autorização, contrato e rotulagem
+
+   ● Casos práticos
+         ○ Uso de trecho de programa por terceiros nas redes
+         ○ Pedido de remoção e de direito de resposta
+         ○ Licenciamento de acervo para treinamento de IA: o que perguntar antes de assinar
+
+7 - Radiodifusão, regulatório e período eleitoral (8 horas)
+   ● Regras do setor
+         ○ Marco legal da radiodifusão e obrigações da concessão — consultar sempre o texto oficial vigente e os órgãos competentes (Ministério das Comunicações e ANATEL)
+         ○ Publicidade e autorregulamentação: Código e Guias do CONAR; o guia de influenciadores atualizado em 2026 inclui uso de IA
+         ○ Classificação indicativa e proteção de crianças e adolescentes
+
+   ● Eleições
+         ○ Resolução TSE n. 23.610/2019 com a redação da Resolução n. 23.732/2024: rotulagem obrigatória de conteúdo sintético na propaganda eleitoral, vedação de deepfake e de chatbot que simule pessoa real
+         ○ O papel da emissora ao veicular propaganda e ao cobrir eleições; conferir resoluções do pleito vigente
+         ○ IA como apoio à triagem de pedidos de remoção e de direito de resposta eleitoral, com decisão humana
+
+8 - Contencioso, trabalhista e gestão de processos (8 horas)
+   ● Processos com apoio de IA
+         ○ Resumo de autos e linha do tempo com página de origem
+         ○ Rascunho de peças a partir de modelos e teses aprovadas, sempre com verificação de citações
+         ○ Preparação de audiência: perguntas, pontos fracos, documentos
+         ○ Trabalhista em empresa de mídia: jornada de equipes de externa, direitos de imagem de empregados, terceirizados
+
+   ● Gestão
+         ○ Indicadores de carteira e provisões com dados do sistema, não estimados pela IA
+         ○ Relatórios à diretoria com risco, valor e responsável
+
+9 - Proteção de dados e compliance na operação de mídia (6 horas)
+   ● Proteção de dados no dia a dia da emissora
+         ○ Dados de audiência, promoções, participantes de programas e ouvintes
+         ○ Contratos com fornecedores de IA: tratamento, retenção e não uso para treinamento
+         ○ Resposta a titulares e incidentes, com apoio de IA para rascunho
+
+   ● Compliance
+         ○ Código de conduta, canal de denúncias e investigações internas: o que a IA pode e não pode fazer
+         ○ Registro de usos de IA que afetam terceiros
+
+10 - Ética, LGPD, segurança da informação e governança de IA (8 horas)
+   ● Ética profissional e regras da advocacia
+         ○ Recomendação n. 001/2024 do Conselho Federal da OAB sobre IA generativa na prática jurídica: sigilo, diligência na escolha da ferramenta, supervisão humana, verificação de doutrina e jurisprudência, transparência com o cliente
+         ○ Dever de veracidade (art. 77 do CPC) e litigância de má-fé (art. 80 do CPC) quando a IA inventa precedentes
+         ○ Casos reais: TJSC (6ª Câmara Civil, fev. 2025) aplicou multa de 10% sobre o valor da causa e comunicou a OAB/SC; TJPR (9ª Câmara Cível, jun. 2026) multou e pediu apuração à OAB/PR por jurisprudência do STJ não localizada no repositório oficial; o TED da OAB/ES (consulta, jun. 2025) afirmou que fundamentação fictícia gerada por IA configura infração disciplinar (art. 34, XIV e XXV, do Estatuto)
+         ○ Resolução CNJ n. 615/2025 (alterada pela Resolução n. 674/2026): regras para IA no Poder Judiciário — o que o advogado precisa saber sobre como tribunais usam IA
+         ○ OAB e CNJ anunciaram em 2026 a elaboração conjunta de um novo provimento sobre IA; tratar como em construção até haver texto publicado
+
+   ● LGPD e segurança
+         ○ Dados pessoais e sensíveis em processos (trabalhistas, de imagem, de menores)
+         ○ Minimização e anonimização antes de usar IA; base legal e finalidade
+         ○ O que nunca enviar a ferramenta não aprovada: segredo de justiça, estratégia processual, certificado digital, senhas
+         ○ Chatbots de atendimento não podem praticar atos privativos da advocacia e devem se identificar como máquina (Recomendação OAB 001/2024)
+
+   ● Governança de IA no jurídico
+         ○ Política de uso: ferramentas aprovadas, usos permitidos e proibidos, revisão obrigatória, registro
+         ○ Transparência com o cliente interno e externo sobre o uso de IA
+         ○ Exercício: rascunho de política de IA para o jurídico da Rede Amazônica, para revisão da diretoria
+
+11 - Agentes e automação do fluxo jurídico (6 horas)
+   ● Do assistente avulso ao processo
+         ○ Mapa do processo atual (contratos, contencioso, notificações, direito de resposta, consultas internas) e pontos de atrito
+         ○ Onde agentes ajudam: triagem de intimações e publicações, primeira leitura de contratos, organização de pesquisa, rascunho de minutas a partir de modelos
+         ○ Human in the loop: aprovação humana antes de protocolar, assinar, enviar notificação ou dar parecer
+         ○ Agentes no Gemini Enterprise e assistentes personalizados (Gems, GPTs, Projetos do Claude): instruções, acervo e teste
+
+   ● Operação e medição
+         ○ Indicadores: tempo, retrabalho, erros evitados, erros introduzidos
+         ○ Documentação do fluxo para outro colega repetir
+         ○ O que nunca sai no automático: protocolo, assinatura, parecer final, comunicação a terceiros e cálculo de prazo sem conferência no sistema
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline é uma sequência de etapas reexecutáveis com entrada, saída e regra clara
+         ○ Etapas determinísticas em código, sem LLM: baixar publicações e intimações, extrair número de processo, datas e partes por regra, calcular prazos no sistema oficial, comparar versões de contrato (diff), checar se cada precedente citado existe no repositório do tribunal
+         ○ O modelo entra só onde há linguagem ou julgamento: resumir peça, classificar risco de cláusula, rascunhar minuta e explicar diferença entre versões
+         ○ Comparar na mesma tarefa o caminho "tudo no chat" e o pipeline: custo em tokens, tempo, erro, capacidade de repetir e auditar
+         ○ Cache e reexecução por etapa; configuração em YAML; registro de tokens e custo por etapa
+         ○ Trava humana antes de qualquer resultado sair da área
+
+   ● Python para quem não é programador
+         ○ Notebooks no navegador (Jupyter ou Google Colab) para ver o resultado linha a linha
+         ○ Pedir o código à IA com problema, formato de entrada e de saída; recusar código que ninguém consegue explicar
+         ○ Rodar, ler o erro, devolver o erro à IA, conferir numa amostra — a pessoa é responsável pelo que o script faz
+         ○ Nunca colar senha, chave de API ou dado pessoal no notebook ou no chat
+         ○ Quando chamar a TI ou quem já trabalha com dados
+
+   ● Caso real e pipelines da área
+         ○ O pipeline interno de criação de aulas da Rede Amazônica (aula-ra) como exemplo de método: legendas do YouTube, roteiro escrito pelo modelo a partir de trechos relevantes, narração sintética, trechos com crédito, página HTML e vídeo 16:9 e 9:16 — cada etapa com script, cache e ponto de parada
+         ○ No teste das aulas de amostra, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só trechos relevantes e reaproveitar o cache (estimativa por tokenizer, não medição de API)
+         ○ Pipeline de verificação de citações: extrair do rascunho cada precedente e artigo, consultar o repositório oficial por regra, marcar o que não foi localizado — o LLM só redige o relatório
+         ○ Pipeline de contratos: comparar com o modelo da casa por diff, LLM só para explicar as diferenças e sugerir redação, revisão do advogado
+         ○ Pipeline de monitoramento de uso indevido de conteúdo da emissora: busca por regra, LLM só para triagem e rascunho de notificação
+         ○ Exercício: desenhar em YAML as etapas de um pipeline da área marcando onde o LLM entra, onde não entra e onde há revisão
+
+   ● Skills, agentes e GitHub com segurança
+         ○ Skill: pacote reutilizável de instruções (e às vezes scripts) que um agente segue numa tarefa
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com arquivo SKILL.md (metadados em YAML com nome e descrição, e instruções em Markdown)
+         ○ Como avaliar skills e repositórios no GitHub: licença, manutenção recente, questões abertas, estrelas como sinal fraco, README e testes
+         ○ Segurança: não rodar código sem ler; não colocar dado da empresa em repositório alheio; desconfiar de pedido de permissão ampla
+         ○ Reutilizar e versionar as skills da própria área, com registro de mudanças
+
+13 - Projeto final — aplicação no jurídico da Rede Amazônica (10 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou dupla) escolhe um caminho ligado a um processo real, usando dados fictícios ou anonimizados:
+         ○ Caminho A — Verificador de citações antes do protocolo
+         ○ Caminho B — Revisão de contratos de licenciamento, cessão de imagem e patrocínio frente ao modelo da casa
+         ○ Caminho C — Fluxo de direito de resposta e de pedidos de remoção de conteúdo
+         ○ Caminho D — Mapa de risco regulatório de radiodifusão e eleições com fontes oficiais
+         ○ Caminho E — Pipeline reexecutável com LLM só onde for necessário e registro de custo
+         ○ Documento de partida: problema, dados, ferramentas, riscos (LGPD, sigilo, alucinação, direitos) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas aprovadas (prioridade ao Gemini Enterprise contratado)
+         ○ Amostra conferida por humano, com registro de acertos e erros da IA
+         ○ Produto mínimo: checklist, minuta revisada, relatório de verificação ou protótipo auditável — não um discurso sobre IA
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à diretoria: problema, método, resultado, limite e pedido de decisão
+         ○ Critérios: utilidade, rigor de conferência, segurança de dados, clareza do método e viabilidade na rotina
+         ○ Projeto final: entrega do produto, do registro de conferência e da proposta de política ou procedimento associada

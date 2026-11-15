@@ -1,0 +1,73 @@
+# Configuração de uma aula (pipeline aula-ra). Caminhos relativos são relativos a este arquivo.
+aula:
+  slug: gemini-enterprise-agentes
+  tema: "Agentes de IA no Gemini Enterprise"
+  publico: "Diretores da Rede Amazônica, público não técnico"
+  objetivo: "Entender o que é um agente, como o Gemini Enterprise usa os dados da empresa, de onde vêm os agentes e o que exige governança"
+
+saida: /workspace/aula-ra/piloto-v2            # aula.html, clips/, aula.mp4, frames/, roteiro.json, verificacao.json
+trabalho: /workspace/aula-ra/work/v2pipe       # cache, legendas, narração, projeto HyperFrames
+# skills_dir: /home/box/agent-data/workflows   # padrão: pasta-mãe da skill aula-ra
+
+# Formatos de vídeo: 16x9 (aula.mp4, 1920x1080) e/ou 9x16 (aula-9x16.mp4, 1080x1920, layout vertical
+# próprio; trechos em FIT com fundo desfocado). Padrão: só 16x9.
+formatos: [16x9]
+
+videos:
+  - url: https://www.youtube.com/watch?v=uDr0xdA_E_A   # Google Workspace · Gemini at Work - Lesson 6
+    idiomas: "pt.*,en.*"
+
+trechos:                                       # 2–3 trechos curtos (4–8 s) que mostram o produto
+  - id: contexto
+    video: uDr0xdA_E_A
+    inicio: "03:03"
+    fim: "03:11"
+    cena: cerebro-contexto
+    titulo_curto: "Gemini at Work – Lesson 6"
+    mostra: "Pedido ao agente 'Daily Optimizer' para organizar o dia e a resposta com prioridades"
+  - id: galeria
+    video: uDr0xdA_E_A
+    inicio: "03:30"
+    fim: "03:37"
+    cena: tres-fontes
+    titulo_curto: "Gemini at Work – Lesson 6"
+    mostra: "Galeria de agentes: do Google, da organização e os do próprio usuário"
+  - id: escala
+    video: uDr0xdA_E_A
+    inicio: "05:17"
+    fim: "05:26"
+    cena: exemplo
+    titulo_curto: "Gemini at Work – Lesson 6"
+    mostra: "Agente de escala recebe 'staff the store' e devolve a tabela de turnos"
+trechos_opcoes: {folga: 1.0, altura: 720, fundo_9x16: blur}   # fundo_9x16: blur ou cor "#0b1d3a"
+
+roteiro:
+  arquivo: roteiro.json        # escrito pelo agente (etapa roteiro), dentro de `saida`
+  duracao_alvo: 95             # segundos no total, com os trechos
+  palavras_max: 190            # narração (≈ 70 s a +8%)
+  cenas: "7 a 8"
+
+narracao:
+  voz: pt-BR-FranciscaNeural
+  velocidade: "+8%"
+  whisper_modelo: small
+  termos_checagem: ["Gemini Enterprise", "agentes", "agente", "Workbench", "Deep Research", "Google Workspace", "Google Drive", "OneDrive"]
+
+marca:
+  cores: {fundo: "#0b1d3a", fundo2: "#12305e", texto: "#ffffff", suave: "#b9c7e0", destaque1: "#4285f4", destaque2: "#34a853", destaque3: "#fbbc04"}
+  fonte_titulo: Poppins
+  fonte_texto: Inter
+
+html:
+  gsap_versao: "3.15.0"
+
+video:
+  resolucao: landscape         # 1920x1080
+  hyperframes: "0.9.43"
+  legenda_fonte: Inter
+  legenda_tamanho: 18
+
+video_9x16:                    # só usado se formatos inclui 9x16
+  legenda_tamanho: 9           # escala libass (PlayResY 288): 9 ≈ 60 px em 1920
+  legenda_margem: 48           # ≈ 320 px do pé: logo abaixo do trecho
+  legenda_max_chars: 26

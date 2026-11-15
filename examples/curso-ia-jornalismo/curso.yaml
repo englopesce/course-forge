@@ -1,0 +1,42 @@
+# Config de curso (curso-a-partir-de-ementa). Caminhos relativos a este arquivo.
+curso:
+  titulo: IA para Jornalismo
+  ementa: ../ementa-ia-jornalismo.txt
+  objetivo: Capacitar a redação a usar inteligência artificial com método jornalístico — para apurar, escutar o público, monitorar diários oficiais, cruzar dados públicos, verificar conteúdo, montar pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários, e decidir com responsabilidade editorial.
+  publico: Jornalistas, editores, chefes de reportagem e analistas de audiência da Rede Amazônica (TV e plataformas digitais no Norte do Brasil). Não é um curso de formação de programadores.
+  nivel: introdutório a intermediário — parte das rotinas de apuração, edição e escuta do público; quem já trabalha com dados avança nos módulos 6 a 8 e no de pipelines, sem deixar o restante do grupo para trás
+  tom: claro e direto, de redação para redação; analogias do jornalismo do dia a dia; a IA auxilia, a responsabilidade editorial é sempre humana
+  linguagem: frases curtas em pt-BR; termos técnicos em inglês só quando forem o nome da coisa (prompt, token, RAG) e explicados na primeira vez; preferir "janela de contexto", "o agente", "regras"
+saida: .
+skills_dir: /workspace/aula-ra/skills   # cópia de trabalho versionada (igual à instalada após sync_skills.sh)
+cache_videos: _cache/videos
+estrutura:
+  aulas_por_modulo: 3 a 12
+  duracao_video_s: 90 a 150
+  cobertura: erro          # erro | aviso — item da ementa sem aula
+  regras:
+    - Público de jornalistas e editores, não de programadores. Aulas de tipo codigo só onde a ementa pede Python (módulo 12 e, se couber, trechos pontuais de API).
+    - Fatos só de transcrição ou documentação oficial vigente do provedor; capacidades e preços mudam.
+    - Nenhum número, citação, atribuição, nexo causal ou identificação de pessoa vai ao ar sem checagem independente.
+    - Não se envia à nuvem o que comprometa fonte em risco, sigilo profissional ou dados pessoais desnecessários (LGPD).
+    - Comentários e posts em redes não são amostra representativa da opinião pública.
+padrao_aula:               # base de todos os aula.yaml (deep merge; listas substituem)
+  marca:
+    cores: {fundo: '#0b1d3a', fundo2: '#12305e', texto: '#ffffff', suave: '#b9c7e0', destaque1: '#4285f4', destaque2: '#34a853', destaque3: '#fbbc04'}
+    fonte_titulo: Poppins
+    fonte_texto: Inter
+  formatos: [16x9, 9x16]
+  roteiro:
+    cenas: 6 a 7
+    estrutura: problema/gancho → conceito → como funciona na redação → exemplo concreto → armadilhas comuns → próximos passos
+    fechamento: Na prática
+  narracao: {voz: pt-BR-FranciscaNeural, rate: "-5%", pausa_frase_ms: 400, pausa_paragrafo_ms: 700, pausa_cena_ms: 950, whisper_modelo: small, termos_ingles: {modo: ingles_mesma_voz}}
+  trechos_opcoes: {folga: 1.0, altura: 720, fundo_9x16: blur}
+  html: {gsap_versao: 3.15.0}
+  video: {resolucao: landscape, hyperframes: 0.9.43, legenda_fonte: Inter, legenda_tamanho: 18}
+  video_9x16: {legenda_tamanho: 9, legenda_margem: 48, legenda_max_chars: 26}
+por_tipo:                  # sobreposto ao padrao_aula conforme o tipo da aula
+  codigo:
+    roteiro:
+      cenas: 6 a 8
+      estrutura: o que vamos construir → estrutura do projeto → código passo a passo (cenas com codigo) → rodar e testar → erros comuns → exercício

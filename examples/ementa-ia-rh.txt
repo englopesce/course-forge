@@ -1,0 +1,226 @@
+Ementa IA para Recursos Humanos
+
+Público: profissionais e gestores de recursos humanos, departamento pessoal, treinamento e desenvolvimento, remuneração, saúde e segurança do trabalho e business partners do Grupo Rede Amazônica (grupo de mídia, rádio e TV no Norte do Brasil, com equipes em AM, RO, RR, AC e AP). Não é um curso de formação de programadores. Pré-requisito: rotina em algum subsistema de RH e uso de planilhas.
+
+Carga horária total sugerida: 104 horas, em 13 módulos, além do tempo de prática com material fictício ou anonimizado da própria área. A carga de cada módulo aparece no título e pode ser ajustada na implementação.
+
+Objetivo geral: capacitar o RH a usar inteligência artificial com método — em recrutamento, desenvolvimento, desempenho, clima, comunicação interna e rotinas de DP —, mantendo a decisão sobre pessoas humana e documentada, prevenindo vieses e discriminação, protegendo dados pessoais e sensíveis de empregados e candidatos, e montando pipelines em que o modelo só entra quando a linguagem ou o julgamento são necessários.
+
+Princípios que valem para todos os módulos:
+- Decisão sobre pessoas (contratar, promover, desligar, avaliar) é humana, fundamentada e registrada; a IA prepara rascunho e análise.
+- Nenhum ranking ou triagem automática de candidatos sem critério documentado, teste de viés e revisão humana.
+- Dados de empregados e candidatos são pessoais e, muitas vezes, sensíveis (saúde, raça, sindicalização, deficiência): só em ferramenta aprovada, com minimização e finalidade definida (LGPD).
+- Norma trabalhista ou previdenciária citada pela IA é pista, não fonte: conferir no texto oficial vigente, na convenção coletiva e com o jurídico.
+- Capacidades, limites e preços das ferramentas mudam. Antes de afirmar o que um produto faz, conferir a documentação oficial vigente do provedor.
+- Esta ementa está no formato aceito pela skill curso-a-partir-de-ementa (módulos "N - Título", tópicos com marcadores). As referências comparadas estão em comparacao-ementa-ia-rh.md.
+
+1 - Fundamentos de IA e limites em recursos humanos (6 horas)
+   ● O que a área precisa entender sobre IA
+         ○ Diferença entre automação tradicional (regras, macros, RPA), aprendizado de máquina, IA generativa e agentes
+         ○ O que um modelo de linguagem faz de fato: prever texto provável, não consultar uma base oficial nem "saber" o fato vigente
+         ○ Por que a resposta soa segura mesmo quando está errada (alucinação)
+         ○ Ferramentas que geram texto versus ferramentas que buscam, calculam ou extraem dados
+         ○ Multimodalidade útil ao RH: currículo em PDF, áudio de entrevista (com consentimento), planilha de folha, vídeo de treinamento
+
+   ● Onde a IA ajuda e onde não se pode confiar
+         ○ Onde costuma ajudar: descrição de vagas, roteiros de entrevista por competência, trilhas de treinamento, rascunho de comunicados, análise de comentários abertos de pesquisas de clima, FAQ de benefícios
+         ○ Onde não se confia sem validação: cálculo de folha, rescisão e encargos, enquadramento legal, inferência sobre personalidade ou saúde, ranking de pessoas e conclusões sobre desempenho individual
+         ○ Atividades automatizáveis, apoiáveis e dependentes de julgamento profissional
+         ○ Definir o problema (o que resolver, com qual prazo, qual risco) antes de escolher a ferramenta
+
+   ● Riscos que a área precisa nomear desde o primeiro dia
+         ○ Viés e discriminação algorítmica em triagem e avaliação
+         ○ Dados pessoais e sensíveis (LGPD) e confidencialidade de casos
+         ○ Currículos e respostas gerados por IA e fraude documental
+         ○ Responsabilidade: a decisão continua do gestor e do RH
+
+2 - Uso comparado de Gemini Enterprise, Claude, ChatGPT e Grok (8 horas)
+   ● Como comparar assistentes sem cair em propaganda
+         ○ Critérios: tipo de tarefa, leitura de arquivos longos, citação de fonte, integração com o que a empresa já usa, custo, limites, retenção e uso dos dados
+         ○ Teste lado a lado com o mesmo pacote fictício da área (vaga fictícia, cinco currículos anonimizados, pesquisa de clima com comentários abertos fictícios e política de benefícios) e registro de acertos, erros e invenções
+         ○ Conta corporativa contratada versus conta pessoal gratuita: o que muda em sigilo, histórico e conformidade
+         ○ Capacidades mudam; a comparação é um método, não um ranking permanente
+
+   ● Gemini Enterprise e o ecossistema Google (ferramenta que a empresa está contratando)
+         ○ O que a documentação oficial do Google Cloud descreve sobre segurança do Gemini Enterprise: criptografia, controles de acesso, proteção de dados sensíveis e opções administrativas — conferir o que foi habilitado no contrato da empresa
+         ○ Integração com Google Workspace (Gmail, Drive, Documentos, Planilhas) conforme permissões e administração
+         ○ NotebookLM para perguntas sobre um conjunto delimitado de documentos (políticas internas, convenções coletivas, manual do empregado, descrições de cargo)
+         ○ Agentes e conectores do Gemini Enterprise: o que a área pode pedir à TI e com que governança
+
+   ● Claude (Anthropic)
+         ○ Uso frequente para leitura e análise de documentos longos; conferir a janela de contexto vigente na documentação oficial da Anthropic
+         ○ Projetos para reunir políticas, modelos e acervo de referência da área
+         ○ Limite: documento longo lido não dispensa conferir trecho, número e citação na origem
+
+   ● ChatGPT (OpenAI)
+         ○ Assistente de uso geral; análise de arquivos conforme o plano contratado
+         ○ GPTs personalizados para tarefas repetidas da área, a partir de modelos da casa
+         ○ Limite: o que sai do chat é rascunho até ser conferido
+
+   ● Grok (xAI)
+         ○ Disponível em produtos da xAI e no X; a documentação da xAI descreve busca em posts do X
+         ○ Uso possível no RH: acompanhar a percepção pública da marca empregadora e de vagas divulgadas, conferindo a fonte original e sem perfilar pessoas
+         ○ Limite: post em rede social não é fonte oficial; conferir sempre a origem
+
+3 - Prompts com método para recursos humanos (8 horas)
+   ● Anatomia de um prompt profissional
+         ○ Contexto, objetivo, dados, critérios e formato de resposta
+         ○ Pedir saída em tabela com coluna de origem (documento, página, trecho) e grau de certeza
+         ○ Obrigar o modelo a dizer o que não encontrou e a não inventar dado de candidato, norma trabalhista ou número
+         ○ Exemplos de entrada e de saída esperada (poucos e bons)
+         ○ Iterar: testar, achar o erro, corrigir o comando, guardar o que funcionou
+
+   ● Prompts para a rotina da área
+         ○ Descrição de vaga inclusiva e sem linguagem excludente
+         ○ Roteiro de entrevista por competência e retorno humanizado ao candidato
+         ○ Plano de desenvolvimento e trilha de treinamento a partir de competências definidas pelo gestor
+         ○ IA como editora de feedback, nunca autora
+         ○ Comunicados internos claros para equipes de redação, técnica, comercial e externas nas cinco praças
+
+   ● Biblioteca de prompts da área
+         ○ Modelos por função: recrutamento, T&D, desempenho, remuneração, DP, comunicação interna, saúde e segurança
+         ○ Versionar e compartilhar com exemplo de entrada e de saída revisada
+         ○ Registrar o que a IA fez em cada entrega para manter rastreabilidade
+
+4 - Recrutamento e seleção com IA e sem discriminação (10 horas)
+   ● Atração e triagem
+         ○ Descrição de vagas para funções de mídia: jornalismo, técnica, engenharia, comercial, digital
+         ○ Critérios de triagem definidos antes, por competência
+         ○ Triagem assistida com revisão humana e registro de motivo
+         ○ Currículos gerados por IA e verificação de informações
+
+   ● Entrevista e retorno
+         ○ Roteiro estruturado por competência
+         ○ Transcrição só com consentimento
+         ○ Retorno humanizado a todos os candidatos
+
+5 - Onboarding, treinamento e desenvolvimento (8 horas)
+   ● Integração
+         ○ Kit de integração por cargo e praça (Manaus, Porto Velho, Boa Vista, Rio Branco, Macapá e interior)
+         ○ Trilhas de aprendizagem e PDI com o gestor na decisão
+         ○ Conteúdo de treinamento com vídeo e narração sintética rotulada
+
+   ● Treinamentos obrigatórios
+         ○ Segurança do trabalho em externas e coberturas
+         ○ Compliance, LGPD e uso responsável de IA para toda a empresa
+
+6 - Desempenho, feedback e carreira (8 horas)
+   ● Ciclo de desempenho
+         ○ Metas e competências definidas por pessoas
+         ○ IA para organizar evidências e redigir feedback, revisado pelo gestor
+         ○ Calibragem com dados, sem ranking automático
+
+   ● Carreira e sucessão
+         ○ Mapas de carreira para funções técnicas e editoriais
+         ○ Riscos de vieses em avaliação de potencial
+
+7 - People analytics, clima e engajamento (8 horas)
+   ● Dados de pessoas
+         ○ Headcount, turnover, absenteísmo e horas extras calculados em planilha ou código
+         ○ Comentários abertos de clima: agrupamento de temas, não identificação de autores
+         ○ Correlação não é causalidade; amostras pequenas por praça
+
+   ● Do diagnóstico à ação
+         ○ Plano de ação pós-pesquisa com responsável e prazo
+         ○ Painéis com rastreabilidade até a origem
+
+8 - Departamento pessoal, benefícios e rotinas (8 horas)
+   ● Rotinas
+         ○ Dúvidas frequentes de benefícios, férias e ponto com respostas a partir de documentos oficiais da empresa
+         ○ Conferência de documentos e prazos no sistema de folha, não no chat
+         ○ eSocial e obrigações: IA para explicar leiaute e erro, validação no sistema oficial
+
+   ● Políticas
+         ○ Rascunho de políticas e comunicados com revisão jurídica
+         ○ Convenções coletivas das diferentes praças: consulta ao texto vigente
+
+9 - Comunicação interna, cultura e liderança (6 horas)
+   ● Comunicação
+         ○ Comunicados claros para equipes de plantão, externas e regionais
+         ○ Newsletter e murais digitais com conteúdo revisado
+         ○ Rotulagem de conteúdo sintético em vídeos e áudios internos
+
+   ● Liderança
+         ○ Gestores usando IA com responsabilidade
+         ○ Conversas difíceis: IA para preparar, nunca para conduzir
+
+10 - Ética, LGPD, segurança da informação e governança de IA (8 horas)
+   ● Ética e não discriminação
+         ○ Viés em triagem, avaliação e promoção: como testar e documentar
+         ○ Testes psicológicos e inferências de personalidade por IA: limites técnicos e éticos
+         ○ Transparência com candidatos e empregados sobre uso de IA
+         ○ Decisão automatizada e o direito de revisão previsto na LGPD (art. 20) — conferir o texto vigente
+
+   ● LGPD e segurança
+         ○ Dados sensíveis de empregados: saúde, atestados, deficiência, filiação sindical
+         ○ Minimização, anonimização e base legal antes de usar IA
+         ○ O que nunca enviar a ferramenta não aprovada: folha identificada, laudos, processos disciplinares, senhas
+         ○ Gravação e transcrição de entrevistas só com consentimento informado
+
+   ● Governança de IA no RH
+         ○ Política de uso: ferramentas aprovadas, usos permitidos e proibidos, revisão obrigatória, registro
+         ○ Inventário de usos de IA que afetam pessoas
+         ○ Exercício: rascunho de política de IA para o RH da Rede Amazônica, para revisão do jurídico e da diretoria
+
+11 - Agentes e automação do fluxo de RH e DP (6 horas)
+   ● Do assistente avulso ao processo
+         ○ Mapa do processo atual (requisição de vaga, admissão, onboarding, avaliação, desligamento) e pontos de atrito
+         ○ Onde agentes ajudam: triagem de dúvidas frequentes, organização de documentos de admissão, lembretes de treinamentos obrigatórios, rascunho de comunicados
+         ○ Human in the loop: aprovação humana antes de reprovar, contratar, avaliar, desligar ou comunicar algo individual
+         ○ Agentes no Gemini Enterprise e assistentes personalizados (Gems, GPTs, Projetos do Claude): instruções, acervo e teste
+
+   ● Operação e medição
+         ○ Indicadores: tempo, retrabalho, erros evitados, erros introduzidos
+         ○ Documentação do fluxo para outro colega repetir
+         ○ O que nunca sai no automático: decisão sobre pessoas, cálculo de folha e rescisão, comunicação de desligamento e qualquer resposta sobre saúde
+
+12 - Pipelines em Python: o LLM só quando for necessário (10 horas)
+   ● Metodologia: o que vai para o código e o que vai para o modelo
+         ○ Pipeline é uma sequência de etapas reexecutáveis com entrada, saída e regra clara
+         ○ Etapas determinísticas em código, sem LLM: consolidar planilhas de headcount, turnover e absenteísmo, calcular indicadores, checar documentos obrigatórios de admissão, cruzar treinamentos obrigatórios com cargos
+         ○ O modelo entra só onde há linguagem ou julgamento: agrupar temas de comentários abertos de clima, rascunhar descrição de vaga e comunicado, resumir entrevista transcrita com consentimento
+         ○ Comparar na mesma tarefa o caminho "tudo no chat" e o pipeline: custo em tokens, tempo, erro, capacidade de repetir e auditar
+         ○ Cache e reexecução por etapa; configuração em YAML; registro de tokens e custo por etapa
+         ○ Trava humana antes de qualquer resultado sair da área
+
+   ● Python para quem não é programador
+         ○ Notebooks no navegador (Jupyter ou Google Colab) para ver o resultado linha a linha
+         ○ Pedir o código à IA com problema, formato de entrada e de saída; recusar código que ninguém consegue explicar
+         ○ Rodar, ler o erro, devolver o erro à IA, conferir numa amostra — a pessoa é responsável pelo que o script faz
+         ○ Nunca colar senha, chave de API ou dado pessoal no notebook ou no chat
+         ○ Quando chamar a TI ou quem já trabalha com dados
+
+   ● Caso real e pipelines da área
+         ○ O pipeline interno de criação de aulas da Rede Amazônica (aula-ra) como exemplo de método: legendas do YouTube, roteiro escrito pelo modelo a partir de trechos relevantes, narração sintética, trechos com crédito, página HTML e vídeo 16:9 e 9:16 — cada etapa com script, cache e ponto de parada
+         ○ No teste das aulas de amostra, a estimativa de tokens caiu cerca de 54% ao enviar ao modelo só trechos relevantes e reaproveitar o cache (estimativa por tokenizer, não medição de API)
+         ○ Pipeline de pesquisa de clima: tabular notas em código, LLM só para agrupar temas dos comentários abertos já anonimizados, revisão do RH
+         ○ Pipeline de onboarding: checklist por cargo e praça gerado por regra, LLM só para o texto de boas-vindas
+         ○ Pipeline de indicadores de pessoas: turnover e absenteísmo calculados no código, LLM só para o comentário à diretoria
+         ○ Exercício: desenhar em YAML as etapas de um pipeline da área marcando onde o LLM entra, onde não entra e onde há revisão
+
+   ● Skills, agentes e GitHub com segurança
+         ○ Skill: pacote reutilizável de instruções (e às vezes scripts) que um agente segue numa tarefa
+         ○ Exemplo verificável: a documentação oficial da Anthropic descreve Agent Skills como uma pasta com arquivo SKILL.md (metadados em YAML com nome e descrição, e instruções em Markdown)
+         ○ Como avaliar skills e repositórios no GitHub: licença, manutenção recente, questões abertas, estrelas como sinal fraco, README e testes
+         ○ Segurança: não rodar código sem ler; não colocar dado da empresa em repositório alheio; desconfiar de pedido de permissão ampla
+         ○ Reutilizar e versionar as skills da própria área, com registro de mudanças
+
+13 - Projeto final — aplicação no RH da Rede Amazônica (10 horas)
+   ● Escolha e desenho do projeto
+         ○ O participante (ou dupla) escolhe um caminho ligado a um processo real, usando dados fictícios ou anonimizados:
+         ○ Caminho A — Recrutamento com descrição inclusiva, roteiro por competência e teste de viés
+         ○ Caminho B — Trilha de desenvolvimento para uma função da emissora (repórter, cinegrafista, executivo de contas)
+         ○ Caminho C — Diagnóstico de clima com comentários abertos anonimizados
+         ○ Caminho D — Chatbot interno de dúvidas de benefícios com encaminhamento humano
+         ○ Caminho E — Pipeline reexecutável com LLM só onde for necessário e registro de custo
+         ○ Documento de partida: problema, dados, ferramentas, riscos (LGPD, sigilo, alucinação, direitos) e o que não será automatizado
+
+   ● Execução supervisionada
+         ○ Montagem do fluxo com as ferramentas aprovadas (prioridade ao Gemini Enterprise contratado)
+         ○ Amostra conferida por humano, com registro de acertos e erros da IA
+         ○ Produto mínimo: kit de vaga, trilha, relatório de clima, protótipo de assistente ou pipeline auditável — não um discurso sobre IA
+
+   ● Apresentação e critérios de avaliação
+         ○ Apresentação curta à diretoria: problema, método, resultado, limite e pedido de decisão
+         ○ Critérios: utilidade, rigor de conferência, segurança de dados, clareza do método e viabilidade na rotina
+         ○ Projeto final: entrega do produto, do registro de conferência e da proposta de política ou procedimento associada
