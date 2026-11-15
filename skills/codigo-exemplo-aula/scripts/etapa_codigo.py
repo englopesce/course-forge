@@ -64,6 +64,15 @@ def main():
         if not a.sem_checagem and ex.get("checagem"):
             run_dir = os.path.join(a.trabalho, "exemplo-run"); copiar(repo, run_dir, ign)
             env = {**os.environ, "CI": "1", "NO_COLOR": "1", "npm_config_update_notifier": "false"}
+            # Em alguns ambientes só existe python3; o cmd pedagógico pode dizer "python".
+            if not shutil.which("python", path=env.get("PATH", "")):
+                shim = os.path.join(a.trabalho, "bin-python")
+                os.makedirs(shim, exist_ok=True)
+                dest = os.path.join(shim, "python")
+                if os.path.lexists(dest):
+                    os.remove(dest)
+                os.symlink(sys.executable, dest)
+                env["PATH"] = shim + os.pathsep + env.get("PATH", "")
             for i, c in enumerate(ex["checagem"]):
                 c = c if isinstance(c, dict) else {"nome": f"cmd{i+1}", "cmd": c}
                 t0 = time.time(); log = os.path.join(out_dir, f"log_{i+1:02d}_{c['nome']}.txt")
