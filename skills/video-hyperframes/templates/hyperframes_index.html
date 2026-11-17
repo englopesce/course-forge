@@ -21,8 +21,9 @@
         font-family: var(--font-display); font-weight: 700; font-size: 36px; }
       .bullet:nth-child(2) .num { background: var(--accent); }
       .bullet:nth-child(3) .num { background: var(--warn); color: #1b1b1b; }
-      #progress { position: absolute; left: 0; top: 0; height: 10px; width: 1920px; background: var(--accent); transform-origin: 0 50%; }
-      #credit { position: absolute; right: 60px; top: 34px; font-size: 28px; color: var(--muted); text-align: right; max-width: 1300px; }
+      #progress { position: absolute; left: 0; top: 0; height: 10px; width: 1920px; background: var(--accent); transform-origin: 0 50%; z-index: 11; }
+      #topo { position: absolute; left: 0; right: 0; top: 16px; z-index: 10; display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+      #credit { position: absolute; right: 60px; top: 34px; font-size: 28px; color: var(--muted); text-align: right; max-width: 1300px; z-index: 10; }
       #step { position: absolute; left: 160px; top: 40px; font-size: 24px; color: var(--muted); font-family: var(--font-display); }
       .trecho-video { position: absolute; left: 320px; top: 92px; width: 1280px; height: 720px; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,.5); background: #000; }
       .trecho-tag { position: absolute; left: 320px; top: 36px; font-size: 30px; font-weight: 600; color: var(--accent); font-family: var(--font-display); }
@@ -46,19 +47,55 @@
       .tk-fn{color:#82aaff}.tk-typ{color:#ffcb6b}.tk-key{color:#89ddff}.tk-punct{color:#a6accd}
 
       #avisos { display: none; }
-      .com-avisos #avisos { display: block; position: absolute; left: 0; right: 0; top: 10px; padding: 8px 420px 8px 160px; font-size: 20px; line-height: 1.3; color: var(--muted); background: rgba(0,0,0,.4); z-index: 8; }
-      .com-avisos #credit { top: 58px; }
+      /* Avisos ficam numa faixa #topo, acima de crédito e clipe. Largura quase total
+         (sem recorte de 420 px à direita) para o texto longo quebrar em menos linhas.
+         A posição de crédito, tag e vídeo é medida em JS (layoutTopo) — offsets fixos
+         não acompanham 2–5 linhas de aviso jurídico. */
+      .com-avisos #topo { top: 14px; }
+      .com-avisos #avisos { display: block; position: relative; padding: 8px 160px; font-size: 20px; line-height: 1.3; color: #fff; background: rgba(0,0,0,.85); text-align: left; }
+      .com-avisos #credit { position: relative; right: auto; top: auto; align-self: flex-end; margin-right: 60px; color: #fff; background: rgba(0,0,0,.85); padding: 6px 14px; border-radius: 10px; }
+      .com-avisos #step { top: calc(var(--topo-bottom, 160px) + 8px); }
+      .com-avisos .scene { padding-top: max(150px, calc(var(--topo-bottom, 160px) + 24px)); }
+      .com-avisos .trecho-tag { top: calc(var(--topo-bottom, 160px) + 8px); z-index: 7; }
+      .com-avisos .trecho-video { top: calc(var(--topo-bottom, 160px) + 52px); }
     </style>
   </head>
   <body>
     <div id="root" class="{{AVISOS_CLASS}}" data-composition-id="main" data-start="0" data-duration="{{TOTAL}}" data-width="1920" data-height="1080">
       <div id="progress"></div>
-      <div id="avisos">{{AVISOS_BAR}}</div>
-      <div id="credit">{{CREDIT_SHORT}}</div>
+      <div id="topo">
+        <div id="avisos">{{AVISOS_BAR}}</div>
+        <div id="credit">{{CREDIT_SHORT}}</div>
+      </div>
 {{SCENES}}
       <audio id="vo" src="assets/narracao.wav" data-start="0" data-duration="{{TOTAL}}" data-volume="1"></audio>
     </div>
     <script>
+      function layoutTopo() {
+        var root = document.getElementById("root");
+        var topo = document.getElementById("topo");
+        if (!root || !topo) return;
+        var bottom = Math.ceil(topo.getBoundingClientRect().bottom);
+        root.style.setProperty("--topo-bottom", bottom + "px");
+        var tagTop = bottom + 8;
+        document.querySelectorAll(".trecho-tag").forEach(function (el) { el.style.top = tagTop + "px"; });
+        var videoTop = tagTop + 48;
+        var maxBottom = 820;
+        document.querySelectorAll(".trecho-video").forEach(function (el) {
+          var h = 720, w = 1280, top = videoTop;
+          if (top + h > maxBottom) {
+            h = Math.max(480, maxBottom - top);
+            w = Math.round(h * 16 / 9);
+            top = Math.min(top, maxBottom - h);
+          }
+          el.style.top = top + "px";
+          el.style.height = h + "px";
+          el.style.width = w + "px";
+          el.style.left = Math.round((1920 - w) / 2) + "px";
+        });
+      }
+      layoutTopo();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutTopo);
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: {{TOTAL}}, ease: "none" }, 0);

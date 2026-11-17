@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <!-- Versão vertical 9:16 (1080x1920). Layout próprio: ícone grande, título e itens empilhados;
          faixa de baixo (≈ y 1380–1920) reservada às legendas gravadas. Trechos: MP4 já reenquadrado (FIT, fundo
-         desfocado, crédito na área livre) ocupando a tela toda. -->
+         desfocado, crédito na área livre) ocupando a tela toda. Crédito da fonte, tag do trecho e faixa de avisos
+         ficam acima do clipe (z-index) com placa escura, para o texto continuar legível no fundo claro do FIT.
+         A faixa de avisos e o crédito são empilhados em #topo (altura medida em JS), para o aviso longo nunca
+         ficar escondido sob a placa do crédito. -->
     <script src="gsap.min.js"></script>
     <style>
       :root { {{ROOT_VARS}} }
@@ -25,10 +28,14 @@
         font-family: var(--font-display); font-weight: 700; font-size: 34px; }
       .bullet:nth-child(2) .num { background: var(--accent); }
       .bullet:nth-child(3) .num { background: var(--warn); color: #1b1b1b; }
-      #progress { position: absolute; left: 0; top: 0; height: 12px; width: 1080px; background: var(--accent); transform-origin: 0 50%; z-index: 9; }
-      #credit { position: absolute; left: 84px; right: 84px; top: 70px; font-size: 26px; color: var(--muted); line-height: 1.35; }
+      #progress { position: absolute; left: 0; top: 0; height: 12px; width: 1080px; background: var(--accent); transform-origin: 0 50%; z-index: 11; }
+      #topo { position: absolute; left: 0; right: 0; top: 20px; z-index: 10; display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+      #credit { position: absolute; left: 84px; right: 84px; top: 70px; font-size: 26px; color: #fff; line-height: 1.35;
+        background: rgba(0,0,0,.85); padding: 10px 16px; border-radius: 12px; z-index: 10; }
       .trecho-video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000; z-index: 5; }
-      .trecho-tag { position: absolute; left: 0; right: 0; top: 300px; text-align: center; font-size: 40px; font-weight: 700; color: var(--accent); font-family: var(--font-display); z-index: 6; }
+      .trecho-tag { position: absolute; left: 80px; right: 80px; top: 300px; bottom: auto; height: auto; text-align: center; font-size: 40px; font-weight: 700;
+        color: var(--accent); font-family: var(--font-display); z-index: 6;
+        background: rgba(0,0,0,.85); padding: 12px 28px; border-radius: 16px; }
       .endcredit { margin-top: 44px; font-size: 27px; color: var(--muted); line-height: 1.4; border-left: 6px solid var(--accent2); padding-left: 22px; }
       .endcredit.compacto { margin-top: 34px; font-size: 22px; line-height: 1.35; }
       /* cena com código (etapa codigo): título, itens curtos e painel empilhados */
@@ -48,19 +55,37 @@
       .tk-fn{color:#82aaff}.tk-typ{color:#ffcb6b}.tk-key{color:#89ddff}.tk-punct{color:#a6accd}
 
       #avisos { display: none; }
-      .com-avisos #avisos { display: block; position: absolute; left: 0; right: 0; top: 12px; padding: 10px 70px; font-size: 22px; line-height: 1.3; color: var(--muted); background: rgba(0,0,0,.4); z-index: 8; text-align: center; }
-      .com-avisos #credit { top: 118px; }
+      /* #topo empilha avisos e crédito. A posição da tag do clipe é medida em JS
+         (layoutTopo). A barra de avisos tem z-index 10 e nunca fica sob a placa do crédito. */
+      .com-avisos #topo { top: 16px; }
+      .com-avisos #avisos { display: block; position: relative; padding: 10px 70px; font-size: 22px; line-height: 1.3; color: #fff; background: rgba(0,0,0,.85); text-align: center; }
+      .com-avisos #credit { position: relative; left: auto; right: auto; top: auto; margin: 0 84px; }
+      .com-avisos .scene { padding-top: max(250px, calc(var(--topo-bottom, 200px) + 24px)); }
+      .com-avisos .trecho-tag { top: calc(var(--topo-bottom, 200px) + 16px); }
     </style>
   </head>
   <body>
     <div id="root" class="{{AVISOS_CLASS}}" data-composition-id="main" data-start="0" data-duration="{{TOTAL}}" data-width="1080" data-height="1920">
       <div id="progress"></div>
-      <div id="avisos">{{AVISOS_BAR}}</div>
-      <div id="credit">{{CREDIT_SHORT}}</div>
+      <div id="topo">
+        <div id="avisos">{{AVISOS_BAR}}</div>
+        <div id="credit">{{CREDIT_SHORT}}</div>
+      </div>
 {{SCENES}}
       <audio id="vo" src="assets/narracao.wav" data-start="0" data-duration="{{TOTAL}}" data-volume="1"></audio>
     </div>
     <script>
+      function layoutTopo() {
+        var root = document.getElementById("root");
+        var topo = document.getElementById("topo");
+        if (!root || !topo) return;
+        var bottom = Math.ceil(topo.getBoundingClientRect().bottom);
+        root.style.setProperty("--topo-bottom", bottom + "px");
+        var tagTop = bottom + 16;
+        document.querySelectorAll(".trecho-tag").forEach(function (el) { el.style.top = tagTop + "px"; });
+      }
+      layoutTopo();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutTopo);
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: {{TOTAL}}, ease: "none" }, 0);
